@@ -63,31 +63,79 @@ AIAA3111 数据挖掘课程项目 · H2 分群购物模式。研究历史消费�
 
 11/18 会议建议冻结测试配置；11/21 完成评价。11/28–12/03 建议安排两次模拟答辩；12/05–12/10 整理最终报告并复现主表。这些是衔接建议，不是图片新增的已确定会议。
 
-## 仓库结构
+## 仓库结构与使用说明
+
+日常协作按一条主线进行：**数据放 `data/`，方法代码写在 `src/`，参数统一放 `configs/`，通过 `scripts/` 运行，实验图表保存到 `results/`，最终整理进 `reports/`。** 分工、实验过程与会议决定统一记录在 `docs/`。
 
 ```text
-configs/                     实验配置及冻结记录
-data/raw/                    原始数据，仅本地保存
-data/interim/                清洗中间数据，仅本地保存
-data/processed/              购物篮和特征，仅本地保存
-src/online_trade/
-  data/                      A：数据清洗、购物篮、时间切分
-  clustering/                B：RFM、真实与随机分群
-  patterns/                  C：频繁项集、规则与预算筛选
-  evaluation/                D：对照、覆盖和未来评价
-notebooks/                   A–D 探索记录，稳定逻辑转到 src
-scripts/                     运行入口，待模块完成后添加
-tests/                       手工可核验的小样本测试，待实现
-results/tables/              经审阅、无顾客标识的结果表
-results/figures/             经审阅的报告与海报图
-docs/team_assignment.docx    四人职责与交接 Word 文档
-docs/team_assignment.md      分工在线版本
-docs/data_contract.md        模块字段与评价口径
-docs/experiment_log.md       实验记录模板
-docs/meetings/               会议记录
-reports/poster/              海报稿及 Poster.pdf
-reports/final/               报告稿及 Report.pdf
+aiaa3111-project-online-trade/
+├── README.md                 项目总入口：分工、时间线、目录及运行说明
+├── requirements.txt          Python 依赖清单
+├── .gitignore                指定不上传的数据、缓存和本地环境
+├── .gitattributes            统一文本换行等 Git 文件属性
+├── .github/                  GitHub 协作模板
+├── configs/                  实验参数
+├── data/                     本地数据
+│   ├── raw/                  下载的原始数据
+│   ├── interim/              清洗过程的中间数据
+│   └── processed/            可供后续模块使用的数据
+├── src/online_trade/         A–D 四人的核心代码
+│   ├── data/                 A：数据处理
+│   ├── clustering/           B：顾客分群
+│   ├── patterns/             C：模式挖掘
+│   └── evaluation/           D：实验评价
+├── scripts/                  调用核心代码的运行入口
+├── results/                  实验输出
+│   ├── tables/               结果表格
+│   └── figures/              结果图片
+├── docs/                     分工、接口和过程记录
+│   └── meetings/             会议纪要
+└── reports/                  面向课程提交的材料
+    ├── poster/               海报源文件及 Poster.pdf
+    └── final/                报告源文件及 Report.pdf
 ```
+
+### 各目录放什么、由谁维护
+
+下表中的具体产物是后续实现时的存放约定。目前仓库主要包含说明文档、配置示例及代码包占位文件，尚未生成实验数据或结果。
+
+| 目录 | 用途与建议内容 | 主要负责人 |
+|---|---|---|
+| `data/raw/` | 放官方原始数据，保留下载时的内容；记录来源、下载日期和校验值。 | A |
+| `data/interim/` | 放清洗中的订单明细，如处理退货、缺失值及异常记录后的阶段性文件，便于追查清洗过程。 | A |
+| `data/processed/` | 放各模块交接的数据：购物篮、时间切分、RFM 特征、顾客群标签及顾客级规则中间结果。顾客级文件仅本地保存，字段按 `docs/data_contract.md` 对齐。 | A 统筹，B/C 写入各自产物 |
+| `src/online_trade/data/` | 写数据读取、清洗、购物篮构建、时间切分和留存审计逻辑，输出到 `data/` 对应阶段。 | A · Qingyang LI |
+| `src/online_trade/clustering/` | 写历史 RFM 特征、标准化、真实聚类与随机分组逻辑，输出顾客标签、群体画像和稳定性统计。 | B · Jinghan ZHAO |
+| `src/online_trade/patterns/` | 写全局与分群频繁项集、关联规则、共同候选池及相同总规则预算下的筛选逻辑。 | C · Anqi ZHAO |
+| `src/online_trade/evaluation/` | 写全局、真实分群、随机分组的公平对照与未来验证，计算覆盖率、规则置信度及不确定性，并处理无订单、空分母等情况。 | D · Chenrui XIANG |
+| `configs/` | 集中放数据时间窗口、随机种子、聚类数量、支持度和规则预算等参数。`experiment.example.json` 是起点；测试前保存冻结版本，实验记录引用该版本。 | D 统筹，全员确认 |
+| `scripts/` | 放运行入口，负责读取配置并按顺序调用 `src/` 的方法。例如后续可增加数据处理或完整实验入口；实际算法统一写在对应的 `src/` 模块。 | A 整合，全员提供调用方式 |
+| `results/tables/` | 放可分享的汇总结果，如样本数量、群体画像、规则比较、未来覆盖率、敏感性分析表；提交前去除顾客标识。 | D 汇总，A/B/C 提供结果 |
+| `results/figures/` | 放实验生成的图，如群体画像、规则预算对比、未来表现和代表性模式图，供海报与报告引用。 | 全员，C/D 统一呈现 |
+| `docs/` | 放分工、模块接口、实验日志、AIGC 使用记录等过程文档，具体文件见下表。 | 全员 |
+| `docs/meetings/` | 按日期记录会议决定、未解决问题、负责人及下一次交付；建议用 `2026-11-04.md` 这样的文件名。 | 每次会议指定一人记录 |
+| `reports/poster/` | 放海报编辑源文件、展示文字及最终 `Poster.pdf`。实验原图保留在 `results/figures/`，这里保存排版后的海报。 | C 整合，全员审阅 |
+| `reports/final/` | 放报告编辑源文件和最终 `Report.pdf`，包括方法、结果、局限、真实引用与 AIGC 披露。最终 ZIP 由 A 按课程清单另行打包。 | D 整合，A 打包，全员审阅 |
+| `.github/` | 保存 `pull_request_template.md`，提交合并请求时填写修改内容、验证方式及需要队友注意的事项。 | 全员 |
+
+### 文档与根目录文件
+
+| 文件 | 用途 |
+|---|---|
+| `README.md` | 先读这一份，了解研究任务、成员职责、时间安排和目录；代码完成后补齐真实运行命令。 |
+| `requirements.txt` | 环境依赖清单；首轮实验后记录经过验证的版本，便于四人复现。 |
+| `.gitignore` | 避免原始数据、顾客级中间数据、虚拟环境、缓存及凭据进入仓库。 |
+| `.gitattributes` | 统一 Git 对文本换行等文件属性的处理，减少跨电脑协作的无关差异。 |
+| `docs/README.md` | 文档索引，快速进入以下说明。 |
+| `docs/team_assignment.docx` | 可下载的四人分工 Word 文档，包含职责、交付和交接要求。 |
+| `docs/team_assignment.md` | 可直接在 GitHub 阅读和讨论的分工版本；分工调整时与 Word 同步。 |
+| `docs/data_contract.md` | 统一模块之间传递的字段、数据格式和评价口径，交接前先核对。 |
+| `docs/experiment_log.md` | 记录每次实验的配置、代码版本、评价样本、结果位置和结论，方便追溯。 |
+| `docs/aigc_usage.md` | 记录外部工具与 AIGC 的具体用途、人工核查和修改，供报告披露使用。 |
+
+**一次实验的文件流向示例：** A 从 `data/raw/` 读取数据，清洗后将购物篮与切分保存到 `data/processed/`；B 读取历史数据生成顾客分群；C 读取购物篮和群标签生成规则；D 按 `configs/` 中冻结的配置完成公平比较和未来验证，将可分享的汇总表与图分别放入 `results/tables/` 和 `results/figures/`。全员在 `docs/experiment_log.md` 记录这次实验，C/D 再将确认后的结果用于海报和报告。
+
+各模块开发时仍应使用可手工核对的小样本检查计算是否正确；核查方法和结果记录在模块说明或实验日志中。
 
 ## 数据与环境
 
