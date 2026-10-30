@@ -1,0 +1,30 @@
+{
+  "status": "draft_requires_data_audit",
+  "timezone": "Asia/Shanghai",
+  "development": {
+    "start": "2010-12-01",
+    "end_exclusive": "2011-07-01"
+  },
+  "validation": {
+    "start": "2011-07-01",
+    "end_exclusive": "2011-09-01"
+  },
+  "test": {
+    "start": "2011-09-01",
+    "end_exclusive": "2011-12-01"
+  },
+  "candidate_k": [
+    3,
+    4,
+    5
+  ],
+  "candidate_total_rule_budgets": [
+    20,
+    50,
+    100
+  ],
+  "max_antecedent_items": 2,
+  "max_consequent_items": 1,
+  "seed": 42,
+  "random_group_repeats": 20
+}
