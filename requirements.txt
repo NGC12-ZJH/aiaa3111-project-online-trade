@@ -1,0 +1,9 @@
+# Initial development dependencies; record tested versions after the first run.
+pandas
+numpy
+scikit-learn
+mlxtend
+openpyxl
+matplotlib
+seaborn
+scipy

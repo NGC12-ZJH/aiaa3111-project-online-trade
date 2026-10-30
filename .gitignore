@@ -1,0 +1,28 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+.env
+.env.*
+!.env.example
+# Local data and sensitive row-level intermediates
+data/raw/*
+data/interim/*
+data/processed/*
+!data/**/README.md
+!data/**/.gitkeep
+*.parquet
+*.pkl
+*.pickle
+*.joblib
+# Local output and submissions
+tmp/
+dist/
+*.log
+Group_*_Project.zip
+~$*
+.DS_Store
+Thumbs.db
