@@ -150,7 +150,16 @@ python -m venv .venv
 python -m pip install -r requirements.txt
 ```
 
-依赖清单为启动建议，尚未验证端到端兼容性。首轮实验后记录确切版本。当前仓库不提供已实现的实验运行命令；各模块完成后，由 A 统一补齐运行入口与复现说明。
+依赖清单为启动建议，尚未验证端到端兼容性。首轮实验后记录确切版本。数据处理模块只使用 Python 标准库；将原始文件放入 `data/raw/Online Retail.xlsx` 后，从仓库根目录依次运行：
+
+```bash
+python3 scripts/process_online_retail.py
+python3 scripts/inspect_data_policy.py
+python3 scripts/check_time_conflicts.py
+python3 scripts/validate_data_outputs.py
+```
+
+输出保存在被 Git 忽略的 `data/processed/`。详细清洗口径、字段和下游交接方式见 [`docs/data_processing_guide.md`](docs/data_processing_guide.md)。其他模块完成后继续补充各自入口和端到端运行顺序。
 
 ## 协作方式
 

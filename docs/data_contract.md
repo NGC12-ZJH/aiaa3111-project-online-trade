@@ -11,6 +11,8 @@
 | C | 规则 | rule_id, group_id, antecedent, consequent, antecedent_count, joint_count, support, confidence, lift, config_id |
 | D | 评价 | method, period, n_customers, n_baskets, actual_rule_count, coverage, config_id |
 
+A 的 `invoice_date` 是订单最早时间，与保留的精确字段 `invoice_datetime` 相同。`valid_amount` 是兼容接口字段，当前等于删除重复候选后的正向商品购买金额 `gross_purchase_amount`；退款另存为 `return_amount`，净额另存为 `net_amount`。B 的 RFM 主版本可直接使用 `valid_amount`，若改用净额必须作为明确记录的敏感性口径。
+
 商品/顾客/订单标识按字符串保存。items、antecedent、consequent 使用无重复商品列表；CSV 中如需存列表，用合法 JSON 编码，不能使用 Python repr。全局规则 group_id 使用明确值 GLOBAL。所有中间数据只放被忽略的数据目录。
 
 同一购物篮匹配多条规则只计一次覆盖；未来前件数量为零时 confidence 不可估；随机分组在顾客级执行。每个配置记录时间切分、阈值、预算、种子和代码版本。系统总规则预算比较与每用户规则预算比较分别报告。

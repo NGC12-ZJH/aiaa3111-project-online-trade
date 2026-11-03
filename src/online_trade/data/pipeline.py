@@ -411,7 +411,7 @@ def process(input_path: Path, output_dir: Path) -> dict:
     }
 
     order_fields = [
-        "basket_id", "customer_id", "invoice_datetime", "country", "gross_purchase_amount",
+        "basket_id", "customer_id", "invoice_date", "invoice_datetime", "country", "valid_amount", "gross_purchase_amount",
         "return_amount", "net_amount", "gross_purchase_amount_with_duplicates",
         "return_amount_with_duplicates", "net_amount_with_duplicates",
         "basket_size", "line_count", "valid_basket_line_count",
@@ -421,10 +421,10 @@ def process(input_path: Path, output_dir: Path) -> dict:
         "duplicate_candidate_count", "cancelled_line_count", "non_product_line_count",
     ]
     basket_fields = [
-        "basket_id", "customer_id", "invoice_datetime", "country", "items", "basket_size",
+        "basket_id", "customer_id", "invoice_date", "invoice_datetime", "country", "items", "basket_size",
         "gross_purchase_amount", "split", "is_profile_customer", "is_eligible_for_main_comparison",
     ]
-    basket_long_fields = ["basket_id", "customer_id", "invoice_datetime", "stock_code", "split", "is_eligible_for_main_comparison"]
+    basket_long_fields = ["basket_id", "customer_id", "invoice_date", "invoice_datetime", "stock_code", "split", "is_eligible_for_main_comparison"]
     conflict_fields = [
         "basket_id", "customer_ids", "countries", "datetimes", "has_customer_conflict",
         "has_country_conflict", "has_datetime_conflict", "datetime_span_seconds",
@@ -469,8 +469,10 @@ def process(input_path: Path, output_dir: Path) -> dict:
         row = {
             "basket_id": order.invoice_id,
             "customer_id": customer_id,
+            "invoice_date": iso_text(first_datetime),
             "invoice_datetime": iso_text(first_datetime),
             "country": country,
+            "valid_amount": money_text(order.gross_purchase_amount),
             "gross_purchase_amount": money_text(order.gross_purchase_amount),
             "return_amount": money_text(order.return_amount),
             "net_amount": money_text(net_amount),
@@ -515,6 +517,7 @@ def process(input_path: Path, output_dir: Path) -> dict:
             basket_rows.append({
                 "basket_id": order.invoice_id,
                 "customer_id": customer_id,
+                "invoice_date": iso_text(first_datetime),
                 "invoice_datetime": iso_text(first_datetime),
                 "country": country,
                 "items": json.dumps(sorted_items, ensure_ascii=False),
@@ -528,6 +531,7 @@ def process(input_path: Path, output_dir: Path) -> dict:
                 basket_long_rows.append({
                     "basket_id": order.invoice_id,
                     "customer_id": customer_id,
+                    "invoice_date": iso_text(first_datetime),
                     "invoice_datetime": iso_text(first_datetime),
                     "stock_code": stock_code,
                     "split": split,
@@ -636,6 +640,8 @@ def process(input_path: Path, output_dir: Path) -> dict:
         "input_sha256": file_sha256(input_path),
         "output_directory": str(output_dir.resolve()),
         "configuration": {
+            "config_path": str(config.CONFIG_PATH.resolve()),
+            "schema_version": config.CONFIG["schema_version"],
             "splits": config.SPLITS,
             "non_product_stock_codes": sorted(config.NON_PRODUCT_STOCK_CODES),
             "include_zero_price_in_baskets": config.INCLUDE_ZERO_PRICE_IN_BASKETS,

@@ -6,4 +6,4 @@
 
 交付：清洗后的购物篮、数据审计表、切分记录、运行说明。
 
-状态：待实现。字段见 [数据接口](../../../docs/data_contract.md)。
+状态：数据处理流水线已实现并通过完整数据验证。配置见 `configs/data_processing.json`，运行入口见 `scripts/`，详细方法和字段见 [数据处理说明](../../../docs/data_processing_guide.md) 与 [数据接口](../../../docs/data_contract.md)。

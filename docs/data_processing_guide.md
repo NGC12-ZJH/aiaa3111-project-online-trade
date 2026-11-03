@@ -57,8 +57,10 @@ aiaa3111-project-online-trade/
 │   ├── raw/
 │   │   └── Online Retail.xlsx        本地只读输入，不提交 Git
 │   └── processed/                    本地生成输出，不提交 Git
+├── configs/
+│   └── data_processing.json          可审阅、可冻结的数据处理配置
 ├── src/online_trade/data/
-│   ├── config.py                     清洗口径和路径配置
+│   ├── config.py                     读取并暴露 JSON 配置
 │   ├── pipeline.py                   核心处理逻辑
 │   ├── policy_audit.py               重复项和零价格敏感性统计
 │   ├── time_conflicts.py             订单时间冲突检查
@@ -644,8 +646,10 @@ is_eligible_for_main_comparison = 1
 |---|---|
 | `basket_id` | 订单号，也是购物篮 ID |
 | `customer_id` | 唯一客户编号；若订单客户冲突则为空 |
+| `invoice_date` | 与接口协议兼容的订单最早时间字段；当前与 `invoice_datetime` 相同 |
 | `invoice_datetime` | 订单最早时间 |
 | `country` | 唯一国家；若冲突则为空 |
+| `valid_amount` | 与接口协议兼容的有效订单金额；当前等于 `gross_purchase_amount` |
 | `gross_purchase_amount` | 删除重复候选后的正向购买金额 |
 | `return_amount` | 删除重复候选后的退款金额 |
 | `net_amount` | 主毛购买金额减主退款金额 |
@@ -935,7 +939,7 @@ with gzip.open(
 
 ## 18. 当前数据处理结果快照
 
-以下结果对应当前 `config.py` 和输入哈希，改变配置后必须重新生成：
+以下结果对应当前 `configs/data_processing.json` 和输入哈希，改变配置后必须重新生成：
 
 | 指标 | 数值 |
 |---|---:|
@@ -973,11 +977,13 @@ with gzip.open(
 
 ## 19. 修改配置
 
-所有核心设置集中在：
+所有需要团队审阅和冻结的核心设置集中在：
 
 ```text
-src/online_trade/data/config.py
+configs/data_processing.json
 ```
+
+`src/online_trade/data/config.py` 只负责读取该 JSON 并转换为程序使用的路径、集合和数值，不再单独维护另一套清洗口径。
 
 包括：
 

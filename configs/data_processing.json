@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "input_xlsx": "data/raw/Online Retail.xlsx",
+  "output_dir": "data/processed",
+  "splits": {
+    "profile": [
+      "2010-12-01T00:00:00",
+      "2011-04-01T00:00:00"
+    ],
+    "discovery": [
+      "2011-04-01T00:00:00",
+      "2011-07-01T00:00:00"
+    ],
+    "validation": [
+      "2011-07-01T00:00:00",
+      "2011-09-01T00:00:00"
+    ],
+    "test": [
+      "2011-09-01T00:00:00",
+      "2011-12-01T00:00:00"
+    ]
+  },
+  "non_product_stock_codes": [
+    "AMAZONFEE",
+    "B",
+    "BANK CHARGES",
+    "C2",
+    "CRUK",
+    "D",
+    "DOT",
+    "DCGS0055",
+    "DCGS0057",
+    "DCGS0066P",
+    "DCGS0067",
+    "DCGS0068",
+    "DCGS0071",
+    "DCGS0072",
+    "DCGS0073",
+    "DCGS0074",
+    "GIFT_0001_10",
+    "GIFT_0001_20",
+    "GIFT_0001_30",
+    "GIFT_0001_40",
+    "GIFT_0001_50",
+    "M",
+    "PADS",
+    "POST",
+    "S"
+  ],
+  "include_zero_price_in_baskets": false,
+  "retain_exact_duplicate_candidates": false,
+  "audit_sample_per_category": 5,
+  "extreme_line_limit": 50,
+  "extreme_order_limit": 50
+}

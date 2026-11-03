@@ -81,6 +81,8 @@ def validate(output_dir: Path) -> list[str]:
             gross = Decimal(row["gross_purchase_amount"])
             returns = Decimal(row["return_amount"])
             net = Decimal(row["net_amount"])
+            require(row["invoice_date"] == row["invoice_datetime"], f"Order date alias mismatch for {basket_id}", errors)
+            require(Decimal(row["valid_amount"]) == gross, f"Valid amount alias mismatch for {basket_id}", errors)
             require(gross - returns == net, f"Amount reconciliation failed for {basket_id}", errors)
             gross_with_duplicates = Decimal(row["gross_purchase_amount_with_duplicates"])
             returns_with_duplicates = Decimal(row["return_amount_with_duplicates"])
@@ -106,6 +108,7 @@ def validate(output_dir: Path) -> list[str]:
             require(basket_id not in basket_ids, f"Duplicate basket id: {basket_id}", errors)
             basket_ids.add(basket_id)
             require(basket_id in order_lookup, f"Basket missing from orders: {basket_id}", errors)
+            require(row["invoice_date"] == row["invoice_datetime"], f"Basket date alias mismatch for {basket_id}", errors)
             items = json.loads(row["items"])
             require(bool(items), f"Empty basket: {basket_id}", errors)
             require(len(items) == len(set(items)), f"Duplicate item within basket: {basket_id}", errors)
@@ -117,6 +120,7 @@ def validate(output_dir: Path) -> list[str]:
     with open_csv(output_dir / "baskets_long.csv.gz") as stream:
         for row in csv.DictReader(stream):
             pair = (row["basket_id"], row["stock_code"])
+            require(row["invoice_date"] == row["invoice_datetime"], f"Basket-long date alias mismatch for {pair}", errors)
             require(pair not in actual_long_pairs, f"Duplicate basket-item pair: {pair}", errors)
             actual_long_pairs.add(pair)
     require(actual_long_pairs == expected_long_pairs, "baskets_long does not match baskets item sets", errors)
