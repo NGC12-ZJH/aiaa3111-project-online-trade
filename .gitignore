@@ -8,16 +8,36 @@ venv/
 .env
 .env.*
 !.env.example
-# Local data and sensitive row-level intermediates
-data/raw/*
-data/interim/*
-data/processed/*
-!data/**/README.md
-!data/**/.gitkeep
+# Binary caches and model objects (reviewed data exceptions below)
 *.parquet
 *.pkl
 *.pickle
 *.joblib
+
+# Raw downloads and regenerable intermediate data stay local.
+# Keep directories traversable so nested README/.gitkeep exceptions work.
+/data/raw/**
+!/data/raw/**/
+/data/interim/**
+!/data/interim/**/
+
+# Processed handoff data and small samples: reviewed formats may be committed.
+# Use sample_*.csv/json/parquet for examples; no separate samples directory needed.
+/data/processed/**
+!/data/processed/**/
+!/data/processed/**/*.csv
+!/data/processed/**/*.json
+!/data/processed/**/*.jsonl
+!/data/processed/**/*.parquet
+
+# Directory documentation and placeholders are tracked.
+!/data/**/README.md
+!/data/**/.gitkeep
+
+# Unreviewed, private or externally shared processed files stay local.
+# This final rule overrides every processed-data exception above.
+/data/processed/local/
+
 # Local output and submissions
 tmp/
 dist/
