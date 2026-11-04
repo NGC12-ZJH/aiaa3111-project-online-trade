@@ -75,7 +75,7 @@ aiaa3111-project-online-trade/
 ├── .gitattributes            统一文本换行等 Git 文件属性
 ├── .github/                  GitHub 协作模板
 ├── configs/                  实验参数
-├── data/                     本地数据
+├── data/                     本地数据与经检查的共享数据
 │   ├── raw/                  下载的原始数据
 │   ├── interim/              清洗过程的中间数据
 │   └── processed/            可供后续模块使用的数据
@@ -103,7 +103,7 @@ aiaa3111-project-online-trade/
 |---|---|---|
 | `data/raw/` | 放官方原始数据，保留下载时的内容；记录来源、下载日期和校验值。 | A |
 | `data/interim/` | 放清洗中的订单明细，如处理退货、缺失值及异常记录后的阶段性文件，便于追查清洗过程。 | A |
-| `data/processed/` | 放各模块交接的数据：购物篮、时间切分、RFM 特征、顾客群标签及顾客级规则中间结果。顾客级文件仅本地保存，字段按 `docs/data_contract.md` 对齐。 | A 统筹，B/C 写入各自产物 |
+| `data/processed/` | 放各模块交接的购物篮、时间切分、RFM 特征与群标签；经检查的 CSV、JSON、JSONL、Parquet 和小样本可选择性提交。未检查、私密或通过共享位置分发的大文件放 `local/` 子目录，仅本地保存。字段按 `docs/data_contract.md` 对齐。 | A 统筹，B/C 写入各自产物 |
 | `src/online_trade/data/` | 写数据读取、清洗、购物篮构建、时间切分和留存审计逻辑，输出到 `data/` 对应阶段。 | A · Qingyang LI |
 | `src/online_trade/clustering/` | 写历史 RFM 特征、标准化、真实聚类与随机分组逻辑，输出顾客标签、群体画像和稳定性统计。 | B · Jinghan ZHAO |
 | `src/online_trade/patterns/` | 写全局与分群频繁项集、关联规则、共同候选池及相同总规则预算下的筛选逻辑。 | C · Anqi ZHAO |
@@ -124,7 +124,7 @@ aiaa3111-project-online-trade/
 |---|---|
 | `README.md` | 先读这一份，了解研究任务、成员职责、时间安排和目录；代码完成后补齐真实运行命令。 |
 | `requirements.txt` | 环境依赖清单；首轮实验后记录经过验证的版本，便于四人复现。 |
-| `.gitignore` | 避免原始数据、顾客级中间数据、虚拟环境、缓存及凭据进入仓库。 |
+| `.gitignore` | 忽略原始数据、清洗中间数据、处理数据的 `local/` 子目录、环境及缓存；允许选择性提交经检查的处理数据和小样本。 |
 | `.gitattributes` | 统一 Git 对文本换行等文件属性的处理，减少跨电脑协作的无关差异。 |
 | `docs/README.md` | 文档索引，快速进入以下说明。 |
 | `docs/team_assignment.docx` | 可下载的四人分工 Word 文档，包含职责、交付和交接要求。 |
@@ -139,7 +139,30 @@ aiaa3111-project-online-trade/
 
 ## 数据与环境
 
-数据来源：[UCI Online Retail](https://archive.ics.uci.edu/dataset/352/online+retail)。下载后在本地 `data/raw/` 放置数据，并记录文件校验值、下载日期和实际字段。不要把原始数据、顾客级中间表、凭据或虚拟环境提交到 Git。
+### 数据存放与四人交接
+
+数据来源：[UCI Online Retail](https://archive.ics.uci.edu/dataset/352/online+retail)。从该页面下载并解压，将 `Online Retail.xlsx` 放入 `data/raw/`；原始压缩包如需保留，也放在该目录。由 A 在 `data/raw/README.md` 记录实际文件名、下载日期、来源和 SHA-256，其他成员获取相同版本。
+
+| 数据类型 | 放在哪里 | 是否提交 GitHub | 队友如何获取 |
+|---|---|---|---|
+| 原始完整数据及下载压缩包 | `data/raw/` | 否；仅目录说明和占位文件保留 | 按官方链接下载，核对 A 记录的校验值 |
+| 可重新生成的清洗中间文件 | `data/interim/` | 否；仅目录说明和占位文件保留 | 使用同一原始数据、代码及配置重新生成 |
+| 检查后的最终购物篮、特征、群标签和切分说明 | `data/processed/` | CSV、JSON、JSONL、Parquet 可选择性提交，包含子目录；其他数据格式默认忽略 | 从仓库拉取，或按下述外部共享说明获取 |
+| 用于演示和检查的小样本 | `data/processed/sample_*.csv` 等 | 可以；与最终数据使用相同的格式规则 | 从仓库拉取；明确样本生成方式与随机种子，不能当作完整实验数据 |
+| 尚未检查、包含不宜共享字段或不适合进入 Git 的大文件 | `data/processed/local/` | 否；该目录内所有内容均忽略 | 本地生成，或从团队约定的共享位置下载 |
+| 可分享的汇总结果和图表 | `results/tables/`、`results/figures/` | 可以，通常使用 CSV、PNG、PDF 等；Parquet 的例外仅限 `data/processed/` | 从仓库拉取 |
+
+“允许提交”只表示 `.gitignore` 不再拦截这些文件，**不会自动上传，也不会自动检查文件大小或字段内容**。A/B/C 交接前确认数据许可与共享范围，保留实验必需的商品、订单和顾客关联键，检查有无额外加入的姓名、邮箱等信息。若需要替换顾客标识，各文件必须使用一致映射，映射表保存在本地。
+
+建议先在 `data/processed/local/` 生成和核对数据；确认可共享后再将指定交接文件放到 `data/processed/`。优先逐个添加文件，例如 `git add data/processed/sample_baskets.csv`，并用 `git diff --cached --stat` 查看待提交清单。CSV、JSON、JSONL、Parquet 使用小写扩展名；Pickle、Joblib 等模型或缓存文件继续忽略。
+
+**每份交接数据都要有获取与复现记录。** A 在 [data/processed/README.md](data/processed/README.md) 维护清单，B/C 补充各自产物，至少写明：文件名、用途和负责人、数据版本、时间窗口、行数和字段、文件大小、SHA-256、生成所用代码版本与配置，以及实际运行命令。需要共享到仓库之外时，还必须写明稳定的下载位置、访问方式和下载后应放入的相对路径；不要记录密码或临时访问令牌。四人核对校验值后再接续实验。
+
+目前尚未配置外部共享位置，尚无已发布的处理数据或小样本；上述示例文件名仅为命名建议。首轮交付时需补齐真实链接或运行命令，不能仅写“联系队友获取”。如果完整数据不便提交，最终课程 ZIP 应包含可用下载说明；特殊情况下只能提供样本时，按课程要求说明原因。
+
+`.gitignore` 不会删除本地数据，也不会停止跟踪已经提交过的文件。网页上传不受本地忽略规则约束，同样需要按此存放约定选择文件。
+
+### Python 环境
 
 建议 Python 3.11 或更新版本，在仓库根目录创建虚拟环境：
 
