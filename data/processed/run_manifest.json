@@ -88,7 +88,6 @@
     "profile_customer_count": 2684
   },
   "outputs": [
-    "README.md",
     "audit_order_samples.csv",
     "audit_summary.csv",
     "baskets.csv.gz",
@@ -111,11 +110,6 @@
     "zero_price_summary.csv"
   ],
   "output_metadata": [
-    {
-      "filename": "README.md",
-      "size_bytes": 1948,
-      "sha256": "5da57f82f76087793a83939379ae2666e0b4b24203449a3b6dddabbeacb522a2"
-    },
     {
       "filename": "audit_order_samples.csv",
       "size_bytes": 4599,
