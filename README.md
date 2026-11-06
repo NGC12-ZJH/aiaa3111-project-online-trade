@@ -24,7 +24,7 @@ AIAA3111 数据挖掘课程项目 · H2 分群购物模式。研究历史消费�
 5. **未来验证 RQ3（D）**：冻结群体和规则，在未来订单上评价覆盖率、规则置信度和差异保持，报告适用顾客比例。
 6. **解释与交付（全员）**：分析成功/失败案例，完成海报、答辩、报告和可复现代码。
 
-聚类和规则挖掘使用历史数据；不要用全年数据分群后把其中后半段称为未见测试集。建议开发期为 2010-12 至 2011-06、验证期为 2011-07 至 08、测试期为 2011-09 至 11，待留存审计后确认。原型参数不是已验证最优值。
+聚类、规则发现、配置选择和最终评价必须使用相互独立的时期；不要用全年数据分群后把其中后半段称为未见测试集。Online Retail II 留存审计后已采用 `profile → discovery → validation → test` 四时期方案，精确边界见下文和 `configs/experiment.json`。候选参数仍须由 Validation 选择，不能把原型值称为已验证最优值。
 
 未来无订单的顾客不创建空购物篮；某群无未来订单时指标记为不可评价。主比较在相同历史已知顾客的未来订单上进行，同时报告其占全部未来订单的比例。新顾客回退全局规则另行评价。
 
@@ -97,7 +97,7 @@ aiaa3111-project-online-trade/
 
 ### 各目录放什么、由谁维护
 
-下表中的具体产物是后续实现时的存放约定。目前仓库主要包含说明文档、配置示例及代码包占位文件，尚未生成实验数据或结果。
+下表是各模块的存放约定。A 的 Online Retail II 数据处理已实现并通过完整审计；B、C、D 的聚类、规则和评价结果仍待各负责人实现和登记。
 
 | 目录 | 用途与建议内容 | 主要负责人 |
 |---|---|---|
@@ -181,9 +181,9 @@ python3 scripts/run_all.py
 
 | 数据类型 | 放在哪里 | 是否提交 GitHub | 队友如何获取 |
 |---|---|---|---|
-| 原始完整数据及下载压缩包 | `data/raw/` | 否；仅目录说明和占位文件保留 | 按官方链接下载，核对 A 记录的校验值 |
+| 原始完整数据及下载压缩包 | `data/raw/` | 不进入 `main`；已放入专用快照分支 | 从 UCI 下载或从 `a/online-retail-ii-data-snapshot` 获取，并核对 A 记录的校验值 |
 | 可重新生成的清洗中间文件 | `data/interim/` | 否；仅目录说明和占位文件保留 | 使用同一原始数据、代码及配置重新生成 |
-| 检查后的最终购物篮、特征、群标签和切分说明 | `data/processed/` | CSV、JSON、JSONL、Parquet 可选择性提交，包含子目录；其他数据格式默认忽略 | 从仓库拉取，或按下述外部共享说明获取 |
+| 检查后的最终订单、购物篮和切分说明 | `data/processed/` | 完整客户级文件不进入 `main`；已放入专用快照分支 | 从 `a/online-retail-ii-data-snapshot` 获取并核对 manifest；也可按配置重跑 |
 | 用于演示和检查的小样本 | `data/processed/sample_*.csv` 等 | 可以；与最终数据使用相同的格式规则 | 从仓库拉取；明确样本生成方式与随机种子，不能当作完整实验数据 |
 | 尚未检查、包含不宜共享字段或不适合进入 Git 的大文件 | `data/processed/local/` | 否；该目录内所有内容均忽略 | 本地生成，或从团队约定的共享位置下载 |
 | 可分享的汇总结果和图表 | `results/tables/`、`results/figures/` | 可以，通常使用 CSV、PNG、PDF 等；Parquet 的例外仅限 `data/processed/` | 从仓库拉取 |
@@ -194,7 +194,7 @@ python3 scripts/run_all.py
 
 **每份交接数据都要有获取与复现记录。** A 在 [data/processed/README.md](data/processed/README.md) 维护清单，B/C 补充各自产物，至少写明：文件名、用途和负责人、数据版本、时间窗口、行数和字段、文件大小、SHA-256、生成所用代码版本与配置，以及实际运行命令。需要共享到仓库之外时，还必须写明稳定的下载位置、访问方式和下载后应放入的相对路径；不要记录密码或临时访问令牌。四人核对校验值后再接续实验。
 
-目前尚未配置外部共享位置，尚无已发布的处理数据或小样本；上述示例文件名仅为命名建议。首轮交付时需补齐真实链接或运行命令，不能仅写“联系队友获取”。如果完整数据不便提交，最终课程 ZIP 应包含可用下载说明；特殊情况下只能提供样本时，按课程要求说明原因。
+完整原始数据和已验证处理输出已发布在只读用途的 [`a/online-retail-ii-data-snapshot`](https://github.com/NGC12-ZJH/aiaa3111-project-online-trade/tree/a/online-retail-ii-data-snapshot) 分支；该分支不得合并到 `main`。精确提交、文件行数、大小、SHA-256 和生成命令登记在 `data/processed/README.md` 与快照的 `run_manifest.json`。最终课程 ZIP 应保留同样的下载与复现说明。
 
 `.gitignore` 不会删除本地数据，也不会停止跟踪已经提交过的文件。网页上传不受本地忽略规则约束，同样需要按此存放约定选择文件。
 
@@ -213,7 +213,7 @@ Online Retail II 数据处理仅使用 Python 标准库，已经完成端到端�
 
 ## 协作方式
 
-分支建议：`a/data-preparation`、`b/customer-clustering`、`c/pattern-mining`、`d/evaluation`。提交小而明确的更改，通过 pull request 合并到 `main`，至少另一人复核。分支名只是约定，当前不宣称已创建远程分支或配置保护规则。
+分支建议：`a/online-retail-ii-data-preparation`、`b/customer-clustering`、`c/pattern-mining`、`d/evaluation`。提交小而明确的更改，通过 pull request 合并到 `main`，至少另一人复核。完整数据单独保存在不合并的 `a/online-retail-ii-data-snapshot`。
 
 每位成员维护自己的模块 README，并记录输入、输出、时间窗口、参数和已知限制。C 整合海报，D 整合报告，各成员提交自己的方法、图表和解释；A 负责运行说明及最终打包。
 

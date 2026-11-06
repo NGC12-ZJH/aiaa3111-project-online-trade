@@ -77,6 +77,7 @@
     ],
     "max_antecedent_items": 2,
     "max_consequent_items": 1,
+    "use_common_candidate_pool_across_methods": true,
     "same_total_rule_budget_across_methods": true,
     "use_identical_eligible_baskets_across_methods": true
   },
@@ -101,6 +102,14 @@
     "retune_parameters": false,
     "change_cleaning_policy": false,
     "evaluate_once_after_freeze": true
+  },
+  "evaluation_contract": {
+    "count_basket_coverage_once_when_multiple_rules_match": true,
+    "zero_antecedent_count_confidence": "not_estimable",
+    "do_not_create_empty_baskets_for_customers_without_future_orders": true,
+    "report_system_total_rule_budget_comparison": true,
+    "report_per_user_rule_budget_sensitivity": true,
+    "report_eligible_share_of_all_future_orders": true
   }
 }
 

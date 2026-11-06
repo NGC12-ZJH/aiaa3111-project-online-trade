@@ -24,10 +24,17 @@ python3 scripts/run_all.py
 
 ## 数据交接清单
 
-完整客户级文件目前不随 Git 发布，外部共享位置尚未配置。A 维护清单，B/C 补充各自产物；每次正式交付添加一条真实记录，不把下列模板当作已完成的数据。
+完整客户级文件不进入 `main`，已发布在禁止合并的
+[`a/online-retail-ii-data-snapshot`](https://github.com/NGC12-ZJH/aiaa3111-project-online-trade/tree/a/online-retail-ii-data-snapshot)
+分支，固定快照提交为 `814842ee7347d24b8f8455031e5873bd8808770a`。A 维护本清单，B/C/D 在使用前核对 SHA-256。
 
 | 文件及版本 | 用途 / 负责人 | 时间窗口 / 行数 / 字段 | 大小 / SHA-256 | 获取方式及本地相对路径 | 生成命令 / 代码版本 / 配置 |
 |---|---|---|---|---|---|
+| `clean_transactions.csv.gz` v1 | A：逐行追溯和敏感性 | 全部物理来源；1,067,371 行；完整字段见处理说明 | 26,635,161 B；`01c6a69702b675723d2d9489f5771a45ea047946875eaae699384298afc9599b` | 快照分支；`data/processed/clean_transactions.csv.gz` | `python3 scripts/run_all.py`；处理基线 `301875b`；`configs/data_processing.json` v1 |
+| `orders.csv.gz` v1 | B、D：RFM、金额、时期、资格和分母 | 四时期及 out-of-scope；53,628 行；键 `basket_id` | 1,266,845 B；`2ff8420a97ed2f89a303c57a6431590e130df35936ad143350adb40a5040d4c2` | 快照分支；`data/processed/orders.csv.gz` | 同上 |
+| `baskets.csv.gz` v1 | D：未来规则命中 | 39,516 个有效订单篮；JSON `items` | 2,772,853 B；`30aef702f812ab42224271871271daff5b4e37a594696eee82208252198367bf` | 快照分支；`data/processed/baskets.csv.gz` | 同上 |
+| `baskets_long.csv.gz` v1 | C：FP-Growth 和分群规则 | 992,036 个唯一订单—商品组合 | 3,977,938 B；`e95ae6da8b07677bdaf6ed2663c178ee44a6e9a1162a26eaa52cfeb62701f175` | 快照分支；`data/processed/baskets_long.csv.gz` | 同上 |
+| `run_manifest.json` v1 | A–D：全部输出清单、哈希和环境 | 20 个数据/审计输出的元数据 | 7,222 B；`fc26e9fe52cf62ca5853b028fc7aab78b06d4cd0d13e1ab01e7412dd4f81554e` | 快照分支；`data/processed/run_manifest.json` | 同上；绝对路径仅记录生成环境 |
 
 获取方式应写明“随仓库提供”，或实际外部下载位置和访问方式。外部文件统一放入约定的 `data/processed/local/` 路径，并在运行配置中引用；不要提交密码或临时访问令牌。小样本还需记录抽样方式与随机种子。四人获取后核对版本和校验值再接续实验。
 

@@ -397,7 +397,7 @@ B 主要读取 `orders.csv.gz`，筛选 profile、非空客户和 Profile 客户
 `net_amount` 可作退款敏感性版本。若用净额，先确定 Profile 客户，再汇总其 profile 全部订单净额，不能先过滤退款订单。B 至少输出：
 
 ```text
-customer_id, R, F, M, cluster_id, random_group, seed
+customer_id, R, F, M, cluster_id, random_group_id, seed
 ```
 
 聚类和客户级随机分组必须在 discovery 前冻结。

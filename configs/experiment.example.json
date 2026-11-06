@@ -1,30 +1,37 @@
 {
-  "status": "draft_requires_data_audit",
+  "schema_version": 1,
+  "status": "template_copy_and_freeze_before_test",
+  "source_of_truth": "configs/experiment.json",
   "timezone": "Asia/Shanghai",
-  "development": {
-    "start": "2010-12-01",
-    "end_exclusive": "2011-07-01"
+  "profile": {
+    "start": "2009-12-01T00:00:00",
+    "end_exclusive": "2010-06-01T00:00:00"
+  },
+  "discovery": {
+    "start": "2010-06-01T00:00:00",
+    "end_exclusive": "2010-12-01T00:00:00"
   },
   "validation": {
-    "start": "2011-07-01",
-    "end_exclusive": "2011-09-01"
+    "start": "2010-12-01T00:00:00",
+    "end_exclusive": "2011-06-01T00:00:00"
   },
   "test": {
-    "start": "2011-09-01",
-    "end_exclusive": "2011-12-01"
+    "start": "2011-06-01T00:00:00",
+    "end_exclusive": "2011-12-01T00:00:00"
   },
-  "candidate_k": [
-    3,
-    4,
-    5
-  ],
-  "candidate_total_rule_budgets": [
-    20,
-    50,
-    100
-  ],
+  "candidate_k": [3, 4, 5],
+  "candidate_min_support": [0.005, 0.01, 0.02],
+  "candidate_min_confidence": [0.1, 0.2, 0.3],
+  "candidate_total_rule_budgets": [20, 50, 100],
   "max_antecedent_items": 2,
   "max_consequent_items": 1,
   "seed": 42,
-  "random_group_repeats": 20
+  "random_group_repeats": 20,
+  "use_common_candidate_pool_across_methods": true,
+  "same_total_rule_budget_across_methods": true,
+  "use_identical_eligible_baskets_across_methods": true,
+  "freeze_before_test": true,
+  "zero_antecedent_count_confidence": "not_estimable",
+  "do_not_create_empty_baskets_for_customers_without_future_orders": true,
+  "report_per_user_rule_budget_sensitivity": true
 }
