@@ -1,0 +1,63 @@
+section,metric,value,description
+line_audit,cancelled_line_rows,19494,Number of source data rows
+line_audit,canonical_source_rows,1044848,Number of source data rows
+line_audit,cross_sheet_overlap_excluded_rows,22523,Number of source data rows
+line_audit,exact_duplicate_candidate_rows,11812,Number of source data rows
+line_audit,missing_customer_rows,243007,Number of source data rows
+line_audit,missing_description_rows,4382,Number of source data rows
+line_audit,negative_price_rows,5,Number of source data rows
+line_audit,negative_quantity_rows,22950,Number of source data rows
+line_audit,non_product_rows,5931,Number of source data rows
+line_audit,noncanonical_source_rows,22523,Number of source data rows
+line_audit,raw_data_rows,1067371,Number of source data rows
+line_audit,valid_amount_rows,1003340,Number of source data rows
+line_audit,valid_basket_item_rows,1003340,Number of source data rows
+line_audit,zero_price_rows,6202,Number of source data rows
+order_audit,invoice_count,53628,Distinct non-empty InvoiceNo values
+order_audit,valid_basket_count,39516,Orders containing at least one valid product
+order_audit,basket_long_rows,992036,Distinct basket-product pairs
+order_audit,profile_customer_count,2684,Identified customers with a valid profile-period basket
+order_audit,single_item_basket_count,3208,Valid baskets containing one distinct product
+order_audit,multi_item_basket_count,36308,Valid baskets containing more than one distinct product
+worksheet_audit,Year 2009-2010:canonical_rows,502938,Worksheet source reconciliation count
+worksheet_audit,Year 2009-2010:cross_sheet_overlap_excluded_rows,22523,Worksheet source reconciliation count
+worksheet_audit,Year 2009-2010:noncanonical_rows,22523,Worksheet source reconciliation count
+worksheet_audit,Year 2009-2010:physical_rows,525461,Worksheet source reconciliation count
+worksheet_audit,Year 2010-2011:canonical_rows,541910,Worksheet source reconciliation count
+worksheet_audit,Year 2010-2011:physical_rows,541910,Worksheet source reconciliation count
+split_lines,profile_physical_line_rows,217062,Physical source rows assigned to split
+split_lines,profile_canonical_line_rows,217062,Canonical source rows assigned to split
+split_orders,profile_valid_baskets,8470,Valid baskets assigned to split
+split_customers,profile_identified_customers,2684,Identified customers with a valid basket
+split_items,profile_distinct_items,3670,Distinct valid product codes
+split_eligibility,profile_eligible_baskets,7738,Valid baskets belonging to profile customers
+split_lines,discovery_physical_line_rows,285876,Physical source rows assigned to split
+split_lines,discovery_canonical_line_rows,285876,Canonical source rows assigned to split
+split_orders,discovery_valid_baskets,11273,Valid baskets assigned to split
+split_customers,discovery_identified_customers,3483,Identified customers with a valid basket
+split_items,discovery_distinct_items,3515,Distinct valid product codes
+split_eligibility,discovery_eligible_baskets,7521,Valid baskets belonging to profile customers
+split_lines,validation_physical_line_rows,231552,Physical source rows assigned to split
+split_lines,validation_canonical_line_rows,209029,Canonical source rows assigned to split
+split_orders,validation_valid_baskets,8067,Valid baskets assigned to split
+split_customers,validation_identified_customers,2716,Identified customers with a valid basket
+split_items,validation_distinct_items,3284,Distinct valid product codes
+split_eligibility,validation_eligible_baskets,4862,Valid baskets belonging to profile customers
+split_lines,test_physical_line_rows,307355,Physical source rows assigned to split
+split_lines,test_canonical_line_rows,307355,Canonical source rows assigned to split
+split_orders,test_valid_baskets,10890,Valid baskets assigned to split
+split_customers,test_identified_customers,3465,Identified customers with a valid basket
+split_items,test_distinct_items,3390,Distinct valid product codes
+split_eligibility,test_eligible_baskets,5730,Valid baskets belonging to profile customers
+split_lines,out_of_scope_physical_line_rows,25526,Physical source rows assigned to split
+split_lines,out_of_scope_canonical_line_rows,25526,Canonical source rows assigned to split
+split_orders,out_of_scope_valid_baskets,816,Valid baskets assigned to split
+split_customers,out_of_scope_identified_customers,614,Identified customers with a valid basket
+split_items,out_of_scope_distinct_items,2433,Distinct valid product codes
+split_eligibility,out_of_scope_eligible_baskets,0,Valid baskets belonging to profile customers
+split_lines,invalid_date_physical_line_rows,0,Physical source rows assigned to split
+split_lines,invalid_date_canonical_line_rows,0,Canonical source rows assigned to split
+split_orders,invalid_date_valid_baskets,0,Valid baskets assigned to split
+split_customers,invalid_date_identified_customers,0,Identified customers with a valid basket
+split_items,invalid_date_distinct_items,0,Distinct valid product codes
+split_eligibility,invalid_date_eligible_baskets,0,Valid baskets belonging to profile customers

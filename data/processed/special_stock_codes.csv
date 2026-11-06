@@ -1,0 +1,66 @@
+stock_code,line_count,configured_as_non_product,top_descriptions
+POST,2086,1,"[[""POSTAGE"", 2079]]"
+DOT,1425,1,"[[""DOTCOM POSTAGE"", 1423]]"
+M,1403,1,"[[""Manual"", 1403]]"
+15056BL,993,0,"[[""EDWARDIAN PARASOL BLACK"", 992]]"
+C2,277,1,"[[""CARRIAGE"", 274]]"
+79323LP,232,0,"[[""LIGHT PINK CHERRY LIGHTS"", 230], [""Unsaleable, destroyed."", 1]]"
+D,173,1,"[[""Discount"", 173]]"
+79323GR,123,0,"[[""GREEN CHERRY LIGHTS"", 120], [""sold as gold"", 1], [""Unsaleable, destroyed."", 1]]"
+S,102,1,"[[""SAMPLES"", 102]]"
+BANK CHARGES,100,1,"[[""Bank Charges"", 100]]"
+ADJUST,67,1,"[[""Adjustment by john on 26/01/2010 16"", 38], [""Adjustment by john on 26/01/2010 17"", 26], [""Adjustment by Peter on 24/05/2010 1"", 3]]"
+AMAZONFEE,36,1,"[[""AMAZON FEE"", 36]]"
+DCGS0058,31,0,"[[""MISO PRETTY GUM"", 30]]"
+GIFT_0001_20,29,1,"[[""Dotcomgiftshop Gift Voucher £20.00"", 26], [""to push order througha s stock was"", 1]]"
+GIFT_0001_30,29,1,"[[""Dotcomgiftshop Gift Voucher £30.00"", 24]]"
+DCGSSGIRL,25,0,"[[""GIRLS PARTY BAG"", 23], [""update"", 1]]"
+DCGSSBOY,23,0,"[[""BOYS PARTY BAG"", 21], [""update"", 1]]"
+PADS,19,1,"[[""PADS TO MATCH ALL CUSHIONS"", 19]]"
+CRUK,16,1,"[[""CRUK Commission"", 16]]"
+GIFT_0001_10,16,1,"[[""Dotcomgiftshop Gift Voucher £10.00"", 14]]"
+TEST001,15,1,"[[""This is a test product."", 15]]"
+DCGS0003,14,0,"[[""BOXED GLASS ASHTRAY"", 13], [""ebay"", 1]]"
+DCGS0076,14,0,"[[""SUNJAR LED NIGHT NIGHT LIGHT"", 14]]"
+GIFT_0001_50,8,1,"[[""Dotcomgiftshop Gift Voucher £50.00"", 6]]"
+GIFT_0001_40,7,1,"[[""Dotcomgiftshop Gift Voucher £40.00"", 5]]"
+B,6,1,"[[""Adjust bad debt"", 6]]"
+DCGS0069,6,0,"[[""OOH LA LA DOGS COLLAR"", 5], [""ebay"", 1]]"
+DCGS0004,5,0,"[[""HAYNES CAMPER SHOULDER BAG"", 4]]"
+DCGS0066N,4,0,"[[""NAVY CUDDLES DOG HOODIE"", 2]]"
+DCGS0072,4,0,"[[""CAT CAMOUFLAGUE COLLAR"", 3]]"
+GIFT_0001_80,4,1,"[[""Dotcomgiftshop Gift Voucher £80.00"", 2]]"
+ADJUST2,3,1,"[[""Adjustment by Peter on Jun 25 2010"", 3]]"
+DCGS0068,3,0,"[[""DOGS NIGHT COLLAR"", 2], [""ebay"", 1]]"
+DCGS0070,3,0,"[[""CAMOUFLAGE DOG COLLAR"", 2]]"
+GIFT_0001_70,3,1,"[[""Dotcomgiftshop Gift Voucher £70.00"", 1]]"
+SP1002,3,0,"[[""KID'S CHALKBOARD/EASEL"", 2]]"
+DCGS0037,2,0,"[[""KEY-RING CORKSCREW"", 1]]"
+DCGS0062,2,0,"[[""ROAD-RAGE CAR FRESHENER"", 1]]"
+GIFT_0001_60,2,1,[]
+GIFT_0001_90,2,1,[]
+TEST002,2,1,"[[""This is a test product."", 1]]"
+72024HC,1,0,[]
+C3,1,0,[]
+DCGS0006,1,0,[]
+DCGS0016,1,0,[]
+DCGS0027,1,0,[]
+DCGS0036,1,0,[]
+DCGS0039,1,0,[]
+DCGS0041,1,0,"[[""HAYNES MINI-COOPER PLAYING CARDS"", 1]]"
+DCGS0044,1,0,"[[""HANDZ-OFF CAR FRESHENER"", 1]]"
+DCGS0053,1,0,[]
+DCGS0055,1,0,[]
+DCGS0056,1,0,[]
+DCGS0057,1,0,[]
+DCGS0059,1,0,[]
+DCGS0060,1,0,[]
+DCGS0066P,1,0,[]
+DCGS0067,1,0,"[[""ebay"", 1]]"
+DCGS0071,1,0,[]
+DCGS0073,1,0,"[[""ebay"", 1]]"
+DCGS0074,1,0,[]
+DCGS0075,1,0,"[[""CAMOUFLAGUE DOG LEAD"", 1]]"
+DCGSLBOY,1,0,[]
+DCGSLGIRL,1,0,[]
+GIFT,1,1,[]

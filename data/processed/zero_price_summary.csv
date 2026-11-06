@@ -1,0 +1,9 @@
+metric,value
+zero_price_rows,6024
+affected_invoices,5379
+affected_identified_customers,51
+rows_in_discovery,1481
+rows_in_out_of_scope,54
+rows_in_profile,2028
+rows_in_test,1169
+rows_in_validation,1292

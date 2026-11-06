@@ -1,0 +1,12 @@
+metric,value
+duplicate_candidate_extra_rows,11812
+affected_invoices,4387
+affected_identified_customers,1594
+all_duplicate_candidate_line_amount,54228.42
+positive_purchase_amount_if_removed,57481.47
+return_amount_if_removed,3253.05
+rows_in_discovery,4036
+rows_in_out_of_scope,279
+rows_in_profile,2508
+rows_in_test,3242
+rows_in_validation,1747

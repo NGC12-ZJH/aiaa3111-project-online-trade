@@ -1,0 +1,240 @@
+{
+  "generated_at_utc": "2026-11-06T12:13:18.020810+00:00",
+  "python_version": "3.14.6",
+  "git": {
+    "commit": "0312759d38bb54dcbb11113d265618c751e3e51c",
+    "new_dataset_worktree_dirty": true
+  },
+  "input_path": "/Users/qingyang/Documents/Codex/2026-11-02/xia/aiaa3111-project-online-trade/new dataset/data/raw/online_retail_II.xlsx",
+  "input_sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980",
+  "output_directory": "/Users/qingyang/Documents/Codex/2026-11-02/xia/aiaa3111-project-online-trade/new dataset/data/processed",
+  "configuration": {
+    "config_path": "/Users/qingyang/Documents/Codex/2026-11-02/xia/aiaa3111-project-online-trade/new dataset/configs/data_processing.json",
+    "schema_version": 1,
+    "splits": {
+      "profile": [
+        "2009-12-01T00:00:00",
+        "2010-06-01T00:00:00"
+      ],
+      "discovery": [
+        "2010-06-01T00:00:00",
+        "2010-12-01T00:00:00"
+      ],
+      "validation": [
+        "2010-12-01T00:00:00",
+        "2011-06-01T00:00:00"
+      ],
+      "test": [
+        "2011-06-01T00:00:00",
+        "2011-12-01T00:00:00"
+      ]
+    },
+    "worksheets": {
+      "Year 2009-2010": {
+        "canonical_start": "2009-12-01T00:00:00",
+        "canonical_end_exclusive": "2010-12-01T00:00:00"
+      },
+      "Year 2010-2011": {
+        "canonical_start": "2010-12-01T00:00:00",
+        "canonical_end_exclusive": "2011-12-10T00:00:00"
+      }
+    },
+    "cross_sheet_policy": {
+      "mode": "canonical_sheet_date_boundary",
+      "audited_overlap_start": "2010-12-01T00:00:00",
+      "audited_overlap_end_exclusive": "2010-12-10T00:00:00",
+      "preserve_excluded_rows_in_clean_transactions": true,
+      "exclude_overlap_rows_from_orders_amounts_baskets_and_experiments": true,
+      "audit_invoice_overlap": true,
+      "audit_nonidentical_overlap": true
+    },
+    "non_product_stock_codes": [
+      "ADJUST",
+      "ADJUST2",
+      "AMAZONFEE",
+      "B",
+      "BANK CHARGES",
+      "C2",
+      "CRUK",
+      "D",
+      "DOT",
+      "GIFT",
+      "GIFT_0001_10",
+      "GIFT_0001_20",
+      "GIFT_0001_30",
+      "GIFT_0001_40",
+      "GIFT_0001_50",
+      "GIFT_0001_60",
+      "GIFT_0001_70",
+      "GIFT_0001_80",
+      "GIFT_0001_90",
+      "M",
+      "PADS",
+      "POST",
+      "S",
+      "TEST001",
+      "TEST002"
+    ],
+    "include_zero_price_in_baskets": false,
+    "retain_exact_duplicate_candidates": false
+  },
+  "headline_counts": {
+    "raw_data_rows": 1067371,
+    "canonical_source_rows": 1044848,
+    "cross_sheet_overlap_excluded_rows": 22523,
+    "cross_sheet_invoice_conflicts": 0,
+    "invoice_count": 53628,
+    "valid_basket_count": 39516,
+    "profile_customer_count": 2684
+  },
+  "outputs": [
+    "README.md",
+    "audit_order_samples.csv",
+    "audit_summary.csv",
+    "baskets.csv.gz",
+    "baskets_long.csv.gz",
+    "clean_transactions.csv.gz",
+    "cross_sheet_invoice_conflicts.csv",
+    "cross_sheet_overlap_exclusions.csv",
+    "duplicate_sensitivity_summary.csv",
+    "exclusion_summary.csv",
+    "extreme_lines.csv",
+    "extreme_orders.csv",
+    "four_period_retention_summary.csv",
+    "invoice_conflicts.csv",
+    "orders.csv.gz",
+    "period_eligibility_summary.csv",
+    "sheet_reconciliation_summary.csv",
+    "special_stock_codes.csv",
+    "time_conflict_stage_check.csv",
+    "zero_price_codes.csv",
+    "zero_price_summary.csv"
+  ],
+  "output_metadata": [
+    {
+      "filename": "README.md",
+      "size_bytes": 1948,
+      "sha256": "5da57f82f76087793a83939379ae2666e0b4b24203449a3b6dddabbeacb522a2"
+    },
+    {
+      "filename": "audit_order_samples.csv",
+      "size_bytes": 4599,
+      "sha256": "2e8394cbf4327f1f156add8c57ca0abb6d5bae00b9b448cba987064fc13a770a",
+      "data_rows": 25
+    },
+    {
+      "filename": "audit_summary.csv",
+      "size_bytes": 5113,
+      "sha256": "78833b3b1eb0409e513b9e51451789657645e8e73060771e4e24210cf2943336",
+      "data_rows": 62
+    },
+    {
+      "filename": "baskets.csv.gz",
+      "size_bytes": 2772853,
+      "sha256": "30aef702f812ab42224271871271daff5b4e37a594696eee82208252198367bf",
+      "data_rows": 39516
+    },
+    {
+      "filename": "baskets_long.csv.gz",
+      "size_bytes": 3977938,
+      "sha256": "e95ae6da8b07677bdaf6ed2663c178ee44a6e9a1162a26eaa52cfeb62701f175",
+      "data_rows": 992036
+    },
+    {
+      "filename": "clean_transactions.csv.gz",
+      "size_bytes": 26635161,
+      "sha256": "01c6a69702b675723d2d9489f5771a45ea047946875eaae699384298afc9599b",
+      "data_rows": 1067371
+    },
+    {
+      "filename": "cross_sheet_invoice_conflicts.csv",
+      "size_bytes": 97,
+      "sha256": "f4eafad718da9a1397d3eef684baf32d238bfd50a5aa2eaf35f92e17be29f838",
+      "data_rows": 0
+    },
+    {
+      "filename": "cross_sheet_overlap_exclusions.csv",
+      "size_bytes": 4306888,
+      "sha256": "bd33712485b378f28a6e1f9e8878bb024fff50168ecfca2e07ea90b781e212d8",
+      "data_rows": 22523
+    },
+    {
+      "filename": "duplicate_sensitivity_summary.csv",
+      "size_bytes": 354,
+      "sha256": "ebd5916aee51796eb08c9d9a196c321e258051ca24da3f069b9612a307daf7f5",
+      "data_rows": 11
+    },
+    {
+      "filename": "exclusion_summary.csv",
+      "size_bytes": 197,
+      "sha256": "eacbd82dc41319c3ee074b8b4c8cbb1d136ce3ad7527a5e54001282b5861db6e",
+      "data_rows": 7
+    },
+    {
+      "filename": "extreme_lines.csv",
+      "size_bytes": 20158,
+      "sha256": "3a06207a2ecbce916df014f675a4e35dc47632f6bf25802957028604aa616e83",
+      "data_rows": 100
+    },
+    {
+      "filename": "extreme_orders.csv",
+      "size_bytes": 9846,
+      "sha256": "f8986d35f93846ff7e5569cb634a21acb4fb381dd637974c95f52d2bf63d99c2",
+      "data_rows": 50
+    },
+    {
+      "filename": "four_period_retention_summary.csv",
+      "size_bytes": 685,
+      "sha256": "c92c33cb01dbcbc78ed1de3e8752a425344eb9194545df85c312d08ba153a941",
+      "data_rows": 7
+    },
+    {
+      "filename": "invoice_conflicts.csv",
+      "size_bytes": 8752,
+      "sha256": "62efbc2d33207af64f63e3a44d624454e03c0bfbe9e179f5b8ff5c7d7b65b049",
+      "data_rows": 83
+    },
+    {
+      "filename": "orders.csv.gz",
+      "size_bytes": 1266845,
+      "sha256": "2ff8420a97ed2f89a303c57a6431590e130df35936ad143350adb40a5040d4c2",
+      "data_rows": 53628
+    },
+    {
+      "filename": "period_eligibility_summary.csv",
+      "size_bytes": 422,
+      "sha256": "a29a6f3ae750fa44514ea7d78a5c23ce941211639ae2790a98441ed76564dcc1",
+      "data_rows": 6
+    },
+    {
+      "filename": "sheet_reconciliation_summary.csv",
+      "size_bytes": 711,
+      "sha256": "aa4492943190e840178316e3261cef5d40c8beadc1c91cf48b2ed083d4726789",
+      "data_rows": 6
+    },
+    {
+      "filename": "special_stock_codes.csv",
+      "size_bytes": 2927,
+      "sha256": "a5f6a866ece8b0f15f6505428870e9c7f804ba4feb8a7e1e96653ec170385f26",
+      "data_rows": 65
+    },
+    {
+      "filename": "time_conflict_stage_check.csv",
+      "size_bytes": 10750,
+      "sha256": "acf574d8e0bf6adf231e95238d7a85aaff1e09f32fab7aad03578f172785685d",
+      "data_rows": 83
+    },
+    {
+      "filename": "zero_price_codes.csv",
+      "size_bytes": 67081,
+      "sha256": "bf5fa20ba20e8a6099a5750d60c93038995bd790df206343eb6eacfd49581193",
+      "data_rows": 2971
+    },
+    {
+      "filename": "zero_price_summary.csv",
+      "size_bytes": 209,
+      "sha256": "2c7772d94412a0d15e781c6482f0412f4b7075708ef92b93061a3b69d0a2e8b8",
+      "data_rows": 8
+    }
+  ]
+}

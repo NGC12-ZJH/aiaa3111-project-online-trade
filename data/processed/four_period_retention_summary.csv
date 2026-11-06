@@ -1,0 +1,8 @@
+metric,customer_count,share_of_profile_customers,description
+profile_customers,2684,1.000000,Identified customers with a valid profile basket
+active_in_discovery,1928,0.718331,Profile customers with a valid discovery basket
+active_in_validation,1458,0.543219,Profile customers with a valid validation basket
+active_in_test,1510,0.562593,Profile customers with a valid test basket
+active_in_any_future_period,2184,0.813711,"Profile customers active in discovery, validation, or test"
+active_in_all_future_periods,1066,0.397168,"Profile customers active in discovery, validation, and test"
+no_future_valid_basket,500,0.186289,Profile customers with no valid basket after profile

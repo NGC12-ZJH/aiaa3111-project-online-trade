@@ -1,0 +1,7 @@
+split,physical_line_rows,canonical_line_rows,valid_baskets,identified_customers,profile_customers_active,profile_customer_eligible_baskets,distinct_items
+profile,217062,217062,8470,2684,2684,7738,3670
+discovery,285876,285876,11273,3483,1928,7521,3515
+validation,231552,209029,8067,2716,1458,4862,3284
+test,307355,307355,10890,3465,1510,5730,3390
+out_of_scope,25526,25526,816,614,0,0,2433
+invalid_date,0,0,0,0,0,0,0

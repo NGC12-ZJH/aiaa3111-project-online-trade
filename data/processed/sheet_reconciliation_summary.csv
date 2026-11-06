@@ -1,0 +1,7 @@
+section,name,physical_rows,canonical_rows,noncanonical_rows,overlap_rows,description
+worksheet,Year 2009-2010,525461,502938,22523,22523,Physical and canonical row counts for the source worksheet
+worksheet,Year 2010-2011,541910,541910,0,22523,Physical and canonical row counts for the source worksheet
+overlap_comparison,exact_common_rows,22523,,,22523,Exact row multiset intersection between worksheets
+overlap_comparison,only_first_sheet_rows,0,,,0,Overlap rows present only in the first worksheet
+overlap_comparison,only_second_sheet_rows,0,,,0,Overlap rows present only in the second worksheet
+overlap_comparison,differing_invoice_multisets,0,,,1088,Shared overlap invoices whose row multisets differ

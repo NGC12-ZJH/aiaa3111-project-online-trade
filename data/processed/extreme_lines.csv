@@ -1,0 +1,101 @@
+extreme_category,absolute_value,source_row_id,source_sheet,source_sheet_row,is_canonical_source_row,is_cross_sheet_overlap_excluded,invoice_id,stock_code_raw,stock_code,description,quantity,invoice_datetime,unit_price,line_amount,customer_id,country,split,is_cancelled_invoice,is_negative_quantity,is_zero_quantity,is_zero_price,is_negative_price,is_missing_customer,is_missing_description,is_non_product,is_exact_duplicate_candidate,is_valid_basket_item,is_valid_amount_line,primary_exclusion_reason
+absolute_quantity,80995,1065884,Year 2010-2011,540424,1,0,C581484,23843,23843,"PAPER CRAFT , LITTLE BIRDIE",-80995,2011-12-09 09:27:00,2.08,-168469.60,16446,United Kingdom,out_of_scope,1,1,0,0,0,0,0,0,0,0,0,cancelled_invoice
+absolute_quantity,80995,1065883,Year 2010-2011,540423,1,0,581483,23843,23843,"PAPER CRAFT , LITTLE BIRDIE",80995,2011-12-09 09:15:00,2.08,168469.60,16446,United Kingdom,out_of_scope,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,74215,587086,Year 2010-2011,61626,1,0,C541433,23166,23166,MEDIUM CERAMIC TOP STORAGE JAR,-74215,2011-01-18 10:17:00,1.04,-77183.60,12346,United Kingdom,validation,1,1,0,0,0,0,0,0,0,0,0,cancelled_invoice
+absolute_quantity,74215,587081,Year 2010-2011,61621,1,0,541431,23166,23166,MEDIUM CERAMIC TOP STORAGE JAR,74215,2011-01-18 10:01:00,1.04,77183.60,12346,United Kingdom,validation,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,19152,90858,Year 2009-2010,90859,1,0,497946,37410,37410,BLACK AND WHITE PAISLEY FLOWER MUG,19152,2010-02-15 11:57:00,0.1,1915.20,13902,Denmark,profile,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,12960,127169,Year 2009-2010,127170,1,0,501534,21091,21091,SET/6 WOODLAND PAPER PLATES,12960,2010-03-17 13:09:00,0.1,1296.00,13902,Denmark,profile,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,12960,127167,Year 2009-2010,127168,1,0,501534,21099,21099,SET/6 STRAWBERRY PAPER CUPS,12960,2010-03-17 13:09:00,0.1,1296.00,13902,Denmark,profile,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,12744,127170,Year 2009-2010,127171,1,0,501534,21085,21085,SET/6 WOODLAND PAPER CUPS,12744,2010-03-17 13:09:00,0.1,1274.40,13902,Denmark,profile,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,12540,1027584,Year 2010-2011,502124,1,0,578841,84826,84826,ASSTD DESIGN 3D PAPER STICKERS,12540,2011-11-25 15:57:00,0,0.00,13256,United Kingdom,test,0,0,0,1,0,0,0,0,0,0,0,zero_price
+absolute_quantity,12480,127168,Year 2009-2010,127169,1,0,501534,21092,21092,SET/6 STRAWBERRY PAPER PLATES,12480,2010-03-17 13:09:00,0.1,1248.00,13902,Denmark,profile,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,10200,192198,Year 2009-2010,192199,1,0,507637,84016,84016,FLAG OF ST GEORGE CAR FLAG,10200,2010-05-10 14:55:00,0,0.00,,United Kingdom,profile,0,0,0,1,0,1,0,0,0,0,0,zero_price
+absolute_quantity,10000,135031,Year 2009-2010,135032,1,0,502269,21981,21981,PACK OF 12 WOODLAND TISSUES,10000,2010-03-23 15:36:00,0.25,2500.00,17940,United Kingdom,profile,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,10000,135030,Year 2009-2010,135031,1,0,502269,21980,21980,PACK OF 12 RED SPOTTY TISSUES,10000,2010-03-23 15:36:00,0.25,2500.00,17940,United Kingdom,profile,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,10000,135029,Year 2009-2010,135030,1,0,502269,21982,21982,PACK OF 12 SUKI TISSUES,10000,2010-03-23 15:36:00,0.25,2500.00,17940,United Kingdom,profile,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,10000,135028,Year 2009-2010,135029,1,0,502269,21984,21984,PACK OF 12 PINK PAISLEY TISSUES,10000,2010-03-23 15:36:00,0.25,2500.00,17940,United Kingdom,profile,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,9600,750992,Year 2010-2011,225532,1,0,556691,23005,23005,printing smudges/thrown away,-9600,2011-06-14 10:37:00,0,-0.00,,United Kingdom,test,0,1,0,1,0,1,0,0,0,0,0,negative_quantity
+absolute_quantity,9600,750991,Year 2010-2011,225531,1,0,556690,23005,23005,printing smudges/thrown away,-9600,2011-06-14 10:37:00,0,-0.00,,United Kingdom,test,0,1,0,1,0,1,0,0,0,0,0,negative_quantity
+absolute_quantity,9600,303997,Year 2009-2010,303998,1,0,519017,22759,22759,,-9600,2010-08-13 09:14:00,0,-0.00,,United Kingdom,discovery,0,1,0,1,0,1,1,0,0,0,0,negative_quantity
+absolute_quantity,9600,296421,Year 2009-2010,296422,1,0,518241,22759,22759,,9600,2010-08-05 15:55:00,0,0.00,,United Kingdom,discovery,0,0,0,1,0,1,1,0,0,0,0,zero_price
+absolute_quantity,9456,93678,Year 2009-2010,93679,1,0,498152,85220,85220,SMALL FAIRY CAKE FRIDGE MAGNETS,9456,2010-02-17 10:51:00,0.3,2836.80,13902,Denmark,profile,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,9360,529730,Year 2010-2011,4270,1,0,C536757,84347,84347,ROTATING SILVER ANGELS T-LIGHT HLDR,-9360,2010-12-02 14:23:00,0.03,-280.80,15838,United Kingdom,validation,1,1,0,0,0,0,0,0,0,0,0,cancelled_invoice
+absolute_quantity,9360,432177,Year 2009-2010,432178,1,0,530715,84347,84347,ROTATING SILVER ANGELS T-LIGHT HLDR,9360,2010-11-04 11:36:00,1.69,15818.40,15838,United Kingdom,discovery,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,9312,65092,Year 2009-2010,65093,1,0,495194,20993,20993,JAZZ HEARTS MEMO PAD,9312,2010-01-21 15:11:00,0.1,931.20,13902,Denmark,profile,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,9200,156489,Year 2009-2010,156490,1,0,504311,22197,22197,,-9200,2010-04-12 14:39:00,0,-0.00,,United Kingdom,profile,0,1,0,1,0,1,1,0,0,0,0,negative_quantity
+absolute_quantity,9058,750990,Year 2010-2011,225530,1,0,556687,23003,23003,Printing smudges/thrown away,-9058,2011-06-14 10:36:00,0,-0.00,,United Kingdom,test,0,1,0,1,0,1,0,0,0,0,0,negative_quantity
+absolute_quantity,9000,428976,Year 2009-2010,428977,1,0,530348,16235,16235,?,-9000,2010-11-02 15:48:00,0,-0.00,,United Kingdom,discovery,0,1,0,1,0,1,0,0,0,0,0,negative_quantity
+absolute_quantity,9000,194373,Year 2009-2010,194374,1,0,507913,10120,10120,Zebra invcing error,-9000,2010-05-11 17:16:00,0,-0.00,,United Kingdom,profile,0,1,0,1,0,1,0,0,0,0,0,negative_quantity
+absolute_quantity,8800,437009,Year 2009-2010,437010,1,0,531177,20852,20852,Given away,-8800,2010-11-05 14:40:00,0,-0.00,,United Kingdom,discovery,0,1,0,1,0,1,0,0,0,0,0,negative_quantity
+absolute_quantity,7128,359670,Year 2009-2010,359671,1,0,C524235,21088,21088,SET/6 FRUIT SALAD PAPER CUPS,-7128,2010-09-28 11:02:00,0.08,-570.24,14277,France,discovery,1,1,0,0,0,0,0,0,0,0,0,cancelled_invoice
+absolute_quantity,7128,358765,Year 2009-2010,358766,1,0,524174,21088,21088,SET/6 FRUIT SALAD PAPER CUPS,7128,2010-09-27 16:30:00,0.08,570.24,13687,United Kingdom,discovery,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,7128,326848,Year 2009-2010,326849,1,0,521315,17003,17003,BROCADE RING PURSE,7128,2010-09-03 12:01:00,0.19,1354.32,15838,United Kingdom,discovery,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,7128,298943,Year 2009-2010,298944,1,0,518505,21088,21088,SET/6 FRUIT SALAD PAPER CUPS,7128,2010-08-09 13:10:00,0.08,570.24,14277,France,discovery,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,7100,258815,Year 2009-2010,258816,1,0,514363,84016,84016,Ebay sales by the box.,-7100,2010-07-01 18:07:00,0,-0.00,,United Kingdom,discovery,0,1,0,1,0,1,0,0,0,0,0,negative_quantity
+absolute_quantity,7008,359671,Year 2009-2010,359672,1,0,C524235,21096,21096,SET/6 FRUIT SALAD PAPER PLATES,-7008,2010-09-28 11:02:00,0.13,-911.04,14277,France,discovery,1,1,0,0,0,0,0,0,0,0,0,cancelled_invoice
+absolute_quantity,7008,358764,Year 2009-2010,358765,1,0,524174,21096,21096,SET/6 FRUIT SALAD PAPER PLATES,7008,2010-09-27 16:30:00,0.13,911.04,13687,United Kingdom,discovery,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,7008,298942,Year 2009-2010,298943,1,0,518505,21096,21096,SET/6 FRUIT SALAD PAPER PLATES,7008,2010-08-09 13:10:00,0.13,911.04,14277,France,discovery,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,7000,269559,Year 2009-2010,269560,1,0,515462,20852,20852,given away,-7000,2010-07-12 15:47:00,0,-0.00,,United Kingdom,discovery,0,1,0,1,0,1,0,0,0,0,0,negative_quantity
+absolute_quantity,6768,65091,Year 2009-2010,65092,1,0,495194,20991,20991,JAZZ HEARTS MAGNETIC MEMO PAD,6768,2010-01-21 15:11:00,0.1,676.80,13902,Denmark,profile,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,6696,90867,Year 2009-2010,90868,1,0,497946,47503E,47503E,ASS FLORAL PRINT SCISSORS,6696,2010-02-15 11:57:00,0.15,1004.40,13902,Denmark,profile,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,6400,437010,Year 2009-2010,437011,1,0,531178,22126,22126,,-6400,2010-11-05 14:40:00,0,-0.00,,United Kingdom,discovery,0,1,0,1,0,1,1,0,0,0,0,negative_quantity
+absolute_quantity,6336,432178,Year 2009-2010,432179,1,0,530715,17003,17003,BROCADE RING PURSE,6336,2010-11-04 11:36:00,0.19,1203.84,15838,United Kingdom,discovery,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,6144,65080,Year 2009-2010,65081,1,0,495194,16044,16044,POP-ART FLUORESCENT PENS,6144,2010-01-21 15:11:00,0.06,368.64,13902,Denmark,profile,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,6012,65078,Year 2009-2010,65079,1,0,495194,37410,37410,BLACK AND WHITE PAISLEY FLOWER MUG,6012,2010-01-21 15:11:00,0.1,601.20,13902,Denmark,profile,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,6000,303996,Year 2009-2010,303997,1,0,519016,22752,22752,,-6000,2010-08-13 09:13:00,0,-0.00,,United Kingdom,discovery,0,1,0,1,0,1,1,0,0,0,0,negative_quantity
+absolute_quantity,6000,296415,Year 2009-2010,296416,1,0,518234,22752,22752,,6000,2010-08-05 15:51:00,0,0.00,,United Kingdom,discovery,0,0,0,1,0,1,1,0,0,0,0,zero_price
+absolute_quantity,5568,600076,Year 2010-2011,74616,1,0,542504,37413,37413,,5568,2011-01-28 12:03:00,0,0.00,,United Kingdom,validation,0,0,0,1,0,1,1,0,0,0,0,zero_price
+absolute_quantity,5368,641280,Year 2010-2011,115820,1,0,546152,72140F,72140F,throw away,-5368,2011-03-09 17:25:00,0,-0.00,,United Kingdom,validation,0,1,0,1,0,1,0,0,0,0,0,negative_quantity
+absolute_quantity,5364,127173,Year 2009-2010,127174,1,0,501534,37351,37351,ORANGE FLOWER MUG,5364,2010-03-17 13:09:00,0.1,536.40,13902,Denmark,profile,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,5280,65089,Year 2009-2010,65090,1,0,495194,20756,20756,GREEN FERN POCKET BOOK,5280,2010-01-21 15:11:00,0.1,528.00,13902,Denmark,profile,0,0,0,0,0,0,0,0,0,1,1,
+absolute_quantity,5280,65086,Year 2009-2010,65087,1,0,495194,20759,20759,CHRYSANTHEMUM POCKET BOOK,5280,2010-01-21 15:11:00,0.1,528.00,13902,Denmark,profile,0,0,0,0,0,0,0,0,0,1,1,
+absolute_line_amount,168469.60,1065884,Year 2010-2011,540424,1,0,C581484,23843,23843,"PAPER CRAFT , LITTLE BIRDIE",-80995,2011-12-09 09:27:00,2.08,-168469.60,16446,United Kingdom,out_of_scope,1,1,0,0,0,0,0,0,0,0,0,cancelled_invoice
+absolute_line_amount,168469.60,1065883,Year 2010-2011,540423,1,0,581483,23843,23843,"PAPER CRAFT , LITTLE BIRDIE",80995,2011-12-09 09:15:00,2.08,168469.60,16446,United Kingdom,out_of_scope,0,0,0,0,0,0,0,0,0,1,1,
+absolute_line_amount,77183.60,587086,Year 2010-2011,61626,1,0,C541433,23166,23166,MEDIUM CERAMIC TOP STORAGE JAR,-74215,2011-01-18 10:17:00,1.04,-77183.60,12346,United Kingdom,validation,1,1,0,0,0,0,0,0,0,0,0,cancelled_invoice
+absolute_line_amount,77183.60,587081,Year 2010-2011,61621,1,0,541431,23166,23166,MEDIUM CERAMIC TOP STORAGE JAR,74215,2011-01-18 10:01:00,1.04,77183.60,12346,United Kingdom,validation,0,0,0,0,0,0,0,0,0,1,1,
+absolute_line_amount,53594.36,179404,Year 2009-2010,179405,1,0,A506401,B,B,Adjust bad debt,1,2010-04-29 13:36:00,-53594.36,-53594.36,,United Kingdom,profile,0,0,0,0,1,1,0,1,0,0,0,negative_price
+absolute_line_amount,44031.79,276275,Year 2009-2010,276276,1,0,A516228,B,B,Adjust bad debt,1,2010-07-19 11:24:00,-44031.79,-44031.79,,United Kingdom,discovery,0,0,0,0,1,1,0,1,0,0,0,negative_price
+absolute_line_amount,38970,748143,Year 2010-2011,222683,1,0,C556445,M,M,Manual,-1,2011-06-10 15:31:00,38970,-38970.00,15098,United Kingdom,test,1,1,0,0,0,0,0,1,0,0,0,cancelled_invoice
+absolute_line_amount,38970.0,748133,Year 2010-2011,222673,1,0,556444,22502,22502,PICNIC BASKET WICKER 60 PIECES,60,2011-06-10 15:28:00,649.5,38970.00,15098,United Kingdom,test,0,0,0,0,0,0,0,0,0,1,1,
+absolute_line_amount,38925.870000000003,403473,Year 2009-2010,403474,1,0,A528059,B,B,Adjust bad debt,1,2010-10-20 12:04:00,-38925.870000000003,-38925.87,,United Kingdom,discovery,0,0,0,0,1,1,0,1,0,0,0,negative_price
+absolute_line_amount,25111.09,241828,Year 2009-2010,241829,1,0,512771,M,M,Manual,1,2010-06-17 16:53:00,25111.09,25111.09,,United Kingdom,discovery,0,0,0,0,0,1,0,1,0,0,0,non_product
+absolute_line_amount,25111.09,241825,Year 2009-2010,241826,1,0,C512770,M,M,Manual,-1,2010-06-17 16:52:00,25111.09,-25111.09,17399,United Kingdom,discovery,1,1,0,0,0,0,0,1,0,0,0,cancelled_invoice
+absolute_line_amount,18910.689999999999,320582,Year 2009-2010,320583,1,0,C520667,BANK CHARGES,BANK CHARGES,Bank Charges,-1,2010-08-27 13:42:00,18910.689999999999,-18910.69,,United Kingdom,discovery,1,1,0,0,0,1,0,1,0,0,0,cancelled_invoice
+absolute_line_amount,17836.46,1050064,Year 2010-2011,524604,1,0,C580605,AMAZONFEE,AMAZONFEE,AMAZON FEE,-1,2011-12-05 11:36:00,17836.46,-17836.46,,United Kingdom,out_of_scope,1,1,0,0,0,1,0,1,0,0,0,cancelled_invoice
+absolute_line_amount,16888.02,569164,Year 2010-2011,43704,1,0,C540117,AMAZONFEE,AMAZONFEE,AMAZON FEE,-1,2011-01-05 09:55:00,16888.02,-16888.02,,United Kingdom,validation,1,1,0,0,0,1,0,1,0,0,0,cancelled_invoice
+absolute_line_amount,16453.71,569165,Year 2010-2011,43705,1,0,C540118,AMAZONFEE,AMAZONFEE,AMAZON FEE,-1,2011-01-05 09:57:00,16453.71,-16453.71,,United Kingdom,validation,1,1,0,0,0,1,0,1,0,0,0,cancelled_invoice
+absolute_line_amount,15818.40,432177,Year 2009-2010,432178,1,0,530715,84347,84347,ROTATING SILVER ANGELS T-LIGHT HLDR,9360,2010-11-04 11:36:00,1.69,15818.40,15838,United Kingdom,discovery,0,0,0,0,0,0,0,0,0,1,1,
+absolute_line_amount,13541.33,541818,Year 2010-2011,16358,1,0,C537651,AMAZONFEE,AMAZONFEE,AMAZON FEE,-1,2010-12-07 15:49:00,13541.33,-13541.33,,United Kingdom,validation,1,1,0,0,0,1,0,1,0,0,0,cancelled_invoice
+absolute_line_amount,13541.33,540479,Year 2010-2011,15019,1,0,537632,AMAZONFEE,AMAZONFEE,AMAZON FEE,1,2010-12-07 15:08:00,13541.33,13541.33,,United Kingdom,validation,0,0,0,0,0,1,0,1,0,0,0,non_product
+absolute_line_amount,13541.33,540478,Year 2010-2011,15018,1,0,C537630,AMAZONFEE,AMAZONFEE,AMAZON FEE,-1,2010-12-07 15:04:00,13541.33,-13541.33,,United Kingdom,validation,1,1,0,0,0,1,0,1,0,0,0,cancelled_invoice
+absolute_line_amount,13474.79,541464,Year 2010-2011,16004,1,0,C537644,AMAZONFEE,AMAZONFEE,AMAZON FEE,-1,2010-12-07 15:34:00,13474.79,-13474.79,,United Kingdom,validation,1,1,0,0,0,1,0,1,0,0,0,cancelled_invoice
+absolute_line_amount,11586.5,1050063,Year 2010-2011,524603,1,0,C580604,AMAZONFEE,AMAZONFEE,AMAZON FEE,-1,2011-12-05 11:35:00,11586.5,-11586.50,,United Kingdom,out_of_scope,1,1,0,0,0,1,0,1,0,0,0,cancelled_invoice
+absolute_line_amount,11062.06,825446,Year 2010-2011,299986,1,0,A563187,B,B,Adjust bad debt,1,2011-08-12 14:52:00,-11062.06,-11062.06,,United Kingdom,test,0,0,0,0,1,1,0,1,0,0,0,negative_price
+absolute_line_amount,11062.06,825445,Year 2010-2011,299985,1,0,A563186,B,B,Adjust bad debt,1,2011-08-12 14:51:00,-11062.06,-11062.06,,United Kingdom,test,0,0,0,0,1,1,0,1,0,0,0,negative_price
+absolute_line_amount,11062.06,825444,Year 2010-2011,299984,1,0,A563185,B,B,Adjust bad debt,1,2011-08-12 14:50:00,11062.06,11062.06,,United Kingdom,test,0,0,0,0,0,1,0,1,0,0,0,non_product
+absolute_line_amount,10953.5,135016,Year 2009-2010,135017,1,0,502265,M,M,Manual,1,2010-03-23 15:28:00,10953.5,10953.50,,United Kingdom,profile,0,0,0,0,0,1,0,1,0,0,0,non_product
+absolute_line_amount,10953.5,135015,Year 2009-2010,135016,1,0,C502264,M,M,Manual,-1,2010-03-23 15:24:00,10953.5,-10953.50,12918,United Kingdom,profile,1,1,0,0,0,0,0,1,0,0,0,cancelled_invoice
+absolute_line_amount,10953.5,135014,Year 2009-2010,135015,1,0,502263,M,M,Manual,1,2010-03-23 15:22:00,10953.5,10953.50,12918,United Kingdom,profile,0,0,0,0,0,0,0,1,0,0,0,non_product
+absolute_line_amount,10953.5,135013,Year 2009-2010,135014,1,0,C502262,M,M,Manual,-1,2010-03-23 15:20:00,10953.5,-10953.50,12918,United Kingdom,profile,1,1,0,0,0,0,0,1,0,0,0,cancelled_invoice
+absolute_line_amount,10468.799999999999,372835,Year 2009-2010,372836,1,0,525399,M,M,Manual,1,2010-10-05 11:49:00,10468.799999999999,10468.80,,United Kingdom,discovery,0,0,0,0,0,1,0,1,0,0,0,non_product
+absolute_line_amount,10468.799999999999,372834,Year 2009-2010,372835,1,0,C525398,M,M,Manual,-1,2010-10-05 11:47:00,10468.799999999999,-10468.80,14063,United Kingdom,discovery,1,1,0,0,0,0,0,1,0,0,0,cancelled_invoice
+absolute_line_amount,10468.799999999999,358670,Year 2009-2010,358671,1,0,C524161,M,M,Manual,-1,2010-09-27 16:16:00,10468.799999999999,-10468.80,,United Kingdom,discovery,1,1,0,0,0,1,0,1,0,0,0,cancelled_invoice
+absolute_line_amount,10468.799999999999,358640,Year 2009-2010,358641,1,0,524159,M,M,Manual,1,2010-09-27 16:12:00,10468.799999999999,10468.80,14063,United Kingdom,discovery,0,0,0,0,0,0,0,1,0,0,0,non_product
+absolute_line_amount,10468.799999999999,342148,Year 2009-2010,342149,1,0,522796,M,M,Manual,1,2010-09-16 15:12:00,10468.799999999999,10468.80,,United Kingdom,discovery,0,0,0,0,0,1,0,1,0,0,0,non_product
+absolute_line_amount,10468.799999999999,342136,Year 2009-2010,342137,1,0,C522793,M,M,Manual,-1,2010-09-16 14:53:00,10468.799999999999,-10468.80,14063,United Kingdom,discovery,1,1,0,0,0,0,0,1,0,0,0,cancelled_invoice
+absolute_line_amount,8985.6,74358,Year 2009-2010,74359,1,0,C496116,M,M,Manual,-1,2010-01-29 11:05:00,8985.6,-8985.60,17949,United Kingdom,profile,1,1,0,0,0,0,0,1,0,0,0,cancelled_invoice
+absolute_line_amount,8985.6,74357,Year 2009-2010,74358,1,0,496115,M,M,Manual,1,2010-01-29 11:04:00,8985.6,8985.60,17949,United Kingdom,profile,0,0,0,0,0,0,0,1,0,0,0,non_product
+absolute_line_amount,8924.9999999999993000,228043,Year 2009-2010,228044,1,0,511465,15044A,15044A,PINK PAPER PARASOL,3500,2010-06-08 12:59:00,2.5499999999999998,8925.00,18008,United Kingdom,discovery,0,0,0,0,0,0,0,0,0,1,1,
+absolute_line_amount,8322.1200000000008,947837,Year 2010-2011,422377,1,0,C573079,M,M,Manual,-2,2011-10-27 14:15:00,4161.0600000000004,-8322.12,12536,France,test,1,1,0,0,0,0,0,1,0,0,0,cancelled_invoice
+absolute_line_amount,8286.2199999999993,971995,Year 2010-2011,446535,1,0,C574902,AMAZONFEE,AMAZONFEE,AMAZON FEE,-1,2011-11-07 15:21:00,8286.2199999999993,-8286.22,,United Kingdom,test,1,1,0,0,0,1,0,1,0,0,0,cancelled_invoice
+absolute_line_amount,8142.75,698844,Year 2010-2011,173384,1,0,551697,POST,POST,POSTAGE,1,2011-05-03 13:46:00,8142.75,8142.75,16029,United Kingdom,validation,0,0,0,0,0,0,0,1,0,0,0,non_product
+absolute_line_amount,8142.75,698739,Year 2010-2011,173279,1,0,C551685,POST,POST,POSTAGE,-1,2011-05-03 12:51:00,8142.75,-8142.75,16029,United Kingdom,validation,1,1,0,0,0,0,0,1,0,0,0,cancelled_invoice
+absolute_line_amount,7427.97,868097,Year 2010-2011,342637,1,0,C566899,AMAZONFEE,AMAZONFEE,AMAZON FEE,-1,2011-09-15 13:53:00,7427.97,-7427.97,,United Kingdom,test,1,1,0,0,0,1,0,1,0,0,0,cancelled_invoice
+absolute_line_amount,7144.7199999999994352,873787,Year 2010-2011,348327,1,0,567423,23243,23243,SET OF TEA COFFEE SUGAR TINS PANTRY,1412,2011-09-20 11:05:00,5.0599999999999996,7144.72,17450,United Kingdom,test,0,0,0,0,0,0,0,0,0,1,1,
+absolute_line_amount,7044.79,374228,Year 2009-2010,374229,1,0,525473,M,M,Manual,1,2010-10-05 15:16:00,7044.79,7044.79,,United Kingdom,discovery,0,0,0,0,0,1,0,1,0,0,0,non_product
+absolute_line_amount,7044.79,374184,Year 2009-2010,374185,1,0,C525470,M,M,Manual,-1,2010-10-05 15:12:00,7044.79,-7044.79,15413,United Kingdom,discovery,1,1,0,0,0,0,0,1,0,0,0,cancelled_invoice
+absolute_line_amount,7006.83,716848,Year 2010-2011,191388,1,0,C553355,AMAZONFEE,AMAZONFEE,AMAZON FEE,-1,2011-05-16 13:58:00,7006.83,-7006.83,,United Kingdom,validation,1,1,0,0,0,1,0,1,0,0,0,cancelled_invoice
+absolute_line_amount,6958.17,129989,Year 2009-2010,129990,1,0,C501769,M,M,Manual,-1,2010-03-19 11:49:00,6958.17,-6958.17,15760,Norway,profile,1,1,0,0,0,0,0,1,0,0,0,cancelled_invoice
+absolute_line_amount,6958.17,129988,Year 2009-2010,129989,1,0,501768,M,M,Manual,1,2010-03-19 11:45:00,6958.17,6958.17,15760,Norway,profile,0,0,0,0,0,0,0,1,0,0,0,non_product
+absolute_line_amount,6958.17,129904,Year 2009-2010,129905,1,0,501766,M,M,Manual,1,2010-03-19 11:35:00,6958.17,6958.17,15760,Norway,profile,0,0,0,0,0,0,0,1,0,0,0,non_product
+absolute_line_amount,6958.17,129903,Year 2009-2010,129904,1,0,C501751,M,M,Manual,-1,2010-03-19 11:30:00,6958.17,-6958.17,15760,Norway,profile,1,1,0,0,0,0,0,1,0,0,0,cancelled_invoice
