@@ -1,1 +1,1 @@
-"""Task A: 数据处理与复现. Owner: Qingyang LI. Implementation pending."""
+"""Task A: auditable Online Retail II data preparation and reproduction."""

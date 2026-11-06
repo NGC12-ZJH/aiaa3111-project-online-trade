@@ -4,9 +4,9 @@ import json
 from pathlib import Path
 
 
-DATASET_ROOT = Path(__file__).resolve().parents[2]
-REPOSITORY_ROOT = DATASET_ROOT.parent
-CONFIG_PATH = DATASET_ROOT / "configs" / "data_processing.json"
+REPOSITORY_ROOT = Path(__file__).resolve().parents[3]
+DATASET_ROOT = REPOSITORY_ROOT
+CONFIG_PATH = REPOSITORY_ROOT / "configs" / "data_processing.json"
 
 with CONFIG_PATH.open("r", encoding="utf-8") as stream:
     CONFIG = json.load(stream)

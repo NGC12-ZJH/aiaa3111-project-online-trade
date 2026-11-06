@@ -2,7 +2,7 @@
 
 ## 1. 目标
 
-使用 UCI Online Retail II 两年交易数据建立独立的四时期数据处理流程，同时保持现有
+使用 UCI Online Retail II 两年交易数据在仓库主目录中建立四时期数据处理流程，同时保持现有
 一年数据交接接口：`clean_transactions`、`orders`、`baskets` 和 `baskets_long`。
 
 ## 2. 规范来源与跨表重叠

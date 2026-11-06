@@ -1,6 +1,7 @@
 {
   "schema_version": 1,
   "design_name": "online_retail_ii_four_period",
+  "repository_layout": "main",
   "status": "draft_requires_team_confirmation",
   "timezone": "Asia/Shanghai",
   "profile": {

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create decision-support summaries for duplicates and zero-price lines."""
+"""Create Online Retail II decision-support summaries for duplicates and zero-price lines."""
 
 from __future__ import annotations
 

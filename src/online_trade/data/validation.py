@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate Online Retail II four-period processing outputs."""
+"""Validate Online Retail II four-period outputs in the main repository layout."""
 
 from __future__ import annotations
 

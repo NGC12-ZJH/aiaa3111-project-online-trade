@@ -1,13 +1,13 @@
 # Online Retail II 四时期数据处理与交接说明
 
-本文档是 `new dataset` 数据处理流程的正式说明。它解释原始数据、双工作表重叠、字段标准化、清洗口径、四时期切分、订单与购物篮的区别、全部输出文件、成员接口和冻结规则。快速运行看根目录 `README.md`；复现和写报告以本文档、配置及 `run_manifest.json` 为准。
+本文档是仓库主目录中 Online Retail II 数据处理流程的正式说明。它解释原始数据、双工作表重叠、字段标准化、清洗口径、四时期切分、订单与购物篮的区别、全部输出文件、成员接口和冻结规则。快速运行看根目录 `README.md`；复现和写报告以本文档、配置及 `run_manifest.json` 为准。
 
 ## 1. 最简说明
 
 从仓库根目录运行：
 
 ```bash
-python3 "new dataset/scripts/run_all.py"
+python3 scripts/run_all.py
 ```
 
 只有最后显示 `Validation passed`，输出才可以交给 B、C、D。
@@ -24,9 +24,8 @@ python3 "new dataset/scripts/run_all.py"
 ## 2. 目录和职责
 
 ```text
-new dataset/
+./
 ├── README.md
-├── .gitignore
 ├── configs/
 │   ├── data_processing.json
 │   └── experiment.json
@@ -35,7 +34,7 @@ new dataset/
 │   └── processed/        # 生成结果，本地保存
 ├── docs/
 ├── scripts/              # 命令行入口
-└── src/online_retail_ii/ # 处理、审计和验证实现
+└── src/online_trade/data/ # 处理、审计和验证实现
 ```
 
 `configs/` 是需要团队冻结的研究口径，`scripts/` 是入口，`src/` 是实现。原始数据和包含客户标识的完整输出默认不提交 Git。
@@ -89,7 +88,7 @@ Year 2010-2011：InvoiceDate >= 2010-12-01
 流程仅依赖 Python 标准库。从仓库根目录执行：
 
 ```bash
-python3 "new dataset/scripts/run_all.py"
+python3 scripts/run_all.py
 ```
 
 它依次完成：
@@ -431,7 +430,7 @@ test:       split == "test"       and eligible == 1
 import pandas as pd
 
 orders = pd.read_csv(
-    "new dataset/data/processed/orders.csv.gz",
+    "data/processed/orders.csv.gz",
     dtype={"basket_id": "string", "customer_id": "string"},
 )
 profile_orders = orders[
@@ -446,7 +445,7 @@ profile_orders = orders[
 import csv, gzip, json
 
 with gzip.open(
-    "new dataset/data/processed/baskets.csv.gz",
+    "data/processed/baskets.csv.gz",
     "rt", encoding="utf-8", newline="",
 ) as stream:
     for row in csv.DictReader(stream):

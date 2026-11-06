@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Process Online Retail II into auditable transaction, order, and basket tables.
+"""Process Online Retail II into auditable transaction, order, and basket tables in the main repository layout.
 
 This implementation uses only the Python standard library. It streams the XLSX XML,
 keeps both source worksheets unchanged, removes their documented overlap through a

@@ -130,6 +130,8 @@ aiaa3111-project-online-trade/
 | `docs/team_assignment.docx` | 可下载的四人分工 Word 文档，包含职责、交付和交接要求。 |
 | `docs/team_assignment.md` | 可直接在 GitHub 阅读和讨论的分工版本；分工调整时与 Word 同步。 |
 | `docs/data_contract.md` | 统一模块之间传递的字段、数据格式和评价口径，交接前先核对。 |
+| `docs/data_processing_guide.md` | Online Retail II 双表重叠、清洗、四时期、订单、购物篮和全部输出的详细说明。 |
+| `docs/four_period_plan.md` | Profile、Discovery、Validation、Test 的实验设计与冻结边界。 |
 | `docs/experiment_log.md` | 记录每次实验的配置、代码版本、评价样本、结果位置和结论，方便追溯。 |
 | `docs/aigc_usage.md` | 记录外部工具与 AIGC 的具体用途、人工核查和修改，供报告披露使用。 |
 
@@ -137,11 +139,45 @@ aiaa3111-project-online-trade/
 
 各模块开发时仍应使用可手工核对的小样本检查计算是否正确；核查方法和结果记录在模块说明或实验日志中。
 
+## Online Retail II 四时期数据处理
+
+本项目现在使用 UCI Online Retail II 两年交易数据，并直接沿用仓库原有目录：配置在 `configs/`，原始文件在 `data/raw/`，处理结果在 `data/processed/`，入口在 `scripts/`，实现位于 `src/online_trade/data/`。仓库中不再建立额外的 `new dataset/` 目录。
+
+### 四个时期
+
+| 阶段 | 时间窗口 | 用途 |
+|---|---|---|
+| `profile` | `[2009-12-01, 2010-06-01)` | RFM、聚类和客户级随机分组 |
+| `discovery` | `[2010-06-01, 2010-12-01)` | 挖掘全局、真实分群和随机分群候选规则 |
+| `validation` | `[2010-12-01, 2011-06-01)` | 选择规则阈值、冗余处理和总预算 |
+| `test` | `[2011-06-01, 2011-12-01)` | 全部设置冻结后的单次最终评价 |
+
+工作簿两张表在 2010-12-01 至 2010-12-09 重叠。程序已按完整行值和重复次数确认两边 22,523 条记录完全相同、1,088 个共享订单无冲突，然后固定使用第一张表的 2010-12-01 以前数据和第二张表的 2010-12-01 起数据。物理证据全部保留，重叠副本不进入金额、订单、购物篮或实验。
+
+### 运行
+
+将哈希核对后的 `online_retail_II.xlsx` 放入 `data/raw/`，执行：
+
+```bash
+python3 scripts/run_all.py
+```
+
+只有最后显示 `Validation passed` 才能交接。核心输出：
+
+| 文件 | 粒度 | 用途 |
+|---|---|---|
+| `clean_transactions.csv.gz` | 一行一个物理来源明细 | A 追踪清洗和敏感性 |
+| `orders.csv.gz` | 一行一个规范订单 | B 计算 Profile RFM；D 确定未来评价分母 |
+| `baskets.csv.gz` | 一行一个有效订单购物篮 | D 判断规则前件和后件命中 |
+| `baskets_long.csv.gz` | 一行一个订单—商品 | C 在 Discovery 挖掘规则 |
+
+购物篮是“一张订单内有效商品的去重集合”，不是跨订单归纳出的组合类别。B、C、D 可以使用同一套接口，但必须先按 `split` 和 `is_eligible_for_main_comparison` 筛选各自时期。完整字段、排除优先级、金额定义、审计文件、成员接口和冻结检查见[详细数据处理说明](docs/data_processing_guide.md)。
+
 ## 数据与环境
 
 ### 数据存放与四人交接
 
-数据来源：[UCI Online Retail](https://archive.ics.uci.edu/dataset/352/online+retail)。从该页面下载并解压，将 `Online Retail.xlsx` 放入 `data/raw/`；原始压缩包如需保留，也放在该目录。由 A 在 `data/raw/README.md` 记录实际文件名、下载日期、来源和 SHA-256，其他成员获取相同版本。
+数据来源：[UCI Online Retail II](https://archive.ics.uci.edu/dataset/502/online+retail+ii)。下载 `online_retail_II.xlsx` 放入 `data/raw/`，并核对 `data/raw/README.md` 记录的 SHA-256。其他成员必须使用相同版本。
 
 | 数据类型 | 放在哪里 | 是否提交 GitHub | 队友如何获取 |
 |---|---|---|---|
@@ -173,7 +209,7 @@ python -m venv .venv
 python -m pip install -r requirements.txt
 ```
 
-依赖清单为启动建议，尚未验证端到端兼容性。首轮实验后记录确切版本。当前仓库不提供已实现的实验运行命令；各模块完成后，由 A 统一补齐运行入口与复现说明。
+Online Retail II 数据处理仅使用 Python 标准库，已经完成端到端验证；统一入口为 `python3 scripts/run_all.py`。聚类、规则和评价模块的额外依赖仍以 `requirements.txt` 及各模块记录为准。
 
 ## 协作方式
 

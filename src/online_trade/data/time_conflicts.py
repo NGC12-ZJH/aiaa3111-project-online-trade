@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check whether orders with multiple timestamps cross experimental time splits."""
+"""Check whether Online Retail II orders with multiple timestamps cross time splits."""
 
 from __future__ import annotations
 
