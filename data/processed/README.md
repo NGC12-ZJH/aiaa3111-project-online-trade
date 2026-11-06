@@ -26,7 +26,7 @@ python3 scripts/run_all.py
 
 完整客户级文件不进入 `main`，已发布在禁止合并的
 [`a/online-retail-ii-data-snapshot`](https://github.com/NGC12-ZJH/aiaa3111-project-online-trade/tree/a/online-retail-ii-data-snapshot)
-分支，固定快照提交为 `814842ee7347d24b8f8455031e5873bd8808770a`。A 维护本清单，B/C/D 在使用前核对 SHA-256。
+分支，固定快照提交为 `ed1c57a0f3f974712bd80624ecbff51462585a39`。A 维护本清单，B/C/D 在使用前核对 SHA-256。
 
 | 文件及版本 | 用途 / 负责人 | 时间窗口 / 行数 / 字段 | 大小 / SHA-256 | 获取方式及本地相对路径 | 生成命令 / 代码版本 / 配置 |
 |---|---|---|---|---|---|

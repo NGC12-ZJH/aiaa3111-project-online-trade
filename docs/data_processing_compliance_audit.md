@@ -2,7 +2,7 @@
 
 审计日期：2026-11-06（Asia/Shanghai）  
 对照基线：`origin/main` 提交 `fa55f769649f1ae0221f29d76b7cbf4af1c91b1c`  
-数据快照：`a/online-retail-ii-data-snapshot` 提交 `814842ee7347d24b8f8455031e5873bd8808770a`
+数据快照：`a/online-retail-ii-data-snapshot` 提交 `ed1c57a0f3f974712bd80624ecbff51462585a39`
 
 ## 结论
 
