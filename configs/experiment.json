@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "design_name": "online_retail_ii_four_period",
+  "repository_layout": "main",
+  "status": "draft_requires_team_confirmation",
+  "timezone": "Asia/Shanghai",
+  "profile": {
+    "start": "2009-12-01T00:00:00",
+    "end_exclusive": "2010-06-01T00:00:00",
+    "uses": [
+      "rfm_feature_construction",
+      "cluster_selection_and_fitting",
+      "customer_level_random_group_assignment"
+    ]
+  },
+  "discovery": {
+    "start": "2010-06-01T00:00:00",
+    "end_exclusive": "2010-12-01T00:00:00",
+    "uses": [
+      "global_rule_mining",
+      "true_cluster_rule_mining",
+      "random_group_rule_mining"
+    ]
+  },
+  "validation": {
+    "start": "2010-12-01T00:00:00",
+    "end_exclusive": "2011-06-01T00:00:00",
+    "uses": [
+      "rule_configuration_selection",
+      "rule_budget_selection",
+      "future_performance_check"
+    ]
+  },
+  "test": {
+    "start": "2011-06-01T00:00:00",
+    "end_exclusive": "2011-12-01T00:00:00",
+    "uses": [
+      "single_final_future_evaluation"
+    ]
+  },
+  "rfm": {
+    "recency_cutoff_exclusive": "2010-06-01T00:00:00",
+    "frequency_definition": "distinct profile orders where is_valid_rfm_order equals 1",
+    "monetary_primary": "sum of profile gross_purchase_amount for valid positive orders",
+    "monetary_sensitivity": "sum of profile net_amount for identified profile customers"
+  },
+  "clustering": {
+    "candidate_k": [
+      3,
+      4,
+      5
+    ],
+    "seed": 42,
+    "selection_evidence": [
+      "silhouette_score",
+      "stability_across_seeds",
+      "minimum_cluster_size",
+      "rfm_profile_interpretability"
+    ],
+    "freeze_before_discovery": true
+  },
+  "pattern_mining": {
+    "candidate_min_support": [
+      0.005,
+      0.01,
+      0.02
+    ],
+    "candidate_min_confidence": [
+      0.1,
+      0.2,
+      0.3
+    ],
+    "candidate_total_rule_budgets": [
+      20,
+      50,
+      100
+    ],
+    "max_antecedent_items": 2,
+    "max_consequent_items": 1,
+    "use_common_candidate_pool_across_methods": true,
+    "same_total_rule_budget_across_methods": true,
+    "use_identical_eligible_baskets_across_methods": true
+  },
+  "random_control": {
+    "assignment_unit": "customer_id",
+    "seed": 42,
+    "repeats": 20,
+    "freeze_before_discovery": true
+  },
+  "eligibility": {
+    "profile_customer_definition": "identified customer with at least one valid positive-price profile order",
+    "main_comparison_requires_valid_basket": true,
+    "main_comparison_requires_profile_customer": true,
+    "exclude_anonymous_customers": true,
+    "exclude_customers_first_seen_after_profile": true,
+    "report_excluded_scope": true,
+    "new_customer_fallback": "evaluate GLOBAL rules separately outside the main G/L/R comparison"
+  },
+  "test_freeze": {
+    "refit_clusters": false,
+    "remine_rules": false,
+    "retune_parameters": false,
+    "change_cleaning_policy": false,
+    "evaluate_once_after_freeze": true
+  },
+  "evaluation_contract": {
+    "count_basket_coverage_once_when_multiple_rules_match": true,
+    "zero_antecedent_count_confidence": "not_estimable",
+    "do_not_create_empty_baskets_for_customers_without_future_orders": true,
+    "report_system_total_rule_budget_comparison": true,
+    "report_per_user_rule_budget_sensitivity": true,
+    "report_eligible_share_of_all_future_orders": true
+  }
+}
+

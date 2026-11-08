@@ -24,7 +24,7 @@ AIAA3111 数据挖掘课程项目 · H2 分群购物模式。研究历史消费�
 5. **未来验证 RQ3（D）**：冻结群体和规则，在未来订单上评价覆盖率、规则置信度和差异保持，报告适用顾客比例。
 6. **解释与交付（全员）**：分析成功/失败案例，完成海报、答辩、报告和可复现代码。
 
-聚类和规则挖掘使用历史数据；不要用全年数据分群后把其中后半段称为未见测试集。建议开发期为 2010-12 至 2011-06、验证期为 2011-07 至 08、测试期为 2011-09 至 11，待留存审计后确认。原型参数不是已验证最优值。
+聚类、规则发现、配置选择和最终评价必须使用相互独立的时期；不要用全年数据分群后把其中后半段称为未见测试集。Online Retail II 留存审计后已采用 `profile → discovery → validation → test` 四时期方案，精确边界见下文和 `configs/experiment.json`。候选参数仍须由 Validation 选择，不能把原型值称为已验证最优值。
 
 未来无订单的顾客不创建空购物篮；某群无未来订单时指标记为不可评价。主比较在相同历史已知顾客的未来订单上进行，同时报告其占全部未来订单的比例。新顾客回退全局规则另行评价。
 
@@ -97,7 +97,7 @@ aiaa3111-project-online-trade/
 
 ### 各目录放什么、由谁维护
 
-下表中的具体产物是后续实现时的存放约定。目前仓库主要包含说明文档、配置示例及代码包占位文件，尚未生成实验数据或结果。
+下表是各模块的存放约定。A 的 Online Retail II 数据处理已实现并通过完整审计；B、C、D 的聚类、规则和评价结果仍待各负责人实现和登记。
 
 | 目录 | 用途与建议内容 | 主要负责人 |
 |---|---|---|
@@ -130,6 +130,8 @@ aiaa3111-project-online-trade/
 | `docs/team_assignment.docx` | 可下载的四人分工 Word 文档，包含职责、交付和交接要求。 |
 | `docs/team_assignment.md` | 可直接在 GitHub 阅读和讨论的分工版本；分工调整时与 Word 同步。 |
 | `docs/data_contract.md` | 统一模块之间传递的字段、数据格式和评价口径，交接前先核对。 |
+| `docs/data_processing_guide.md` | Online Retail II 双表重叠、清洗、四时期、订单、购物篮和全部输出的详细说明。 |
+| `docs/four_period_plan.md` | Profile、Discovery、Validation、Test 的实验设计与冻结边界。 |
 | `docs/experiment_log.md` | 记录每次实验的配置、代码版本、评价样本、结果位置和结论，方便追溯。 |
 | `docs/aigc_usage.md` | 记录外部工具与 AIGC 的具体用途、人工核查和修改，供报告披露使用。 |
 
@@ -137,17 +139,51 @@ aiaa3111-project-online-trade/
 
 各模块开发时仍应使用可手工核对的小样本检查计算是否正确；核查方法和结果记录在模块说明或实验日志中。
 
+## Online Retail II 四时期数据处理
+
+本项目现在使用 UCI Online Retail II 两年交易数据，并直接沿用仓库原有目录：配置在 `configs/`，原始文件在 `data/raw/`，处理结果在 `data/processed/`，入口在 `scripts/`，实现位于 `src/online_trade/data/`。仓库中不再建立额外的 `new dataset/` 目录。
+
+### 四个时期
+
+| 阶段 | 时间窗口 | 用途 |
+|---|---|---|
+| `profile` | `[2009-12-01, 2010-06-01)` | RFM、聚类和客户级随机分组 |
+| `discovery` | `[2010-06-01, 2010-12-01)` | 挖掘全局、真实分群和随机分群候选规则 |
+| `validation` | `[2010-12-01, 2011-06-01)` | 选择规则阈值、冗余处理和总预算 |
+| `test` | `[2011-06-01, 2011-12-01)` | 全部设置冻结后的单次最终评价 |
+
+工作簿两张表在 2010-12-01 至 2010-12-09 重叠。程序已按完整行值和重复次数确认两边 22,523 条记录完全相同、1,088 个共享订单无冲突，然后固定使用第一张表的 2010-12-01 以前数据和第二张表的 2010-12-01 起数据。物理证据全部保留，重叠副本不进入金额、订单、购物篮或实验。
+
+### 运行
+
+将哈希核对后的 `online_retail_II.xlsx` 放入 `data/raw/`，执行：
+
+```bash
+python3 scripts/run_all.py
+```
+
+只有最后显示 `Validation passed` 才能交接。核心输出：
+
+| 文件 | 粒度 | 用途 |
+|---|---|---|
+| `clean_transactions.csv.gz` | 一行一个物理来源明细 | A 追踪清洗和敏感性 |
+| `orders.csv.gz` | 一行一个规范订单 | B 计算 Profile RFM；D 确定未来评价分母 |
+| `baskets.csv.gz` | 一行一个有效订单购物篮 | D 判断规则前件和后件命中 |
+| `baskets_long.csv.gz` | 一行一个订单—商品 | C 在 Discovery 挖掘规则 |
+
+购物篮是“一张订单内有效商品的去重集合”，不是跨订单归纳出的组合类别。B、C、D 可以使用同一套接口，但必须先按 `split` 和 `is_eligible_for_main_comparison` 筛选各自时期。完整字段、排除优先级、金额定义、审计文件、成员接口和冻结检查见[详细数据处理说明](docs/data_processing_guide.md)。
+
 ## 数据与环境
 
 ### 数据存放与四人交接
 
-数据来源：[UCI Online Retail](https://archive.ics.uci.edu/dataset/352/online+retail)。从该页面下载并解压，将 `Online Retail.xlsx` 放入 `data/raw/`；原始压缩包如需保留，也放在该目录。由 A 在 `data/raw/README.md` 记录实际文件名、下载日期、来源和 SHA-256，其他成员获取相同版本。
+数据来源：[UCI Online Retail II](https://archive.ics.uci.edu/dataset/502/online+retail+ii)。下载 `online_retail_II.xlsx` 放入 `data/raw/`，并核对 `data/raw/README.md` 记录的 SHA-256。其他成员必须使用相同版本。
 
 | 数据类型 | 放在哪里 | 是否提交 GitHub | 队友如何获取 |
 |---|---|---|---|
-| 原始完整数据及下载压缩包 | `data/raw/` | 否；仅目录说明和占位文件保留 | 按官方链接下载，核对 A 记录的校验值 |
+| 原始完整数据及下载压缩包 | `data/raw/` | 不进入 `main`；已放入专用快照分支 | 从 UCI 下载或从 `a/online-retail-ii-data-snapshot` 获取，并核对 A 记录的校验值 |
 | 可重新生成的清洗中间文件 | `data/interim/` | 否；仅目录说明和占位文件保留 | 使用同一原始数据、代码及配置重新生成 |
-| 检查后的最终购物篮、特征、群标签和切分说明 | `data/processed/` | CSV、JSON、JSONL、Parquet 可选择性提交，包含子目录；其他数据格式默认忽略 | 从仓库拉取，或按下述外部共享说明获取 |
+| 检查后的最终订单、购物篮和切分说明 | `data/processed/` | 完整客户级文件不进入 `main`；已放入专用快照分支 | 从 `a/online-retail-ii-data-snapshot` 获取并核对 manifest；也可按配置重跑 |
 | 用于演示和检查的小样本 | `data/processed/sample_*.csv` 等 | 可以；与最终数据使用相同的格式规则 | 从仓库拉取；明确样本生成方式与随机种子，不能当作完整实验数据 |
 | 尚未检查、包含不宜共享字段或不适合进入 Git 的大文件 | `data/processed/local/` | 否；该目录内所有内容均忽略 | 本地生成，或从团队约定的共享位置下载 |
 | 可分享的汇总结果和图表 | `results/tables/`、`results/figures/` | 可以，通常使用 CSV、PNG、PDF 等；Parquet 的例外仅限 `data/processed/` | 从仓库拉取 |
@@ -158,7 +194,7 @@ aiaa3111-project-online-trade/
 
 **每份交接数据都要有获取与复现记录。** A 在 [data/processed/README.md](data/processed/README.md) 维护清单，B/C 补充各自产物，至少写明：文件名、用途和负责人、数据版本、时间窗口、行数和字段、文件大小、SHA-256、生成所用代码版本与配置，以及实际运行命令。需要共享到仓库之外时，还必须写明稳定的下载位置、访问方式和下载后应放入的相对路径；不要记录密码或临时访问令牌。四人核对校验值后再接续实验。
 
-目前尚未配置外部共享位置，尚无已发布的处理数据或小样本；上述示例文件名仅为命名建议。首轮交付时需补齐真实链接或运行命令，不能仅写“联系队友获取”。如果完整数据不便提交，最终课程 ZIP 应包含可用下载说明；特殊情况下只能提供样本时，按课程要求说明原因。
+完整原始数据和已验证处理输出已发布在只读用途的 [`a/online-retail-ii-data-snapshot`](https://github.com/NGC12-ZJH/aiaa3111-project-online-trade/tree/a/online-retail-ii-data-snapshot) 分支；该分支不得合并到 `main`。精确提交、文件行数、大小、SHA-256 和生成命令登记在 `data/processed/README.md` 与快照的 `run_manifest.json`。最终课程 ZIP 应保留同样的下载与复现说明。
 
 `.gitignore` 不会删除本地数据，也不会停止跟踪已经提交过的文件。网页上传不受本地忽略规则约束，同样需要按此存放约定选择文件。
 
@@ -173,11 +209,11 @@ python -m venv .venv
 python -m pip install -r requirements.txt
 ```
 
-依赖清单为启动建议，尚未验证端到端兼容性。首轮实验后记录确切版本。当前仓库不提供已实现的实验运行命令；各模块完成后，由 A 统一补齐运行入口与复现说明。
+Online Retail II 数据处理仅使用 Python 标准库，已经完成端到端验证；统一入口为 `python3 scripts/run_all.py`。聚类、规则和评价模块的额外依赖仍以 `requirements.txt` 及各模块记录为准。
 
 ## 协作方式
 
-分支建议：`a/data-preparation`、`b/customer-clustering`、`c/pattern-mining`、`d/evaluation`。提交小而明确的更改，通过 pull request 合并到 `main`，至少另一人复核。分支名只是约定，当前不宣称已创建远程分支或配置保护规则。
+分支建议：`a/online-retail-ii-data-preparation`、`b/customer-clustering`、`c/pattern-mining`、`d/evaluation`。提交小而明确的更改，通过 pull request 合并到 `main`，至少另一人复核。完整数据单独保存在不合并的 `a/online-retail-ii-data-snapshot`。
 
 每位成员维护自己的模块 README，并记录输入、输出、时间窗口、参数和已知限制。C 整合海报，D 整合报告，各成员提交自己的方法、图表和解释；A 负责运行说明及最终打包。
 
