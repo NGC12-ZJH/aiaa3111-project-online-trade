@@ -1,9 +1,10 @@
-"""B 模块完整流程：RFM → 12 个候选 → 按规则选择 → 画像、随机分组、敏感性检查 → 写出文件。"""
+"""Task B workflow: RFM -> 12 candidates -> rule-based selection -> profile, random groups,
+sensitivity checks -> output files."""
 
 import json
 
 import matplotlib
-matplotlib.use("Agg")  # 无界面环境（WSL、服务器）下直接存图
+matplotlib.use("Agg")  # save figures without a display (WSL, servers)
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -21,12 +22,12 @@ def run(experiment, orders_path, root, bootstrap_repeats=None):
     method_args = {"n_init": cfg["n_init"], "score_bins": cfg["rfm_score_bins"]}
     repeats = bootstrap_repeats or cfg["bootstrap_repeats"]
 
-    # 第 1–2 步：RFM 与标准化特征（只用 Profile 期）
+    # Steps 1-2: RFM and standardized features (profile period only)
     rfm = build_rfm(load_profile_orders(orders_path), cutoff)
     X = feature_matrix(rfm)
     print(f"Profile customers: {len(rfm)}")
 
-    # 第 3–4 步：四种方法 × 候选 K，逐个计算证据
+    # Steps 3-4: evidence for every method x candidate k
     rows, labels_by_candidate = [], {}
     for method in cfg["candidate_methods"]:
         for k in cfg["candidate_k"]:
@@ -40,9 +41,9 @@ def run(experiment, orders_path, root, bootstrap_repeats=None):
     labels = labels_by_candidate[(method, k)]
     print(f"Selected: {method}, k={k}")
 
-    # 第 5 步：画像表与图
+    # Step 5: cluster profile table
     profile = cluster_profile(rfm, labels)
-    # 第 6 步：同规模随机分组（打乱真实标签 = 各组人数与真实分群完全相同）
+    # Step 6: size-matched random groups (shuffling the real labels keeps every group size identical)
     control = experiment["random_control"]
     random_groups = pd.concat(
         pd.DataFrame({
@@ -52,7 +53,7 @@ def run(experiment, orders_path, root, bootstrap_repeats=None):
         })
         for s in range(control["seed"], control["seed"] + control["repeats"])
     )
-    # 第 7 步：敏感性检查——换特征口径后与选中结果的一致度
+    # Step 7: sensitivity - agreement with the selected labels under alternative features
     variants = {"monetary_net": feature_matrix(rfm, monetary="monetary_net"),
                 "log_recency": feature_matrix(rfm, log_recency=True)}
     sensitivity = pd.DataFrame([
@@ -61,7 +62,8 @@ def run(experiment, orders_path, root, bootstrap_repeats=None):
         for name, Xv in variants.items()
     ])
 
-    # 第 8 步：写出。含顾客编号的文件放 data/processed/local/（不进 Git），汇总表和图进 results/
+    # Step 8: write outputs. Customer-level files go to data/processed/local/ (git-ignored);
+    # summary tables and figures go to results/
     local, tables, figures = (root / p for p in ("data/processed/local", "results/tables", "results/figures"))
     for folder in (local, tables, figures):
         folder.mkdir(parents=True, exist_ok=True)
@@ -83,7 +85,7 @@ def run(experiment, orders_path, root, bootstrap_repeats=None):
 
 
 def cluster_profile(rfm, labels):
-    """每群人数、占比、R/F/M 中位数和四分位数、平均购物篮大小、Profile 期购物篮数。"""
+    """Per cluster: size, share, R/F/M medians and quartiles, mean basket size, profile baskets."""
     grouped = rfm.groupby(labels)
     q = lambda p: (lambda s: s.quantile(p))
     profile = grouped.agg(
@@ -100,7 +102,7 @@ def cluster_profile(rfm, labels):
 
 
 def plot_profiles(rfm, labels, X, folder):
-    """两张图：各群 R/F/M 箱线图；各群标准化特征均值的“蛇形图”。"""
+    """Two figures: R/F/M box plots by cluster, and a snake plot of standardized cluster means."""
     groups = sorted(np.unique(labels))
     fig, axes = plt.subplots(1, 3, figsize=(12, 3.6))
     for ax, (column, title, log) in zip(axes, [("recency", "Recency (days)", False),
@@ -128,17 +130,19 @@ def plot_profiles(rfm, labels, X, folder):
 
 
 def plot_heatmap(rfm, labels, X, names, folder):
-    """命名用热力图：格子里写真实中位数，颜色表示比全体平均好还是差。
+    """Heatmap for naming clusters: cells show real medians, colour shows better or worse
+    than the customer average.
 
-    颜色 = 群均值的标准化分数（R 取反，使“来得近”也算好），截在 ±1.5；
-    红 = 低于平均，灰 = 接近平均，蓝 = 高于平均。平均购物篮大小不参与聚类，仅作参照。
+    Colour = cluster mean of the standardized score (R inverted so that recent counts as
+    better), clipped to +/-1.5: red = below average, grey = about average, blue = above.
+    Mean basket size is not a clustering feature and is shown for reference only.
     """
     from matplotlib.colors import LinearSegmentedColormap
 
     size_z = (rfm["mean_basket_size"] - rfm["mean_basket_size"].mean()) / rfm["mean_basket_size"].std()
     score = pd.DataFrame({"r": -X[:, 0], "f": X[:, 1], "m": X[:, 2], "s": size_z.to_numpy()}).groupby(labels).mean()
     median = rfm.groupby(labels)[["recency", "frequency", "monetary", "mean_basket_size"]].median()
-    groups = sorted(np.unique(labels), reverse=True)  # 高价值群放最上面
+    groups = sorted(np.unique(labels), reverse=True)  # highest-value cluster on top
     columns = ["Recency\n(days, lower = more recent)", "Frequency\n(orders)", "Monetary\n(GBP)",
                "Avg basket size\n(items, not clustered)"]
     formats = ["{:.0f}", "{:.0f}", "{:,.0f}", "{:.0f}"]
@@ -157,7 +161,7 @@ def plot_heatmap(rfm, labels, X, names, folder):
     ax.tick_params(which="both", length=0)
     ax.set_xticks(np.arange(-0.5, len(columns)), minor=True)
     ax.set_yticks(np.arange(-0.5, len(groups)), minor=True)
-    ax.grid(which="minor", color="white", linewidth=2)  # 格子之间留白
+    ax.grid(which="minor", color="white", linewidth=2)  # white gaps between cells
     for spine in ax.spines.values():
         spine.set_visible(False)
     bar = fig.colorbar(image, ax=ax, fraction=0.04, pad=0.02, ticks=[-1.5, 0, 1.5])

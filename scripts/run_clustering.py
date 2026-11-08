@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""运行 B 模块：Profile 期 RFM 分群比较、选择、随机分组与画像。
+"""Run task B: compare, select and profile RFM clusterings and build random control groups.
 
-用法（仓库根目录）：
+Usage (from the repository root):
     python scripts/run_clustering.py
-    python scripts/run_clustering.py --bootstrap-repeats 5   # 快速试跑
+    python scripts/run_clustering.py --bootstrap-repeats 5   # quick trial run
 """
 
 import argparse
@@ -20,10 +20,10 @@ from online_trade.clustering.pipeline import run  # noqa: E402
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--orders", type=Path, default=ROOT / "data/processed/orders.csv.gz",
-                        help="A 输出的订单表（默认 data/processed/orders.csv.gz）")
+                        help="orders table produced by task A")
     parser.add_argument("--config", type=Path, default=ROOT / "configs/experiment.json")
     parser.add_argument("--bootstrap-repeats", type=int, default=None,
-                        help="覆盖配置中的抽样次数，仅用于快速试跑")
+                        help="override the configured bootstrap repeats (quick trials only)")
     args = parser.parse_args()
 
     experiment = json.loads(args.config.read_text(encoding="utf-8"))
