@@ -74,6 +74,7 @@ def run(experiment, orders_path, root, bootstrap_repeats=None):
     profile.to_csv(tables / "clustering_profile.csv")
     sensitivity.to_csv(tables / "clustering_sensitivity.csv", index=False)
     plot_profiles(rfm, labels, X, figures)
+    plot_heatmap(rfm, labels, X, cfg.get("cluster_names", {}), figures)
     summary = {"selected_method": method, "selected_k": k, "fitted_until": cutoff,
                "n_customers": len(rfm), "bootstrap_repeats": repeats,
                "selection_rule": cfg["selection_rule"], "cluster_sizes": chosen["cluster_sizes"]}
@@ -123,4 +124,46 @@ def plot_profiles(rfm, labels, X, folder):
     ax.legend(fontsize=8)
     fig.tight_layout()
     fig.savefig(folder / "clustering_snake_plot.png", dpi=200)
+    plt.close(fig)
+
+
+def plot_heatmap(rfm, labels, X, names, folder):
+    """命名用热力图：格子里写真实中位数，颜色表示比全体平均好还是差。
+
+    颜色 = 群均值的标准化分数（R 取反，使“来得近”也算好），截在 ±1.5；
+    红 = 低于平均，灰 = 接近平均，蓝 = 高于平均。平均购物篮大小不参与聚类，仅作参照。
+    """
+    from matplotlib.colors import LinearSegmentedColormap
+
+    size_z = (rfm["mean_basket_size"] - rfm["mean_basket_size"].mean()) / rfm["mean_basket_size"].std()
+    score = pd.DataFrame({"r": -X[:, 0], "f": X[:, 1], "m": X[:, 2], "s": size_z.to_numpy()}).groupby(labels).mean()
+    median = rfm.groupby(labels)[["recency", "frequency", "monetary", "mean_basket_size"]].median()
+    groups = sorted(np.unique(labels), reverse=True)  # 高价值群放最上面
+    columns = ["Recency\n(days, lower = more recent)", "Frequency\n(orders)", "Monetary\n(GBP)",
+               "Avg basket size\n(items, not clustered)"]
+    formats = ["{:.0f}", "{:.0f}", "{:,.0f}", "{:.0f}"]
+
+    cmap = LinearSegmentedColormap.from_list("worse_better", ["#e34948", "#f0efec", "#2a78d6"])
+    fig, ax = plt.subplots(figsize=(8.4, 1.2 + 0.75 * len(groups)))
+    image = ax.imshow(score.loc[groups].to_numpy(), cmap=cmap, vmin=-1.5, vmax=1.5, aspect="auto")
+    for i, g in enumerate(groups):
+        for j, column in enumerate(median.columns):
+            z = score.loc[g].iloc[j]
+            ax.text(j, i, formats[j].format(median.loc[g, column]), ha="center", va="center",
+                    fontsize=11, color="white" if abs(z) > 1.0 else "#1a1a19")
+    ax.set_xticks(range(len(columns)), columns, fontsize=9)
+    ax.set_yticks(range(len(groups)),
+                  [f"C{g} {names.get(str(g), '')} (n={np.sum(labels == g)})".replace("  ", " ") for g in groups])
+    ax.tick_params(which="both", length=0)
+    ax.set_xticks(np.arange(-0.5, len(columns)), minor=True)
+    ax.set_yticks(np.arange(-0.5, len(groups)), minor=True)
+    ax.grid(which="minor", color="white", linewidth=2)  # 格子之间留白
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    bar = fig.colorbar(image, ax=ax, fraction=0.04, pad=0.02, ticks=[-1.5, 0, 1.5])
+    bar.ax.set_yticklabels(["Worse than\naverage", "Average", "Better than\naverage"], fontsize=8)
+    bar.outline.set_visible(False)
+    ax.set_title("Cluster profile: median values (cell text) vs. customer average (colour)", fontsize=10, loc="left")
+    fig.tight_layout()
+    fig.savefig(folder / "clustering_heatmap.png", dpi=200)
     plt.close(fig)
