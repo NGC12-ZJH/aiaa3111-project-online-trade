@@ -26,17 +26,17 @@ python3 scripts/run_all.py
 
 完整客户级文件不进入 `main`，已发布在禁止合并的
 [`a/online-retail-ii-data-snapshot`](https://github.com/NGC12-ZJH/aiaa3111-project-online-trade/tree/a/online-retail-ii-data-snapshot)
-分支，固定快照提交为 `ed1c57a0f3f974712bd80624ecbff51462585a39`。A 维护本清单，B/C/D 在使用前核对 SHA-256。B 的顾客级输出不发布，由各成员用同一配置运行 `scripts/run_clustering.py` 在本地生成；不同库版本下哈希可能不同，此时核对群规模（700 / 1,263 / 721）与 `results/tables/clustering_summary.json`。
+分支。快照按流程步骤分文件夹存放：A 的输出在 `data/processed/A_data_preparation/`（与快照提交 `ed1c57a0f3f974712bd80624ecbff51462585a39` 逐字节相同，2026-11-08 移入该文件夹），B 的输出在 `data/processed/B_customer_clustering/`；当前快照提交为 `2ae672b7ea6edb7f5e1561b6a64823004dea833e`。下载命令见快照分支的 `data/processed/README.md`。A 维护本清单，B/C/D 在使用前核对 SHA-256。B 的顾客级输出请直接使用快照中的冻结版本，不要用自己重跑的结果替代：不同库版本的 K-means 可能让少数边界顾客换群。
 
 | 文件及版本 | 用途 / 负责人 | 时间窗口 / 行数 / 字段 | 大小 / SHA-256 | 获取方式及本地相对路径 | 生成命令 / 代码版本 / 配置 |
 |---|---|---|---|---|---|
-| `clean_transactions.csv.gz` v1 | A：逐行追溯和敏感性 | 全部物理来源；1,067,371 行；完整字段见处理说明 | 26,635,161 B；`01c6a69702b675723d2d9489f5771a45ea047946875eaae699384298afc9599b` | 快照分支；`data/processed/clean_transactions.csv.gz` | `python3 scripts/run_all.py`；处理基线 `301875b`；`configs/data_processing.json` v1 |
-| `orders.csv.gz` v1 | B、D：RFM、金额、时期、资格和分母 | 四时期及 out-of-scope；53,628 行；键 `basket_id` | 1,266,845 B；`2ff8420a97ed2f89a303c57a6431590e130df35936ad143350adb40a5040d4c2` | 快照分支；`data/processed/orders.csv.gz` | 同上 |
-| `baskets.csv.gz` v1 | D：未来规则命中 | 39,516 个有效订单篮；JSON `items` | 2,772,853 B；`30aef702f812ab42224271871271daff5b4e37a594696eee82208252198367bf` | 快照分支；`data/processed/baskets.csv.gz` | 同上 |
-| `baskets_long.csv.gz` v1 | C：FP-Growth 和分群规则 | 992,036 个唯一订单—商品组合 | 3,977,938 B；`e95ae6da8b07677bdaf6ed2663c178ee44a6e9a1162a26eaa52cfeb62701f175` | 快照分支；`data/processed/baskets_long.csv.gz` | 同上 |
-| `run_manifest.json` v1 | A–D：全部输出清单、哈希和环境 | 20 个数据/审计输出的元数据 | 7,222 B；`fc26e9fe52cf62ca5853b028fc7aab78b06d4cd0d13e1ab01e7412dd4f81554e` | 快照分支；`data/processed/run_manifest.json` | 同上；绝对路径仅记录生成环境 |
-| `local/customer_clusters.csv` v1 | B → C、D：每名 Profile 顾客的群标签（K-means，K = 3） | Profile 期；2,684 行；`customer_id, cluster_id, recency, frequency, monetary, fitted_until, method, k` | 145,074 B；`fc3826532fde31491d6f76d1930629ce347719edd71114651ae162365c765bcf` | 不进 Git（含顾客编号）；本地 `data/processed/local/customer_clusters.csv` | `python scripts/run_clustering.py`；分支 `b/customer-clustering`；`configs/experiment.json` `clustering`（规则 2026-11-08 确认）；scikit-learn 1.9.1 |
-| `local/random_groups.csv` v1 | B → C、D：20 次同规模顾客级随机分组 | 2,684 × 20 = 53,680 行；`customer_id, random_group_id, seed`（种子 42–61） | 590,513 B；`f6004881ba824a3275ac5be018a3db5c5488800db444bdf96cef52e313a7c3aa` | 同上；本地 `data/processed/local/random_groups.csv` | 同上 |
+| `clean_transactions.csv.gz` v1 | A：逐行追溯和敏感性 | 全部物理来源；1,067,371 行；完整字段见处理说明 | 26,635,161 B；`01c6a69702b675723d2d9489f5771a45ea047946875eaae699384298afc9599b` | 快照分支；`data/processed/A_data_preparation/clean_transactions.csv.gz` | `python3 scripts/run_all.py`；处理基线 `301875b`；`configs/data_processing.json` v1 |
+| `orders.csv.gz` v1 | B、D：RFM、金额、时期、资格和分母 | 四时期及 out-of-scope；53,628 行；键 `basket_id` | 1,266,845 B；`2ff8420a97ed2f89a303c57a6431590e130df35936ad143350adb40a5040d4c2` | 快照分支；`data/processed/A_data_preparation/orders.csv.gz` | 同上 |
+| `baskets.csv.gz` v1 | D：未来规则命中 | 39,516 个有效订单篮；JSON `items` | 2,772,853 B；`30aef702f812ab42224271871271daff5b4e37a594696eee82208252198367bf` | 快照分支；`data/processed/A_data_preparation/baskets.csv.gz` | 同上 |
+| `baskets_long.csv.gz` v1 | C：FP-Growth 和分群规则 | 992,036 个唯一订单—商品组合 | 3,977,938 B；`e95ae6da8b07677bdaf6ed2663c178ee44a6e9a1162a26eaa52cfeb62701f175` | 快照分支；`data/processed/A_data_preparation/baskets_long.csv.gz` | 同上 |
+| `run_manifest.json` v1 | A–D：全部输出清单、哈希和环境 | 20 个数据/审计输出的元数据 | 7,222 B；`fc26e9fe52cf62ca5853b028fc7aab78b06d4cd0d13e1ab01e7412dd4f81554e` | 快照分支；`data/processed/A_data_preparation/run_manifest.json` | 同上；绝对路径仅记录生成环境 |
+| `local/customer_clusters.csv` v1 | B → C、D：每名 Profile 顾客的群标签（K-means，K = 3） | Profile 期；2,684 行；`customer_id, cluster_id, recency, frequency, monetary, fitted_until, method, k` | 145,074 B；`fc3826532fde31491d6f76d1930629ce347719edd71114651ae162365c765bcf` | 快照分支 `data/processed/B_customer_clustering/customer_clusters.csv`；本地放 `data/processed/local/customer_clusters.csv`（被忽略） | `python scripts/run_clustering.py`；分支 `b/customer-clustering`；`configs/experiment.json` `clustering`（规则 2026-11-08 确认）；scikit-learn 1.9.1 |
+| `local/random_groups.csv` v1 | B → C、D：20 次同规模顾客级随机分组 | 2,684 × 20 = 53,680 行；`customer_id, random_group_id, seed`（种子 42–61） | 590,513 B；`f6004881ba824a3275ac5be018a3db5c5488800db444bdf96cef52e313a7c3aa` | 快照分支 `data/processed/B_customer_clustering/random_groups.csv`；本地放 `data/processed/local/random_groups.csv`（被忽略） | 同上 |
 
 获取方式应写明“随仓库提供”，或实际外部下载位置和访问方式。外部文件统一放入约定的 `data/processed/local/` 路径，并在运行配置中引用；不要提交密码或临时访问令牌。小样本还需记录抽样方式与随机种子。四人获取后核对版本和校验值再接续实验。
 

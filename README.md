@@ -180,7 +180,7 @@ aiaa3111-project-online-trade/
 
 ### 数据清洗思路（摘要）
 
-本节概括 [详细数据处理说明](docs/data_processing_guide.md)，数字来自已发布快照的审计表（`data/processed/audit_summary.csv`、`exclusion_summary.csv`）。
+本节概括 [详细数据处理说明](docs/data_processing_guide.md)，数字来自已发布快照的审计表（快照分支 `data/processed/A_data_preparation/audit_summary.csv`、`exclusion_summary.csv`）。
 
 **核心原则：不删数据，只打标签。** 每一条原始明细都保留在 `clean_transactions.csv.gz` 中，并带有问题标记和 `primary_exclusion_reason`；标记决定它能否进入订单金额、购物篮和实验。因此任何汇总数字都能追溯到工作表和行号。清洗口径依据业务含义和审计证据确定，不依据聚类分数、规则覆盖率或 Test 表现调整。
 
@@ -245,7 +245,14 @@ python3 scripts/run_all.py
 
 ### 运行
 
-先准备 A 的订单表 `data/processed/orders.csv.gz`（运行 `python3 scripts/run_all.py`，或从快照分支取出），然后在仓库根目录执行：
+先准备 A 的订单表 `data/processed/orders.csv.gz`：运行 `python3 scripts/run_all.py`，或从快照分支取出：
+
+```bash
+git fetch origin a/online-retail-ii-data-snapshot
+git show origin/a/online-retail-ii-data-snapshot:data/processed/A_data_preparation/orders.csv.gz > data/processed/orders.csv.gz
+```
+
+然后在仓库根目录执行：
 
 ```bash
 python scripts/run_clustering.py                        # 完整运行，约 1 分钟
@@ -265,7 +272,7 @@ python scripts/run_clustering.py --bootstrap-repeats 5  # 快速试跑，不用�
 | 5 画像 | 各群人数、R/F/M 分位数、平均购物篮大小；箱线图、蛇形图、热力图 | `pipeline.py` | 画像表、3 张图 |
 | 6 随机对照 | 把选中的群标签随机打乱 20 次（种子 42–61），各组人数与真实分群完全相同，以顾客为单位 | `pipeline.py` | 随机分组长表 |
 | 7 敏感性检查 | M 改用净额、R 改用 `log1p`，与选中结果比较 ARI | `pipeline.py` | 敏感性表 |
-| 8 写出 | 含顾客编号的文件写入 `data/processed/local/`（不进 Git），汇总表和图写入 `results/` | `pipeline.py` | 见“输出文件” |
+| 8 写出 | 含顾客编号的文件写入 `data/processed/local/`（不进功能分支，冻结版本发布到快照分支），汇总表和图写入 `results/` | `pipeline.py` | 见“输出文件” |
 
 **为什么这样处理特征**
 
@@ -351,6 +358,17 @@ R 的处理方式是本模块最重要的建模选择。团队决定使用原始
 
 ### 交给 C、D 的信息
 
+- 冻结的 `customer_clusters.csv` 和 `random_groups.csv` 发布在快照分支 `a/online-retail-ii-data-snapshot` 的 `data/processed/B_customer_clustering/`，取出后放到本地 `data/processed/local/`：
+
+  ```bash
+  git fetch origin a/online-retail-ii-data-snapshot
+  S=origin/a/online-retail-ii-data-snapshot
+  mkdir -p data/processed/local
+  git show $S:data/processed/B_customer_clustering/customer_clusters.csv > data/processed/local/customer_clusters.csv
+  git show $S:data/processed/B_customer_clustering/random_groups.csv > data/processed/local/random_groups.csv
+  ```
+
+  请使用这份冻结版本，不要用自己重跑的结果替代：不同库版本的 K-means 可能让少数边界顾客换群。重跑只用于复现检查（群规模应为 700 / 1,263 / 721）。
 - 用 `customer_clusters.csv` 的 `customer_id → cluster_id` 把购物篮分到各群；随机组用 `random_groups.csv` 中对应 `seed` 的 `random_group_id`。
 - 冻结后各群在后续时期的主比较购物篮数如下（仅供规划样本量，未参与分群选择）：
 
@@ -378,8 +396,8 @@ R 的处理方式是本模块最重要的建模选择。团队决定使用原始
 | `results/tables/clustering_sensitivity.csv` | 敏感性检查 | 是 |
 | `results/tables/clustering_summary.json` | 选中方法、K、规则、群规模 | 是 |
 | `results/figures/clustering_heatmap.png`、`clustering_rfm_boxplots.png`、`clustering_snake_plot.png` | 画像图 | 是 |
-| `data/processed/local/customer_clusters.csv` | 每名顾客的群标签与 R、F、M（2,684 行） | 否，含顾客编号；运行脚本即可重新生成，校验值见 `data/processed/README.md` |
-| `data/processed/local/random_groups.csv` | 20 套随机分组长表（53,680 行） | 否，同上 |
+| `data/processed/local/customer_clusters.csv` | 每名顾客的群标签与 R、F、M（2,684 行） | 不进功能分支（含顾客编号）；冻结版本在快照分支 `data/processed/B_customer_clustering/`，校验值见 `data/processed/README.md` |
+| `data/processed/local/random_groups.csv` | 20 套随机分组长表（53,680 行） | 同上 |
 
 代码结构与字段说明见 [`src/online_trade/clustering/README.md`](src/online_trade/clustering/README.md)。
 
@@ -393,7 +411,7 @@ R 的处理方式是本模块最重要的建模选择。团队决定使用原始
 |---|---|---|---|
 | 原始完整数据及下载压缩包 | `data/raw/` | 不进入 `main`；已放入专用快照分支 | 从 UCI 下载或从 `a/online-retail-ii-data-snapshot` 获取，并核对 A 记录的校验值 |
 | 可重新生成的清洗中间文件 | `data/interim/` | 否；仅目录说明和占位文件保留 | 使用同一原始数据、代码及配置重新生成 |
-| 检查后的最终订单、购物篮和切分说明 | `data/processed/` | 完整客户级文件不进入 `main`；已放入专用快照分支 | 从 `a/online-retail-ii-data-snapshot` 获取并核对 manifest；也可按配置重跑 |
+| 检查后的最终订单、购物篮和切分说明 | `data/processed/` | 完整客户级文件不进入 `main`；已放入专用快照分支 | 从 `a/online-retail-ii-data-snapshot` 的 `data/processed/A_data_preparation/`（A）、`B_customer_clustering/`（B）获取并核对校验值；A 的输出也可按配置重跑 |
 | 用于演示和检查的小样本 | `data/processed/sample_*.csv` 等 | 可以；与最终数据使用相同的格式规则 | 从仓库拉取；明确样本生成方式与随机种子，不能当作完整实验数据 |
 | 尚未检查、包含不宜共享字段或不适合进入 Git 的大文件 | `data/processed/local/` | 否；该目录内所有内容均忽略 | 本地生成，或从团队约定的共享位置下载 |
 | 可分享的汇总结果和图表 | `results/tables/`、`results/figures/` | 可以，通常使用 CSV、PNG、PDF 等；Parquet 的例外仅限 `data/processed/` | 从仓库拉取 |

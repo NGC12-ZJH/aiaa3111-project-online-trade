@@ -8,7 +8,7 @@
 
 ## 运行
 
-先准备 A 的订单表 `data/processed/orders.csv.gz`（运行 `python3 scripts/run_all.py`，或从 `a/online-retail-ii-data-snapshot` 分支取出），然后在仓库根目录执行：
+先准备 A 的订单表 `data/processed/orders.csv.gz`（运行 `python3 scripts/run_all.py`，或从 `a/online-retail-ii-data-snapshot` 分支的 `data/processed/A_data_preparation/orders.csv.gz` 取出），然后在仓库根目录执行：
 
 ```bash
 python scripts/run_clustering.py                        # 完整运行，约 1 分钟
@@ -45,8 +45,8 @@ python scripts/run_clustering.py --bootstrap-repeats 5  # 快速试跑
 
 | 文件 | 内容 | 是否进 Git |
 |---|---|---|
-| `data/processed/local/customer_clusters.csv` | `customer_id, cluster_id, recency, frequency, monetary, fitted_until, method, k` | 否（含顾客编号） |
-| `data/processed/local/random_groups.csv` | `customer_id, random_group_id, seed`，20 个种子的长表 | 否（含顾客编号） |
+| `data/processed/local/customer_clusters.csv` | `customer_id, cluster_id, recency, frequency, monetary, fitted_until, method, k` | 不进功能分支；冻结版本在快照分支 `data/processed/B_customer_clustering/` |
+| `data/processed/local/random_groups.csv` | `customer_id, random_group_id, seed`，20 个种子的长表 | 同上 |
 | `results/tables/clustering_candidates.csv` | 12 个候选的四项证据、是否合格、是否选中 | 是 |
 | `results/tables/clustering_profile.csv` | 选中分群的人数、R/F/M 分位数、平均购物篮大小、Profile 购物篮数 | 是 |
 | `results/tables/clustering_sensitivity.csv` | 净额、`log(R)` 口径下与选中结果的 ARI | 是 |
