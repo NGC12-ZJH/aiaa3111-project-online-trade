@@ -1,0 +1,4 @@
+cluster_id,customers,share,recency_median,recency_q1,recency_q3,frequency_median,frequency_q3,monetary_median,monetary_q1,monetary_q3,mean_basket_size,profile_baskets
+0,700,0.26,125.47,104.5,168.35,1.0,1.0,266.23,149.93,393.16,19.39,869
+1,1263,0.47,36.51,19.6,62.47,1.0,2.0,420.58,247.18,691.18,21.42,2058
+2,721,0.27,19.59,7.55,36.55,5.0,7.0,1783.01,1156.04,2953.0,22.81,4811

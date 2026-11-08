@@ -1,0 +1,3 @@
+variant,method,k,ari_vs_selected
+monetary_net,kmeans,3,0.9592
+log_recency,kmeans,3,0.3551

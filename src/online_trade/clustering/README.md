@@ -1,5 +1,7 @@
 # B 顾客分群与对照分组
 
+结果解读与完整流程说明见根目录 [README](../../../README.md#顾客分群b)。
+
 负责人：Jinghan ZHAO（zhaojinghan06@gmail.com）
 
 在 Profile 期（`[2009-12-01, 2010-06-01)`）的 RFM 特征上比较 K-means、高斯混合（GMM）、层次聚类（Ward）和 RFM 分档打分四种方法，各取 K = 3、4、5，按预先约定的规则选出一个分群并冻结；再生成 20 次同规模的顾客级随机分组作为对照。只使用 Profile 期数据。
@@ -45,12 +47,12 @@ python scripts/run_clustering.py --bootstrap-repeats 5  # 快速试跑
 |---|---|---|
 | `data/processed/local/customer_clusters.csv` | `customer_id, cluster_id, recency, frequency, monetary, fitted_until, method, k` | 否（含顾客编号） |
 | `data/processed/local/random_groups.csv` | `customer_id, random_group_id, seed`，20 个种子的长表 | 否（含顾客编号） |
-| `results/tables/clustering_candidates.csv` | 12 个候选的四项证据、是否合格、是否选中 | 冻结后提交 |
-| `results/tables/clustering_profile.csv` | 选中分群的人数、R/F/M 分位数、平均购物篮大小、Profile 购物篮数 | 冻结后提交 |
-| `results/tables/clustering_sensitivity.csv` | 净额、`log(R)` 口径下与选中结果的 ARI | 冻结后提交 |
-| `results/tables/clustering_summary.json` | 选中方法、K、规则与群规模 | 冻结后提交 |
-| `results/figures/clustering_rfm_boxplots.png`、`clustering_snake_plot.png` | 群画像图 | 冻结后提交 |
-| `results/figures/clustering_heatmap.png` | 命名用热力图：格内为中位数，颜色为相对全体平均的好坏（红差、灰平均、蓝好；R 已取反） | 冻结后提交 |
+| `results/tables/clustering_candidates.csv` | 12 个候选的四项证据、是否合格、是否选中 | 是 |
+| `results/tables/clustering_profile.csv` | 选中分群的人数、R/F/M 分位数、平均购物篮大小、Profile 购物篮数 | 是 |
+| `results/tables/clustering_sensitivity.csv` | 净额、`log(R)` 口径下与选中结果的 ARI | 是 |
+| `results/tables/clustering_summary.json` | 选中方法、K、规则与群规模 | 是 |
+| `results/figures/clustering_rfm_boxplots.png`、`clustering_snake_plot.png` | 群画像图 | 是 |
+| `results/figures/clustering_heatmap.png` | 命名用热力图：格内为中位数，颜色为相对全体平均的好坏（红差、灰平均、蓝好；R 已取反） | 是 |
 
 群号 0 为最低价值群，数字越大价值越高。随机分组通过打乱真实群标签生成，因此每个种子下各组人数与真实分群完全相同。
 
