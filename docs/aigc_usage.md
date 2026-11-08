@@ -7,3 +7,7 @@
 使用 Codex 协助对照仓库协议，检查 UCI Online Retail II 工作簿结构，识别并验证两张表在 2010-12-01 至 2010-12-09 的完整重叠，起草四时期配置、处理代码、审计输出和自动验证，并执行全量金额、购物篮、时间冲突及重复运行哈希检查。
 
 人工仍需复核非商品编码业务含义，确认 K、支持度、置信度和总规则预算，并检查 B、C、D 是否遵守时期边界和共同评价对象。生成式模型没有推断或修改原始交易值；清洗标记、金额、订单和购物篮均由版本化配置与确定性 Python 代码生成。
+
+## 2026-11-08 README 进度汇报与清洗说明摘要
+
+使用 Claude 根据 `docs/data_processing_guide.md` 与快照分支的审计表（`audit_summary.csv`、`exclusion_summary.csv`、`four_period_retention_summary.csv`、`period_eligibility_summary.csv`）起草 README 中的进度汇报和数据清洗摘要，数字直接取自审计表。同日由 Claude 在 Profile 期 RFM 特征上做过探索性试跑，用于讨论分群方案，其数字不是正式结果，未写入 README。成员需核对摘要表述与 A 的实现一致。
