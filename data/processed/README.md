@@ -1,34 +1,42 @@
-# data/processed
+# data/processed（数据快照：各步骤交付物）
 
-Online Retail II 四时期流程直接在本目录生成本地输出。运行：
+本分支 `a/online-retail-ii-data-snapshot` 只用于分发数据，**禁止合并到 `main`，也不能作为 PR 来源**。代码改动仍走各成员的功能分支和 PR。
+
+每一步的交付物放在各自的文件夹中，按流程顺序：
+
+| 步骤 | 文件夹 | 负责人 | 交付内容 | 下游使用者 |
+|---|---|---|---|---|
+| 1 数据清洗与四时期切分 | [`A_data_preparation/`](A_data_preparation/) | A · Qingyang LI | 逐行清洗明细、订单表、购物篮、订单—商品长表、全部审计表、运行清单 | B（订单表算 RFM）、C（长表挖规则）、D（订单表与购物篮做评价） |
+| 2 顾客分群与随机对照 | [`B_customer_clustering/`](B_customer_clustering/) | B · Jinghan ZHAO | 冻结的顾客群标签（K-means，K = 3）、20 次同规模随机分组、选择摘要 | C（按群/随机组挖规则）、D（真实分群与随机分组对照） |
+| 3 规则挖掘 | 待添加（`C_pattern_mining/`） | C · Anqi ZHAO | — | D |
+| 4 评价 | 待添加（`D_evaluation/`） | D · Chenrui XIANG | — | 报告与海报 |
+
+原始工作簿在 `data/raw/online_retail_II.xlsx`。每个文件夹内的 README 记录文件清单、行数、SHA-256、生成命令和代码版本；下载后先核对校验值。
+
+## 获取方式
+
+不必检出整个分支，用 `git show` 取出需要的文件即可（在你自己的仓库根目录执行）：
 
 ```bash
-python3 scripts/run_all.py
+git fetch origin a/online-retail-ii-data-snapshot
+S=origin/a/online-retail-ii-data-snapshot
+
+# A 的订单表 → B 运行 run_clustering.py 的默认输入位置
+git show $S:data/processed/A_data_preparation/orders.csv.gz > data/processed/orders.csv.gz
+
+# B 的群标签和随机分组 → C、D 的本地位置（被 .gitignore 忽略）
+mkdir -p data/processed/local
+git show $S:data/processed/B_customer_clustering/customer_clusters.csv > data/processed/local/customer_clusters.csv
+git show $S:data/processed/B_customer_clustering/random_groups.csv > data/processed/local/random_groups.csv
+
+sha256sum data/processed/orders.csv.gz data/processed/local/*.csv   # 与各文件夹 README 中的值核对
 ```
 
-当前主交接接口：
+`.csv.gz` 文件和 `data/processed/local/` 都被 `.gitignore` 忽略，取出后不会被误提交到功能分支。
 
-| 文件 | 粒度 | 使用者 | 用途 |
-|---|---|---|---|
-| `clean_transactions.csv.gz` | 一行一个物理来源明细 | A | 清洗、重叠和敏感性追溯 |
-| `orders.csv.gz` | 一行一个规范订单 | B、D | RFM、金额、时期、资格、评价分母 |
-| `baskets.csv.gz` | 一行一个有效订单购物篮 | D | 判断规则前件和后件命中 |
-| `baskets_long.csv.gz` | 一行一个订单—商品 | C | FP-Growth 和分群购物篮 |
+## 版本说明
 
-完整字段、审计文件和 A–D 使用边界见
-[数据处理与交接说明](../../docs/data_processing_guide.md)。完整文件哈希、大小和行数见每次运行生成的 `run_manifest.json`。
+- `A_data_preparation/` 中的文件与快照提交 `ed1c57a0f3f974712bd80624ecbff51462585a39` 逐字节相同，2026-11-08 只移动了位置。
+- `B_customer_clustering/` 于 2026-11-08 加入。
 
-保存供 A–D 交接的购物篮、特征、群标签和时间切分说明。经检查的 `.csv`、`.json`、`.jsonl`、`.parquet` 可选择性提交；小样本使用 `sample_` 前缀，直接放在本目录。规则也适用于子目录。其他数据格式默认忽略。
-
-未检查、私密或通过外部共享位置分发的大文件放在 `local/` 子目录，该目录内全部内容被忽略。先在此生成并核查，再把确认可共享的交接文件放到本目录。数据许可、字段、大小与跨文件关联键应由交付人核对。
-
-## 数据交接清单
-
-完整客户级文件目前不随 Git 发布，外部共享位置尚未配置。A 维护清单，B/C 补充各自产物；每次正式交付添加一条真实记录，不把下列模板当作已完成的数据。
-
-| 文件及版本 | 用途 / 负责人 | 时间窗口 / 行数 / 字段 | 大小 / SHA-256 | 获取方式及本地相对路径 | 生成命令 / 代码版本 / 配置 |
-|---|---|---|---|---|---|
-
-获取方式应写明“随仓库提供”，或实际外部下载位置和访问方式。外部文件统一放入约定的 `data/processed/local/` 路径，并在运行配置中引用；不要提交密码或临时访问令牌。小样本还需记录抽样方式与随机种子。四人获取后核对版本和校验值再接续实验。
-
-完整存放规则见[根目录 README](../../README.md#数据存放与四人交接)，交接字段见[模块协议](../../docs/data_contract.md)。
+完整存放规则见 `main` 分支根目录 README，交接字段见 `docs/data_contract.md`。
