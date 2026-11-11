@@ -1,0 +1,7 @@
+definition,customer_type,baskets,items_median,series_median,largest_series_share_median,items_with_same_series_partner,single_series_baskets
+broad,bulk (median qty/line >= 12),3205,10.0,4.0,0.5,0.601,0.213
+broad,middle,3139,17.0,7.0,0.444,0.699,0.097
+broad,small (<= 2),1177,27.0,10.0,0.421,0.682,0.084
+strict,bulk (median qty/line >= 12),3205,10.0,9.0,0.167,0.114,0.152
+strict,middle,3139,17.0,16.0,0.111,0.137,0.062
+strict,small (<= 2),1177,27.0,25.0,0.077,0.125,0.067

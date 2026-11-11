@@ -11,3 +11,9 @@
 ## 2026-11-08 README 进度汇报与清洗说明摘要
 
 使用 Claude 根据 `docs/data_processing_guide.md` 与快照分支的审计表（`audit_summary.csv`、`exclusion_summary.csv`、`four_period_retention_summary.csv`、`period_eligibility_summary.csv`）起草 README 中的进度汇报和数据清洗摘要，数字直接取自审计表。同日由 Claude 在 Profile 期 RFM 特征上做过探索性试跑，用于讨论分群方案，其数字不是正式结果，未写入 README。成员需核对摘要表述与 A 的实现一致。
+
+## 2026-11-11 至 11-12 商品品类层级 taxonomy_v0（B）
+
+使用 Claude 协助：检查 C 的商品层规则构成与订单商品构成；查阅并总结 Gholamian et al. (2024) 的 LLM 商品分类方法；编写 `experiments/b_taxonomy/` 的脚本；根据文本聚类样例起草 `rules_v0.py` 的 53 条关键词规则与类别命名；运行品类层 G/L/R 探索并起草 `docs/taxonomy_v0.md` 与 README 中的修改方案。
+
+所有数字由确定性 Python 代码从固定提交的 A/B 快照与 C 规则证据计算，未读取 Test 期数据。v0 的分类规则和类别命名由 AI 起草，尚无人工金标准；组员需复核规则、类别边界和结论表述。后续 LLM 标注将作为研究方法写入报告方法部分，与此处的写作和编程辅助分开披露。

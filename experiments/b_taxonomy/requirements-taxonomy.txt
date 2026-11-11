@@ -1,0 +1,6 @@
+# Tested versions for experiments/b_taxonomy (taxonomy_v0), CPU only.
+numpy==2.4.4
+pandas==3.0.2
+scikit-learn==1.8.0
+torch==2.12.1
+transformers==5.13.1
