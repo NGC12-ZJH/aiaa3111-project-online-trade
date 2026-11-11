@@ -120,6 +120,75 @@ FP-Growth运行64次：G一次、L三个真实群、R二十个seed（42–61）�
 
 图6：按发现期支持度差探索性选择的案例。高金额是事后按整单金额筛选；不能把规则匹配订单的金额解释为规则创造的收入。
 
+### 6. 分析1–3：群间相似度、共同池强度与群外代表规则
+
+**分析1：Top10/Top20 Jaccard。** 先按商品并集去重，再按该组合排名最高的合格方向规则排序（联合次数、confidence、lift降序，rule_id升序），取K个不同组合。不是系统总预算实验。C2与全局Top10共享9个组合，Jaccard=9/11=0.818；Top20共享15个，Jaccard=15/25=0.600。C0与全局分别0.250/0.333，C1分别0.429/0.481。Jaccard不是简单的交集/K，结论受K和并列排序影响。
+
+![Top-K商品组合Jaccard](../experiments/c_pattern/pattern_similarity/01_jaccard.png)
+
+**分析2：共同池support向量差异。** 将同商品并集的方向规则合并，二商品2134个、三商品2326个分别比较。使用每群实际support，包括未过该群筛选门槛的候选；无实际出现才填0。Bray–Curtis=Σ|s−t|/Σ(s+t)，越大差异越大。C0–C1二/三商品差异0.192/0.214；C0–C2为0.266/0.571；C1–C2为0.265/0.566。因此广泛支持度分布中C0与C1更接近，不能只看热门榜单。G包含自身，且受C2的60.5%订单权重影响，不是独立参照。
+
+![共同池support差异](../experiments/c_pattern/pattern_similarity/02_support_distance.png)
+
+**分析3：群vs群外代表规则。** 每群选择support正差最大的3个不同组合及负差最大的1个反例，保留代表方向；附前件、联合、群内外篮数与support/confidence。规则有差异不等于更有用，也不代表显著性。[代表规则完整计数](../experiments/c_pattern/pattern_similarity/representative_rules.csv)；[完整分析报告](../experiments/c_pattern/pattern_similarity/群体相似度分析.html)。
+
+![代表组合各群support](../experiments/c_pattern/pattern_similarity/03_case_support.png)
+
+### 7. 分析4：20个随机分组的差异对照
+
+每个seed先对3个组对等权平均，或对3个“组vs群外”指标等权平均，再得到20个随机汇总值；**不能把60个组对当作独立样本**。Top-K、候选池、门槛和真实组采用同一政策。下表所有指标越大表示差异越大，Jaccard这里换算为1−J。
+
+|指标|真实分群|随机中位数|随机最小–最大|真实值高于的随机结果数|
+|---|---|---|---|---|
+|Top10组间平均Jaccard差异|0.7467|0.6427|0.4872–0.7613|19/20|
+|Top20组间平均Jaccard差异|0.7214|0.6449|0.5238–0.7440|18/20|
+|二商品组间Bray–Curtis|0.2409|0.2301|0.1897–0.2403|20/20|
+|三商品组间Bray–Curtis|0.4505|0.4921|0.3955–0.5291|5/20|
+|二商品组vs群外Bray–Curtis|0.2376|0.2046|0.1754–0.2135|20/20|
+|三商品组vs群外Bray–Curtis|0.5250|0.5151|0.4346–0.5436|16/20|
+|二商品组vs群外support绝对差（百分点）|0.3594|0.3345|0.2771–0.3491|20/20|
+|三商品组vs群外support绝对差（百分点）|0.3943|0.5165|0.3612–0.5561|3/20|
+
+![组间差异与随机对照](../experiments/c_pattern/random_similarity/01_between_groups.png)
+
+![各组与群外差异的随机对照](../experiments/c_pattern/random_similarity/02_group_vs_rest.png)
+
+**保留负面结果：三商品的组间差异没有一致超过随机分组。** 真实三商品组间Bray–Curtis低于随机中位数；群外相对距离虽略高于中位数，绝对support差反而较低。二商品存在较强差异迹象，但组间0.2409仅略高于随机最大0.2403，不能只强调“超过全部20次”而忽略幅度。
+
+这不是正式显著性检验：共同池由真实组及这些随机组共同生成并固定，只有20个种子，多个指标无多重检验处理。随机分组保持Profile组人数，不匹配Discovery订单数、活跃度、篮子大小和商品边际频率。无p值、无置信区间，不据此宣称独特偏好或未来优势。[每种子的指标](../experiments/c_pattern/random_similarity/seed_level_metrics.csv)；[各组对明细](../experiments/c_pattern/random_similarity/pair_and_group_details.csv)。
+
+### 8. 二商品与三商品规则：分开统计、排名和解释
+
+一直挖掘最长3商品项集；二商品生成A→B，三商品生成{A,B}→C，后件始终为1商品，不生成A→{B,C}。之前案例偏二商品，原因是按联合次数优先排序，子集出现次数不低于超集，正反规则也占据展示名额。现在分长度列榜，避免用二商品案例代表全部结果。
+
+|范围|二商品合格方向规则|二商品不同集合|三商品合格方向规则|三商品不同集合|
+|---|---|---|---|---|
+|G|720|419|396|132|
+|C0|43|22|3|1|
+|C1|633|367|210|70|
+|C2|900|555|690|230|
+
+[分长度G/L Top10榜单与详细案例（Markdown）](../experiments/c_pattern/pattern_length_analysis/按长度规则榜单与三商品案例.md)包含每张榜的商品名称、计数、support/confidence/lift。[全部64个范围分长度Top50](../experiments/c_pattern/pattern_length_analysis/top50_by_scope_length.csv)按method/seed/group_id/length过滤，rank_within_length<=10或20即可取Top10/20。[全部范围计数](../experiments/c_pattern/pattern_length_analysis/counts_by_scope_length.csv)含20个随机种子。C0三商品只有3条，不能补齐Top10。这里是方向规则排行榜，不是Top-K不同组合或系统总预算结果。
+
+### 9. 三商品案例及单前件对照
+
+检验{A,B}→C是否有增量，比较其confidence与A→C、B→C中的较大值。两个单前件均从原Discovery篮子直接计数，即使它们未通过筛选也保留。增量是探索性条件关联，不是因果提升；联合事件更少、分母不同，仍需未来验证。
+
+|群|前件 → 后件|群内联合/前件|群内/群外support|三商品confidence|较强单前件confidence|增量（百分点）|
+|---|---|---|---|---|---|---|
+|C0|POPPY'S PLAYHOUSE BEDROOM + POPPY'S PLAYHOUSE LIVINGROOM → POPPY'S PLAYHOUSE KITCHEN|20/22|2.50% / 1.41%|90.91%|93.10%|-2.19|
+|C0|POPPY'S PLAYHOUSE LIVINGROOM + POPPY'S PLAYHOUSE KITCHEN → POPPY'S PLAYHOUSE BEDROOM|20/27|2.50% / 1.41%|74.07%|75.86%|-1.79|
+|C1|FELTCRAFT 6 FLOWER FRIENDS + FELTCRAFT CUSHION BUTTERFLY → FELTCRAFT CUSHION RABBIT|26/33|1.20% / 0.32%|78.79%|73.49%|+5.29|
+|C1|FELTCRAFT BUTTERFLY HEARTS + FELTCRAFT CUSHION BUTTERFLY → FELTCRAFT CUSHION RABBIT|26/29|1.20% / 0.43%|89.66%|73.49%|+16.16|
+|C1|HEART OF WICKER SMALL + HEART OF WICKER LARGE → WHITE HANGING HEART T-LIGHT HOLDER|40/91|1.84% / 1.31%|43.96%|46.56%|-2.60|
+|C2|JUMBO STORAGE BAG SUKI + JUMBO BAG PINK WITH WHITE SPOTS → JUMBO BAG RED RETROSPOT|94/137|2.07% / 0.74%|68.61%|61.42%|+7.19|
+|C2|WOODEN PICTURE FRAME WHITE FINISH + WOOD 2 DRAWER CABINET WHITE FINISH → WOOD S/3 CABINET ANT WHITE FINISH|82/99|1.80% / 0.57%|82.83%|66.30%|+16.52|
+|C2|LUNCH BAG PINK RETROSPOT + JUMBO BAG PINK WITH WHITE SPOTS → LUNCH BAG RED SPOTTY|68/106|1.50% / 0.84%|64.15%|64.38%|-0.23|
+
+C0唯一三商品集合为玩具屋卧室/客厅/厨房。卧室+客厅→厨房confidence为90.91%，低于较强单前件93.10%，不能说额外前件提供增量。C1部分毛毡组合、C2部分袋类/白色木质家居组合显示正增量，同时每群保留无增量反例。案例按群内外support差选择，不只挑增量最大的规则。
+
+[完整G/L三商品与两个单前件逐条对照](../experiments/c_pattern/pattern_length_analysis/triple_vs_single_all_GL.csv)含双方单前件次数及联合次数。[案例表](../experiments/c_pattern/pattern_length_analysis/triple_cases.csv)和上述Markdown附录同时提供群外篮数/前件数/联合数、两个单前件编码与confidence。C0只一个集合，正差案例与无增量反例可能是同集合不同方向，不能当作独立证据。
+
 ## 二、进一步研究方向
 
 ### 1. 优先与D完成Validation评价
@@ -172,11 +241,16 @@ python -m venv .venv-c
 .venv-c/Scripts/python.exe experiments/c_pattern/export_top_rules.py
 .venv-c/Scripts/python.exe experiments/c_pattern/high_value_patterns.py
 .venv-c/Scripts/python.exe experiments/c_pattern/report_high_value.py
+.venv-c/Scripts/python.exe experiments/c_pattern/compare_group_patterns.py
+.venv-c/Scripts/python.exe experiments/c_pattern/compare_random_similarity.py
+.venv-c/Scripts/python.exe experiments/c_pattern/analyze_pattern_lengths.py
 ```
 
 prepare_inputs从固定Git快照提取A购物篮/订单、B标签，并构造Discovery矩阵；报告中文字体依赖Microsoft YaHei。benchmark会再次生成相同编码输入并运行对照；可直接跳到pattern_mining以跳过耗时对照。脚本会覆盖实验输出，重跑前请备份或使用独立checkout。参数集中在pattern_mining.py的CFG；其他分析脚本目前有固定数据量检查和少量显示文字，变更数据/阈值须同步检查，不能声称是任意数据通用工具。
 
 可选从原始Excel重跑A的完整清洗与验证，请按主仓库文档操作；audit_data.py针对本实验processed目录运行审计。prepared快照仅按核心哈希核验，不替代A的全部审计。
+
+新增相似度检查：Top-K集合大小、距离矩阵对称性、重复并集support一致、全局support等于群体加权平均均通过；随机真实值复现上一轮分析，各指标保留20个种子；三商品G/L规则逐条重算前件与联合计数，单前件从输入独立计数。
 
 ## 五、已执行验证与限制
 

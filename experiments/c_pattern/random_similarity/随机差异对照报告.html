@@ -1,0 +1,105 @@
+<meta charset="utf-8"><style>body{font:16px Microsoft YaHei;max-width:1250px;margin:32px auto;color:#24384f;line-height:1.7}table{border-collapse:collapse;font-size:13px}td,th{padding:10px;border-bottom:1px solid #ccd4df}img{width:100%}</style><h1>随机分组：群体差异对照</h1><p>沿用既有20个seed（42–61），顾客级置换保持Profile组人数，所有方法使用同一7521个Discovery购物篮。Top-K先合并商品并集，再按最佳合格方向规则排序；K=10/20。共同池包含2134个二商品组合、2326个三商品组合，使用实际support，不把未过门槛者置零。</p><p>每个种子先对3个组对等权平均：Jaccard差异=1-J，Bray–Curtis为支持度向量距离；组vs群外先分别计算，再对3组等权平均。平均绝对支持度差以百分点表示。20个种子构成20个随机汇总值，不把60个组对当作独立样本。明细保留，未按结果挑种子。</p><h2>当前结论</h2><p>热门榜单：真实Top10平均Jaccard差异0.747，高于19/20随机结果；Top20为0.721，高于18/20。它们位于随机结果较高端，但仍在随机最小–最大范围内。</p><p>二商品：组间平均Bray–Curtis为0.2409，略高于随机最大0.2403；组vs群外平均Bray–Curtis为0.2376，高于随机最大0.2135。两种指标均高于这20个随机结果，但幅度不同。</p><p>三商品：组间平均差异0.4505，低于随机中位0.4921；组vs群外相对差异略高于随机中位，但仍在随机范围内，绝对support差反而较低。因此不能笼统宣称真实分群比随机分组更独特。</p><p>建议汇报：RFM真实分群在当前二商品共购及热门榜单层面呈现较强差异迹象，但证据不跨所有模式长度和指标一致；需进一步检查订单规模、活跃度与Validation保持。</p><h2>解释边界</h2><ul><li>共同池由真实及这些随机组共同产生并固定，比较是条件于该候选池的探索性诊断，不是完整重抽样的正式置换检验。多个指标无多重检验处理，因此不报告显著性p值。</li><li>随机标签匹配Profile顾客组人数，不匹配Discovery各组订单数、活跃度、篮子大小及商品边际频率。真实差异较大仍可能反映这些因素，不能直接归因于独特商品偏好。</li><li>随机样本只有20个：真实值高于全部20个，也不能据此宣称极小p值或稳定优势。范围不是置信区间。</li><li>本结果不证明规则更有用、更高覆盖或未来保持；下一步须冻结候选与政策后在Validation重复检查。若需稳健性，可预先规定按历史活跃度分层置换，但不按Test结果修改。</li></ul><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>metric</th>
+      <th>real</th>
+      <th>random_min</th>
+      <th>random_median</th>
+      <th>random_max</th>
+      <th>real_minus_random_median</th>
+      <th>random_less_than_real</th>
+      <th>random_equal_real</th>
+      <th>random_greater_equal_real</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Top10：平均 Jaccard 差异度</td>
+      <td>0.7467</td>
+      <td>0.4872</td>
+      <td>0.6427</td>
+      <td>0.7613</td>
+      <td>0.1040</td>
+      <td>19</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Top20：平均 Jaccard 差异度</td>
+      <td>0.7214</td>
+      <td>0.5238</td>
+      <td>0.6449</td>
+      <td>0.7440</td>
+      <td>0.0765</td>
+      <td>18</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>二商品：组间平均 Bray–Curtis</td>
+      <td>0.2409</td>
+      <td>0.1897</td>
+      <td>0.2301</td>
+      <td>0.2403</td>
+      <td>0.0108</td>
+      <td>20</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>二商品：组与群外平均 Bray–Curtis</td>
+      <td>0.2376</td>
+      <td>0.1754</td>
+      <td>0.2046</td>
+      <td>0.2135</td>
+      <td>0.0330</td>
+      <td>20</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>二商品：组与群外平均支持度绝对差</td>
+      <td>0.3594</td>
+      <td>0.2771</td>
+      <td>0.3345</td>
+      <td>0.3491</td>
+      <td>0.0249</td>
+      <td>20</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>三商品：组间平均 Bray–Curtis</td>
+      <td>0.4505</td>
+      <td>0.3955</td>
+      <td>0.4921</td>
+      <td>0.5291</td>
+      <td>-0.0416</td>
+      <td>5</td>
+      <td>0</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>三商品：组与群外平均 Bray–Curtis</td>
+      <td>0.5250</td>
+      <td>0.4346</td>
+      <td>0.5151</td>
+      <td>0.5436</td>
+      <td>0.0099</td>
+      <td>16</td>
+      <td>0</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>三商品：组与群外平均支持度绝对差</td>
+      <td>0.3943</td>
+      <td>0.3612</td>
+      <td>0.5165</td>
+      <td>0.5561</td>
+      <td>-0.1221</td>
+      <td>3</td>
+      <td>0</td>
+      <td>17</td>
+    </tr>
+  </tbody>
+</table><img src="01_between_groups.png"><img src="02_group_vs_rest.png">

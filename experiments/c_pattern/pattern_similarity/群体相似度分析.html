@@ -1,0 +1,240 @@
+<meta charset="utf-8"><style>body{font:16px Microsoft YaHei;margin:32px;color:#24384f;line-height:1.7}table{border-collapse:collapse;font-size:13px}td,th{padding:9px;border-bottom:1px solid #ccd4df}th{background:#e4edf7}img{max-width:1100px;width:100%}.table{overflow:auto}</style><h1>顾客群购物模式相似度与差异度</h1><p>仅Discovery。Top-K先将商品并集相同的合格方向规则合并，再按该组合排名最高的方向规则排序（联合次数、confidence、lift降序，rule_id升序），取K个不同组合。该规则明确处理同次数的并列，不把相同商品集合重复计算。</p><p>共同池差异使用全部G/L/R候选的不同商品并集，对各群重新计算的真实support，包含未达各群筛选门槛者。二商品和三商品分别比较；Bray–Curtis=Σ|sᵢ−tᵢ|/Σ(sᵢ+tᵢ)，不对向量归一化为概率。池来源仍影响指标，不涵盖所有未入池商品组合。</p><p>Jaccard越大越相似；Bray–Curtis越大越不同。C2占60.5%的Discovery订单，G是群体加权混合；群vsG有自身重叠，不能当独立样本。未做随机距离对照、置信区间或Validation验证，差异大不等于更有用。</p><img src="01_jaccard.png"><img src="02_support_distance.png"><img src="03_case_support.png"><h2>各群 vs 群外：代表规则与计数</h2><p>每群选择support正差最大的3个不同商品集合，以及负差最大的1个反例；均为该群合格规则，保留代表方向。群外为其他两个真实群的合格Discovery订单。全局排名空白表示未通过完整全局筛选。百分比为展示舍入。</p><div class="table"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>群</th>
+      <th>类型</th>
+      <th>前件</th>
+      <th>后件</th>
+      <th>群内篮数</th>
+      <th>群外篮数</th>
+      <th>群内前件次数</th>
+      <th>群外前件次数</th>
+      <th>群内联合次数</th>
+      <th>群外联合次数</th>
+      <th>群内support</th>
+      <th>群外support</th>
+      <th>群内confidence</th>
+      <th>群外confidence</th>
+      <th>confidence差(百分点)</th>
+      <th>全局排名</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>C0</td>
+      <td>positive</td>
+      <td>HAND WARMER OWL DESIGN</td>
+      <td>HAND WARMER SCOTTY DOG DESIGN</td>
+      <td>801</td>
+      <td>6720</td>
+      <td>51</td>
+      <td>289</td>
+      <td>34</td>
+      <td>156</td>
+      <td>4.24%</td>
+      <td>2.32%</td>
+      <td>66.67%</td>
+      <td>53.98%</td>
+      <td>12.69</td>
+      <td>57.00</td>
+    </tr>
+    <tr>
+      <td>C0</td>
+      <td>positive</td>
+      <td>PACK OF 6 BIRDY GIFT TAGS</td>
+      <td>PACK OF 6 PANNETONE GIFT BOXES</td>
+      <td>801</td>
+      <td>6720</td>
+      <td>50</td>
+      <td>261</td>
+      <td>20</td>
+      <td>44</td>
+      <td>2.50%</td>
+      <td>0.65%</td>
+      <td>40.00%</td>
+      <td>16.86%</td>
+      <td>23.14</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>C0</td>
+      <td>positive</td>
+      <td>POPPY'S PLAYHOUSE BEDROOM</td>
+      <td>POPPY'S PLAYHOUSE KITCHEN</td>
+      <td>801</td>
+      <td>6720</td>
+      <td>32</td>
+      <td>133</td>
+      <td>29</td>
+      <td>123</td>
+      <td>3.62%</td>
+      <td>1.83%</td>
+      <td>90.62%</td>
+      <td>92.48%</td>
+      <td>-1.86</td>
+      <td>109.00</td>
+    </tr>
+    <tr>
+      <td>C0</td>
+      <td>counterexample</td>
+      <td>JUMBO BAG PINK WITH WHITE SPOTS</td>
+      <td>JUMBO BAG RED RETROSPOT</td>
+      <td>801</td>
+      <td>6720</td>
+      <td>33</td>
+      <td>412</td>
+      <td>21</td>
+      <td>247</td>
+      <td>2.62%</td>
+      <td>3.68%</td>
+      <td>63.64%</td>
+      <td>59.95%</td>
+      <td>3.68</td>
+      <td>7.00</td>
+    </tr>
+    <tr>
+      <td>C1</td>
+      <td>positive</td>
+      <td>HEART OF WICKER LARGE</td>
+      <td>WHITE HANGING HEART T-LIGHT HOLDER</td>
+      <td>2173</td>
+      <td>5348</td>
+      <td>189</td>
+      <td>335</td>
+      <td>88</td>
+      <td>130</td>
+      <td>4.05%</td>
+      <td>2.43%</td>
+      <td>46.56%</td>
+      <td>38.81%</td>
+      <td>7.75</td>
+      <td>23.00</td>
+    </tr>
+    <tr>
+      <td>C1</td>
+      <td>positive</td>
+      <td>FELTCRAFT CUSHION RABBIT</td>
+      <td>FELTCRAFT CUSHION BUTTERFLY</td>
+      <td>2173</td>
+      <td>5348</td>
+      <td>78</td>
+      <td>111</td>
+      <td>61</td>
+      <td>76</td>
+      <td>2.81%</td>
+      <td>1.42%</td>
+      <td>78.21%</td>
+      <td>68.47%</td>
+      <td>9.74</td>
+      <td>162.00</td>
+    </tr>
+    <tr>
+      <td>C1</td>
+      <td>positive</td>
+      <td>FELTCRAFT BUTTERFLY HEARTS</td>
+      <td>FELTCRAFT 6 FLOWER FRIENDS</td>
+      <td>2173</td>
+      <td>5348</td>
+      <td>90</td>
+      <td>124</td>
+      <td>53</td>
+      <td>58</td>
+      <td>2.44%</td>
+      <td>1.08%</td>
+      <td>58.89%</td>
+      <td>46.77%</td>
+      <td>12.11</td>
+      <td>376.00</td>
+    </tr>
+    <tr>
+      <td>C1</td>
+      <td>counterexample</td>
+      <td>WOODEN PICTURE FRAME WHITE FINISH</td>
+      <td>WOODEN FRAME ANTIQUE WHITE</td>
+      <td>2173</td>
+      <td>5348</td>
+      <td>82</td>
+      <td>296</td>
+      <td>45</td>
+      <td>214</td>
+      <td>2.07%</td>
+      <td>4.00%</td>
+      <td>54.88%</td>
+      <td>72.30%</td>
+      <td>-17.42</td>
+      <td>9.00</td>
+    </tr>
+    <tr>
+      <td>C2</td>
+      <td>positive</td>
+      <td>WOODEN PICTURE FRAME WHITE FINISH</td>
+      <td>WOODEN FRAME ANTIQUE WHITE</td>
+      <td>4547</td>
+      <td>2974</td>
+      <td>276</td>
+      <td>102</td>
+      <td>198</td>
+      <td>61</td>
+      <td>4.35%</td>
+      <td>2.05%</td>
+      <td>71.74%</td>
+      <td>59.80%</td>
+      <td>11.94</td>
+      <td>9.00</td>
+    </tr>
+    <tr>
+      <td>C2</td>
+      <td>positive</td>
+      <td>JUMBO BAG PINK WITH WHITE SPOTS</td>
+      <td>JUMBO BAG RED RETROSPOT</td>
+      <td>4547</td>
+      <td>2974</td>
+      <td>324</td>
+      <td>121</td>
+      <td>199</td>
+      <td>69</td>
+      <td>4.38%</td>
+      <td>2.32%</td>
+      <td>61.42%</td>
+      <td>57.02%</td>
+      <td>4.39</td>
+      <td>7.00</td>
+    </tr>
+    <tr>
+      <td>C2</td>
+      <td>positive</td>
+      <td>JUMBO BAG PINK WITH WHITE SPOTS</td>
+      <td>JUMBO STORAGE BAG SUKI</td>
+      <td>4547</td>
+      <td>2974</td>
+      <td>324</td>
+      <td>121</td>
+      <td>137</td>
+      <td>29</td>
+      <td>3.01%</td>
+      <td>0.98%</td>
+      <td>42.28%</td>
+      <td>23.97%</td>
+      <td>18.32</td>
+      <td>77.00</td>
+    </tr>
+    <tr>
+      <td>C2</td>
+      <td>counterexample</td>
+      <td>FELTCRAFT CUSHION RABBIT</td>
+      <td>FELTCRAFT CUSHION BUTTERFLY</td>
+      <td>4547</td>
+      <td>2974</td>
+      <td>84</td>
+      <td>105</td>
+      <td>59</td>
+      <td>78</td>
+      <td>1.30%</td>
+      <td>2.62%</td>
+      <td>70.24%</td>
+      <td>74.29%</td>
+      <td>-4.05</td>
+      <td>162.00</td>
+    </tr>
+  </tbody>
+</table></div>

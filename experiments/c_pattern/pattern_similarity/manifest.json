@@ -1,0 +1,21 @@
+{
+  "source_sha256": "8b06c7bc2630319ce7d20733d67ca197c01b7731eb07dfda392d48899b12ad46",
+  "unique_common_pool_by_length": {
+    "2": 2134,
+    "3": 2326
+  },
+  "scope_order": [
+    "C0",
+    "C1",
+    "C2",
+    "G"
+  ],
+  "checks": [
+    "exact TopK cardinalities",
+    "symmetric matrices",
+    "duplicate-union support consistency",
+    "global support equals weighted group support",
+    "case support and confidence counts checked"
+  ],
+  "status": "discovery_descriptive_only"
+}
