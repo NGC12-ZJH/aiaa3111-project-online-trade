@@ -1,0 +1,3 @@
+high_value,orders,customers,amount,median_amount,median_basket_size
+False,6768,1864,2098355.82,295.325,14.0
+True,753,310,1551599.93,1311.6,29.0

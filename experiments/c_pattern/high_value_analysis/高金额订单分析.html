@@ -1,0 +1,618 @@
+<meta charset="utf-8"><title>高金额订单分析</title><style>body{font:16px Microsoft YaHei;max-width:1400px;margin:30px auto;line-height:1.7;color:#203047}table{border-collapse:collapse;font-size:13px}td,th{padding:9px;border-bottom:1px solid #ddd}th{background:#e7edf5}img{margin:20px 0}</style><h1>高金额订单补充分析</h1><p>仅使用Discovery历史已知顾客订单。全体Discovery金额90%分位数为£888.47，采用≥门槛并保留并列：753张订单、310名顾客，贡献42.51%的毛购买金额。原有G/L/R实验未修改。</p><h2>主要发现</h2><ul><li>高金额订单中纸杯蛋糕托、午餐盒、蛋糕架和茶杯套装的共购较突出。</li><li>生成1128条合格方向规则；原有相对支持度1%、联合和前件至少20次、confidence≥0.2、lift≥1不变。因此高金额样本实际支持度门槛约2.66%。该门槛不是Validation选出的最优设置。</li><li>例：粉色佩斯利蛋糕纸杯→波点蛋糕纸杯，高金额订单support 9.03%、其余2.13%；confidence 70.83%对52.94%，联合68次。</li><li>篮子大小影响明显：高金额篮商品种类中位数29，其余14。第一条蛋糕纸杯规则在21–50种商品的篮中仍有差异（support 11.94%对4.02%，confidence 78.05%对56.59%），但51种及以上篮中confidence接近（63.41%对61.54%）。这只是粗分层，不能证明排除了混杂。</li><li>C0/C1/C2分别有53/99/601张高金额订单；小群不单独调低门槛追求规则。case_cluster_counts.csv给出案例群体分布。</li></ul><h2>解释边界</h2><p>按最终订单金额筛选属于事后描述，不能用于声称预测订单是否高金额。单价、数量和商品种类都可能贡献高金额。匹配规则的整单金额不是该规则创造的销售额，多条规则金额不能直接相加。高金额订单与其余订单样本量不同；本补充不是新的G/L/R公平效果实验，未评价Validation/Test。</p><p>核验：Top50独立集合计数通过；原始规则证据、选中规则和manifest哈希未变。输入版本、阈值及时间记录在manifest.json。原始数据含顾客标识，所有文件仅本地保存。</p><img src="high_value_cases.png" style="width:100%"><h2>高金额订单Top50规则</h2><p>按联合次数、confidence、lift降序，rule_id升序；正反方向分别保留。下表support/confidence以比例表示，0.09表示9%。</p><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>high_rank</th>
+      <th>antecedent_name</th>
+      <th>consequent_name</th>
+      <th>high_joint</th>
+      <th>high_support</th>
+      <th>rest_support</th>
+      <th>high_confidence</th>
+      <th>rest_confidence</th>
+      <th>high_lift</th>
+      <th>global_rank</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>PACK OF 60 PINK PAISLEY CAKE CASES</td>
+      <td>PACK OF 72 RETRO SPOT CAKE CASES</td>
+      <td>68</td>
+      <td>0.0903</td>
+      <td>0.0213</td>
+      <td>0.7083</td>
+      <td>0.5294</td>
+      <td>3.9219</td>
+      <td>32.0000</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>PACK OF 72 RETRO SPOT CAKE CASES</td>
+      <td>PACK OF 60 PINK PAISLEY CAKE CASES</td>
+      <td>68</td>
+      <td>0.0903</td>
+      <td>0.0213</td>
+      <td>0.5000</td>
+      <td>0.3165</td>
+      <td>3.9219</td>
+      <td>33.0000</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>60 TEATIME FAIRY CAKE CASES</td>
+      <td>PACK OF 72 RETRO SPOT CAKE CASES</td>
+      <td>59</td>
+      <td>0.0784</td>
+      <td>0.0276</td>
+      <td>0.6413</td>
+      <td>0.5123</td>
+      <td>3.5508</td>
+      <td>15.0000</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>PACK OF 72 RETRO SPOT CAKE CASES</td>
+      <td>60 TEATIME FAIRY CAKE CASES</td>
+      <td>59</td>
+      <td>0.0784</td>
+      <td>0.0276</td>
+      <td>0.4338</td>
+      <td>0.4110</td>
+      <td>3.5508</td>
+      <td>16.0000</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>LUNCH BAG PINK RETROSPOT</td>
+      <td>LUNCH BAG RED SPOTTY</td>
+      <td>57</td>
+      <td>0.0757</td>
+      <td>0.0338</td>
+      <td>0.7215</td>
+      <td>0.6139</td>
+      <td>4.7658</td>
+      <td>3.0000</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>LUNCH BAG RED SPOTTY</td>
+      <td>LUNCH BAG PINK RETROSPOT</td>
+      <td>57</td>
+      <td>0.0757</td>
+      <td>0.0338</td>
+      <td>0.5000</td>
+      <td>0.4821</td>
+      <td>4.7658</td>
+      <td>4.0000</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>JUMBO BAG PINK WITH WHITE SPOTS</td>
+      <td>JUMBO BAG RED RETROSPOT</td>
+      <td>56</td>
+      <td>0.0744</td>
+      <td>0.0313</td>
+      <td>0.7000</td>
+      <td>0.5808</td>
+      <td>3.8474</td>
+      <td>7.0000</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>60 TEATIME FAIRY CAKE CASES</td>
+      <td>PACK OF 60 PINK PAISLEY CAKE CASES</td>
+      <td>56</td>
+      <td>0.0744</td>
+      <td>0.0214</td>
+      <td>0.6087</td>
+      <td>0.3973</td>
+      <td>4.7745</td>
+      <td>49.0000</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>PACK OF 60 PINK PAISLEY CAKE CASES</td>
+      <td>60 TEATIME FAIRY CAKE CASES</td>
+      <td>56</td>
+      <td>0.0744</td>
+      <td>0.0214</td>
+      <td>0.5833</td>
+      <td>0.5331</td>
+      <td>4.7745</td>
+      <td>48.0000</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>JUMBO BAG RED RETROSPOT</td>
+      <td>JUMBO BAG PINK WITH WHITE SPOTS</td>
+      <td>56</td>
+      <td>0.0744</td>
+      <td>0.0313</td>
+      <td>0.4088</td>
+      <td>0.3387</td>
+      <td>3.8474</td>
+      <td>8.0000</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>DOLLY GIRL LUNCH BOX</td>
+      <td>SPACEBOY LUNCH BOX</td>
+      <td>52</td>
+      <td>0.0691</td>
+      <td>0.0198</td>
+      <td>0.8125</td>
+      <td>0.6063</td>
+      <td>8.7402</td>
+      <td>58.0000</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>SPACEBOY LUNCH BOX</td>
+      <td>DOLLY GIRL LUNCH BOX</td>
+      <td>52</td>
+      <td>0.0691</td>
+      <td>0.0198</td>
+      <td>0.7429</td>
+      <td>0.5956</td>
+      <td>8.7402</td>
+      <td>59.0000</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>LUNCH BAG SUKI DESIGN</td>
+      <td>LUNCH BAG RED SPOTTY</td>
+      <td>48</td>
+      <td>0.0637</td>
+      <td>0.0309</td>
+      <td>0.6234</td>
+      <td>0.5148</td>
+      <td>4.1176</td>
+      <td>11.0000</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>LUNCH BAG RED SPOTTY</td>
+      <td>LUNCH BAG SUKI DESIGN</td>
+      <td>48</td>
+      <td>0.0637</td>
+      <td>0.0309</td>
+      <td>0.4211</td>
+      <td>0.4400</td>
+      <td>4.1176</td>
+      <td>12.0000</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>GREEN REGENCY TEACUP AND SAUCER</td>
+      <td>ROSES REGENCY TEACUP AND SAUCER</td>
+      <td>47</td>
+      <td>0.0624</td>
+      <td>0.0183</td>
+      <td>0.9592</td>
+      <td>0.8212</td>
+      <td>12.0378</td>
+      <td>69.0000</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>ROSES REGENCY TEACUP AND SAUCER</td>
+      <td>GREEN REGENCY TEACUP AND SAUCER</td>
+      <td>47</td>
+      <td>0.0624</td>
+      <td>0.0183</td>
+      <td>0.7833</td>
+      <td>0.7561</td>
+      <td>12.0378</td>
+      <td>70.0000</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>SWEETHEART CERAMIC TRINKET BOX</td>
+      <td>STRAWBERRY CERAMIC TRINKET BOX</td>
+      <td>46</td>
+      <td>0.0611</td>
+      <td>0.0412</td>
+      <td>0.9020</td>
+      <td>0.7904</td>
+      <td>9.7025</td>
+      <td>1.0000</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>WOODEN FRAME ANTIQUE WHITE</td>
+      <td>WOODEN PICTURE FRAME WHITE FINISH</td>
+      <td>46</td>
+      <td>0.0611</td>
+      <td>0.0315</td>
+      <td>0.7541</td>
+      <td>0.6174</td>
+      <td>9.1586</td>
+      <td>10.0000</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>WOODEN PICTURE FRAME WHITE FINISH</td>
+      <td>WOODEN FRAME ANTIQUE WHITE</td>
+      <td>46</td>
+      <td>0.0611</td>
+      <td>0.0315</td>
+      <td>0.7419</td>
+      <td>0.6741</td>
+      <td>9.1586</td>
+      <td>9.0000</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>LUNCH BAG WOODLAND</td>
+      <td>LUNCH BAG RED SPOTTY</td>
+      <td>46</td>
+      <td>0.0611</td>
+      <td>0.0235</td>
+      <td>0.7419</td>
+      <td>0.5618</td>
+      <td>4.9007</td>
+      <td>42.0000</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>LUNCH BAG SPACEBOY DESIGN</td>
+      <td>LUNCH BAG RED SPOTTY</td>
+      <td>46</td>
+      <td>0.0611</td>
+      <td>0.0244</td>
+      <td>0.6866</td>
+      <td>0.4810</td>
+      <td>4.5350</td>
+      <td>34.0000</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>STRAWBERRY CERAMIC TRINKET BOX</td>
+      <td>SWEETHEART CERAMIC TRINKET BOX</td>
+      <td>46</td>
+      <td>0.0611</td>
+      <td>0.0412</td>
+      <td>0.6571</td>
+      <td>0.6200</td>
+      <td>9.7025</td>
+      <td>2.0000</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>JUMBO BAG STRAWBERRY</td>
+      <td>JUMBO BAG RED RETROSPOT</td>
+      <td>46</td>
+      <td>0.0611</td>
+      <td>0.0290</td>
+      <td>0.6571</td>
+      <td>0.5833</td>
+      <td>3.6119</td>
+      <td>17.0000</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>LUNCH BAG RED SPOTTY</td>
+      <td>LUNCH BAG WOODLAND</td>
+      <td>46</td>
+      <td>0.0611</td>
+      <td>0.0235</td>
+      <td>0.4035</td>
+      <td>0.3347</td>
+      <td>4.9007</td>
+      <td>46.0000</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>LUNCH BAG RED SPOTTY</td>
+      <td>LUNCH BAG SPACEBOY DESIGN</td>
+      <td>46</td>
+      <td>0.0611</td>
+      <td>0.0244</td>
+      <td>0.4035</td>
+      <td>0.3474</td>
+      <td>4.5350</td>
+      <td>35.0000</td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>JUMBO BAG RED RETROSPOT</td>
+      <td>JUMBO BAG STRAWBERRY</td>
+      <td>46</td>
+      <td>0.0611</td>
+      <td>0.0290</td>
+      <td>0.3358</td>
+      <td>0.3131</td>
+      <td>3.6119</td>
+      <td>18.0000</td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>LUNCH BAG SPACEBOY DESIGN</td>
+      <td>LUNCH BAG SUKI DESIGN</td>
+      <td>45</td>
+      <td>0.0598</td>
+      <td>0.0248</td>
+      <td>0.6716</td>
+      <td>0.4898</td>
+      <td>6.5681</td>
+      <td>28.0000</td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td>RED RETROSPOT CAKE STAND</td>
+      <td>REGENCY CAKESTAND 3 TIER</td>
+      <td>45</td>
+      <td>0.0598</td>
+      <td>0.0137</td>
+      <td>0.6164</td>
+      <td>0.4043</td>
+      <td>2.5227</td>
+      <td>157.0000</td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td>LUNCH BAG SUKI DESIGN</td>
+      <td>LUNCH BAG SPACEBOY DESIGN</td>
+      <td>45</td>
+      <td>0.0598</td>
+      <td>0.0248</td>
+      <td>0.5844</td>
+      <td>0.4138</td>
+      <td>6.5681</td>
+      <td>30.0000</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>REGENCY CAKESTAND 3 TIER</td>
+      <td>RED RETROSPOT CAKE STAND</td>
+      <td>45</td>
+      <td>0.0598</td>
+      <td>0.0137</td>
+      <td>0.2446</td>
+      <td>0.1225</td>
+      <td>2.5227</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>LUNCH BAG CARS BLUE</td>
+      <td>LUNCH BAG SUKI DESIGN</td>
+      <td>44</td>
+      <td>0.0584</td>
+      <td>0.0225</td>
+      <td>0.6197</td>
+      <td>0.5278</td>
+      <td>6.0604</td>
+      <td>50.0000</td>
+    </tr>
+    <tr>
+      <td>32</td>
+      <td>LUNCH BAG CARS BLUE</td>
+      <td>LUNCH BAG PINK RETROSPOT</td>
+      <td>44</td>
+      <td>0.0584</td>
+      <td>0.0223</td>
+      <td>0.6197</td>
+      <td>0.5243</td>
+      <td>5.9069</td>
+      <td>54.0000</td>
+    </tr>
+    <tr>
+      <td>33</td>
+      <td>LUNCH BAG SUKI DESIGN</td>
+      <td>LUNCH BAG CARS BLUE</td>
+      <td>44</td>
+      <td>0.0584</td>
+      <td>0.0225</td>
+      <td>0.5714</td>
+      <td>0.3744</td>
+      <td>6.0604</td>
+      <td>53.0000</td>
+    </tr>
+    <tr>
+      <td>34</td>
+      <td>LUNCH BAG PINK RETROSPOT</td>
+      <td>LUNCH BAG CARS BLUE</td>
+      <td>44</td>
+      <td>0.0584</td>
+      <td>0.0223</td>
+      <td>0.5570</td>
+      <td>0.4048</td>
+      <td>5.9069</td>
+      <td>55.0000</td>
+    </tr>
+    <tr>
+      <td>35</td>
+      <td>LUNCH BAG CARS BLUE</td>
+      <td>LUNCH BAG RED SPOTTY</td>
+      <td>43</td>
+      <td>0.0571</td>
+      <td>0.0239</td>
+      <td>0.6056</td>
+      <td>0.5625</td>
+      <td>4.0004</td>
+      <td>43.0000</td>
+    </tr>
+    <tr>
+      <td>36</td>
+      <td>LUNCH BAG SUKI DESIGN</td>
+      <td>LUNCH BAG PINK RETROSPOT</td>
+      <td>43</td>
+      <td>0.0571</td>
+      <td>0.0259</td>
+      <td>0.5584</td>
+      <td>0.4310</td>
+      <td>5.3229</td>
+      <td>22.0000</td>
+    </tr>
+    <tr>
+      <td>37</td>
+      <td>LUNCH BAG PINK RETROSPOT</td>
+      <td>LUNCH BAG SUKI DESIGN</td>
+      <td>43</td>
+      <td>0.0571</td>
+      <td>0.0259</td>
+      <td>0.5443</td>
+      <td>0.4692</td>
+      <td>5.3229</td>
+      <td>21.0000</td>
+    </tr>
+    <tr>
+      <td>38</td>
+      <td>LUNCH BAG RED SPOTTY</td>
+      <td>LUNCH BAG CARS BLUE</td>
+      <td>43</td>
+      <td>0.0571</td>
+      <td>0.0239</td>
+      <td>0.3772</td>
+      <td>0.3411</td>
+      <td>4.0004</td>
+      <td>47.0000</td>
+    </tr>
+    <tr>
+      <td>39</td>
+      <td>RED HANGING HEART T-LIGHT HOLDER</td>
+      <td>WHITE HANGING HEART T-LIGHT HOLDER</td>
+      <td>42</td>
+      <td>0.0558</td>
+      <td>0.0353</td>
+      <td>0.7500</td>
+      <td>0.7221</td>
+      <td>3.6202</td>
+      <td>5.0000</td>
+    </tr>
+    <tr>
+      <td>40</td>
+      <td>JUMBO SHOPPER VINTAGE RED PAISLEY</td>
+      <td>JUMBO BAG RED RETROSPOT</td>
+      <td>42</td>
+      <td>0.0558</td>
+      <td>0.0253</td>
+      <td>0.6176</td>
+      <td>0.4622</td>
+      <td>3.3948</td>
+      <td>29.0000</td>
+    </tr>
+    <tr>
+      <td>41</td>
+      <td>JUMBO STORAGE BAG SUKI</td>
+      <td>JUMBO BAG RED RETROSPOT</td>
+      <td>42</td>
+      <td>0.0558</td>
+      <td>0.0276</td>
+      <td>0.6000</td>
+      <td>0.5253</td>
+      <td>3.2978</td>
+      <td>19.0000</td>
+    </tr>
+    <tr>
+      <td>42</td>
+      <td>LUNCH BAG RED SPOTTY</td>
+      <td>JUMBO BAG RED RETROSPOT</td>
+      <td>42</td>
+      <td>0.0558</td>
+      <td>0.0245</td>
+      <td>0.3684</td>
+      <td>0.3495</td>
+      <td>2.0250</td>
+      <td>40.0000</td>
+    </tr>
+    <tr>
+      <td>43</td>
+      <td>JUMBO BAG RED RETROSPOT</td>
+      <td>JUMBO SHOPPER VINTAGE RED PAISLEY</td>
+      <td>42</td>
+      <td>0.0558</td>
+      <td>0.0253</td>
+      <td>0.3066</td>
+      <td>0.2732</td>
+      <td>3.3948</td>
+      <td>31.0000</td>
+    </tr>
+    <tr>
+      <td>44</td>
+      <td>JUMBO BAG RED RETROSPOT</td>
+      <td>JUMBO STORAGE BAG SUKI</td>
+      <td>42</td>
+      <td>0.0558</td>
+      <td>0.0276</td>
+      <td>0.3066</td>
+      <td>0.2987</td>
+      <td>3.2978</td>
+      <td>20.0000</td>
+    </tr>
+    <tr>
+      <td>45</td>
+      <td>JUMBO BAG RED RETROSPOT</td>
+      <td>LUNCH BAG RED SPOTTY</td>
+      <td>42</td>
+      <td>0.0558</td>
+      <td>0.0245</td>
+      <td>0.3066</td>
+      <td>0.2652</td>
+      <td>2.0250</td>
+      <td>41.0000</td>
+    </tr>
+    <tr>
+      <td>46</td>
+      <td>WHITE HANGING HEART T-LIGHT HOLDER</td>
+      <td>RED HANGING HEART T-LIGHT HOLDER</td>
+      <td>42</td>
+      <td>0.0558</td>
+      <td>0.0353</td>
+      <td>0.2692</td>
+      <td>0.2407</td>
+      <td>3.6202</td>
+      <td>6.0000</td>
+    </tr>
+    <tr>
+      <td>47</td>
+      <td>WHITE HANGING HEART T-LIGHT HOLDER</td>
+      <td>REGENCY CAKESTAND 3 TIER</td>
+      <td>42</td>
+      <td>0.0558</td>
+      <td>0.0168</td>
+      <td>0.2692</td>
+      <td>0.1148</td>
+      <td>1.1018</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>48</td>
+      <td>REGENCY CAKESTAND 3 TIER</td>
+      <td>WHITE HANGING HEART T-LIGHT HOLDER</td>
+      <td>42</td>
+      <td>0.0558</td>
+      <td>0.0168</td>
+      <td>0.2283</td>
+      <td>0.1502</td>
+      <td>1.1018</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>49</td>
+      <td>JUMBO BAG BAROQUE BLACK WHITE</td>
+      <td>JUMBO BAG RED RETROSPOT</td>
+      <td>41</td>
+      <td>0.0544</td>
+      <td>0.0248</td>
+      <td>0.6833</td>
+      <td>0.5437</td>
+      <td>3.7558</td>
+      <td>37.0000</td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>LUNCH BAG SPACEBOY DESIGN</td>
+      <td>LUNCH BAG CARS BLUE</td>
+      <td>41</td>
+      <td>0.0544</td>
+      <td>0.0179</td>
+      <td>0.6119</td>
+      <td>0.3528</td>
+      <td>6.4900</td>
+      <td>95.0000</td>
+    </tr>
+  </tbody>
+</table>

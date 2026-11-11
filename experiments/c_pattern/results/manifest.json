@@ -1,0 +1,32 @@
+{
+  "n_baskets": 7521,
+  "all_discovery_baskets": 11273,
+  "customers": 1928,
+  "items": 3321,
+  "single_item_baskets": 709,
+  "source_sha256": "30aef702f812ab42224271871271daff5b4e37a594696eee82208252198367bf",
+  "matrix_sha256": "4df80404d9dd0a3a79c996c9208367cb7d6ab3c160e9e3df88ec65bd5f156c0d",
+  "source_commit": "fbd462b8e6b72848cb3b967b39c114f911826774",
+  "python": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 15:03:56) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.22631-SP0",
+  "cpu": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "logical_cpus": 32,
+  "ram_gib": 15.692092895507812,
+  "versions": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "mlxtend": "0.23.4",
+    "psutil": "6.1.0"
+  },
+  "repeats": 3,
+  "supports": [
+    0.02,
+    0.01
+  ],
+  "max_lengths": [
+    2,
+    3
+  ],
+  "apriori_low_memory": false,
+  "sampling_ms": 5
+}

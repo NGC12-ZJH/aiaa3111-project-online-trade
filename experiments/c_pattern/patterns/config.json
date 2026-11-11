@@ -1,0 +1,18 @@
+{
+  "config_id": "discovery_dev_v1",
+  "status": "development_not_validation_selected",
+  "min_support": 0.01,
+  "min_joint_count": 20,
+  "min_antecedent_count": 20,
+  "min_confidence": 0.2,
+  "min_lift": 1.0,
+  "max_itemset_length": 3,
+  "budgets": [
+    20,
+    50,
+    100
+  ],
+  "ranking": "joint_count desc, confidence desc, lift desc, rule_id asc",
+  "budget_policy": "largest remainder by Discovery basket counts; ties group_id; no redistribution",
+  "redundancy": "exact duplicate rule only; no additional pruning"
+}

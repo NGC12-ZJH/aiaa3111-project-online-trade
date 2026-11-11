@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+processed/
+labels/
+discovery.npy
+discovery_baskets.csv
+items.json
+*.log
+patterns/case_order_examples.csv
+high_value_analysis/discovery_amount_cohort.csv

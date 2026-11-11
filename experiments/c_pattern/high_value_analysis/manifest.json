@@ -1,0 +1,39 @@
+{
+  "status": "exploratory_discovery_only",
+  "definition": "global Discovery amount 90th percentile, >= threshold, include ties",
+  "amount_field": "gross_purchase_amount",
+  "threshold_gbp": 888.47,
+  "high_orders": 753,
+  "high_customers": 310,
+  "high_amount_share": 0.4251010248548903,
+  "min_joint": 20,
+  "min_antecedent": 20,
+  "min_support": 0.01,
+  "effective_high_min_support": 0.02656042496679947,
+  "confidence": 0.2,
+  "lift": 1,
+  "max_len": 3,
+  "qualified_high_rules": 1128,
+  "mining": [
+    {
+      "scope": "high",
+      "seconds": 0.7010680999956094,
+      "candidates": 1232
+    },
+    {
+      "scope": "rest",
+      "seconds": 4.691112700034864,
+      "candidates": 901
+    }
+  ],
+  "checks": [
+    "matrix alignment every basket",
+    "top50 independently recounted",
+    "original experiment hashes unchanged"
+  ],
+  "inputs": {
+    "discovery_baskets.csv": "090bbb7f561cdc388980f539f454159b2ddc2658f2f2cc4b8eb9a33b9278658a",
+    "processed\\orders.csv.gz": "2ff8420a97ed2f89a303c57a6431590e130df35936ad143350adb40a5040d4c2",
+    "labels\\customer_clusters.csv": "fc3826532fde31491d6f76d1930629ce347719edd71114651ae162365c765bcf"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "config": {
+    "config_id": "discovery_dev_v1",
+    "status": "development_not_validation_selected",
+    "min_support": 0.01,
+    "min_joint_count": 20,
+    "min_antecedent_count": 20,
+    "min_confidence": 0.2,
+    "min_lift": 1.0,
+    "max_itemset_length": 3,
+    "budgets": [
+      20,
+      50,
+      100
+    ],
+    "ranking": "joint_count desc, confidence desc, lift desc, rule_id asc",
+    "budget_policy": "largest remainder by Discovery basket counts; ties group_id; no redistribution",
+    "redundancy": "exact duplicate rule only; no additional pruning"
+  },
+  "n_baskets": 7521,
+  "n_scopes": 64,
+  "random_seeds": [
+    "42",
+    "43",
+    "44",
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50",
+    "51",
+    "52",
+    "53",
+    "54",
+    "55",
+    "56",
+    "57",
+    "58",
+    "59",
+    "60",
+    "61"
+  ],
+  "common_pool_rules": 11246,
+  "evidence_rows": 719744,
+  "elapsed_seconds": 458.56279270001687,
+  "inputs": {
+    "discovery_baskets.csv": "090bbb7f561cdc388980f539f454159b2ddc2658f2f2cc4b8eb9a33b9278658a",
+    "discovery.npy": "4df80404d9dd0a3a79c996c9208367cb7d6ab3c160e9e3df88ec65bd5f156c0d",
+    "items.json": "d7af21f4474ff23a54a748999237b070594080da2811d2dc6e3aebaf64a9ea9e",
+    "labels\\customer_clusters.csv": "fc3826532fde31491d6f76d1930629ce347719edd71114651ae162365c765bcf",
+    "labels\\random_groups.csv": "f6004881ba824a3275ac5be018a3db5c5488800db444bdf96cef52e313a7c3aa"
+  },
+  "code_sha256": "e2ab5c670a4afe206fd38ab09ced6ffd4e254246d03112a4031d776077c16584",
+  "checks": [
+    "label uniqueness and complete coverage",
+    "20 size-matched customer permutations",
+    "encoded matrix checked against every basket",
+    "exact rule membership counts",
+    "system budgets checked"
+  ]
+}

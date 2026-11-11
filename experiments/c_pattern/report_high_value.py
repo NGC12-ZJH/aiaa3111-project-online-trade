@@ -1,0 +1,15 @@
+from pathlib import Path
+import json,pandas as pd
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+R=Path(__file__).resolve().parent;O=R/'high_value_analysis';c=pd.read_csv(O/'differential_cases.csv');t=pd.read_csv(O/'high_value_top50.csv')
+plt.rcParams.update({'font.family':'Microsoft YaHei','axes.unicode_minus':False,'axes.spines.top':False,'axes.spines.right':False})
+fig,axes=plt.subplots(1,2,figsize=(13,6));labels=['粉色佩斯利蛋糕纸杯 → 波点蛋糕纸杯','茶会蛋糕纸杯 → 粉色佩斯利蛋糕纸杯','茶会蛋糕纸杯 → 波点蛋糕纸杯','娃娃女孩午餐盒 → 太空男孩午餐盒','红色波点蛋糕架 → 三层蛋糕架','绿色茶杯碟套装 → 玫瑰茶杯碟套装'];p=c.head(6)
+for ax,metric,title in zip(axes,['support','confidence'],['组合出现比例（support）','条件共购比例（confidence）']):
+ y=list(range(6));ax.barh([v-.16 for v in y],p['high_'+metric]*100,height=.3,label='金额最高约10%',color='#d78e26');ax.barh([v+.16 for v in y],p['rest_'+metric]*100,height=.3,label='其余订单',color='#4779a9');ax.set_yticks(y,labels if ax==axes[0] else ['']*6);ax.invert_yaxis();ax.set_title(title);ax.set_xlabel('%');ax.grid(axis='x',alpha=.15)
+fig.legend(*axes[0].get_legend_handles_labels(),loc='upper center',bbox_to_anchor=(.65,.90),ncol=2,frameon=False);fig.suptitle('高金额订单：烘焙、午餐盒和茶具组合更突出',fontsize=18,fontweight='bold');fig.text(.03,.025,'Discovery描述性分析｜高金额门槛 ≥ £888.47，753张订单｜案例按支持度差探索性选择；非因果、非未来验证',fontsize=9);fig.tight_layout(rect=[0,.06,1,.92]);fig.savefig(O/'high_value_cases.png',dpi=180)
+intro='''<h1>高金额订单补充分析</h1><p>仅使用Discovery历史已知顾客订单。全体Discovery金额90%分位数为£888.47，采用≥门槛并保留并列：753张订单、310名顾客，贡献42.51%的毛购买金额。原有G/L/R实验未修改。</p><h2>主要发现</h2><ul><li>高金额订单中纸杯蛋糕托、午餐盒、蛋糕架和茶杯套装的共购较突出。</li><li>生成1128条合格方向规则；原有相对支持度1%、联合和前件至少20次、confidence≥0.2、lift≥1不变。因此高金额样本实际支持度门槛约2.66%。该门槛不是Validation选出的最优设置。</li><li>例：粉色佩斯利蛋糕纸杯→波点蛋糕纸杯，高金额订单support 9.03%、其余2.13%；confidence 70.83%对52.94%，联合68次。</li><li>篮子大小影响明显：高金额篮商品种类中位数29，其余14。第一条蛋糕纸杯规则在21–50种商品的篮中仍有差异（support 11.94%对4.02%，confidence 78.05%对56.59%），但51种及以上篮中confidence接近（63.41%对61.54%）。这只是粗分层，不能证明排除了混杂。</li><li>C0/C1/C2分别有53/99/601张高金额订单；小群不单独调低门槛追求规则。case_cluster_counts.csv给出案例群体分布。</li></ul><h2>解释边界</h2><p>按最终订单金额筛选属于事后描述，不能用于声称预测订单是否高金额。单价、数量和商品种类都可能贡献高金额。匹配规则的整单金额不是该规则创造的销售额，多条规则金额不能直接相加。高金额订单与其余订单样本量不同；本补充不是新的G/L/R公平效果实验，未评价Validation/Test。</p><p>核验：Top50独立集合计数通过；原始规则证据、选中规则和manifest哈希未变。输入版本、阈值及时间记录在manifest.json。原始数据含顾客标识，所有文件仅本地保存。</p><img src="high_value_cases.png" style="width:100%"><h2>高金额订单Top50规则</h2><p>按联合次数、confidence、lift降序，rule_id升序；正反方向分别保留。下表support/confidence以比例表示，0.09表示9%。</p>'''
+cols=['high_rank','antecedent_name','consequent_name','high_joint','high_support','rest_support','high_confidence','rest_confidence','high_lift','global_rank']
+html='<meta charset="utf-8"><title>高金额订单分析</title><style>body{font:16px Microsoft YaHei;max-width:1400px;margin:30px auto;line-height:1.7;color:#203047}table{border-collapse:collapse;font-size:13px}td,th{padding:9px;border-bottom:1px solid #ddd}th{background:#e7edf5}img{margin:20px 0}</style>'+intro+t[cols].to_html(index=False,float_format=lambda v:f'{v:.4f}',escape=True)
+(O/'高金额订单分析.html').write_text(html,encoding='utf-8')
