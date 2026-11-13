@@ -1,0 +1,32 @@
+{
+ "R5_codes": 596,
+ "R5_l2_consistency": 0.9178,
+ "R5_l1_consistency": 0.9446,
+ "R5_pass_90": true,
+ "R6_codes": 4724,
+ "missing_codes": [],
+ "invalid": 1,
+ "human_gold_used": 200,
+ "human_override": 30,
+ "gold_items_llm_equals_gold": 0.9,
+ "other_codes_share": 0.0131,
+ "other_weighted_share": 0.002,
+ "other_pass_5pct": true,
+ "prefix_family_consistency": 0.9089,
+ "prefix_families": 384,
+ "series_consistency": 0.9062,
+ "series": 32,
+ "l1_agreement_with_v0": 0.7987,
+ "n_l2_used": 77,
+ "max_l2_share": 0.0672,
+ "review_list": 20,
+ "season_counts": {
+  "none": 4424,
+  "christmas": 237,
+  "easter": 61,
+  "halloween": 1,
+  "valentine": 1
+ },
+ "R6_cost_incl_cached": 12.546127,
+ "R5_cost_incl_cached": 3.015932
+}

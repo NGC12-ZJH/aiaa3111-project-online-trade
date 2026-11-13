@@ -1,0 +1,21 @@
+stock_code,canonical_description,l2_id,l2_name,reason,discovery_lines
+20914,SET/5 RED SPOTTY LID GLASS BOWLS,bowls,碗,wording_inconsistent;,663
+22588,CARD HOLDER GINGHAM HEART,tabletop_decorations,桌面装饰,wording_inconsistent;,314
+20750,RED/WHITE DOT MINI CASES,trinket_jewellery_box,首饰盒与小饰品盒,wording_inconsistent;,284
+21531,RETRO SPOT SUGAR JAM BOWL,teapot_tea_set,茶壶和茶/咖啡套装,wording_inconsistent;,274
+20754,RETRO RED SPOTTY WASHING UP GLOVES,kitchen_tools,厨房工具和餐具,wording_inconsistent;,251
+21539,RETRO SPOTS BUTTER DISH,kitchen_storage,厨房储物罐,wording_inconsistent;,231
+22579,WOODEN TREE CHRISTMAS SCANDINAVIAN,hanging_ornaments,悬挂装饰（含圣诞树挂饰）,wording_inconsistent;,225
+22080,RIBBON REEL SPOTS DESIGN,gift_wrap_tags,礼品包装纸和标签,wording_inconsistent;,195
+22536,MAGIC DRAWING SLATE PURDEY,pens_pencils_art,笔和美术用品,wording_inconsistent;,168
+10002,INFLATABLE POLITICAL GLOBE,outdoor_active_toys,户外运动玩具,family_inconsistent;,168
+22168,ORGANISER WOOD ANTIQUE WHITE,storage_baskets_decor,装饰收纳篮与玩具收纳,wording_inconsistent;,145
+22175,PINK OWL SOFT TOY,soft_toys,毛绒玩具,wording_inconsistent;,119
+22406,MONEY BOX KINGS CHOICE DESIGN,money_boxes,存钱罐,wording_inconsistent;,88
+22410,MONEY BOX HOUSEKEEPING DESIGN,money_boxes,存钱罐,wording_inconsistent;,86
+22176,BLUE OWL SOFT TOY,soft_toys,毛绒玩具,wording_inconsistent;,83
+22289,"DECORATION , HANGING METAL CHICKEN",hanging_ornaments,悬挂装饰（含圣诞树挂饰）,series_inconsistent;,13
+22288,"DECORATION , HANGING METAL RABBIT",hanging_ornaments,悬挂装饰（含圣诞树挂饰）,series_inconsistent;,7
+22286,"DECORATION , WOBBLY RABBIT , METAL",tabletop_decorations,桌面装饰,series_inconsistent;,2
+22287,"DECORATION , WOBBLY CHICKEN, METAL",tabletop_decorations,桌面装饰,series_inconsistent;,1
+10002R,ROBOT PENCIL SHARPNER,pens_pencils_art,笔和美术用品,family_inconsistent;,0

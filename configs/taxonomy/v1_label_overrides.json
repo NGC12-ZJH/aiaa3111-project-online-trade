@@ -1,0 +1,21 @@
+{
+  "_comment": "Human corrections to the final taxonomy_v1 item labels (after the gold-standard evaluation; not blind). Applied by v1_finalize_labels.py as label_source = human_override; the LLM output stays in llm_tag_l2. Gold items are never changed here. Item-level review decisions come from data/taxonomy/v1_work/review_v1_decisions.csv.",
+  "rules": [
+    {
+      "codes": [
+        "21354",
+        "21355",
+        "21356",
+        "21358"
+      ],
+      "to": "kitchen_tools",
+      "why": "TOAST ITS series (21354-21358) made consistent with C's adjudication of gold item 21357 (B decision 2026-11-13)."
+    }
+  ],
+  "notes": [
+    "hanging_ornaments ends at 6.7% of Discovery lines (6.8% before the item review) (v0 hanging_decoration 6.9%) because tree ornaments were merged back (season is an attribute). Kept as is: the taxonomy is frozen and the gold evaluation used this structure (B decision 2026-11-13).",
+    "Matches (21584, 21586, 21587, 21588, 21590, 21591 and 21592 in the gold set): no dedicated subcategory; labelled candle_holder_lantern by purpose (lighting candles), reviewer suggestion confirmed by B 2026-11-13. Recorded in review_v1_decisions.csv.",
+    "Harmonicas in box (21914, 21915): kept as gift_boxes per reviewer (frozen gift_boxes definition includes pre-filled gift boxes), B decision 2026-11-13.",
+    "Item-level review: 26 changes among 55 doubtful codes (top 1,000 by Discovery lines plus their families), file data/taxonomy/gold/review_v1_B.xlsx -> data/taxonomy/v1_work/review_v1_decisions.csv."
+  ]
+}

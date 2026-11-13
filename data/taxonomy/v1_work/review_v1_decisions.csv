@@ -1,0 +1,27 @@
+stock_code,llm_l2,reviewed_l2,note
+21914,other,gift_boxes,盒装玩具口琴，无乐器子类；参照指南礼品盒例子 BLUE DIAMANTE PEN IN GIFT BOX，按盒装小礼物归礼品盒
+22739,hanging_ornaments,gift_wrap_tags,主体是彩带卷（RIBBON REEL），袜子/彩球只是图案
+22636,other,plates,儿童早餐餐具套装（盘/碗/杯），无套装子类，取盘子
+21915,other,gift_boxes,盒装玩具口琴，无乐器子类；参照指南礼品盒例子 BLUE DIAMANTE PEN IN GIFT BOX，按盒装小礼物归礼品盒
+22558,other,household_laundry_storage,晾衣夹，洗衣用品
+21587,other,candle_holder_lantern,火柴：指南无对应子类，按点蜡烛用途取最接近的烛台；也可考虑统一定为其他规则，交 B 决定
+21591,other,candle_holder_lantern,火柴：指南无对应子类，按点蜡烛用途取最接近的烛台；也可考虑统一定为其他规则，交 B 决定
+22950,coasters_placemats,party_tableware,一次性纸质蕾丝垫（DOILIES），按派对餐具
+85049C,sewing_craft,gift_wrap_tags,85049 彩带系列统一为礼品包装
+21832,other,pens_pencils_art,趣味计算器，文具类无更近子类
+85049D,sewing_craft,gift_wrap_tags,85049 彩带系列统一为礼品包装
+20751,other,kitchen_tools,洗碗手套，同 RETRO RED SPOTTY WASHING UP GLOVES
+21584,other,candle_holder_lantern,火柴：指南无对应子类，按点蜡烛用途取最接近的烛台；也可考虑统一定为其他规则，交 B 决定
+22535,chalkboards_memo_boards,pens_pencils_art,魔术画板统一为笔和美术用品（同 #20）
+22533,chalkboards_memo_boards,pens_pencils_art,魔术画板统一为笔和美术用品（同 #20）
+21590,other,candle_holder_lantern,火柴：指南无对应子类，按点蜡烛用途取最接近的烛台；也可考虑统一定为其他规则，交 B 决定
+22311,other,mugs_cups,杯子保温垫，杯具配件，取杯子
+21586,other,candle_holder_lantern,火柴：指南无对应子类，按点蜡烛用途取最接近的烛台；也可考虑统一定为其他规则，交 B 决定
+85049F,hair_accessories,gift_wrap_tags,85049 彩带系列统一为礼品包装；BABY BOOM 是图案名，不是发饰
+20752,other,kitchen_tools,洗碗手套，同 RETRO RED SPOTTY WASHING UP GLOVES
+84659A,other,clocks,复古造型旅行闹钟，偏装饰
+21588,other,candle_holder_lantern,火柴：指南无对应子类，按点蜡烛用途取最接近的烛台；也可考虑统一定为其他规则，交 B 决定
+20985,other,pens_pencils_art,趣味计算器，文具类无更近子类
+15044B,party_tableware,umbrella_rainwear,装饰纸阳伞，不是鸡尾酒纸伞；15044 系列统一
+15044D,party_tableware,umbrella_rainwear,装饰纸阳伞，不是鸡尾酒纸伞；15044 系列统一
+72807A,decorative_candles,scented_candles,香薰蜡烛礼盒，与 72807B/C 统一（指南例子 ROSE SCENT CANDLE IN JEWELLED BOX）

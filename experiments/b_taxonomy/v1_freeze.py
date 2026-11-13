@@ -41,11 +41,34 @@ def check_freeze(strict=True):
     return rec
 
 
+FINAL = V1_WORK / "FREEZE_taxonomy_v1_final.json"
+FINAL_FILES = ["data/taxonomy/item_taxonomy_v1.csv", "configs/taxonomy/v1_label_overrides.json",
+               "data/taxonomy/v1_work/review_v1_decisions.csv", "experiments/b_taxonomy/results/llm_runs/R6/labels.csv",
+               "experiments/b_taxonomy/results/llm_runs/R5/labels.csv", "data/taxonomy/gold/gold_final_v1.csv",
+               "configs/taxonomy/llm_runs_v1.json", "experiments/b_taxonomy/results/gold/evaluation_v1.json"]
+
+
+def freeze_final(by, note):
+    """Final freeze of the item labels (taxonomy_v1). The rc1 structure freeze must still be intact."""
+    rc1 = check_freeze(strict=True)
+    if rc1 is None:
+        raise SystemExit("structure (rc1) was never frozen")
+    rec = {"version": "taxonomy_v1", "structure": {"version": rc1["version"], "frozen_at": rc1["frozen_at"]},
+           "frozen_at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "frozen_by": by, "note": note,
+           "sha256": {f: sha(ROOT / f) for f in FINAL_FILES}}
+    FINAL.write_text(json.dumps(rec, indent=1, ensure_ascii=False))
+    print(json.dumps(rec, indent=1, ensure_ascii=False))
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--by", required=True)
     ap.add_argument("--note", default="")
+    ap.add_argument("--final", action="store_true", help="freeze the final item labels (after R6 and human review)")
     a = ap.parse_args()
+    if a.final:
+        freeze_final(a.by, a.note)
+        raise SystemExit
     tp = TAX_CFG / "taxonomy_v1.json"
     tax = json.loads(tp.read_text())
     tax["version"] = VERSION
