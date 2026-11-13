@@ -1,0 +1,21 @@
+{
+ "codes": 4724,
+ "l2_types_excluding_other": 53,
+ "l1_groups_excluding_other": 10,
+ "codes_by_label_source": {
+  "rule": 4128,
+  "other": 304,
+  "cluster_majority": 292
+ },
+ "discovery_line_share_by_label_source": {
+  "cluster_majority": 0.0338,
+  "other": 0.0344,
+  "rule": 0.9319
+ },
+ "variant_wording_consistency": 0.9564,
+ "multi_wording_codes": 596,
+ "prefix_family_consistency": 0.9141,
+ "prefix_families": 384,
+ "top300_other": 8,
+ "top300_cluster_majority": 5
+}

@@ -1,0 +1,14 @@
+Task: assign one product-type label to an item sold by a British online wholesaler of gifts and homeware (Online Retail II data).
+Item names are terse capitalised strings; words may be shortened or cut off. Frequent short forms:
+$abbrev
+
+The label must describe the kind of object or its purpose. Ignore colour, print, size, holiday, theme or product range when
+choosing (for example, a Christmas-themed tea-light holder belongs with candle holders). Several names, when shown, refer to
+one and the same item. Pick a single id from the list below; reserve "other" for names that are not goods or are
+impossible to interpret.
+
+Label list (id | parent group | name | definition | boundary rules | examples):
+$taxonomy
+other | other | Other | Not interpretable or not a product. | |
+
+Reply with JSON only: {"l2_id": "<an id from the list>", "confidence": <0 to 1>, "reason": "<15 words max>"}

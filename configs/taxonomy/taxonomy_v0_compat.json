@@ -1,0 +1,642 @@
+{
+ "version": "taxonomy_v0_compat",
+ "status": "v0 categories without definitions; for pipeline trials only",
+ "seed_labels": "data/taxonomy/v1_work/seed_labels_v0.csv",
+ "l2": [
+  {
+   "id": "lunch_bag",
+   "l1": "bags",
+   "name_en": "lunch bag",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "LUNCH BAG RED SPOTTY",
+    "LUNCH BAG WOODLAND",
+    "LUNCH BAG CARS BLUE"
+   ]
+  },
+  {
+   "id": "jumbo_shopper_bag",
+   "l1": "bags",
+   "name_en": "jumbo shopper bag",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "RED SPOTTY SHOPPER BAG",
+    "RED SPOTTY SHOPPING BAG",
+    "POSY SHOPPER BAG"
+   ]
+  },
+  {
+   "id": "small_fabric_bag",
+   "l1": "bags",
+   "name_en": "small fabric bag",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "BLUE STRIPES SHOULDER BAG",
+    "PINK STRIPES SHOULDER BAG",
+    "POCKET BAG BLUE PAISLEY RED SPOT"
+   ]
+  },
+  {
+   "id": "purse_wallet",
+   "l1": "fashion_accessories",
+   "name_en": "purse wallet",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "RED SPOTTY PURSE",
+    "BLUE SPOTTY PURSE",
+    "BLUE FLOWER DES PURSE"
+   ]
+  },
+  {
+   "id": "cake_cases",
+   "l1": "baking_party",
+   "name_en": "cake cases",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "PACK OF 60 PINK PAISLEY CAKE CASES",
+    "60 GOLD AND SILVER FAIRY CAKE CASES",
+    "75 GREEN FAIRY CAKE CASES"
+   ]
+  },
+  {
+   "id": "party_tableware",
+   "l1": "baking_party",
+   "name_en": "party tableware",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "SET/20 RED SPOTTY PAPER NAPKINS",
+    "SET/20 POSIES PAPER NAPKINS",
+    "SET/6 STRAWBERRY PAPER CUPS"
+   ]
+  },
+  {
+   "id": "party_bags_supplies",
+   "l1": "baking_party",
+   "name_en": "party bags supplies",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "12 COLOURED PARTY BALLOONS",
+    "BLUE PARTY BAGS",
+    "PINK PARTY BAGS"
+   ]
+  },
+  {
+   "id": "bunting_garland",
+   "l1": "baking_party",
+   "name_en": "bunting garland",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "WHITE BELL HONEYCOMB PAPER GARLAND",
+    "WHITE HONEYCOMB PAPER GARLAND",
+    "WHITE DOVE HONEYCOMB PAPER GARLAND"
+   ]
+  },
+  {
+   "id": "hand_warmer",
+   "l1": "fashion_accessories",
+   "name_en": "hand warmer",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "HAND WARMER RED RETROSPOT",
+    "HAND WARMER BIRD DESIGN",
+    "HAND WARMER OWL DESIGN"
+   ]
+  },
+  {
+   "id": "hot_water_bottle",
+   "l1": "home_decor",
+   "name_en": "hot water bottle",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "PINK STRIPE HOT WATER BOTTLE",
+    "RED WHITE SCARF HOT WATER BOTTLE",
+    "BLUE WHITE SCARF HOT WATER BOTTLE"
+   ]
+  },
+  {
+   "id": "toys_games",
+   "l1": "toys_kids",
+   "name_en": "toys games",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "SILVER TEDDY BEAR",
+    "GOLD TEDDY BEAR",
+    "TOYBOX WRAP"
+   ]
+  },
+  {
+   "id": "greeting_cards",
+   "l1": "stationery_gift_wrap",
+   "name_en": "greeting cards",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "FOLK ART GREETING CARD,pack/12",
+    "VINTAGE CARAVAN GREETING CARD",
+    "FAIRY CAKE GREETINGS CARD"
+   ]
+  },
+  {
+   "id": "gift_wrap_tags",
+   "l1": "stationery_gift_wrap",
+   "name_en": "gift wrap tags",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "RED SPOTS WRAP",
+    "BLUE SPOTS WRAP",
+    "PINK SPOTS WRAP"
+   ]
+  },
+  {
+   "id": "gift_boxes",
+   "l1": "stationery_gift_wrap",
+   "name_en": "gift boxes",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "FAIRY CAKES RECTANGLUAR BOXES",
+    "PACK OF 6 SWEETIE GIFT BOXES",
+    "PINK DIAMANTE PEN IN GIFT BOX"
+   ]
+  },
+  {
+   "id": "cake_stand",
+   "l1": "kitchen_dining",
+   "name_en": "cake stand",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "GLASS CAKE STAND",
+    "PINK SMALL GLASS CAKE STAND",
+    "BLACK MEDIUM GLASS CAKE STAND"
+   ]
+  },
+  {
+   "id": "baking_tools",
+   "l1": "kitchen_dining",
+   "name_en": "baking tools",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "ROUND CAKE TIN VINTAGE RED",
+    "ROUND CAKE TIN VINTAGE GREEN",
+    "TEATIME ROUND CAKE TINS"
+   ]
+  },
+  {
+   "id": "lunch_box_cutlery",
+   "l1": "kitchen_dining",
+   "name_en": "lunch box cutlery",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "LUNCHBOX WITH CUTLERY RETROSPOT",
+    "STRAWBERRY LUNCHBOX WITH CUTLERY",
+    "BLUE 3 PIECE MINI DOTS CUTLERY SET"
+   ]
+  },
+  {
+   "id": "kitchen_textiles",
+   "l1": "kitchen_dining",
+   "name_en": "kitchen textiles",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "TEA TIME KITCHEN APRON",
+    "RED TEA TOWEL CLASSIC DESIGN",
+    "BLACK TEA TOWEL CLASSIC DESIGN"
+   ]
+  },
+  {
+   "id": "teapot_tea_set",
+   "l1": "kitchen_dining",
+   "name_en": "teapot tea set",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "BLUE SPOTTY COFFEE MUG",
+    "RED SPOTTY COFFEE MUG",
+    "COFFEE MUG BLUE PAISLEY DESIGN"
+   ]
+  },
+  {
+   "id": "mugs_cups",
+   "l1": "kitchen_dining",
+   "name_en": "mugs cups",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "BLACK AND WHITE PAISLEY FLOWER MUG",
+    "ORANGE FLOWER MUG",
+    "VINTAGE RED MUG"
+   ]
+  },
+  {
+   "id": "egg_cups",
+   "l1": "kitchen_dining",
+   "name_en": "egg cups",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "FELT EGG COSY BLUE RABBIT",
+    "FELT EGG COSY WHITE RABBIT",
+    "FELT EGG COSY CHICKEN"
+   ]
+  },
+  {
+   "id": "plates_bowls",
+   "l1": "kitchen_dining",
+   "name_en": "plates bowls",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "SILVER PLATE CANDLE BOWL SMALL",
+    "SILVER PLATE CANDLE BOWL LARGE",
+    "RETRO SPOTS PUDDING BOWL"
+   ]
+  },
+  {
+   "id": "kitchen_storage",
+   "l1": "kitchen_dining",
+   "name_en": "kitchen storage",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "JAM JAR WITH GREEN LID",
+    "JAM JAR WITH PINK LID",
+    "JARDIN ETCHED GLASS LARGE BELL JAR"
+   ]
+  },
+  {
+   "id": "kitchen_tools",
+   "l1": "kitchen_dining",
+   "name_en": "kitchen tools",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "GOLD WINE GLASS",
+    "BLACK WINE GLASS",
+    "ENAMEL FLOWER JUG CREAM"
+   ]
+  },
+  {
+   "id": "candle_holder_lantern",
+   "l1": "candles_lighting",
+   "name_en": "candle holder lantern",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "FLUTED ANTIQUE CANDLE HOLDER",
+    "BLUE FLOWER T-LIGHT HOLDER",
+    "BLACK SILVER FLOWER T-LIGHT HOLDER"
+   ]
+  },
+  {
+   "id": "candles_incense",
+   "l1": "candles_lighting",
+   "name_en": "candles incense",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "ORANGE CANDLE",
+    "S/4 ROSE BOTANICAL CANDLE",
+    "RETRO SPOT CANDLE MEDIUM"
+   ]
+  },
+  {
+   "id": "lights_lamps",
+   "l1": "candles_lighting",
+   "name_en": "lights lamps",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "LIGHT PINK CHERRY LIGHTS",
+    "BLUE ORGANDY ROUND LAMPSHADE W BEA",
+    "PINK CHERRY LIGHTS"
+   ]
+  },
+  {
+   "id": "photo_frame_album",
+   "l1": "home_decor",
+   "name_en": "photo frame album",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "GOLD PHOTO FRAME",
+    "SILVER PHOTO FRAME",
+    "PINK JEWELLED PHOTO FRAME"
+   ]
+  },
+  {
+   "id": "signs_boards",
+   "l1": "home_decor",
+   "name_en": "signs boards",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "WASHROOM METAL SIGN",
+    "GARDEN METAL SIGN",
+    "FRENCH KITCHEN SIGN BLUE METAL"
+   ]
+  },
+  {
+   "id": "clocks",
+   "l1": "home_decor",
+   "name_en": "clocks",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "WHITE BAROQUE WALL CLOCK",
+    "BLACK BAROQUE WALL CLOCK",
+    "BLACK DINER WALL CLOCK"
+   ]
+  },
+  {
+   "id": "mirrors",
+   "l1": "home_decor",
+   "name_en": "mirrors",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "PINK OVAL JEWELLED MIRROR",
+    "SILVER OVAL JEWELLED MIRROR",
+    "ARCHED GREY MIRROR"
+   ]
+  },
+  {
+   "id": "word_blocks_letters",
+   "l1": "home_decor",
+   "name_en": "word blocks letters",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "WELCOME WOODEN BLOCK LETTERS",
+    "PEACE WOODEN BLOCK LETTERS",
+    "JOY WOODEN BLOCK LETTERS"
+   ]
+  },
+  {
+   "id": "cushions_textiles",
+   "l1": "home_decor",
+   "name_en": "cushions textiles",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "PINK PAISLEY CUSHION COVER",
+    "GREEN ROSE CUSHION COVER",
+    "GOLD FLOWER CUSHION COVER"
+   ]
+  },
+  {
+   "id": "doormats",
+   "l1": "home_decor",
+   "name_en": "doormats",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "DOOR MAT RED SPOT",
+    "DOOR MAT GREEN PAISLEY",
+    "DOOR MAT RESPECTABLE HOUSE"
+   ]
+  },
+  {
+   "id": "hooks_racks_shelves",
+   "l1": "home_decor",
+   "name_en": "hooks racks shelves",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "CREAM SWEETHEART SHELF + HOOKS",
+    "ENCHANTED BIRD COATHANGER 5 HOOK",
+    "HOOK, 5 HANGER ,MAGIC TOADSTOOL RED"
+   ]
+  },
+  {
+   "id": "furniture_knobs",
+   "l1": "home_decor",
+   "name_en": "furniture knobs",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "WOOD 2 DRAWER CABINET WHITE FINISH",
+    "EDWARDIAN 2 DRAWER WALL CABINET",
+    "HALL CABINET WITH 3 DRAWERS"
+   ]
+  },
+  {
+   "id": "vases_planters",
+   "l1": "home_decor",
+   "name_en": "vases planters",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "SMALL GLASS HEART TRINKET POT",
+    "LOVE HEART TRINKET POT",
+    "ANTIQUE TALL SWIRLGLASS TRINKET POT"
+   ]
+  },
+  {
+   "id": "trinket_jewellery_box",
+   "l1": "home_decor",
+   "name_en": "trinket jewellery box",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "RED POLKA DOT TISSUE BOX",
+    "VICTORIAN SEWING BOX LARGE",
+    "VICTORIAN SEWING BOX MEDIUM"
+   ]
+  },
+  {
+   "id": "doorstops_paperweights",
+   "l1": "home_decor",
+   "name_en": "doorstops paperweights",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "OWL DOORSTOP",
+    "SPOTTY PINK DUCK DOORSTOP",
+    "SPOTTY CAT DOORSTOP"
+   ]
+  },
+  {
+   "id": "hanging_decoration",
+   "l1": "home_decor",
+   "name_en": "hanging decoration",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "HEART WOODEN CHRISTMAS DECORATION",
+    "PINK STAR CHRISTMAS DECORATION",
+    "WHITE CHRISTMAS HEART DECORATION"
+   ]
+  },
+  {
+   "id": "notebooks_journals",
+   "l1": "stationery_gift_wrap",
+   "name_en": "notebooks journals",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "VINTAGE NOTEBOOK PINK FLOWER",
+    "DAISY SKETCHBOOK",
+    "GREEN FERN NOTEBOOK"
+   ]
+  },
+  {
+   "id": "pens_pencils_art",
+   "l1": "stationery_gift_wrap",
+   "name_en": "pens pencils art",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "36 PENCILS TUBE RED SPOTTY",
+    "12 PENCILS SMALL TUBE RED SPOTTY",
+    "PACK OF 12 COLOURED PENCILS"
+   ]
+  },
+  {
+   "id": "stickers_tattoos",
+   "l1": "stationery_gift_wrap",
+   "name_en": "stickers tattoos",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "ANIMAL STICKERS",
+    "3D VINTAGE CHRISTMAS STICKERS",
+    "FLOWERS STICKERS"
+   ]
+  },
+  {
+   "id": "magnets",
+   "l1": "stationery_gift_wrap",
+   "name_en": "magnets",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "SET 5 MINI CHOCOLATE FRIDGE MAGNETS",
+    "BIG DOUGHNUT FRIDGE MAGNETS",
+    "ASSORTED CAKES FRIDGE MAGNETS"
+   ]
+  },
+  {
+   "id": "jewellery_accessories",
+   "l1": "fashion_accessories",
+   "name_en": "jewellery accessories",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "BLACK GLASS/SHELL/PEARL NECKLACE",
+    "AMBER CHUNKY GLASS+BEAD NECKLACE",
+    "RESIN NECKLACE W PASTEL BEADS"
+   ]
+  },
+  {
+   "id": "umbrella_rainwear",
+   "l1": "fashion_accessories",
+   "name_en": "umbrella rainwear",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "VINTAGE PINK DECORATIVE PARASOL",
+    "FOLDING UMBRELLA , RED/WHITE SPOT",
+    "FOLDING UMBRELLA WHITE/RED SPOT"
+   ]
+  },
+  {
+   "id": "keyrings_tags",
+   "l1": "fashion_accessories",
+   "name_en": "keyrings tags",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "BLUE SPOTTY LUGGAGE TAG",
+    "RED SPOTTY LUGGAGE TAG",
+    "RED HEART LUGGAGE TAG"
+   ]
+  },
+  {
+   "id": "clothing_slippers",
+   "l1": "fashion_accessories",
+   "name_en": "clothing slippers",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "PINK HORSE SOCK PUPPET",
+    "COSY SLIPPER SHOES SMALL GREEN",
+    "COSY SLIPPER SHOES SMALL RED"
+   ]
+  },
+  {
+   "id": "tissues_plasters",
+   "l1": "personal_care",
+   "name_en": "tissues plasters",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "PACK OF 12 RED SPOTTY TISSUES",
+    "PACK OF 12 PINK SPOT TISSUES",
+    "PACK OF 12 PINK PAISLEY TISSUES"
+   ]
+  },
+  {
+   "id": "bath_beauty",
+   "l1": "personal_care",
+   "name_en": "bath beauty",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "SOFT PINK ROSE TOWEL",
+    "MINT GREEN ROSE TOWEL",
+    "LARGE CAKE TOWEL PINK SPOTS"
+   ]
+  },
+  {
+   "id": "sewing_craft",
+   "l1": "personal_care",
+   "name_en": "sewing craft",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "VICTORIAN SEWING KIT",
+    "BASKET OF FLOWERS SEWING KIT",
+    "DELUXE SEWING KIT"
+   ]
+  },
+  {
+   "id": "garden_outdoor",
+   "l1": "garden_outdoor",
+   "name_en": "garden outdoor",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "BIRDHOUSE GARDEN MARKER",
+    "MINATURE COLOURED GARDENING SET",
+    "CERAMIC BIRDHOUSE BLACK ROSE LARGE"
+   ]
+  },
+  {
+   "id": "pet_items",
+   "l1": "garden_outdoor",
+   "name_en": "pet items",
+   "definition": "",
+   "boundary": "",
+   "examples": [
+    "CAMOUFLAGE DOG COLLAR",
+    "CAMOUFLAGUE DOG LEAD"
+   ]
+  }
+ ]
+}

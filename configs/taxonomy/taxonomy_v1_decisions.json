@@ -1,0 +1,328 @@
+{
+  "_comment": "Human decisions for taxonomy_v1 (B). Assistant recommendations, confirmed by B on 2026-11-12 (incl. merging tree_ornaments). Edit, then run v1_step3_build.py. accept=false keeps the v0 subcategory unchanged. merge: {source: target}, applied after all proposals; the target's definition is redrafted. Keys starting with _ are ignored. Round 2 (2026-11-12, confirmed by B): definition fixes, seed_overrides, Charlotte bag stays in fashion_handbags.",
+  "splits": {
+    "hanging_decoration": {
+      "accept": true,
+      "edits": {}
+    },
+    "toys_games": {
+      "accept": true,
+      "edits": {}
+    },
+    "signs_boards": {
+      "accept": true,
+      "edits": {}
+    },
+    "plates_bowls": {
+      "accept": true,
+      "edits": {}
+    },
+    "small_fabric_bag": {
+      "accept": true,
+      "edits": {}
+    },
+    "candles_incense": {
+      "accept": true,
+      "edits": {}
+    },
+    "jewellery_accessories": {
+      "accept": true,
+      "edits": {}
+    }
+  },
+  "merge": {
+    "_why": "92 subcategories after splits is above the 60-80 target; merge tiny or overlapping ones -> 76. pet_items is no longer merged: misplaced pet bowls moved into it (14 codes, 279 Discovery baskets).",
+    "tree_ornaments": "hanging_ornaments",
+    "mobiles": "hanging_ornaments",
+    "decorative_objects": "tabletop_decorations",
+    "toy_storage": "storage_baskets_decor",
+    "baskets_storage": "storage_baskets_decor",
+    "decorative_wall_art": "wall_art",
+    "number_tiles": "door_hangers_signs",
+    "wall_organisers": "hooks_racks_shelves",
+    "jewellery_stands": "trinket_jewellery_box",
+    "bag_phone_charms": "keyrings_tags",
+    "napkin_rings_charms": "tableware_sets",
+    "ashtrays": "plates",
+    "drinkware": "mugs_cups",
+    "fragrance_accessories": "incense",
+    "gift_bags": "gift_wrap_tags",
+    "picnic_beach_bags": "travel_bags_luggage"
+  },
+  "edits": {
+    "hanging_ornaments": {
+      "name_en": "Hanging Ornaments (incl. Christmas tree)",
+      "name_zh": "悬挂装饰（含圣诞树挂饰）",
+      "definition": "Ornaments designed to be hung from a tree, branch, hook, window or wall, for any season: tree decorations, baubles, hanging hearts, stars and birds, and mobiles.",
+      "boundary": "Includes tree decorations, baubles, hanging hearts, stars and birds, and mobiles; excludes garlands and bunting (bunting_garland), wreaths (wreaths), freestanding figures (tabletop_decorations) and hanging candle holders (candle_holder_lantern). Season is recorded separately and does not change the subcategory."
+    },
+    "door_hangers_signs": {
+      "name_en": "Door & House-Number Signs",
+      "name_zh": "门牌、门挂与数字牌"
+    },
+    "tableware_sets": {
+      "name_en": "Table Accessories & Sets",
+      "name_zh": "餐桌配件与套装"
+    },
+    "incense": {
+      "name_en": "Incense & Fragrance Accessories",
+      "name_zh": "香与香薰配件",
+      "definition": "Incense sticks and cones and other non-candle home-fragrance items: incense holders, oil burners, fragrance oils and scented sachets.",
+      "boundary": "Includes incense, incense holders, oil burners, fragrance oils and sachets, and incense-and-candle sets; excludes candles (the four candle subcategories) and candle holders (candle_holder_lantern)."
+    },
+    "travel_bags_luggage": {
+      "name_en": "Travel, Picnic & Beach Bags",
+      "name_zh": "旅行、野餐与沙滩包"
+    },
+    "storage_baskets_decor": {
+      "name_en": "Decorative Storage Baskets & Toy Tidies",
+      "name_zh": "装饰收纳篮与玩具收纳",
+      "definition": "Woven, wicker, wooden or fabric baskets, chests and tidies for storage or display, including toy tidies and picnic baskets.",
+      "boundary": "Includes storage and picnic baskets, nesting basket sets, wooden chests and toy tidies; excludes laundry and peg bags (household_laundry_storage), food tins and jars (kitchen_storage) and small trinket boxes (trinket_jewellery_box)."
+    },
+    "wall_art": {
+      "name_en": "Wall Art & Plaques",
+      "name_zh": "墙面装饰画与挂牌"
+    },
+    "keyrings_tags": {
+      "name_en": "Keyrings, Bag Charms & Luggage Tags",
+      "name_zh": "钥匙扣、包挂与行李牌",
+      "definition": "Small attachable accessories: keyrings and key fobs, bag and phone charms, and luggage tags.",
+      "boundary": "Includes keyrings, key fobs, bag charms, phone charms and luggage tags; excludes jewellery worn on the body (jewellery) and gift tags (gift_wrap_tags)."
+    },
+    "furniture_knobs": {
+      "name_en": "Furniture & Drawer Knobs",
+      "name_zh": "家具与抽屉把手",
+      "definition": "Small furniture such as cabinets, drawer units and side, occasional or coffee tables, plus furniture hardware such as drawer knobs and handles.",
+      "boundary": "Includes cabinets, drawer units, small tables, drawer knobs and pulls; excludes wall shelves and hooks (hooks_racks_shelves), storage baskets (storage_baskets_decor), table linens (kitchen_textiles) and TV tray tables (serving_trays_platters)."
+    },
+    "cushions_textiles": {
+      "name_en": "Cushions & Cushion Covers",
+      "name_zh": "靠垫与靠垫套",
+      "definition": "Cushions, cushion covers and other soft-furnishing textiles such as throws.",
+      "boundary": "Includes filled cushions and cushion covers; excludes kitchen and table textiles (kitchen_textiles), bath towels (bath_beauty), hot water bottles (hot_water_bottle) and doorstops (doorstops_paperweights)."
+    },
+    "greeting_cards": {
+      "name_zh": "贺卡与明信片",
+      "definition": "Greeting cards, postcards, notelets and envelopes for occasions and messages.",
+      "boundary": "Includes single cards, card packs, postcards, notelets and envelopes; excludes gift tags (gift_wrap_tags), card games such as snap cards (games_puzzles) and card holders (tabletop_decorations)."
+    },
+    "kitchen_textiles": {
+      "name_en": "Kitchen & Table Textiles",
+      "name_zh": "厨房与餐桌纺织品",
+      "definition": "Fabric items for the kitchen and dining table: tea towels, aprons, oven gloves, tablecloths and table runners.",
+      "boundary": "Includes tea towels, aprons, oven gloves, tablecloths, table runners and fabric napkins; excludes paper napkins (party_tableware), bath towels (bath_beauty) and cushions (cushions_textiles)."
+    },
+    "umbrella_rainwear": {
+      "name_en": "Umbrellas, Parasols & Rainwear",
+      "name_zh": "雨伞、阳伞与雨具",
+      "definition": "Umbrellas, parasols and rainwear such as ponchos and rain hats.",
+      "boundary": "Includes folding umbrellas, decorative parasols, ponchos and rain hats; excludes other clothing (clothing_slippers) and paper cocktail parasols (party_tableware)."
+    },
+    "chalkboards_memo_boards": {
+      "boundary": "Use for plain writing surfaces (blackboards, chalkboards, memo boards); boards whose main function is storage with hooks or pockets go to hooks_racks_shelves; worded decorative signs go to wall_signs."
+    },
+    "teapot_tea_set": {
+      "definition": "Teapots, coffee pots, tea sets and matching tea-time serving pieces such as milk jugs, sugar bowls and tea, coffee or sugar caddies.",
+      "boundary": "Includes teapots, coffee pots, multi-piece tea sets, milk jugs, sugar bowls and tea caddies; excludes single mugs and cup-and-saucer items (mugs_cups) and general food storage tins (kitchen_storage)."
+    },
+    "clothing_slippers": {
+      "name_en": "Clothing, Footwear & Fans",
+      "name_zh": "服装、鞋袜与扇子",
+      "definition": "Wearable clothing and footwear (slippers, socks, scarves, hats, dresses, baby bibs) and hand-held fans.",
+      "boundary": "Includes slippers, socks, scarves, sun hats, children's clothing, bibs and fans; excludes knitting kits (sewing_craft), sock puppets (soft_toys), rainwear (umbrella_rainwear) and hand warmers (hand_warmer)."
+    },
+    "vases_planters": {
+      "definition": "Vases, posy holders, plant pots and planters for cut flowers or plants, including wall and hanging planters.",
+      "boundary": "Includes vases, posy holders, indoor plant pots and planters; excludes small trinket pots (trinket_jewellery_box), garden ornaments and tools (garden_outdoor) and candle holders (candle_holder_lantern)."
+    },
+    "trinket_jewellery_box": {
+      "name_en": "Jewellery & Trinket Boxes",
+      "name_zh": "首饰盒与小饰品盒",
+      "definition": "Decorative small boxes, pots and trays for jewellery and small items: jewellery boxes, trinket pots and trays, jewellery stands, sewing boxes and tissue box covers.",
+      "boundary": "Includes jewellery boxes, trinket pots and trays, jewellery stands, sewing boxes and tissue boxes; excludes gift boxes (gift_boxes), food storage tins and jars (kitchen_storage) and storage baskets (storage_baskets_decor)."
+    },
+    "purse_wallet": {
+      "name_zh": "钱包",
+      "definition": "Purses, wallets, coin purses and card or passport holders for carrying money and documents.",
+      "boundary": "Includes purses, wallets and passport covers; excludes toiletry and cosmetic bags (wash_cosmetic_bags), handbags (fashion_handbags) and keyrings (keyrings_tags)."
+    },
+    "wash_cosmetic_bags": {
+      "boundary": "Includes washbags, cosmetic and make-up bags and toiletry pouches; excludes purses and wallets (purse_wallet) and drawstring or laundry bags (household_laundry_storage)."
+    },
+    "decorative_candles": {
+      "definition": "Candles made or decorated for display rather than standard lighting: figural and novelty shapes, candles in decorative cups or teacups, and pebble or ball candles.",
+      "boundary": "Includes shaped and novelty candles, cup/teacup candles and decorative candle sets; excludes tealights (tealight_candles), dinner, taper and pillar candles (dinner_taper_pillar_candles) and scented jar or tin candles (scented_candles)."
+    },
+    "fashion_handbags": {
+      "_note": "Charlotte bags stay here (B decision 2026-11-12)."
+    }
+  },
+  "other": {
+    "accept_assignments": true,
+    "accept_new_subcategories": true
+  },
+  "design": {
+    "accept": true,
+    "season_extra": {
+      "_why": "unambiguous Christmas words missed by the LLM list (added by B 2026-11-12)",
+      "christmas": [
+        "SANTA",
+        "ADVENT",
+        "BAUBLE",
+        "NATIVITY",
+        "SNOWMAN",
+        "NOEL",
+        "REINDEER",
+        "STOCKING",
+        "HOLLY",
+        "SNOWFLAKE"
+      ]
+    },
+    "_why": "keep named collections only; generic motifs (heart, rose, star, bird, cat, spotty, floral ...) are dropped because they describe a picture, not a product range",
+    "keep_only": [
+      "retrospot",
+      "spaceboy",
+      "dolly_girl",
+      "circus_parade",
+      "tutti_frutti",
+      "baroque",
+      "vintage_paisley",
+      "scandinavian_paisley",
+      "potting_shed",
+      "kings_choice",
+      "new_england",
+      "empire",
+      "folk_art",
+      "teatime",
+      "sweetheart",
+      "union_jack",
+      "english_rose",
+      "cherry_blossom",
+      "charlie_and_lola",
+      "skull",
+      "woodland",
+      "london"
+    ]
+  },
+  "seed_overrides": [
+    {
+      "_why": "Seed-label fixes found while reviewing taxonomy_v1 (v0 keyword-rule errors). Regex on canonical description; from = current label."
+    },
+    {
+      "from": "teapot_tea_set",
+      "match": "\\bMUGS?\\b|CUP & SAUCER",
+      "to": "mugs_cups"
+    },
+    {
+      "from": "teapot_tea_set",
+      "match": "CANDLE",
+      "to": "dinner_taper_pillar_candles"
+    },
+    {
+      "from": "teapot_tea_set",
+      "match": "COFFEE TABLE",
+      "to": "furniture_knobs"
+    },
+    {
+      "from": "clothing_slippers",
+      "match": "KNITTING KIT",
+      "to": "sewing_craft"
+    },
+    {
+      "from": "clothing_slippers",
+      "match": "SOCK PUPPET|CAT WITH SCARF",
+      "to": "soft_toys"
+    },
+    {
+      "from": "clothing_slippers",
+      "match": "FEATHER TREE",
+      "to": "tabletop_decorations"
+    },
+    {
+      "from": "clothing_slippers",
+      "match": "FEATHER DUSTER",
+      "to": "kitchen_tools"
+    },
+    {
+      "from": "clothing_slippers",
+      "match": "WINDSOCK",
+      "to": "garden_outdoor"
+    },
+    {
+      "from": "clothing_slippers",
+      "match": "JEWEL STAND",
+      "to": "trinket_jewellery_box"
+    },
+    {
+      "from": "vases_planters",
+      "match": "TRINKET POT",
+      "to": "trinket_jewellery_box"
+    },
+    {
+      "from": "vases_planters",
+      "match": "GLASS CLOCHE",
+      "to": "tabletop_decorations"
+    },
+    {
+      "from": "vases_planters",
+      "match": "ENAMEL POT W LID",
+      "to": "kitchen_storage"
+    },
+    {
+      "from": "furniture_knobs",
+      "match": "TABLE RUN|TABLE CLOTH",
+      "to": "kitchen_textiles"
+    },
+    {
+      "from": "furniture_knobs",
+      "match": "TABLE DECORATIONS",
+      "to": "tabletop_decorations"
+    },
+    {
+      "from": "furniture_knobs",
+      "match": "DRESSING TABLE POT",
+      "to": "trinket_jewellery_box"
+    },
+    {
+      "from": "furniture_knobs",
+      "match": "TABLE TINS",
+      "to": "kitchen_storage"
+    },
+    {
+      "from": "mugs_cups",
+      "match": "CANDLE",
+      "to": "decorative_candles"
+    },
+    {
+      "from": "kitchen_storage",
+      "match": "CANDLE IN JAR",
+      "to": "scented_candles"
+    },
+    {
+      "from": "kitchen_tools",
+      "match": "DINNER CANDLES",
+      "to": "dinner_taper_pillar_candles"
+    },
+    {
+      "from": "gift_boxes",
+      "match": "PEBBLE CANDLES",
+      "to": "decorative_candles"
+    },
+    {
+      "from": "gift_boxes",
+      "match": "\\bMUG\\b",
+      "to": "mugs_cups"
+    },
+    {
+      "from": "jumbo_shopper_bag",
+      "match": "DOORSTOP",
+      "to": "doorstops_paperweights"
+    },
+    {
+      "from": "purse_wallet",
+      "match": "NOTEBOOK",
+      "to": "notebooks_journals"
+    }
+  ]
+}

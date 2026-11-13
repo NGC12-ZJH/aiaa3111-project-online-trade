@@ -1,0 +1,17 @@
+You are helping define two item attributes for a UK online giftware wholesaler (dataset: Online Retail II):
+- season: christmas, easter, valentine, halloween, or none.
+- design_line: a recurring design collection / motif / theme that appears across many different product types
+  (for example a named pattern such as RETROSPOT or a character range such as SPACEBOY). Colours alone ("PINK"),
+  materials ("ZINC", "WOOD") and product-type words ("MUG", "BAG", "CANDLE") are NOT design lines.
+
+Below are frequent words and word pairs from item descriptions, each with the number of items and of distinct product
+types it appears in, plus sample descriptions:
+$candidates
+
+Task: select the design lines (merge spelling variants of the same line into one) and give keyword patterns for them
+and for the four seasons. Patterns are matched as whole words/phrases against the upper-case description.
+
+Return only a JSON object with this shape:
+{"design_lines": [{"id": "snake_case", "name": "...", "patterns": ["WORD", "TWO WORDS"]}],
+ "seasons": {"christmas": ["..."], "easter": ["..."], "valentine": ["..."], "halloween": ["..."]},
+ "comment": "<short>"}

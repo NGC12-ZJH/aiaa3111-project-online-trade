@@ -5,3 +5,7 @@
 *.docx binary
 *.pdf binary
 *.png binary
+
+# Preserve the exact bytes recorded in the taxonomy final freeze manifest.
+/data/taxonomy/v1_work/review_v1_decisions.csv -text whitespace=cr-at-eol
+/data/taxonomy/gold/gold_final_v1.csv -text whitespace=cr-at-eol

@@ -1,0 +1,29 @@
+{
+ "seed": 3111,
+ "n": 200,
+ "strata": {
+  "head": 100,
+  "tail_rule": 80,
+  "tail_cluster_majority": 10,
+  "tail_other": 10
+ },
+ "tail_rule_by_v0_l1": {
+  "bags": 4,
+  "baking_party": 4,
+  "candles_lighting": 11,
+  "fashion_accessories": 12,
+  "garden_outdoor": 4,
+  "home_decor": 18,
+  "kitchen_dining": 11,
+  "personal_care": 3,
+  "stationery_gift_wrap": 9,
+  "toys_kids": 4
+ },
+ "top500_share_of_discovery_lines": 0.5713,
+ "gold_share_of_discovery_lines": 0.1358,
+ "first_seen_split": {
+  "profile": 168,
+  "discovery": 22,
+  "validation": 10
+ }
+}

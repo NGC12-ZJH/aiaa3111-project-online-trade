@@ -1,0 +1,333 @@
+{
+ "_source": "LLM draft from cache key 0be5dab24ce50c7f787d435c11648f0781c616c93d69f6fad88a336eecd60220 (2026-11-12T13:39:37+00:00, deepseek-v4-pro); human edits live in taxonomy_v1_decisions.json",
+ "baking_tools": {
+  "name_en": "Baking Tools & Tins",
+  "name_zh": "烘焙工具和模具",
+  "definition": "Items used for baking, including cake tins and cookie cutters.",
+  "boundary": "Includes baking pans, moulds, and cutters; excludes general kitchen utensils (kitchen_tools) and disposable paper cases (cake_cases)."
+ },
+ "bath_beauty": {
+  "name_en": "Bath & Beauty Accessories",
+  "name_zh": "洗浴美容用品",
+  "definition": "Towels, soap holders, and bath sponges used for personal care in the bath or shower.",
+  "boundary": "Includes bath linens and bath accessories; excludes kitchen textiles (kitchen_textiles) and tissues (tissues_plasters)."
+ },
+ "bunting_garland": {
+  "name_en": "Bunting & Garlands",
+  "name_zh": "彩旗和花环",
+  "definition": "Decorative strings of flags or paper shapes used to adorn spaces for celebrations.",
+  "boundary": "Includes paper or fabric garlands and bunting; excludes individual hanging ornaments (hanging_ornaments)."
+ },
+ "cake_cases": {
+  "name_en": "Cake Cases",
+  "name_zh": "蛋糕纸托",
+  "definition": "Disposable paper or foil cups used to line muffin or fairy cake tins.",
+  "boundary": "Includes baking paper liners; excludes reusable cake tins (baking_tools) and paper napkins/cups (party_tableware)."
+ },
+ "cake_stand": {
+  "name_en": "Cake Stands",
+  "name_zh": "蛋糕架",
+  "definition": "Elevated plates or stands used to display and serve cakes and desserts.",
+  "boundary": "Includes glass, metal, or ceramic cake stands; excludes general serving plates (plates) and tabletop decorations (tabletop_decorations)."
+ },
+ "candle_holder_lantern": {
+  "name_en": "Candle Holders & Lanterns",
+  "name_zh": "烛台和灯笼",
+  "definition": "Holders, plates, or lanterns designed to safely contain candles or tea lights.",
+  "boundary": "Includes candle plates and tea light holders; excludes string lights (lights_lamps) and incense holders (incense)."
+ },
+ "incense": {
+  "name_en": "Incense",
+  "name_zh": "香薰产品",
+  "definition": "Incense sticks, cones, or sets used to release fragrance when burned.",
+  "boundary": "Includes incense with holders or candles in sets; excludes candle holders without incense (candle_holder_lantern) and scented candles alone."
+ },
+ "clocks": {
+  "name_en": "Clocks",
+  "name_zh": "时钟",
+  "definition": "Timepieces designed for wall or tabletop display.",
+  "boundary": "Includes wall clocks and table clocks; excludes watches or alarm clocks not intended as decor."
+ },
+ "clothing_slippers": {
+  "name_en": "Clothing & Slippers",
+  "name_zh": "服装和拖鞋",
+  "definition": "Wearable items such as slippers, sock puppets, and scarf knitting kits.",
+  "boundary": "Includes slippers, soft sock puppets, and knitting kits for scarves; excludes hand warmers (hand_warmer) and purses/wallets (purse_wallet)."
+ },
+ "cushions_textiles": {
+  "name_en": "Cushion Covers",
+  "name_zh": "靠垫套",
+  "definition": "Removable fabric covers designed to fit over cushion inserts.",
+  "boundary": "Includes decorative cushion covers only; excludes filled cushions, throws, and kitchen textiles."
+ },
+ "doormats": {
+  "name_en": "Doormats",
+  "name_zh": "门垫",
+  "definition": "Mats placed at entrances to wipe shoes and protect floors.",
+  "boundary": "Includes indoor/outdoor doormats; excludes bath mats and pet mats."
+ },
+ "doorstops_paperweights": {
+  "name_en": "Doorstops & Paperweights",
+  "name_zh": "门挡和镇纸",
+  "definition": "Weighted items used to hold doors open or keep papers in place.",
+  "boundary": "Includes decorative doorstops and paperweights; excludes tabletop decorations (tabletop_decorations) not designed as weights."
+ },
+ "egg_cups": {
+  "name_en": "Egg Cups & Egg Cosies",
+  "name_zh": "蛋杯和蛋套",
+  "definition": "Items used to hold boiled eggs upright or cover them to keep warm.",
+  "boundary": "Includes egg cups and knitted/felt egg cosies; excludes general kitchen tools (kitchen_tools) and tableware (plates)."
+ },
+ "furniture_knobs": {
+  "name_en": "Cabinets & Cupboards",
+  "name_zh": "橱柜",
+  "definition": "Small freestanding or wall-mounted storage furniture pieces such as cabinets and cupboards.",
+  "boundary": "Includes decorative storage cabinets with drawers; excludes wall shelves/hooks (hooks_racks_shelves), storage baskets, and separate furniture knobs/handles."
+ },
+ "garden_outdoor": {
+  "name_en": "Garden & Outdoor Decor",
+  "name_zh": "花园户外装饰",
+  "definition": "Decorative and functional items for gardens and outdoor spaces, such as birdhouses, plant cages, and garden markers.",
+  "boundary": "Includes garden ornaments and plant holders; excludes indoor vases/planters (vases_planters) and pet bowls (pet_items)."
+ },
+ "gift_boxes": {
+  "name_en": "Gift Boxes",
+  "name_zh": "礼品盒",
+  "definition": "Decorative boxes used to present gifts, sometimes with a small item included.",
+  "boundary": "Includes pre-filled gift boxes; excludes gift wrap/tags (gift_wrap_tags) and decorative storage boxes (trinket_jewellery_box)."
+ },
+ "gift_wrap_tags": {
+  "name_en": "Gift Wrap & Tags",
+  "name_zh": "礼品包装纸和标签",
+  "definition": "Wrapping paper, tape, and tags used to wrap and label gifts.",
+  "boundary": "Includes rolls/sheets of wrap and gift tags; excludes gift boxes (gift_boxes) and greeting cards (greeting_cards)."
+ },
+ "greeting_cards": {
+  "name_en": "Greeting Cards",
+  "name_zh": "贺卡",
+  "definition": "Cards with messages or images sent for occasions and celebrations.",
+  "boundary": "Includes single cards and packs; excludes gift tags (gift_wrap_tags) and postcards."
+ },
+ "hand_warmer": {
+  "name_en": "Hand Warmers",
+  "name_zh": "暖手宝",
+  "definition": "Portable items that generate heat to warm hands, often reusable.",
+  "boundary": "Includes pocket warmers and reusable hand warmers; excludes gloves and clothing/slippers (clothing_slippers)."
+ },
+ "hanging_ornaments": {
+  "name_en": "Hanging Ornaments",
+  "name_zh": "挂饰",
+  "definition": "Decorative items designed to be suspended, typically for seasonal or festive display.",
+  "boundary": "Includes Christmas tree ornaments and hanging decorations; excludes garlands (bunting_garland) and tabletop decorations (tabletop_decorations)."
+ },
+ "tabletop_decorations": {
+  "name_en": "Tabletop Decorations",
+  "name_zh": "桌面装饰",
+  "definition": "Freestanding small decorative objects for display on tables, shelves, or mantels.",
+  "boundary": "Includes figurines and small seasonal decorations; excludes hanging ornaments (hanging_ornaments) and candle holders (candle_holder_lantern)."
+ },
+ "storage_baskets_decor": {
+  "name_en": "Decorative Storage Baskets",
+  "name_zh": "装饰收纳篮",
+  "definition": "Woven or wicker baskets used for storage, picnics, or decorative display.",
+  "boundary": "Includes picnic baskets and nesting baskets; excludes kitchen storage containers (kitchen_storage) and laundry baskets."
+ },
+ "hooks_racks_shelves": {
+  "name_en": "Hooks, Racks & Shelves",
+  "name_zh": "挂钩、挂架和搁板",
+  "definition": "Wall-mounted or hanging hardware for hanging and storing items such as coats, keys, and magazines.",
+  "boundary": "Includes coat hooks, shelving units, and magazine racks; excludes freestanding cabinets (furniture_knobs) and doorstops."
+ },
+ "hot_water_bottle": {
+  "name_en": "Hot Water Bottles",
+  "name_zh": "热水袋",
+  "definition": "Containers filled with hot water and often covered with fabric, used to provide warmth.",
+  "boundary": "Includes hot water bottles with covers; excludes hand warmers (hand_warmer) and cushions."
+ },
+ "jumbo_shopper_bag": {
+  "name_en": "Jumbo Shopper Bags",
+  "name_zh": "大号购物袋",
+  "definition": "Large reusable bags designed for shopping and carrying groceries or goods.",
+  "boundary": "Includes cotton or fabric shopper bags; excludes lunch bags (lunch_bag) and travel bags (travel_bags_luggage)."
+ },
+ "keyrings_tags": {
+  "name_en": "Keyrings & Bag Charms",
+  "name_zh": "钥匙扣和包挂饰",
+  "definition": "Decorative charms or tags attached to keys, bags, or phones.",
+  "boundary": "Includes keyrings, bag charms, and phone charms; excludes jewellery and trinket boxes (trinket_jewellery_box)."
+ },
+ "kitchen_storage": {
+  "name_en": "Kitchen Storage Containers",
+  "name_zh": "厨房储物罐",
+  "definition": "Containers such as tins, jars, and bread bins used to store food or kitchen items.",
+  "boundary": "Includes biscuit tins, glass jars, and bread bins; excludes decorative storage boxes (trinket_jewellery_box) and baskets (storage_baskets_decor)."
+ },
+ "kitchen_textiles": {
+  "name_en": "Kitchen Textiles",
+  "name_zh": "厨房纺织品",
+  "definition": "Fabric items used in the kitchen for cleaning, drying, and protection, such as tea towels, aprons, and oven gloves.",
+  "boundary": "Includes tea towels and oven gloves; excludes bath towels (bath_beauty) and table linens."
+ },
+ "kitchen_tools": {
+  "name_en": "Kitchen Tools & Utensils",
+  "name_zh": "厨房工具和餐具",
+  "definition": "Handheld tools and utensils used for cooking, serving, or eating.",
+  "boundary": "Includes spoons, spatulas, chopsticks, and small pans; excludes baking-specific tools (baking_tools), kitchen storage (kitchen_storage), and tableware (plates, mugs_cups)."
+ },
+ "lights_lamps": {
+  "name_en": "Lights & Lamps",
+  "name_zh": "灯饰",
+  "definition": "Lighting products including string lights, lamps, and lampshades for illumination or decoration.",
+  "boundary": "Includes fairy lights and lampshades; excludes candle holders (candle_holder_lantern) and non-electric lanterns."
+ },
+ "lunch_bag": {
+  "name_en": "Lunch Bags",
+  "name_zh": "午餐包",
+  "definition": "Insulated or non-insulated bags designed to carry packed meals and snacks.",
+  "boundary": "Includes lunch bags with handles or zippers; excludes jumbo shopper bags (jumbo_shopper_bag) and lunch boxes (lunch_box_cutlery)."
+ },
+ "lunch_box_cutlery": {
+  "name_en": "Lunch Boxes & Cutlery Sets",
+  "name_zh": "午餐盒和餐具套装",
+  "definition": "Containers for packed meals, often with accompanying mini cutlery sets.",
+  "boundary": "Includes lunchboxes with cutlery and standalone mini cutlery sets; excludes lunch bags (lunch_bag) and full-size kitchen utensils (kitchen_tools)."
+ },
+ "magnets": {
+  "name_en": "Fridge Magnets",
+  "name_zh": "冰箱贴",
+  "definition": "Decorative magnets designed to attach to refrigerators or other magnetic surfaces.",
+  "boundary": "Includes fridge magnets in sets or singles; excludes magnetic hooks or tools."
+ },
+ "mirrors": {
+  "name_en": "Mirrors",
+  "name_zh": "镜子",
+  "definition": "Reflective surfaces for viewing oneself, available as wall-mounted or handheld/compact styles.",
+  "boundary": "Includes wall mirrors and compact mirrors; excludes photo frames (photo_frame_album) and mirrored wall art (wall_art)."
+ },
+ "mugs_cups": {
+  "name_en": "Mugs & Cups",
+  "name_zh": "杯子和马克杯",
+  "definition": "Drinking vessels intended for hot beverages such as tea and coffee.",
+  "boundary": "Includes mugs, coffee cups, and saucers; excludes teapots/coffee pots (teapot_tea_set) and disposable paper cups (party_tableware)."
+ },
+ "notebooks_journals": {
+  "name_en": "Notebooks & Journals",
+  "name_zh": "笔记本和日记本",
+  "definition": "Bound paper products for writing, note-taking, or sketching.",
+  "boundary": "Includes notebooks, journals, and sketchbooks; excludes greeting cards and stationery sets."
+ },
+ "party_bags_supplies": {
+  "name_en": "Party Bags & Supplies",
+  "name_zh": "派对袋和派对用品",
+  "definition": "Disposable or decorative items for parties, including party bags, balloons, invitations, and candy cones.",
+  "boundary": "Includes party favours and decorations; excludes party tableware (party_tableware) and bunting/garlands (bunting_garland)."
+ },
+ "party_tableware": {
+  "name_en": "Party Tableware",
+  "name_zh": "派对餐具",
+  "definition": "Disposable paper or plastic tableware for parties, such as napkins, plates, and cups.",
+  "boundary": "Includes paper napkins and paper cups; excludes reusable plates (plates) and party bags/supplies (party_bags_supplies)."
+ },
+ "pens_pencils_art": {
+  "name_en": "Pens, Pencils & Art Supplies",
+  "name_zh": "笔和美术用品",
+  "definition": "Writing and drawing instruments and related art materials.",
+  "boundary": "Includes pencils, pens, and erasers; excludes notebooks (notebooks_journals) and craft kits (sewing_craft)."
+ },
+ "pet_items": {
+  "name_en": "Pet Bowls & Accessories",
+  "name_zh": "宠物碗和用品",
+  "definition": "Items for pets, particularly feeding bowls and related accessories.",
+  "boundary": "Includes dog and cat bowls; excludes human kitchen storage (kitchen_storage) and garden decor (garden_outdoor)."
+ },
+ "photo_frame_album": {
+  "name_en": "Photo Frames & Albums",
+  "name_zh": "相框和相册",
+  "definition": "Frames for displaying photographs and albums for storing them.",
+  "boundary": "Includes photo frames and photo albums; excludes mirrors (mirrors) and wall art (wall_art)."
+ },
+ "plates": {
+  "name_en": "Plates",
+  "name_zh": "盘子",
+  "definition": "Flat or shallow dishes used for serving or eating food.",
+  "boundary": "Includes dinner plates, cake plates, and pizza plates; excludes cake stands (cake_stand) and disposable paper plates (party_tableware)."
+ },
+ "tableware_sets": {
+  "name_en": "Napkin Rings & Place Settings",
+  "name_zh": "餐巾环和餐位装饰",
+  "definition": "Decorative accessories for table settings, such as napkin charms, napkin rings, and place card holders.",
+  "boundary": "Includes napkin rings and place setting decorations; excludes actual plates/cutlery (plates, kitchen_tools) and party tableware."
+ },
+ "purse_wallet": {
+  "name_en": "Purses & Wallets",
+  "name_zh": "钱包和手拿包",
+  "definition": "Small bags or cases used to carry money, cards, or cosmetics.",
+  "boundary": "Includes purses, wallets, and cosmetic pouches; excludes jumbo shopper bags (jumbo_shopper_bag) and keyring charms (keyrings_tags)."
+ },
+ "sewing_craft": {
+  "name_en": "Sewing & Craft Kits",
+  "name_zh": "缝纫和手工艺套装",
+  "definition": "Kits and supplies for sewing, felt craft, and similar handmade projects.",
+  "boundary": "Includes sewing kits and felt doll kits; excludes art supplies (pens_pencils_art) and finished textile products."
+ },
+ "door_hangers_signs": {
+  "name_en": "Door Hangers & Signs",
+  "name_zh": "门挂和标牌",
+  "definition": "Decorative signs, number tiles, and door hangers used for identification or display.",
+  "boundary": "Includes number/letter tiles and door signs; excludes wall art (wall_art) and hanging ornaments (hanging_ornaments)."
+ },
+ "travel_bags_luggage": {
+  "name_en": "Travel Bags & Luggage",
+  "name_zh": "旅行包和行李箱",
+  "definition": "Bags and cases designed for travel, including cabin bags, airline bags, and picnic bags.",
+  "boundary": "Includes luggage and travel bags; excludes jumbo shopper bags (jumbo_shopper_bag) and lunch bags (lunch_bag)."
+ },
+ "stickers_tattoos": {
+  "name_en": "Stickers & Temporary Tattoos",
+  "name_zh": "贴纸和纹身贴",
+  "definition": "Adhesive decorative stickers and temporary tattoos for personalising items or skin.",
+  "boundary": "Includes paper and 3D stickers; excludes gift wrap/tags (gift_wrap_tags) and magnets (magnets)."
+ },
+ "teapot_tea_set": {
+  "name_en": "Teapots & Tea/Coffee Sets",
+  "name_zh": "茶壶和茶/咖啡套装",
+  "definition": "Teapots, coffee pots, and matching cups/saucers or caddies used for serving tea or coffee.",
+  "boundary": "Includes tea/coffee pots and coordinated serving sets; excludes individual mugs (mugs_cups) not part of a set and kitchen storage jars (kitchen_storage)."
+ },
+ "tissues_plasters": {
+  "name_en": "Tissues & Plasters",
+  "name_zh": "纸巾和创可贴",
+  "definition": "Disposable paper tissues and adhesive bandages for personal hygiene and first aid.",
+  "boundary": "Includes pocket tissue packs and plasters; excludes bath sponges (bath_beauty) and kitchen towels (kitchen_textiles)."
+ },
+ "trinket_jewellery_box": {
+  "name_en": "Trinket & Jewellery Boxes",
+  "name_zh": "首饰盒和装饰盒",
+  "definition": "Decorative boxes used to store small items such as jewellery, sewing supplies, or tissues.",
+  "boundary": "Includes jewellery boxes, sewing boxes, and tissue box covers; excludes kitchen storage containers (kitchen_storage) and gift boxes (gift_boxes)."
+ },
+ "umbrella_rainwear": {
+  "name_en": "Umbrellas & Parasols",
+  "name_zh": "雨伞和阳伞",
+  "definition": "Umbrellas and parasols used for protection from rain or sun, or as decorative accessories.",
+  "boundary": "Includes folding umbrellas and decorative parasols; excludes raincoats and other clothing (clothing_slippers)."
+ },
+ "vases_planters": {
+  "name_en": "Vases & Planters",
+  "name_zh": "花瓶和花盆",
+  "definition": "Containers for displaying cut flowers or growing plants, including wall planters.",
+  "boundary": "Includes vases, plant pots, and planters; excludes garden outdoor decor (garden_outdoor) and candle holders."
+ },
+ "word_blocks_letters": {
+  "name_en": "Wooden Word Blocks & Letters",
+  "name_zh": "木质字母块",
+  "definition": "Decorative wooden letters or words used for display on shelves, walls, or tables.",
+  "boundary": "Includes freestanding or wall-mountable wooden letters/words; excludes door signs (door_hangers_signs) and wall art (wall_art)."
+ },
+ "wall_art": {
+  "name_en": "Wall Art & Plaques",
+  "name_zh": "墙面装饰画和挂饰",
+  "definition": "Decorative pieces designed to be mounted on walls, including mirrored art and plaques.",
+  "boundary": "Includes wall plaques and mirrored wall art; excludes mirrors (mirrors) and hanging ornaments (hanging_ornaments)."
+ }
+}

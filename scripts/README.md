@@ -20,3 +20,15 @@ python3 scripts/run_all.py
 | `run_all.py` | 按正确顺序执行以上完整流程 |
 
 算法实现位于 `src/online_trade/data/`，配置位于 `configs/`。
+
+## 商品分类入口（B）
+
+`python scripts/run_taxonomy.py validate` 只读检查冻结产物；
+`python scripts/run_taxonomy.py --help` 列出各步骤。
+实现与迁移说明见 [taxonomy 模块](../src/online_trade/taxonomy/README.md)。
+
+## 顾客分群入口（B）
+
+`python scripts/run_clustering.py` 比较 Profile 期 RFM 分群并生成随机对照。
+输入、冻结快照与结果见 [分群模块](../src/online_trade/clustering/README.md)。
+`run_all.py` 当前只串联 A 的数据处理，尚未整合 B/C/D。

@@ -1,0 +1,17 @@
+You are helping design a product-type taxonomy for a UK online giftware wholesaler (dataset: Online Retail II).
+Product descriptions are short, upper-case and often abbreviated (e.g. ASSTD = assorted, T-LIGHT = tea light, HLDR = holder, S/3 = set of 3).
+
+A keyword-based first version could not place the $n items below. Existing subcategories (id | parent group | example items):
+$taxonomy
+
+Task: for EACH item, choose the best existing subcategory id. If several items share a clear product type that no existing
+subcategory covers, you may propose up to 5 new subcategories (snake_case id, parent group from the existing groups, name_en,
+name_zh in Simplified Chinese, one-sentence definition, boundary rules). Use "other" only if the description is truly
+uninterpretable or not a product. Classify by what the product is / how it is used, not by colour, theme or season.
+
+Return only a JSON object with this shape:
+{"new_subcategories": [{"id": "...", "l1": "...", "name_en": "...", "name_zh": "...", "definition": "...", "boundary": "..."}],
+ "assignments": {"<stock_code>": "<subcategory id or other>", ...}}
+
+Items (stock code | description):
+$items

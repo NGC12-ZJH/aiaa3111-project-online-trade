@@ -1,0 +1,52 @@
+{
+  "_comment": "Run presets for llm_tag.py --run <id> (README section 5). Command-line flags override presets.",
+  "R1": {
+    "items": "gold",
+    "library": "eval",
+    "k": 5,
+    "prompt": "tag_v1.txt",
+    "purpose": "main method on gold"
+  },
+  "R2": {
+    "items": "gold",
+    "library": "eval",
+    "k": 0,
+    "prompt": "tag_v1.txt",
+    "purpose": "ablation: no examples"
+  },
+  "R3": {
+    "items": "gold",
+    "library": "eval",
+    "k": 5,
+    "prompt": "tag_v1_alt.txt",
+    "purpose": "prompt-wording stability"
+  },
+  "R4": {
+    "items": "gold",
+    "library": "eval",
+    "k": 0,
+    "prompt": "tag_v1.txt",
+    "purpose": "model stability",
+    "llm": {
+      "model": "SET-ME (different model family)",
+      "base_url": "SET-ME",
+      "api_key_env": "SET-ME"
+    }
+  },
+  "R5": {
+    "items": "multiwording",
+    "library": "prod",
+    "k": 0,
+    "prompt": "tag_v1.txt",
+    "per_variant": true,
+    "purpose": "robustness: label each wording separately (main method = R2 config)"
+  },
+  "R6": {
+    "items": "all",
+    "library": "prod",
+    "k": 0,
+    "prompt": "tag_v1.txt",
+    "purpose": "final labels for all codes (main method = R2 config)"
+  },
+  "_selection": "2026-11-13: R2 (no examples) chosen as main method by the pre-registered rule on the 200-item gold standard (L2 90.0% vs R1 87.0%; L1 92.5%; see experiments/b_taxonomy/results/gold/evaluation_v1.md). R5 and R6 therefore use the R2 configuration (k = 0, prompt tag_v1.txt)."
+}

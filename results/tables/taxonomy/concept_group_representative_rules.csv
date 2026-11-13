@@ -1,0 +1,16 @@
+group,rule,joint,support,out_support,conf,out_conf,lift
+0,toys_games->pens_pencils_art,182,0.2281,0.1481,0.524,0.403,1.63
+0,pens_pencils_art->trinket_jewellery_box,146,0.183,0.117,0.568,0.501,1.72
+0,toys_games->hanging_decoration,207,0.2594,0.1953,0.597,0.532,1.27
+0,candles_incense->hanging_decoration,144,0.1805,0.1234,0.676,0.574,1.43
+0,garden_outdoor->toys_games,111,0.1391,0.0844,0.657,0.538,1.51
+1,hanging_decoration->candle_holder_lantern,485,0.2241,0.2011,0.497,0.502,1.44
+1,hanging_decoration->gift_wrap_tags,367,0.1696,0.1474,0.376,0.368,1.41
+1,toys_games->candles_incense,267,0.1234,0.102,0.312,0.279,1.31
+1,jewellery_accessories->toys_games,172,0.0795,0.0601,0.656,0.579,1.66
+1,gift_wrap_tags+hanging_decoration->toys_games,223,0.103,0.0866,0.608,0.587,1.53
+2,signs_boards->doormats,469,0.1036,0.0635,0.319,0.215,1.45
+2,plates_bowls->doormats,446,0.0985,0.0621,0.279,0.192,1.27
+2,mugs_cups->plates_bowls,697,0.1539,0.1185,0.562,0.485,1.59
+2,jumbo_shopper_bag->lunch_bag,480,0.106,0.0709,0.387,0.303,2.24
+2,jumbo_shopper_bag->doormats,369,0.0815,0.0466,0.298,0.199,1.36
