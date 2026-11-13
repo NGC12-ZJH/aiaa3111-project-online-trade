@@ -4,8 +4,8 @@ import re
 
 import pandas as pd
 
-from paths import CACHE, RESULTS, TAXONOMY
-from rules_v0 import RULES
+from .paths import CACHE, RESULTS, TAXONOMY
+from .rules_v0 import RULES
 
 COMPILED = [(l2, re.compile(rx)) for l2, _, rx in RULES]
 L1_OF = {l2: l1 for l2, l1, _ in RULES}

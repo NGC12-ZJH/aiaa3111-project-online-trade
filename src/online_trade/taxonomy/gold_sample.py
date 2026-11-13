@@ -16,7 +16,7 @@ import json
 import numpy as np
 import pandas as pd
 
-from taxonomy_io import GOLD_DIR, load_catalog
+from .taxonomy_io import GOLD_DIR, load_catalog
 
 SEED = 3111
 N_HEAD, TOP_K, N_TAIL_FALLBACK, N_TAIL_OTHER, N_TAIL_RULE = 100, 500, 10, 10, 80

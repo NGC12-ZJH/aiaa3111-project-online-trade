@@ -3,8 +3,8 @@ import json
 
 import pandas as pd
 
-from paths import RESULTS
-from taxonomy_io import TAX_CFG, V1_WORK
+from .paths import RESULTS
+from .taxonomy_io import TAX_CFG, V1_WORK
 
 if __name__ == "__main__":
     t = json.loads((TAX_CFG / "taxonomy_v1.json").read_text())

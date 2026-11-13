@@ -19,7 +19,7 @@ import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 
-from paths import ROOT
+from .paths import ROOT
 
 CONFIG_PATH = ROOT / "configs" / "taxonomy" / "llm_v1.json"
 

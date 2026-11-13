@@ -9,9 +9,9 @@ Outputs: data/taxonomy/v1_work/proposals/*.json, results/v1_proposals_review.md,
 configs/taxonomy/taxonomy_v1_decisions.json, the file the human edits before step 3.
 
 Usage:
-  python v1_step2_propose.py --dry-run                 # show prompt sizes, no API call
-  python v1_step2_propose.py --only split:toys_games    # one request
-  python v1_step2_propose.py                            # everything (cached; rerun resumes)
+  python scripts/run_taxonomy.py v1_step2_propose --dry-run                 # show prompt sizes, no API call
+  python scripts/run_taxonomy.py v1_step2_propose --only split:toys_games    # one request
+  python scripts/run_taxonomy.py v1_step2_propose                            # everything (cached; rerun resumes)
 """
 import argparse
 import json
@@ -22,9 +22,9 @@ from string import Template
 
 import pandas as pd
 
-from llm_client import LLM, BudgetExceeded, load_config, parse_json
-from paths import RESULTS, SCHEMA_CUTOFF
-from taxonomy_io import LLM_CACHE, PROMPTS, TAX_CFG, V1_WORK, gold_codes, load_catalog, load_embeddings, pick_examples, prefix
+from .llm_client import LLM, BudgetExceeded, load_config, parse_json
+from .paths import RESULTS, SCHEMA_CUTOFF
+from .taxonomy_io import LLM_CACHE, PROMPTS, TAX_CFG, V1_WORK, gold_codes, load_catalog, load_embeddings, pick_examples, prefix
 
 PROP = V1_WORK / "proposals"
 PROP.mkdir(parents=True, exist_ok=True)

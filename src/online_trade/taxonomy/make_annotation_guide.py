@@ -7,14 +7,14 @@ Outputs: docs/annotation_guide_v1.md
 
 Leak check: no example shown in the guide may be the wording of a gold item.
 Standard library + openpyxl only, so it can run in any small environment:
-  python make_annotation_guide.py
+  python scripts/run_taxonomy.py make_annotation_guide
 """
 import csv
 import json
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 TAX = json.loads((ROOT / "configs/taxonomy/taxonomy_v1.json").read_text())
 ZH = json.loads((ROOT / "configs/taxonomy/annotation_guide_zh_v1.json").read_text())
 ABBR = (ROOT / "configs/prompts/abbreviations_v1.txt").read_text().strip().splitlines()
@@ -39,7 +39,7 @@ RULES = [
 
 def md():
     L = ["# 商品品类人工标注指南（金标准 · taxonomy_v1_rc1）", "",
-         f"> 版本：{TAX['version']}（冻结于 {TAX.get('frozen_at', '')}）· 由 `experiments/b_taxonomy/make_annotation_guide.py` 生成 · 负责人：B（Jinghan ZHAO）", "",
+         f"> 版本：{TAX['version']}（冻结于 {TAX.get('frozen_at', '')}）· 由 `src/online_trade/taxonomy/make_annotation_guide.py` 生成 · 负责人：B（Jinghan ZHAO）", "",
          "## 1. 你要做什么", "",
          "- 给 **200 个商品**各选一个“子类”。这 200 个商品是随机抽出的“金标准”，用来检验电脑自动标签（关键词规则和 LLM）准不准。",
          "- 两位标注人（A、D）**各自独立**标注同一批商品，C 裁定两人不一致的地方。",
@@ -49,7 +49,7 @@ def md():
          "为了让金标准真正独立，标注时请：",
          "",
          "1. **只看这份指南和你自己的 Excel。**",
-         "2. **不要打开仓库里 `data/taxonomy/` 和 `experiments/b_taxonomy/results/` 下的其他文件**。里面有电脑给这些商品打的标签（v0、LLM 的 R1–R3 等），看了就不再是独立判断了。",
+         "2. **不要打开仓库里 `data/taxonomy/` 和 `results/tables/taxonomy/` 下的其他文件**。里面有电脑给这些商品打的标签（v0、LLM 的 R1–R3 等），看了就不再是独立判断了。",
          "3. **标完之前不要和另一位标注人讨论**，也不要互看文件。",
          "4. 不要修改“编码”和“商品写法”两列，也不要增删行或调整顺序。",
          "", "## 3. Excel 怎么填", "",
@@ -166,7 +166,7 @@ def workbook(who):
     ru = wb.create_sheet("标注规则")
     ru.column_dimensions["A"].width = 120
     ru.append([f"标注人：{who}    版本：{TAX['version']}    完整说明见 docs/annotation_guide_v1.md"])
-    ru.append(["盲标纪律：只看本文件和指南；不要打开仓库 data/taxonomy/ 与 experiments/b_taxonomy/results/ 下的其他文件；标完前不和另一位标注人讨论。"])
+    ru.append(["盲标纪律：只看本文件和指南；不要打开仓库 data/taxonomy/ 与 results/tables/taxonomy/ 下的其他文件；标完前不和另一位标注人讨论。"])
     ru.append([""])
     for i, (t, d) in enumerate(RULES, 1):
         ru.append([f"{i}. {t}：{d}"])

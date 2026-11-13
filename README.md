@@ -74,7 +74,7 @@ AIAA3111 数据挖掘课程项目 · H2 分群购物模式。研究历史消费�
 | 规模 | 4,724 个商品；53 个子类、10 个大类 |
 | 覆盖 | 按 Discovery 购买加权：规则直接命中 93.2%，聚类兜底 3.4%，other 3.4% |
 | 一致性 | 同一商品不同写法标签一致 95.6%；同一编码前缀家族一致 91.4% |
-| 复现 | `python experiments/b_taxonomy/run_v0.py`，两次运行输出哈希一致；不需要 GPU |
+| 复现 | `python scripts/run_taxonomy.py run_v0`，两次运行输出哈希一致；不需要 GPU |
 | 未完成 | **没有人工金标准，准确率未知**；挂饰、玩具、招牌等子类过粗 |
 
 **品类层的初步发现（Discovery 期，门槛与 C 相同）：**
@@ -197,7 +197,7 @@ AIAA3111 数据挖掘课程项目 · H2 分群购物模式。研究历史消费�
 | LLM + 5 个例子（R1） | 87.0%（82–91%） | 90.5% | 0.823 | 91.4% |
 | 两位标注人一致性（Cohen's κ） | 参照上限：一致 92.5%，κ = 0.923 | 一致 95.0%，κ = 0.940 | — | — |
 
-结果（2026-11-13）：热门 100 个 / 长尾 100 个上 R2 的子类准确率分别为 91% / 89%。R1 与 R2 的差异不显著（McNemar 检验 p = 0.31）。按下面的规则 1，R2 为主方法；按规则 2，**达到冻结门槛**。详见 `experiments/b_taxonomy/results/gold/evaluation_v1.md`。
+结果（2026-11-13）：热门 100 个 / 长尾 100 个上 R2 的子类准确率分别为 91% / 89%。R1 与 R2 的差异不显著（McNemar 检验 p = 0.31）。按下面的规则 1，R2 为主方法；按规则 2，**达到冻结门槛**。详见 `results/tables/taxonomy/gold/evaluation_v1.md`。
 
 另外分“热门 100”和“长尾 100”报告。
 
@@ -316,8 +316,10 @@ AIAA3111 数据挖掘课程项目 · H2 分群购物模式。研究历史消费�
 | 路径 | 内容 |
 |---|---|
 | [`docs/taxonomy_v0.md`](docs/taxonomy_v0.md) | v0 的步骤、探索结果、基线定位、局限与复现 |
-| `experiments/b_taxonomy/` | v0 全部脚本（`run_v0.py` 一键运行）、分类规则 `rules_v0.py`、依赖版本 `requirements-taxonomy.txt` |
-| `experiments/b_taxonomy/results/` | 质量指标、子类规模、聚类样例、品类层结果与探索结果表 |
+| [`src/online_trade/taxonomy/`](src/online_trade/taxonomy/README.md) | v0/v1 实现、共享读取、分类规则、标注与校验模块 |
+| `scripts/run_taxonomy.py` | 分类统一入口：`validate`、`run_v0`、`llm_tag` 等步骤 |
+| `requirements-taxonomy.txt` | 分类模块的独立依赖版本 |
+| `results/tables/taxonomy/` | 质量指标、子类规模、聚类样例、品类层结果与探索结果表 |
 | `data/taxonomy/item_taxonomy_v0.csv` | 每个商品的子类、大类与标签来源（不含顾客信息） |
 | `data/taxonomy/item_description_variants.csv` | 每个商品的全部描述写法 |
 | **`data/taxonomy/item_taxonomy_v1.csv`** | **v1 最终标签**：子类、大类、season、design_line、标签来源（C 挖品类层用这个） |
@@ -330,7 +332,7 @@ AIAA3111 数据挖掘课程项目 · H2 分群购物模式。研究历史消费�
 | `data/taxonomy/llm_cache/llm_cache.jsonl` | 全部 LLM 返回（不含 API key），用于不联网复现 |
 
 ```bash
-python experiments/b_taxonomy/run_v0.py
+python scripts/run_taxonomy.py run_v0
 ```
 
 v1 的运行命令见 [`docs/taxonomy_v1.md`](docs/taxonomy_v1.md) 第 3 节。

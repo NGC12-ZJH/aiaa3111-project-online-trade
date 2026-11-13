@@ -13,7 +13,7 @@ import torch
 from sklearn.cluster import KMeans
 from transformers import AutoModel, AutoTokenizer
 
-from paths import CACHE, EMBED_MODEL, EMBED_REVISION, INPUT, N_CLUSTERS, RESULTS, SCHEMA_CUTOFF, SEED, TAXONOMY
+from .paths import CACHE, EMBED_MODEL, EMBED_REVISION, INPUT, N_CLUSTERS, RESULTS, SCHEMA_CUTOFF, SEED, TAXONOMY
 
 COLOUR_SIZE_WORDS = set("""red pink blue green white black ivory cream yellow purple orange silver gold brown grey gray
 natural antique vintage spotty spots spot retrospot polkadot dots dot stripe stripes stripey paisley baroque pastel

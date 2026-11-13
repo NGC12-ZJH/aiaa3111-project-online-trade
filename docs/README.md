@@ -10,3 +10,11 @@
 - [AIGC 使用记录](aigc_usage.md)
 
 课程与团队时间线见根目录 README。
+
+## 商品分类（B）
+
+- [v0 探索与复现](taxonomy_v0.md)
+- [v1 方法、评测与运行](taxonomy_v1.md)
+- [完整研究工作流](taxonomy_workflow.md)
+- [交接给 C](taxonomy_v1_handoff_C.md)
+- [模块架构与路径迁移](../src/online_trade/taxonomy/README.md)

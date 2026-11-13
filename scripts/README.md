@@ -20,3 +20,9 @@ python3 scripts/run_all.py
 | `run_all.py` | 按正确顺序执行以上完整流程 |
 
 算法实现位于 `src/online_trade/data/`，配置位于 `configs/`。
+
+## 商品分类入口（B）
+
+`python scripts/run_taxonomy.py validate` 只读检查冻结产物；
+`python scripts/run_taxonomy.py --help` 列出各步骤。
+实现与迁移说明见 [taxonomy 模块](../src/online_trade/taxonomy/README.md)。

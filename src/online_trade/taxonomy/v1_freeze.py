@@ -7,15 +7,15 @@ What it does:
 After this, v1_step3_build.py refuses to overwrite the taxonomy (unless --unfreeze), and llm_tag.py checks the
 hashes before each run, so R1-R6 are guaranteed to use exactly this version.
 
-Usage: python v1_freeze.py --by "B (Jinghan ZHAO)" --note "..."
+Usage: python scripts/run_taxonomy.py v1_freeze --by "B (Jinghan ZHAO)" --note "..."
 """
 import argparse
 import hashlib
 import json
 from datetime import datetime, timezone
 
-from paths import ROOT, TAXONOMY
-from taxonomy_io import GOLD_DIR, TAX_CFG, V1_WORK
+from .paths import ROOT, TAXONOMY
+from .taxonomy_io import GOLD_DIR, TAX_CFG, V1_WORK
 
 FREEZE = V1_WORK / "FREEZE_taxonomy_v1.json"
 FILES = [TAX_CFG / "taxonomy_v1.json", TAX_CFG / "taxonomy_v1_decisions.json", V1_WORK / "seed_labels_v1.csv",
@@ -43,9 +43,9 @@ def check_freeze(strict=True):
 
 FINAL = V1_WORK / "FREEZE_taxonomy_v1_final.json"
 FINAL_FILES = ["data/taxonomy/item_taxonomy_v1.csv", "configs/taxonomy/v1_label_overrides.json",
-               "data/taxonomy/v1_work/review_v1_decisions.csv", "experiments/b_taxonomy/results/llm_runs/R6/labels.csv",
-               "experiments/b_taxonomy/results/llm_runs/R5/labels.csv", "data/taxonomy/gold/gold_final_v1.csv",
-               "configs/taxonomy/llm_runs_v1.json", "experiments/b_taxonomy/results/gold/evaluation_v1.json"]
+               "data/taxonomy/v1_work/review_v1_decisions.csv", "results/tables/taxonomy/llm_runs/R6/labels.csv",
+               "results/tables/taxonomy/llm_runs/R5/labels.csv", "data/taxonomy/gold/gold_final_v1.csv",
+               "configs/taxonomy/llm_runs_v1.json", "results/tables/taxonomy/gold/evaluation_v1.json"]
 
 
 def freeze_final(by, note):

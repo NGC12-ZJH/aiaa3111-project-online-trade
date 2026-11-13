@@ -1,8 +1,7 @@
 """Shared paths and pinned input versions for the taxonomy_v0 experiment."""
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
-EXP = ROOT / "experiments" / "b_taxonomy"
+ROOT = Path(__file__).resolve().parents[3]
 
 # Pinned upstream inputs (read with `git show <commit>:<path>`; nothing is re-cleaned here).
 SNAPSHOT_COMMIT = "2ae672b7ea6edb7f5e1561b6a64823004dea833e"  # origin/a/online-retail-ii-data-snapshot
@@ -24,7 +23,7 @@ CACHE = ROOT / "data" / "processed" / "local" / "b_taxonomy_cache"
 
 # Committed outputs (no customer identifiers).
 TAXONOMY = ROOT / "data" / "taxonomy"
-RESULTS = EXP / "results"
+RESULTS = ROOT / "results" / "tables" / "taxonomy"
 
 # Text-embedding model used only to propose clusters (pinned Hugging Face revision).
 EMBED_MODEL = "sentence-transformers/all-MiniLM-L6-v2"

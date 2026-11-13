@@ -1,11 +1,11 @@
 """Inter-annotator agreement on the gold standard (A vs D) and the blind adjudication sheet for C. No machine labels.
 
 Inputs : data/taxonomy/gold/gold_labels_{A,D}.xlsx (returned workbooks), gold_items_v1.csv, taxonomy_v1.json
-Outputs: experiments/b_taxonomy/results/gold/agreement_A_D.md      report
+Outputs: results/tables/taxonomy/gold/agreement_A_D.md      report
          data/taxonomy/gold/gold_human_AD.csv                        one row per item: both labels, uncertainty, notes
          data/taxonomy/gold/adjudication_C.xlsx                       disagreements for C (+ optional sheet: agreed
                                                                       but both unsure); dropdown of valid ids
-Standard library + openpyxl only:  python gold_agreement.py
+Standard library + openpyxl only:  python scripts/run_taxonomy.py gold_agreement
 """
 import csv
 import json
@@ -16,9 +16,9 @@ from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.worksheet.datavalidation import DataValidation
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 GOLD = ROOT / "data/taxonomy/gold"
-OUT = ROOT / "experiments/b_taxonomy/results/gold"
+OUT = ROOT / "results/tables/taxonomy/gold"
 OUT.mkdir(parents=True, exist_ok=True)
 TAX = json.loads((ROOT / "configs/taxonomy/taxonomy_v1.json").read_text())
 ZH = json.loads((ROOT / "configs/taxonomy/annotation_guide_zh_v1.json").read_text())

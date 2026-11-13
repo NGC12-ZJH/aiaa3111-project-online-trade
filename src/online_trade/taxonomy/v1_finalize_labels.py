@@ -18,8 +18,8 @@ import re
 
 import pandas as pd
 
-from paths import RESULTS, TAXONOMY
-from taxonomy_io import GOLD_DIR, TAX_CFG, V1_WORK, load_catalog, prefix
+from .paths import RESULTS, TAXONOMY
+from .taxonomy_io import GOLD_DIR, TAX_CFG, V1_WORK, load_catalog, prefix
 
 RUNS = RESULTS / "llm_runs"
 

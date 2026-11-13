@@ -3,7 +3,7 @@ import json
 
 import pandas as pd
 
-from paths import CACHE, INPUT, RESULTS, TAXONOMY
+from .paths import CACHE, INPUT, RESULTS, TAXONOMY
 
 tax = pd.read_csv(TAXONOMY / "item_taxonomy_v0.csv", dtype={"stock_code": str}).set_index("stock_code").l2_id
 ev = pd.read_csv(INPUT / "rule_evidence.csv.gz", dtype={"seed": str, "group_id": str})

@@ -11,7 +11,7 @@ from pathlib import Path
 
 from openpyxl import load_workbook
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 GOLD = ROOT / "data/taxonomy/gold"
 TAX = json.loads((ROOT / "configs/taxonomy/taxonomy_v1.json").read_text())
 L1 = {c["id"]: c["l1"] for c in TAX["l2"]} | {"other": "other"}

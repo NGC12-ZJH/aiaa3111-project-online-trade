@@ -246,12 +246,12 @@ Online Retail II 的顾客中有不少批发商，我们最初猜测“同类换
 
 ## 8. 复现方法
 
-环境：Python 3.11（测试版本 3.11.15），`numpy 2.4.4`、`pandas 3.0.2`、`scikit-learn 1.8.0`、`torch 2.12.1+cpu`、`transformers 5.13.1`（见 `experiments/b_taxonomy/requirements-taxonomy.txt`）。第一次运行会从 Hugging Face 下载约 90 MB 的 MiniLM 模型；之后可设 `HF_HUB_OFFLINE=1` 离线运行。
+环境：Python 3.11（测试版本 3.11.15），`numpy 2.4.4`、`pandas 3.0.2`、`scikit-learn 1.8.0`、`torch 2.12.1+cpu`、`transformers 5.13.1`（见 `requirements-taxonomy.txt`）。第一次运行会从 Hugging Face 下载约 90 MB 的 MiniLM 模型；之后可设 `HF_HUB_OFFLINE=1` 离线运行。
 
 从仓库根目录执行：
 
 ```bash
-python experiments/b_taxonomy/run_v0.py
+python scripts/run_taxonomy.py run_v0
 ```
 
 依次运行：
@@ -274,11 +274,11 @@ python experiments/b_taxonomy/run_v0.py
 |---|---|---|
 | `data/taxonomy/item_taxonomy_v0.csv` | 每个商品的子类、大类、标签来源、首次出现时期、聚类、Discovery 购买行数 | 是（不含顾客信息） |
 | `data/taxonomy/item_description_variants.csv` | 每个商品的全部描述写法 | 是 |
-| `experiments/b_taxonomy/rules_v0.py` | 53 条有序关键词规则 | 是 |
-| `experiments/b_taxonomy/results/taxonomy_v0_quality.json` | 质量指标 | 是 |
-| `experiments/b_taxonomy/results/taxonomy_v0_category_sizes.csv` | 各子类商品数与购买占比 | 是 |
-| `experiments/b_taxonomy/results/cluster_review_v0.txt` | 120 个文本聚类的样例 | 是 |
-| `experiments/b_taxonomy/results/item_rules_same_type_share.csv` | C 的商品层规则中同类规则占比（含 60 个随机组） | 是 |
-| `experiments/b_taxonomy/results/concept_*.csv` | 品类层规则数量、差异指标、代表规则、高 lift 组合、Validation 检查 | 是 |
-| `experiments/b_taxonomy/results/explore_*.csv` | 关键词同系列检查、订单构成、Validation 新商品比例 | 是 |
+| `src/online_trade/taxonomy/rules_v0.py` | 53 条有序关键词规则 | 是 |
+| `results/tables/taxonomy/taxonomy_v0_quality.json` | 质量指标 | 是 |
+| `results/tables/taxonomy/taxonomy_v0_category_sizes.csv` | 各子类商品数与购买占比 | 是 |
+| `results/tables/taxonomy/cluster_review_v0.txt` | 120 个文本聚类的样例 | 是 |
+| `results/tables/taxonomy/item_rules_same_type_share.csv` | C 的商品层规则中同类规则占比（含 60 个随机组） | 是 |
+| `results/tables/taxonomy/concept_*.csv` | 品类层规则数量、差异指标、代表规则、高 lift 组合、Validation 检查 | 是 |
+| `results/tables/taxonomy/explore_*.csv` | 关键词同系列检查、订单构成、Validation 新商品比例 | 是 |
 | `data/processed/local/b_taxonomy_inputs/`、`b_taxonomy_cache/` | 提取的输入、向量和中间结果 | 否（本地） |

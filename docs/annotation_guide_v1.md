@@ -1,6 +1,6 @@
 # 商品品类人工标注指南（金标准 · taxonomy_v1_rc1）
 
-> 版本：taxonomy_v1_rc1（冻结于 2026-11-12T13:59:48+00:00）· 由 `experiments/b_taxonomy/make_annotation_guide.py` 生成 · 负责人：B（Jinghan ZHAO）
+> 版本：taxonomy_v1_rc1（冻结于 2026-11-12T13:59:48+00:00）· 由 `src/online_trade/taxonomy/make_annotation_guide.py` 生成 · 负责人：B（Jinghan ZHAO）
 
 ## 1. 你要做什么
 
@@ -14,7 +14,7 @@
 为了让金标准真正独立，标注时请：
 
 1. **只看这份指南和你自己的 Excel。**
-2. **不要打开仓库里 `data/taxonomy/` 和 `experiments/b_taxonomy/results/` 下的其他文件**。里面有电脑给这些商品打的标签（v0、LLM 的 R1–R3 等），看了就不再是独立判断了。
+2. **不要打开仓库里 `data/taxonomy/` 和 `results/tables/taxonomy/` 下的其他文件**。里面有电脑给这些商品打的标签（v0、LLM 的 R1–R3 等），看了就不再是独立判断了。
 3. **标完之前不要和另一位标注人讨论**，也不要互看文件。
 4. 不要修改“编码”和“商品写法”两列，也不要增删行或调整顺序。
 

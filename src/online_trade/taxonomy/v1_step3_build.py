@@ -15,10 +15,10 @@ from datetime import date
 
 import pandas as pd
 
-from llm_client import LLM, load_config, parse_json
-from paths import SCHEMA_CUTOFF, TAXONOMY
-from step2_tag import rule_tag
-from taxonomy_io import LLM_CACHE, TAX_CFG, V1_WORK, gold_codes, load_catalog, load_embeddings, pick_examples, prefix
+from .llm_client import LLM, load_config, parse_json
+from .paths import SCHEMA_CUTOFF, TAXONOMY
+from .step2_tag import rule_tag
+from .taxonomy_io import LLM_CACHE, TAX_CFG, V1_WORK, gold_codes, load_catalog, load_embeddings, pick_examples, prefix
 
 PROP = V1_WORK / "proposals"
 

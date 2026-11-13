@@ -4,7 +4,7 @@ import json
 import numpy as np
 import pandas as pd
 
-from paths import CACHE, ROOT, TAXONOMY
+from .paths import CACHE, ROOT, TAXONOMY
 
 V1_WORK = TAXONOMY / "v1_work"
 GOLD_DIR = TAXONOMY / "gold"

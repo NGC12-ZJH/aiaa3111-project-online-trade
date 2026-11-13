@@ -2,7 +2,7 @@
 import itertools
 import numpy as np
 import pandas as pd
-from paths import INPUT, TAXONOMY, RESULTS, CACHE, THRESHOLDS, BUDGET50_ALLOCATION
+from .paths import INPUT, TAXONOMY, RESULTS, CACHE, THRESHOLDS, BUDGET50_ALLOCATION
 OUT = RESULTS
 TH = THRESHOLDS
 tax = pd.read_csv(TAXONOMY / 'item_taxonomy_v0.csv', dtype={'stock_code': str}).set_index('stock_code')

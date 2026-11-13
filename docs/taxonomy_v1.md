@@ -17,13 +17,13 @@ v0 用关键词规则给商品分了 53 个子类，但几个大子类太粗（�
 | 步骤 | 状态 | 产出 |
 |---|---|---|
 | 金标准抽样（200 个） | ✅ 完成，固定不变 | `data/taxonomy/gold/gold_items_v1.csv`、盲标表 `gold_blind_sheet_A.csv` / `_D.csv` |
-| v1 第 1 步：统计哪些子类太大/太小 | ✅ | `experiments/b_taxonomy/results/v1_subcategory_stats.csv` |
+| v1 第 1 步：统计哪些子类太大/太小 | ✅ | `results/tables/taxonomy/v1_subcategory_stats.csv` |
 | v1 第 2 步：LLM 提拆分方案（9 个请求） | ✅ | `data/taxonomy/v1_work/proposals/*.json`、`results/v1_proposals_review.md` |
 | 人工决定（3 轮） | ✅ B 已确认 | `configs/taxonomy/taxonomy_v1_decisions.json` |
 | v1 第 3 步：生成类别表、例子池、节日/系列属性 | ✅ | `configs/taxonomy/taxonomy_v1.json`、`seed_labels_v1.csv`、`item_attributes_v1.csv` |
 | 冻结结构 | ✅ 2026-11-12 13:59 UTC | `data/taxonomy/v1_work/FREEZE_taxonomy_v1.json` |
 | R1–R3（金标准上的 LLM 标注） | ✅ 2026-11-12 | `results/llm_runs/R1/`、`R2/`、`R3/`；比较报告 `results/llm_runs/compare_R1_R2_R3.md` |
-| 不需人工的比较脚本 | ✅ | `experiments/b_taxonomy/compare_runs.py` |
+| 不需人工的比较脚本 | ✅ | `src/online_trade/taxonomy/compare_runs.py` |
 | 中文标注指南与盲标 Excel | ✅ | `docs/annotation_guide_v1.md`、`make_annotation_guide.py` |
 | A、D 人工盲标 | ✅ 2026-11-12 | `gold_labels_A.xlsx` / `_D.xlsx`；一致性报告 `results/gold/agreement_A_D.md` |
 | C 裁定 15 个分歧 | ✅ 2026-11-13 | `label_C.xlsx` → 最终金标准 `data/taxonomy/gold/gold_final_v1.csv` |
@@ -128,8 +128,8 @@ awk -F= '{print $1, "length=" length($2)}' .env
 ### 3.3 先看提示词（dry-run，不花钱）
 
 ```bash
-cd experiments/b_taxonomy
-/home/zhaojinghan0204/miniconda3/envs/dsaa_ml/bin/python llm_tag.py --run R1 --dry-run
+# 在仓库根目录运行
+python scripts/run_taxonomy.py llm_tag --run R1 --dry-run
 ```
 
 会打印第一个商品的完整提示词，以及大小估计（约 7,800 token 的固定部分加约 110 token 的个性化部分）。
@@ -139,10 +139,10 @@ cd experiments/b_taxonomy
 每轮一条命令，`--max-cost 3` 表示这一轮新花的钱超过 3 美元就停下：
 
 ```bash
-cd experiments/b_taxonomy
-/home/zhaojinghan0204/miniconda3/envs/dsaa_ml/bin/python llm_tag.py --run R1 --max-cost 3
-/home/zhaojinghan0204/miniconda3/envs/dsaa_ml/bin/python llm_tag.py --run R2 --max-cost 3
-/home/zhaojinghan0204/miniconda3/envs/dsaa_ml/bin/python llm_tag.py --run R3 --max-cost 3
+# 在仓库根目录运行
+python scripts/run_taxonomy.py llm_tag --run R1 --max-cost 3
+python scripts/run_taxonomy.py llm_tag --run R2 --max-cost 3
+python scripts/run_taxonomy.py llm_tag --run R3 --max-cost 3
 ```
 
 - 每轮默认同时发 8 个请求，200 个商品预计 **5–15 分钟**。运行中每完成 100 个会打印一次进度。
@@ -163,7 +163,7 @@ cd experiments/b_taxonomy
 
 ### 3.6 每轮的输出怎么看
 
-输出在 `experiments/b_taxonomy/results/llm_runs/<轮次>/`：
+输出在 `results/tables/taxonomy/llm_runs/<轮次>/`：
 
 **`labels.csv`**：每个商品一行。
 
@@ -221,14 +221,14 @@ cd experiments/b_taxonomy
 
 | 文件 | 作用 |
 |---|---|
-| `experiments/b_taxonomy/llm_client.py` | API 调用、缓存、断点续跑、费用统计；`--list-models` 查可用模型 |
-| `experiments/b_taxonomy/gold_sample.py` | 金标准抽样与盲标表 |
-| `experiments/b_taxonomy/v1_step1_stats.py` | 子类大小统计与拆分/合并标记 |
-| `experiments/b_taxonomy/v1_step2_propose.py` | LLM 拆分提案 |
-| `experiments/b_taxonomy/v1_step3_build.py` | 按人工决定生成类别表 |
-| `experiments/b_taxonomy/v1_review_sheet.py` | 生成中文审阅表 `results/taxonomy_v1_review.md` |
-| `experiments/b_taxonomy/v1_freeze.py` | 冻结与指纹核对 |
-| `experiments/b_taxonomy/llm_tag.py` | LLM 打标签（R1–R6） |
+| `src/online_trade/taxonomy/llm_client.py` | API 调用、缓存、断点续跑、费用统计；`--list-models` 查可用模型 |
+| `src/online_trade/taxonomy/gold_sample.py` | 金标准抽样与盲标表 |
+| `src/online_trade/taxonomy/v1_step1_stats.py` | 子类大小统计与拆分/合并标记 |
+| `src/online_trade/taxonomy/v1_step2_propose.py` | LLM 拆分提案 |
+| `src/online_trade/taxonomy/v1_step3_build.py` | 按人工决定生成类别表 |
+| `src/online_trade/taxonomy/v1_review_sheet.py` | 生成中文审阅表 `results/tables/taxonomy/taxonomy_v1_review.md` |
+| `src/online_trade/taxonomy/v1_freeze.py` | 冻结与指纹核对 |
+| `src/online_trade/taxonomy/llm_tag.py` | LLM 打标签（R1–R6） |
 | `configs/taxonomy/llm_v1.json` | 模型、接口地址、价格、并发数、默认费用上限 |
 | `configs/taxonomy/llm_runs_v1.json` | R1–R6 的预设 |
 | `configs/prompts/*.txt` | 提示词模板与缩写表 |

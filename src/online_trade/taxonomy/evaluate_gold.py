@@ -13,15 +13,15 @@ Discovery-weighted accuracy. Freeze only if L1 >= 90 % and L2 >= 80 %; 70-80 % a
 v0 note: v0 uses the old 53 subcategories, so at L2 it can only be right where the gold subcategory keeps a v0 id; we
 also report v0 on that subset.
 
-Usage: python evaluate_gold.py   -> results/gold/evaluation_v1.md (+ printed summary)
+Usage: python scripts/run_taxonomy.py evaluate_gold   -> results/gold/evaluation_v1.md (+ printed summary)
 """
 import json
 from math import comb, sqrt
 
 import pandas as pd
 
-from paths import RESULTS, ROOT
-from taxonomy_io import GOLD_DIR, TAX_CFG, load_catalog
+from .paths import RESULTS, ROOT
+from .taxonomy_io import GOLD_DIR, TAX_CFG, load_catalog
 
 OUT = RESULTS / "gold"
 OUT.mkdir(parents=True, exist_ok=True)

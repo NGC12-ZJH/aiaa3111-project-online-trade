@@ -1,7 +1,7 @@
 # 商品品类层级：完整工作流（v0 → v1）
 
 > 负责人：B（Jinghan ZHAO）· 分支：`b/taxonomy` · 整理日期：2026-11-13
-> 本文按时间顺序梳理从发现问题、做 v0、做 v1，到人工金标准评测的全过程，并列出参考来源、结果和未完成的工作。具体数字以 [`taxonomy_v0.md`](taxonomy_v0.md)、[`taxonomy_v1.md`](taxonomy_v1.md) 和 `experiments/b_taxonomy/results/` 为准。
+> 本文按时间顺序梳理从发现问题、做 v0、做 v1，到人工金标准评测的全过程，并列出参考来源、结果和未完成的工作。具体数字以 [`taxonomy_v0.md`](taxonomy_v0.md)、[`taxonomy_v1.md`](taxonomy_v1.md) 和 `results/tables/taxonomy/` 为准。
 > 全过程只用 Profile、Discovery、Validation 三个时期，**没有读取 Test 期的购买数据**。
 
 ---
@@ -331,7 +331,7 @@
 
 | 阶段 | 文件 |
 |---|---|
-| 问题发现与 v0 | `docs/taxonomy_v0.md`；`experiments/b_taxonomy/{explore_*,step1-4,rules_v0,run_v0}.py`；`data/taxonomy/item_taxonomy_v0.csv` |
+| 问题发现与 v0 | `docs/taxonomy_v0.md`；`src/online_trade/taxonomy/{explore_*,step1-4,rules_v0,run_v0}.py`；`data/taxonomy/item_taxonomy_v0.csv` |
 | v1 工具 | `llm_client.py`、`llm_tag.py`、`taxonomy_io.py`；`configs/taxonomy/llm_v1.json`、`llm_runs_v1.json`；`configs/prompts/*.txt` |
 | v1 结构 | `v1_step1_stats.py`、`v1_step2_propose.py`、`v1_step3_build.py`、`v1_review_sheet.py`、`v1_freeze.py`；`configs/taxonomy/taxonomy_v1.json`、`taxonomy_v1_decisions.json`；`data/taxonomy/v1_work/`；`results/v1_proposals_review.md`、`taxonomy_v1_review.md` |
 | 金标准 | `gold_sample.py`、`make_annotation_guide.py`、`gold_agreement.py`、`gold_finalize.py`；`docs/annotation_guide_v1.md`；`data/taxonomy/gold/` |

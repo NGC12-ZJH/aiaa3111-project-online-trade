@@ -2,7 +2,7 @@
 import hashlib
 import subprocess
 
-from paths import C_FILES, C_PATTERN_COMMIT, INPUT, ROOT, SNAPSHOT_COMMIT, SNAPSHOT_FILES
+from .paths import C_FILES, C_PATTERN_COMMIT, INPUT, ROOT, SNAPSHOT_COMMIT, SNAPSHOT_FILES
 
 
 def extract(commit, files):

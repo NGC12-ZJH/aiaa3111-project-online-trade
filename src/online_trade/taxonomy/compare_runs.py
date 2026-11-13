@@ -7,7 +7,7 @@ not validated).
 
 Pre-registered check (README section 6): R1 vs R3 L2 agreement >= 85 %.
 
-Usage: python compare_runs.py R1 R2 R3        -> results/llm_runs/compare_R1_R2_R3.md (+ printed)
+Usage: python scripts/run_taxonomy.py compare_runs R1 R2 R3        -> results/llm_runs/compare_R1_R2_R3.md (+ printed)
 """
 import itertools
 import json
@@ -15,8 +15,8 @@ import sys
 
 import pandas as pd
 
-from paths import RESULTS
-from taxonomy_io import GOLD_DIR, TAX_CFG, load_catalog
+from .paths import RESULTS
+from .taxonomy_io import GOLD_DIR, TAX_CFG, load_catalog
 
 RUNS = RESULTS / "llm_runs"
 

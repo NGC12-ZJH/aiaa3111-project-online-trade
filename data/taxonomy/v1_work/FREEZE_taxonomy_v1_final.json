@@ -11,10 +11,10 @@
   "data/taxonomy/item_taxonomy_v1.csv": "67c9c22ce3e3816a09e89ffc412546396950d904f0457e549072b71fd4353434",
   "configs/taxonomy/v1_label_overrides.json": "c69bd1e85a2cf03ca33b31cd02fb9fc4830e6e76f78a95bf549f47189f9e1341",
   "data/taxonomy/v1_work/review_v1_decisions.csv": "2205bfcdf8f775e829cfd0eb24d818d771f95d2c608d7f54d5628251003b8280",
-  "experiments/b_taxonomy/results/llm_runs/R6/labels.csv": "18ccbf9fcedeb8a2607a910300a4d59574cb187c5f105ab7fd0011270af5c621",
-  "experiments/b_taxonomy/results/llm_runs/R5/labels.csv": "45e766f63676d7a9fa65776b3780d4561643ffaf8655da4d0a2510380a5225a8",
+  "results/tables/taxonomy/llm_runs/R6/labels.csv": "18ccbf9fcedeb8a2607a910300a4d59574cb187c5f105ab7fd0011270af5c621",
+  "results/tables/taxonomy/llm_runs/R5/labels.csv": "45e766f63676d7a9fa65776b3780d4561643ffaf8655da4d0a2510380a5225a8",
   "data/taxonomy/gold/gold_final_v1.csv": "0b2f9980a627b4a0a524aeba5eeff9992ff76f36ba47b35615a577e1dddefe3c",
   "configs/taxonomy/llm_runs_v1.json": "98188bdfb05574980ec3bf94e09a9aad4ff8f580a965b1cbfee34276da8e1d16",
-  "experiments/b_taxonomy/results/gold/evaluation_v1.json": "8a78f88b18961f0e7aca571a7710d8cf8e169c4a09e345c8b5236eec50144fb4"
+  "results/tables/taxonomy/gold/evaluation_v1.json": "8a78f88b18961f0e7aca571a7710d8cf8e169c4a09e345c8b5236eec50144fb4"
  }
 }

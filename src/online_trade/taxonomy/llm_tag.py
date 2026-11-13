@@ -11,10 +11,10 @@ Reference library:
   prod  excludes gold items only (for R5-R6); the item itself is always excluded
 
 Examples:
-  python llm_tag.py --taxonomy v0 --items gold --sample 5 --run-id trial_v0 --dry-run   # inspect prompt, no API
-  python llm_tag.py --taxonomy v0 --items gold --sample 5 --run-id trial_v0              # 5-item trial
-  python llm_tag.py --run R1                                                             # preset (taxonomy_v1)
-  python llm_tag.py --run R1 --offline                                                   # rebuild from cache only
+  python scripts/run_taxonomy.py llm_tag --taxonomy v0 --items gold --sample 5 --run-id trial_v0 --dry-run   # inspect prompt, no API
+  python scripts/run_taxonomy.py llm_tag --taxonomy v0 --items gold --sample 5 --run-id trial_v0              # 5-item trial
+  python scripts/run_taxonomy.py llm_tag --run R1                                                             # preset (taxonomy_v1)
+  python scripts/run_taxonomy.py llm_tag --run R1 --offline                                                   # rebuild from cache only
 """
 import argparse
 import json
@@ -24,11 +24,11 @@ from string import Template
 import numpy as np
 import pandas as pd
 
-from llm_client import LLM, BudgetExceeded, CacheMiss, load_config, parse_json
-from paths import RESULTS, SCHEMA_CUTOFF
-from rules_v0 import RULES
-from step2_tag import rule_tag
-from taxonomy_io import (LLM_CACHE, PROMPTS, TAX_CFG, V1_WORK, gold_codes, load_catalog, load_embeddings,
+from .llm_client import LLM, BudgetExceeded, CacheMiss, load_config, parse_json
+from .paths import RESULTS, SCHEMA_CUTOFF
+from .rules_v0 import RULES
+from .step2_tag import rule_tag
+from .taxonomy_io import (LLM_CACHE, PROMPTS, TAX_CFG, V1_WORK, gold_codes, load_catalog, load_embeddings,
                          load_seed_labels, load_taxonomy, pick_examples, prefix)
 
 RUNS = RESULTS / "llm_runs"
@@ -171,7 +171,7 @@ def main():
     tax = load_taxonomy(tax_path)
     freeze = None
     if a.taxonomy != "v0":
-        from v1_freeze import check_freeze
+        from .v1_freeze import check_freeze
         freeze = check_freeze(strict=not a.dry_run)
         if freeze is None and a.run:
             raise SystemExit("taxonomy_v1 is not frozen yet: run v1_freeze.py before the R1-R6 runs")

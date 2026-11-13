@@ -10,8 +10,8 @@ Output: results/v1_subcategory_stats.csv
 """
 import pandas as pd
 
-from paths import INPUT, RESULTS, SCHEMA_CUTOFF
-from taxonomy_io import load_catalog
+from .paths import INPUT, RESULTS, SCHEMA_CUTOFF
+from .taxonomy_io import load_catalog
 
 SPLIT_SHARE, SPLIT_CODES, MERGE_BASKETS = 0.035, 150, 20
 

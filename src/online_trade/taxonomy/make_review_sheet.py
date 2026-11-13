@@ -1,7 +1,7 @@
 """Human review of doubtful popular items in the final taxonomy_v1 labels (standard library + openpyxl).
 
-  python make_review_sheet.py          -> data/taxonomy/v1_work/review_v1.xlsx   (to fill in)
-  python make_review_sheet.py --read   -> data/taxonomy/v1_work/review_v1_decisions.csv  (from review_v1_B.xlsx)
+  python scripts/run_taxonomy.py make_review_sheet          -> data/taxonomy/v1_work/review_v1.xlsx   (to fill in)
+  python scripts/run_taxonomy.py make_review_sheet --read   -> data/taxonomy/v1_work/review_v1_decisions.csv  (from review_v1_B.xlsx)
 
 The sheet lists results/v1_review_list.csv (top 1,000 codes by Discovery lines that are other / invalid / inconsistent
 across wordings, prefix family or name series). This review happens AFTER the gold evaluation and is not blind: it
@@ -19,7 +19,7 @@ from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.worksheet.datavalidation import DataValidation
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 WORK = ROOT / "data/taxonomy/v1_work"
 TAX = json.loads((ROOT / "configs/taxonomy/taxonomy_v1.json").read_text())
 ZH = json.loads((ROOT / "configs/taxonomy/annotation_guide_zh_v1.json").read_text())
@@ -40,9 +40,9 @@ def lab(x):
 
 def build():
     items = {r["stock_code"]: r for r in csv.DictReader(open(ROOT / "data/taxonomy/item_taxonomy_v1.csv"))}
-    review = list(csv.DictReader(open(ROOT / "experiments/b_taxonomy/results/v1_review_list.csv")))
+    review = list(csv.DictReader(open(ROOT / "results/tables/taxonomy/v1_review_list.csv")))
     r5 = defaultdict(list)
-    for r in csv.DictReader(open(ROOT / "experiments/b_taxonomy/results/llm_runs/R5/labels.csv")):
+    for r in csv.DictReader(open(ROOT / "results/tables/taxonomy/llm_runs/R5/labels.csv")):
         r5[r["stock_code"]].append(f"{r['wording']} → {lab(r['l2_id'])}")
     fam, ser = defaultdict(list), defaultdict(list)
     for c, r in items.items():
