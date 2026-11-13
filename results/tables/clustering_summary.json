@@ -1,0 +1,15 @@
+{
+  "selected_method": "kmeans",
+  "selected_k": 3,
+  "fitted_until": "2010-06-01T00:00:00",
+  "n_customers": 2684,
+  "bootstrap_repeats": 50,
+  "selection_rule": {
+    "status": "confirmed_2026-11-08",
+    "min_cluster_share": 0.05,
+    "min_bootstrap_ari": 0.8,
+    "silhouette_tie_tolerance": 0.02,
+    "tie_break": "within tolerance of best silhouette: smaller k, then method order"
+  },
+  "cluster_sizes": "700/1263/721"
+}

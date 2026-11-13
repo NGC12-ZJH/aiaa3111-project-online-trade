@@ -2,14 +2,14 @@
 
 AIAA3111 数据挖掘课程项目 · H2 分群购物模式。研究历史消费行为分群能否在相同规则预算下发现全局规则未充分体现的商品关联，并在未来交易中保持价值。
 
-**当前状态（2026-11-08）：A 的 Online Retail II 数据处理已合并到 `main` 并通过全量验证；B 的顾客分群方案已确定、代码待提交；C 的规则挖掘与 D 的评价尚未开始。尚无聚类、规则或评价结果。**
+**当前状态（2026-11-08）：A 的 Online Retail II 数据处理已合并到 `main` 并通过全量验证；B 的顾客分群已完成并在 `b/customer-clustering` 分支等待审阅（选中 K-means，K = 3）；C 的规则挖掘与 D 的评价尚未开始。尚无规则或评价结果。**
 
 ## 进度汇报（截至 2026-11-08）
 
 | 模块 | 负责人 | 状态 | 已完成 / 下一步 |
 |---|---|---|---|
 | A 数据处理与复现 | Qingyang LI | 已完成，PR #2 已于 11-08 合并 | Online Retail II 清洗、四时期切分、订单与购物篮、审计表和自动验证全部完成；`python3 scripts/run_all.py` 可一条命令复现。PR #2 合并前未经第二人审阅，建议 11-11 会议补做复核。 |
-| B 顾客分群与对照分组 | Jinghan ZHAO | 方案已确定，代码待提交 | 在 Profile 期 RFM 特征上比较 K-means、高斯混合（GMM）、层次聚类（Ward）和 RFM 分档打分，按轮廓系数、换种子稳定性、最小群规模和可解释性选择方法与 K；同时生成 20 次顾客级随机分组。原定 11-08 交付。 |
+| B 顾客分群与对照分组 | Jinghan ZHAO | 已完成，待审阅后合并 | 在 Profile 期 RFM 特征上比较 K-means、高斯混合（GMM）、层次聚类（Ward）和 RFM 分档打分共 12 个候选，按预先确认的规则选中 K-means、K = 3；生成 20 次同规模顾客级随机分组。`python scripts/run_clustering.py` 一条命令复现，详见下文“顾客分群（B）”。群名称待确认。 |
 | C 模式挖掘与解释 | Anqi ZHAO | 未开始 | 11-15 完成 G/L/R 规则挖掘。需在相对支持度之外增加最低绝对出现次数（小群在 Discovery 期可能只有几百个购物篮）。 |
 | D 公平实验与未来评价 | Chenrui XIANG | 未开始 | 11-18 冻结测试配置，11-21 完成评价。 |
 
@@ -17,11 +17,13 @@ AIAA3111 数据挖掘课程项目 · H2 分群购物模式。研究历史消费�
 
 - 数据集由 Online Retail（一年）改为 Online Retail II（两年），采用 `profile → discovery → validation → test` 四时期设计（见下文）。
 - 顾客分群只使用 RFM 特征，不使用“买了什么商品”做分群：按商品偏好分群会让“各群规则不同”在很大程度上由分群方式本身决定，形成循环论证。
+- 分群选择规则（2026-11-08 确认）：最小群占比 ≥ 5%、抽样稳定性 ARI ≥ 0.8、轮廓系数并列容差 0.02；R 使用原始天数，不取对数。
 
 **待全员确认（冻结 `configs/experiment.json` 前）**
 
 - A 的清洗口径，尤其是零价格行和非商品编码列表（见 `data/processed/special_stock_codes.csv`）；
-- K 的候选范围、支持度/置信度候选值、最低绝对计数和总规则预算；
+- 三个顾客群的名称（`configs/experiment.json` 中 `cluster_names`，当前为建议名）；
+- 支持度/置信度候选值、最低绝对计数和总规则预算；
 - 主比较只覆盖 2,684 名 Profile 顾客：Test 期 10,890 个有效购物篮中只有 5,730 个（约 53%）属于这批顾客，报告与海报须明确说明适用范围，新顾客另用全局规则评价。
 
 ## 成员与任务
@@ -178,7 +180,7 @@ aiaa3111-project-online-trade/
 
 ### 数据清洗思路（摘要）
 
-本节概括 [详细数据处理说明](docs/data_processing_guide.md)，数字来自已发布快照的审计表（`data/processed/audit_summary.csv`、`exclusion_summary.csv`）。
+本节概括 [详细数据处理说明](docs/data_processing_guide.md)，数字来自已发布快照的审计表（快照分支 `data/processed/A_data_preparation/audit_summary.csv`、`exclusion_summary.csv`）。
 
 **核心原则：不删数据，只打标签。** 每一条原始明细都保留在 `clean_transactions.csv.gz` 中，并带有问题标记和 `primary_exclusion_reason`；标记决定它能否进入订单金额、购物篮和实验。因此任何汇总数字都能追溯到工作表和行号。清洗口径依据业务含义和审计证据确定，不依据聚类分数、规则覆盖率或 Test 表现调整。
 
@@ -237,6 +239,168 @@ python3 scripts/run_all.py
 
 购物篮是“一张订单内有效商品的去重集合”，不是跨订单归纳出的组合类别。B、C、D 可以使用同一套接口，但必须先按 `split` 和 `is_eligible_for_main_comparison` 筛选各自时期。完整字段、排除优先级、金额定义、审计文件、成员接口和冻结检查见[详细数据处理说明](docs/data_processing_guide.md)。
 
+## 顾客分群（B）
+
+**目标**：只用 Profile 期（`[2009-12-01, 2010-06-01)`）的购买记录，把 2,684 名 Profile 顾客按 RFM 分成若干群并冻结，交给 C 挖掘分群规则；同时生成同规模的随机分组，作为“分组本身带来多少好处”的对照。分群过程不使用 Discovery、Validation、Test 的任何信息。
+
+### 运行
+
+先准备 A 的订单表 `data/processed/orders.csv.gz`：运行 `python3 scripts/run_all.py`，或从快照分支取出：
+
+```bash
+git fetch origin a/online-retail-ii-data-snapshot
+git show origin/a/online-retail-ii-data-snapshot:data/processed/A_data_preparation/orders.csv.gz > data/processed/orders.csv.gz
+```
+
+然后在仓库根目录执行：
+
+```bash
+python scripts/run_clustering.py                        # 完整运行，约 1 分钟
+python scripts/run_clustering.py --bootstrap-repeats 5  # 快速试跑，不用于正式结果
+```
+
+需要 `pandas`、`numpy`、`scikit-learn`、`matplotlib`。本节结果的运行环境为 Python 3.13、scikit-learn 1.9.1、pandas 3.0.5、numpy 2.5.3、matplotlib 3.11.2；其他版本的小数位可能略有差异，选中结果和群规模应一致。全部参数在 `configs/experiment.json` 的 `clustering` 与 `random_control` 部分。
+
+### 流程
+
+| 步骤 | 做什么 | 代码 | 产出 |
+|---|---|---|---|
+| 1 选人、算 RFM | 取 Profile 期有效正向订单，按顾客汇总：R = 2010-06-01 距最后一单的天数，F = 不同订单数，M = 毛购买额之和；名单须与 A 标记的 2,684 名 Profile 顾客完全一致，否则报错 | `features.py` | 每人一行的 RFM 表 |
+| 2 特征处理 | F、M 取 `log1p`，R 保留原始天数；三列再做 z-score 标准化（只用这 2,684 人拟合） | `features.py` | 2,684 × 3 特征矩阵 |
+| 3 生成候选 | K-means、高斯混合（GMM）、层次聚类（Ward）、RFM 分档打分，各取 K = 3、4、5，共 12 个候选；群号统一按价值从低到高排列 | `methods.py` | 12 套群标签 |
+| 4 评分与选择 | 对每个候选计算轮廓系数、50 次抽样稳定性（ARI）、最小群占比，按预先确认的规则选出一个 | `evaluation.py` | 候选比较表 |
+| 5 画像 | 各群人数、R/F/M 分位数、平均购物篮大小；箱线图、蛇形图、热力图 | `pipeline.py` | 画像表、3 张图 |
+| 6 随机对照 | 把选中的群标签随机打乱 20 次（种子 42–61），各组人数与真实分群完全相同，以顾客为单位 | `pipeline.py` | 随机分组长表 |
+| 7 敏感性检查 | M 改用净额、R 改用 `log1p`，与选中结果比较 ARI | `pipeline.py` | 敏感性表 |
+| 8 写出 | 含顾客编号的文件写入 `data/processed/local/`（不进功能分支，冻结版本发布到快照分支），汇总表和图写入 `results/` | `pipeline.py` | 见“输出文件” |
+
+**为什么这样处理特征**
+
+| 指标 | 原始偏度 | 处理 | 理由 |
+|---|---:|---|---|
+| R | 0.91 | 原始天数 | Profile 期只有半年，R 范围有限（最大约 182 天）；取对数会把“1 天 vs 10 天”放大到与“20 天 vs 180 天”相当，不符合业务含义 |
+| F | 7.6 | `log1p` | 45% 的顾客只买过 1 单，少数人下几十单 |
+| M | 18.8 | `log1p` | 最大值是中位数的 300 倍，前 1% 顾客贡献 28% 金额；不取对数会让少数批发大户单独成群 |
+
+取对数后三列的标准差仍相差近百倍（R 50.7、log F 0.55、log M 1.17），不标准化时 K-means 的距离几乎只由 R 决定，所以三列都做标准化，使三项权重相同。画像表和图中的数字一律用原始单位（天、单、英镑）。
+
+**选择规则（2026-11-08 确认，写在看结果之前）**
+
+1. 淘汰实际群数少于 K、最小群占比 < 5% 或抽样稳定性 ARI < 0.8 的候选；
+2. 在剩余候选中选轮廓系数最高者；
+3. 与最高分相差不超过 0.02 的视为并列，并列时取更小的 K，再按 `kmeans → gmm → ward → rfm_score` 的顺序。
+
+### 结果解读
+
+#### 1. 12 个候选的比较（`results/tables/clustering_candidates.csv`）
+
+| 方法 | K | 轮廓系数 | 稳定性 ARI（均值 ± 标准差） | 最小群占比 | 各群人数 | 合格 |
+|---|---:|---:|---|---:|---|:---:|
+| **K-means** | **3** | **0.361** | **0.93 ± 0.05** | **26.1%** | **700 / 1,263 / 721** | **选中** |
+| K-means | 4 | 0.342 | 0.87 ± 0.08 | 10.6% | 594 / 867 / 938 / 285 | 是 |
+| K-means | 5 | 0.308 | 0.68 ± 0.20 | 5.3% | 579 / 667 / 735 / 561 / 142 | 否（不稳定） |
+| GMM | 3 | 0.189 | 0.93 ± 0.03 | 25.9% | 1,202 / 696 / 786 | 是 |
+| GMM | 4 | 0.131 | 0.94 ± 0.07 | 14.5% | 1,202 / 600 / 493 / 389 | 是 |
+| GMM | 5 | 0.109 | 0.96 ± 0.07 | 8.4% | 1,202 / 600 / 319 / 337 / 226 | 是 |
+| Ward | 3 | 0.274 | 0.38 ± 0.14 | 29.6% | 889 / 795 / 1,000 | 否（不稳定） |
+| Ward | 4 | 0.276 | 0.41 ± 0.12 | 6.1% | 889 / 795 / 837 / 163 | 否（不稳定） |
+| Ward | 5 | 0.274 | 0.42 ± 0.11 | 6.1% | 889 / 795 / 327 / 510 / 163 | 否（不稳定） |
+| RFM 分档 | 3 | 0.267 | 0.96 ± 0.02 | 26.7% | 997 / 970 / 717 | 是 |
+| RFM 分档 | 4 | 0.199 | 0.96 ± 0.02 | 19.9% | 723 / 803 / 623 / 535 | 是 |
+| RFM 分档 | 5 | 0.127 | 0.89 ± 0.06 | 15.4% | 723 / 562 / 450 / 414 / 535 | 是 |
+
+怎么读：
+
+- **轮廓系数**衡量群与群分得开不开（−1 到 1）；**稳定性 ARI** 衡量有放回抽样重做 50 次后分组是否一致（1 = 完全一致，0 ≈ 随机）；**最小群占比**防止出现太小、无法挖规则的群。
+- **K-means, K = 3 被选中。** 它的轮廓系数最高（0.361）且稳定（0.93）。K-means, K = 4 的轮廓系数 0.342 与最高分只差 0.019，在并列容差内，按规则取更小的 K。
+- **K-means, K = 5 被淘汰**：142 人的高额小群在不同抽样中时有时无，稳定性降到 0.68。
+- **Ward 全部被淘汰**：逐步合并是“一锤子买卖”，早期合并稍有不同，整棵树都会改变，换一批样本结果差别很大（ARI ≈ 0.4）。
+- **GMM 稳定但分不开**：总有一个约 1,200 人的宽分布罩住大片顾客，与其他群重叠，轮廓系数只有 0.11–0.19。
+- **RFM 分档打分最稳定（ARI ≈ 0.96）**，因为排名分位数对抽样不敏感；但它不按距离分组，分离度低于 K-means。这说明 K-means 优于业界常用的人工分档。
+- 所有轮廓系数都在 0.4 以下：顾客更像分布在一条连续光谱上，而不是天然分成几堆。分群是对光谱的合理切分，报告中应如实说明。
+
+#### 2. 选中的三个群（`results/tables/clustering_profile.csv`）
+
+![顾客群热力图：格内为中位数，颜色为相对全体平均的好坏](results/figures/clustering_heatmap.png)
+
+热力图格内是各群的真实中位数；颜色表示比全体平均好（蓝）还是差（红），R 已反向处理，所以整张图统一按“越蓝越好”读。
+
+| 群 | 建议名称 | 人数（占比） | R 中位数（四分位） | F 中位数 | M 中位数（四分位，英镑） | 平均篮子大小 | Profile 期购物篮 |
+|---|---|---|---|---:|---|---:|---:|
+| C2 | Frequent high spenders（高频高额买家） | 721（27%） | 20 天（8–37） | 5 | 1,783（1,156–2,953） | 22.8 | 4,811（62%） |
+| C1 | Recent light buyers（近期低频买家） | 1,263（47%） | 37 天（20–62） | 1 | 421（247–691） | 21.4 | 2,058（27%） |
+| C0 | Lapsed one-time buyers（流失的一次性买家） | 700（26%） | 125 天（105–168） | 1 | 266（150–393） | 19.4 | 869（11%） |
+
+- **C0 与 C1 的区别几乎全在 R**：两群的 F 中位数都是 1 单，C1 最近来过，C0 已近半年没有购买。
+- **C2 人数只占 27%，却贡献了 62% 的 Profile 期购物篮**。后续评价必须同时报告按订单和按顾客汇总的指标，防止少数高频顾客主导结论。
+- **三群的平均购物篮大小接近（19–23 种商品）**：若 C 在 C2 中挖出更多规则，不能简单归因于“篮子更大”。
+
+![各群 R、F、M 箱线图](results/figures/clustering_rfm_boxplots.png)
+
+箱线图中箱体为中间 50% 的顾客，中线为中位数；F、M 使用对数纵轴，未画离群点。C0 的 F 箱体缩成一条线，因为该群几乎全部只买过 1 单。
+
+![各群标准化特征均值的蛇形图](results/figures/clustering_snake_plot.png)
+
+蛇形图纵轴是标准化后的群均值，0 为全体平均。注意 R 越高表示越久没来；C2 左低右高（来得近、买得多），C0 正好相反。
+
+#### 3. 敏感性检查（`results/tables/clustering_sensitivity.csv`）
+
+| 改动 | 与选中结果的 ARI | 解读 |
+|---|---:|---|
+| M 改用净额（扣除退款） | 0.96 | 几乎不变，退款口径不影响分群 |
+| R 改用 `log1p` | 0.36 | 分群明显改变，结果对 R 的尺度敏感 |
+
+R 的处理方式是本模块最重要的建模选择。团队决定使用原始天数（理由见上），报告的局限部分须说明这一敏感性。
+
+#### 4. 随机对照（`data/processed/local/random_groups.csv`）
+
+20 个种子（42–61）各给出一套随机分组，每套都是 700 / 1,263 / 721 人，与真实分群完全相同，且同一顾客的全部订单在同一组。C 对每个种子按随机组重复挖掘规则，D 比较真实分群与这 20 次随机分组的结果分布：只有真实分群明显优于随机分组，才能说优势来自“按消费行为分群”，而不只是“分了组”。
+
+### 交给 C、D 的信息
+
+- 冻结的 `customer_clusters.csv` 和 `random_groups.csv` 发布在快照分支 `a/online-retail-ii-data-snapshot` 的 `data/processed/B_customer_clustering/`，取出后放到本地 `data/processed/local/`：
+
+  ```bash
+  git fetch origin a/online-retail-ii-data-snapshot
+  S=origin/a/online-retail-ii-data-snapshot
+  mkdir -p data/processed/local
+  git show $S:data/processed/B_customer_clustering/customer_clusters.csv > data/processed/local/customer_clusters.csv
+  git show $S:data/processed/B_customer_clustering/random_groups.csv > data/processed/local/random_groups.csv
+  ```
+
+  请使用这份冻结版本，不要用自己重跑的结果替代：不同库版本的 K-means 可能让少数边界顾客换群。重跑只用于复现检查（群规模应为 700 / 1,263 / 721）。
+- 用 `customer_clusters.csv` 的 `customer_id → cluster_id` 把购物篮分到各群；随机组用 `random_groups.csv` 中对应 `seed` 的 `random_group_id`。
+- 冻结后各群在后续时期的主比较购物篮数如下（仅供规划样本量，未参与分群选择）：
+
+| 时期 | C0 | C1 | C2 |
+|---|---:|---:|---:|
+| Discovery | 801 | 2,173 | 4,547 |
+| Validation | 431 | 1,253 | 3,178 |
+| Test | 573 | 1,609 | 3,548 |
+
+  C0 在 Discovery 期只有约 800 个购物篮，按最小相对支持度 0.005 换算只需 4 个篮子就算频繁，**C 必须增加最低绝对出现次数**。
+
+### 局限
+
+- 轮廓系数低于 0.4，群边界较软；分群是对连续光谱的切分。
+- 结果对 R 的尺度敏感（取对数后 ARI 仅 0.36）。
+- 群体在 2010-06-01 冻结，之后顾客行为可能变化（例如 C0 顾客重新活跃），这属于未来验证要分析的现象，而不是要修正的问题。
+- 只覆盖 Profile 期已出现的 2,684 名顾客；新顾客不属于任何群。
+
+### 输出文件
+
+| 文件 | 内容 | 是否进 Git |
+|---|---|---|
+| `results/tables/clustering_candidates.csv` | 12 个候选的全部证据、是否合格、是否选中 | 是 |
+| `results/tables/clustering_profile.csv` | 选中分群的画像 | 是 |
+| `results/tables/clustering_sensitivity.csv` | 敏感性检查 | 是 |
+| `results/tables/clustering_summary.json` | 选中方法、K、规则、群规模 | 是 |
+| `results/figures/clustering_heatmap.png`、`clustering_rfm_boxplots.png`、`clustering_snake_plot.png` | 画像图 | 是 |
+| `data/processed/local/customer_clusters.csv` | 每名顾客的群标签与 R、F、M（2,684 行） | 不进功能分支（含顾客编号）；冻结版本在快照分支 `data/processed/B_customer_clustering/`，校验值见 `data/processed/README.md` |
+| `data/processed/local/random_groups.csv` | 20 套随机分组长表（53,680 行） | 同上 |
+
+代码结构与字段说明见 [`src/online_trade/clustering/README.md`](src/online_trade/clustering/README.md)。
+
 ## 数据与环境
 
 ### 数据存放与四人交接
@@ -247,7 +411,7 @@ python3 scripts/run_all.py
 |---|---|---|---|
 | 原始完整数据及下载压缩包 | `data/raw/` | 不进入 `main`；已放入专用快照分支 | 从 UCI 下载或从 `a/online-retail-ii-data-snapshot` 获取，并核对 A 记录的校验值 |
 | 可重新生成的清洗中间文件 | `data/interim/` | 否；仅目录说明和占位文件保留 | 使用同一原始数据、代码及配置重新生成 |
-| 检查后的最终订单、购物篮和切分说明 | `data/processed/` | 完整客户级文件不进入 `main`；已放入专用快照分支 | 从 `a/online-retail-ii-data-snapshot` 获取并核对 manifest；也可按配置重跑 |
+| 检查后的最终订单、购物篮和切分说明 | `data/processed/` | 完整客户级文件不进入 `main`；已放入专用快照分支 | 从 `a/online-retail-ii-data-snapshot` 的 `data/processed/A_data_preparation/`（A）、`B_customer_clustering/`（B）获取并核对校验值；A 的输出也可按配置重跑 |
 | 用于演示和检查的小样本 | `data/processed/sample_*.csv` 等 | 可以；与最终数据使用相同的格式规则 | 从仓库拉取；明确样本生成方式与随机种子，不能当作完整实验数据 |
 | 尚未检查、包含不宜共享字段或不适合进入 Git 的大文件 | `data/processed/local/` | 否；该目录内所有内容均忽略 | 本地生成，或从团队约定的共享位置下载 |
 | 可分享的汇总结果和图表 | `results/tables/`、`results/figures/` | 可以，通常使用 CSV、PNG、PDF 等；Parquet 的例外仅限 `data/processed/` | 从仓库拉取 |

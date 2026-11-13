@@ -53,11 +53,34 @@
     "seed": 42,
     "selection_evidence": [
       "silhouette_score",
-      "stability_across_seeds",
+      "bootstrap_stability_ari",
       "minimum_cluster_size",
       "rfm_profile_interpretability"
     ],
-    "freeze_before_discovery": true
+    "freeze_before_discovery": true,
+    "candidate_methods": [
+      "kmeans",
+      "gmm",
+      "ward",
+      "rfm_score"
+    ],
+    "features": "recency in raw days (team decision 2026-11-08: R is not skewed, so no log); log1p(frequency), log1p(gross monetary); standardized on profile customers",
+    "n_init": 10,
+    "rfm_score_bins": 5,
+    "bootstrap_repeats": 50,
+    "selection_rule": {
+      "status": "confirmed_2026-11-08",
+      "min_cluster_share": 0.05,
+      "min_bootstrap_ari": 0.8,
+      "silhouette_tie_tolerance": 0.02,
+      "tie_break": "within tolerance of best silhouette: smaller k, then method order"
+    },
+    "cluster_names": {
+      "0": "Lapsed one-time buyers",
+      "1": "Recent light buyers",
+      "2": "Frequent high spenders"
+    },
+    "cluster_names_status": "proposed_requires_team_confirmation"
   },
   "pattern_mining": {
     "candidate_min_support": [
@@ -112,4 +135,3 @@
     "report_eligible_share_of_all_future_orders": true
   }
 }
-
