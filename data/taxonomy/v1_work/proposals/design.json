@@ -1,0 +1,347 @@
+{
+ "request": "design",
+ "cache_key": "dff6bc3525a1edf61e633410d4c116a688fbab5c8939eb2269806282e38345d7",
+ "checks": {},
+ "proposal": {
+  "design_lines": [
+   {
+    "id": "retrospot",
+    "name": "Retrospot",
+    "patterns": [
+     "RETROSPOT",
+     "RETRO SPOT"
+    ]
+   },
+   {
+    "id": "spaceboy",
+    "name": "Spaceboy",
+    "patterns": [
+     "SPACEBOY"
+    ]
+   },
+   {
+    "id": "fairy",
+    "name": "Fairy",
+    "patterns": [
+     "FAIRY"
+    ]
+   },
+   {
+    "id": "dolly_girl",
+    "name": "Dolly Girl",
+    "patterns": [
+     "DOLLY GIRL"
+    ]
+   },
+   {
+    "id": "circus_parade",
+    "name": "Circus Parade",
+    "patterns": [
+     "CIRCUS PARADE"
+    ]
+   },
+   {
+    "id": "tutti_frutti",
+    "name": "Tutti Frutti",
+    "patterns": [
+     "TUTTI FRUTTI"
+    ]
+   },
+   {
+    "id": "baroque",
+    "name": "Baroque/New Baroque",
+    "patterns": [
+     "BAROQUE",
+     "NEW BAROQUE"
+    ]
+   },
+   {
+    "id": "vintage_paisley",
+    "name": "Vintage Paisley",
+    "patterns": [
+     "VINTAGE PAISLEY"
+    ]
+   },
+   {
+    "id": "scandinavian_paisley",
+    "name": "Scandinavian Paisley",
+    "patterns": [
+     "SCANDINAVIAN PAISLEY"
+    ]
+   },
+   {
+    "id": "potting_shed",
+    "name": "Potting Shed",
+    "patterns": [
+     "POTTING SHED"
+    ]
+   },
+   {
+    "id": "kings_choice",
+    "name": "Kings Choice",
+    "patterns": [
+     "KINGS CHOICE"
+    ]
+   },
+   {
+    "id": "new_england",
+    "name": "New England",
+    "patterns": [
+     "NEW ENGLAND"
+    ]
+   },
+   {
+    "id": "empire",
+    "name": "Empire",
+    "patterns": [
+     "EMPIRE"
+    ]
+   },
+   {
+    "id": "folk_art",
+    "name": "Folk Art",
+    "patterns": [
+     "FOLKART",
+     "FOLK ART"
+    ]
+   },
+   {
+    "id": "teatime",
+    "name": "Teatime",
+    "patterns": [
+     "TEATIME"
+    ]
+   },
+   {
+    "id": "sweetheart",
+    "name": "Sweetheart",
+    "patterns": [
+     "SWEETHEART"
+    ]
+   },
+   {
+    "id": "union_jack",
+    "name": "Union Jack",
+    "patterns": [
+     "UNION JACK"
+    ]
+   },
+   {
+    "id": "english_rose",
+    "name": "English Rose",
+    "patterns": [
+     "ENGLISH ROSE"
+    ]
+   },
+   {
+    "id": "cherry_blossom",
+    "name": "Cherry Blossom",
+    "patterns": [
+     "CHERRY BLOSSOM"
+    ]
+   },
+   {
+    "id": "charlie_and_lola",
+    "name": "Charlie and Lola",
+    "patterns": [
+     "CHARLIE AND LOLA",
+     "CHARLIE & LOLA",
+     "CHARLIE + LOLA",
+     "CHARLIE+LOLA",
+     "CHARLIE LOLA"
+    ]
+   },
+   {
+    "id": "paisley",
+    "name": "Paisley",
+    "patterns": [
+     "PAISLEY"
+    ]
+   },
+   {
+    "id": "gingham",
+    "name": "Gingham",
+    "patterns": [
+     "GINGHAM"
+    ]
+   },
+   {
+    "id": "heart",
+    "name": "Heart",
+    "patterns": [
+     "HEART",
+     "HEARTS"
+    ]
+   },
+   {
+    "id": "rose",
+    "name": "Rose",
+    "patterns": [
+     "ROSE",
+     "ROSES"
+    ]
+   },
+   {
+    "id": "star",
+    "name": "Star",
+    "patterns": [
+     "STAR",
+     "STARS"
+    ]
+   },
+   {
+    "id": "butterfly",
+    "name": "Butterfly",
+    "patterns": [
+     "BUTTERFLY",
+     "BUTTERFLIES"
+    ]
+   },
+   {
+    "id": "bird",
+    "name": "Bird",
+    "patterns": [
+     "BIRD",
+     "BIRDS"
+    ]
+   },
+   {
+    "id": "daisy",
+    "name": "Daisy",
+    "patterns": [
+     "DAISY",
+     "DAISIES"
+    ]
+   },
+   {
+    "id": "skull",
+    "name": "Skull",
+    "patterns": [
+     "SKULL",
+     "SKULLS"
+    ]
+   },
+   {
+    "id": "woodland",
+    "name": "Woodland",
+    "patterns": [
+     "WOODLAND"
+    ]
+   },
+   {
+    "id": "strawberry",
+    "name": "Strawberry",
+    "patterns": [
+     "STRAWBERRY",
+     "STRAWBERRIES"
+    ]
+   },
+   {
+    "id": "dinosaur",
+    "name": "Dinosaur",
+    "patterns": [
+     "DINOSAUR",
+     "DINOSAURS"
+    ]
+   },
+   {
+    "id": "rabbit",
+    "name": "Rabbit",
+    "patterns": [
+     "RABBIT",
+     "RABBITS"
+    ]
+   },
+   {
+    "id": "cat",
+    "name": "Cat",
+    "patterns": [
+     "CAT",
+     "CATS"
+    ]
+   },
+   {
+    "id": "dog",
+    "name": "Dog",
+    "patterns": [
+     "DOG",
+     "DOGS"
+    ]
+   },
+   {
+    "id": "frog",
+    "name": "Frog",
+    "patterns": [
+     "FROG",
+     "FROGS"
+    ]
+   },
+   {
+    "id": "floral",
+    "name": "Floral/Flower",
+    "patterns": [
+     "FLORAL",
+     "FLOWER",
+     "FLOWERS"
+    ]
+   },
+   {
+    "id": "spotty",
+    "name": "Spots/Spotty",
+    "patterns": [
+     "SPOTTY",
+     "SPOTS",
+     "SPOT"
+    ]
+   },
+   {
+    "id": "beach",
+    "name": "Beach",
+    "patterns": [
+     "BEACH"
+    ]
+   },
+   {
+    "id": "london",
+    "name": "London",
+    "patterns": [
+     "LONDON"
+    ]
+   },
+   {
+    "id": "apples",
+    "name": "Apples",
+    "patterns": [
+     "APPLES"
+    ]
+   },
+   {
+    "id": "reindeer",
+    "name": "Reindeer",
+    "patterns": [
+     "REINDEER"
+    ]
+   }
+  ],
+  "seasons": {
+   "christmas": [
+    "CHRISTMAS",
+    "XMAS"
+   ],
+   "easter": [
+    "EASTER"
+   ],
+   "valentine": [
+    "VALENTINE",
+    "VALENTINES",
+    "VALENTINE'S",
+    "VALENTINES'"
+   ],
+   "halloween": [
+    "HALLOWEEN",
+    "HALLOWE'EN"
+   ]
+  },
+  "comment": "Selected recurring motifs/collections and named ranges; excluded colours, materials, product types and generic style words."
+ }
+}

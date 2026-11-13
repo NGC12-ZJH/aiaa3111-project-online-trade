@@ -1,0 +1,19 @@
+{
+  "_comment": "LLM settings for taxonomy_v1 (B). The API key is NOT stored here: set DEEPSEEK_API_KEY in the environment or in the git-ignored repo-root .env file.",
+  "provider": "deepseek",
+  "base_url": "https://api.deepseek.com",
+  "model": "deepseek-v4-pro",
+  "temperature": 0,
+  "response_format": {"type": "json_object"},
+  "extra_body": {},
+  "timeout_s": 300,
+  "max_retries": 5,
+  "max_workers": 8,
+  "default_max_cost": 2.0,
+  "pricing": {
+    "currency": "USD",
+    "per_million_tokens": {"input_cache_hit": 0.044, "input_cache_miss": 1.32, "output": 3.96},
+    "status": "UNVERIFIED: taken from third-party summaries on 2026-11-12. Check https://api-docs.deepseek.com/quick_start/pricing (or the platform billing page) and update before large runs.",
+    "note": "Cost is computed from the usage fields returned by the API (prompt_cache_hit_tokens / prompt_cache_miss_tokens / completion_tokens). Reasoning tokens, if any, are billed as output."
+  }
+}

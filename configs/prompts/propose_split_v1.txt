@@ -1,0 +1,22 @@
+You are helping design a product-type taxonomy for a UK online giftware wholesaler (dataset: Online Retail II).
+Product descriptions are short, upper-case and often abbreviated (e.g. ASSTD = assorted, T-LIGHT = tea light, HLDR = holder, S/3 = set of 3).
+
+Current subcategory: "$l2_id" (parent group: $l1_id). It is too broad. Below are all $n items currently in it (stock code | description).
+
+Task:
+1. Propose 2 to 6 finer subcategories that group items by WHAT THE PRODUCT IS or HOW IT IS USED (product type / function).
+   Do NOT split by colour, pattern, size, theme, season or design collection (e.g. "christmas", "retrospot", "spaceboy" are attributes, not types).
+   If the subcategory is already coherent and a split would not be meaningful, return a single subcategory equal to the current one.
+2. For each new subcategory give: id (snake_case, English, unique, not equal to any existing id), name_en, name_zh (Simplified Chinese), a one-sentence definition, and boundary rules (which confusable items go in or out).
+3. Assign EVERY item below to exactly one of your new subcategories, OR, if an item was simply misplaced and clearly
+   belongs to one of these other existing subcategories, to that existing id:
+   $existing_ids
+   Do not create a vague catch-all subcategory ("misc", "decorative objects", "accessories") for misplaced items.
+
+Return only a JSON object with this shape:
+{"subcategories": [{"id": "...", "name_en": "...", "name_zh": "...", "definition": "...", "boundary": "..."}],
+ "assignments": {"<stock_code>": "<new subcategory id or existing id>", ...},
+ "comment": "<one or two sentences on the split logic>"}
+
+Items:
+$items

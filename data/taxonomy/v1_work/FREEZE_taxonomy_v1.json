@@ -1,0 +1,16 @@
+{
+ "version": "taxonomy_v1_rc1",
+ "frozen_at": "2026-11-12T13:59:48+00:00",
+ "frozen_by": "B (Jinghan ZHAO)",
+ "note": "76 L2 / 10 L1; 3 review rounds (splits+merges, definition fixes, 61 seed overrides); Charlotte bag stays in fashion_handbags",
+ "n_l2": 76,
+ "n_l1": 10,
+ "sha256": {
+  "configs/taxonomy/taxonomy_v1.json": "cbbde67fa13d9eb4dddd76e4612cdc944319db0ebef86f5087e5a8832637e759",
+  "configs/taxonomy/taxonomy_v1_decisions.json": "21beb826311f0bbb81412c38a692d429ee19f2026a89a0134bffabab683a24a6",
+  "data/taxonomy/v1_work/seed_labels_v1.csv": "dffeb9a958732762cf4f9301bfac2c1a5dc6bb821252351658f226c0719895aa",
+  "data/taxonomy/v1_work/definitions_draft_v1.json": "22da1e11e0d57d3bf76fb542088e692728c83fee2dae76c337e8c839af30e7d1",
+  "data/taxonomy/item_attributes_v1.csv": "4e5a5f8a3521cace406920e25511c66857fe5b6fc74ff30f3fe43ef391b50801",
+  "data/taxonomy/gold/gold_items_v1.csv": "6780c6892f850b9dfc1899653fa02e4c407f5e343de1cc6472e013342d85bcdb"
+ }
+}

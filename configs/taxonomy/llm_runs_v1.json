@@ -1,0 +1,11 @@
+{
+  "_comment": "Run presets for llm_tag.py --run <id> (README section 5). Command-line flags override presets.",
+  "R1": {"items": "gold", "library": "eval", "k": 5, "prompt": "tag_v1.txt", "purpose": "main method on gold"},
+  "R2": {"items": "gold", "library": "eval", "k": 0, "prompt": "tag_v1.txt", "purpose": "ablation: no examples"},
+  "R3": {"items": "gold", "library": "eval", "k": 5, "prompt": "tag_v1_alt.txt", "purpose": "prompt-wording stability"},
+  "R4": {"items": "gold", "library": "eval", "k": 5, "prompt": "tag_v1.txt", "purpose": "model stability",
+         "llm": {"model": "SET-ME (different model family)", "base_url": "SET-ME", "api_key_env": "SET-ME"}},
+  "R5": {"items": "multiwording", "library": "prod", "k": 5, "prompt": "tag_v1.txt", "per_variant": true,
+         "purpose": "robustness: label each wording separately"},
+  "R6": {"items": "all", "library": "prod", "k": 5, "prompt": "tag_v1.txt", "purpose": "final labels"}
+}

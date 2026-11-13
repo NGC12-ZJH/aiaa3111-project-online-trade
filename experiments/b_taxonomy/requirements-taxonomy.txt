@@ -4,3 +4,5 @@ pandas==3.0.2
 scikit-learn==1.8.0
 torch==2.12.1
 transformers==5.13.1
+# taxonomy_v1 additions: LLM calls use the standard library only (urllib); Excel annotation workbooks need openpyxl.
+openpyxl==3.1.5
