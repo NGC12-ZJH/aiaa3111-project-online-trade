@@ -17,3 +17,11 @@
 使用 Claude 协助：检查 C 的商品层规则构成与订单商品构成；查阅并总结 Gholamian et al. (2024) 的 LLM 商品分类方法；编写 `experiments/b_taxonomy/` 的脚本；根据文本聚类样例起草 `rules_v0.py` 的 53 条关键词规则与类别命名；运行品类层 G/L/R 探索并起草 `docs/taxonomy_v0.md` 与 README 中的修改方案。
 
 所有数字由确定性 Python 代码从固定提交的 A/B 快照与 C 规则证据计算，未读取 Test 期数据。v0 的分类规则和类别命名由 AI 起草，尚无人工金标准；组员需复核规则、类别边界和结论表述。后续 LLM 标注将作为研究方法写入报告方法部分，与此处的写作和编程辅助分开披露。
+
+## 2026-11-12 至 11-13 商品品类层级 taxonomy_v1（B）
+
+**写作与编程辅助（Claude）**：编写 `experiments/b_taxonomy/` 中 v1 的全部脚本，包括 API 客户端、缓存、冻结、打标签、金标准抽样、标注指南、一致性与评测；起草提示词模板、中文标注指南、类别中文翻译、审阅建议，以及 `docs/taxonomy_v1.md`、`docs/taxonomy_workflow.md`。每条拆分、合并、定义修改和种子纠正都是 Claude 先提出建议，再由 B 逐条决定，决定记录在 `configs/taxonomy/taxonomy_v1_decisions.json`。
+
+**作为研究方法的 LLM（DeepSeek V4 Pro，官方 API）**：① 提出子类拆分方案、重新归类 other、挑选设计系列关键词、起草子类定义；② 给商品打标签（R1–R3）。全部请求和返回保存在 `data/taxonomy/llm_cache/llm_cache.jsonl`，可以不联网复现。输入只有商品文字，没有销量、顾客、分群或时期信息。这部分应写进报告的方法章节。
+
+**人工部分**：金标准由 A、D 独立盲标、C 裁定，三人都看不到任何机器标签；评测数字由确定性 Python 代码计算。未读取 Test 期数据。
