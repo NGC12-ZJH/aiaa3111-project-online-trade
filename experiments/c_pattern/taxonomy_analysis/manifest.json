@@ -1,0 +1,11 @@
+{
+  "taxonomy_commit": "c89430d4cb894154d6084b3eae7f70ba18a04069",
+  "taxonomy_sha256": "67c9c22ce3e3816a09e89ffc412546396950d904f0457e549072b71fd4353434",
+  "evidence_sha256": "8b06c7bc2630319ce7d20733d67ca197c01b7731eb07dfda392d48899b12ad46",
+  "candidate_rules": 11246,
+  "evidence_rows": 719744,
+  "qualified_rows": 121556,
+  "scopes": 64,
+  "unknown_qualified": 0,
+  "checks": "mapping complete; evidence rows preserved; counts reconcile; all top rules cross-category"
+}

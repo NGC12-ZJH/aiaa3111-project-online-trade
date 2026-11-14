@@ -1,0 +1,41 @@
+{
+  "config": "strict_increment5pp",
+  "budgets": [
+    20,
+    50,
+    100
+  ],
+  "n_orders": 7521,
+  "n_systems": 22,
+  "random_seeds": [
+    "42",
+    "43",
+    "44",
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50",
+    "51",
+    "52",
+    "53",
+    "54",
+    "55",
+    "56",
+    "57",
+    "58",
+    "59",
+    "60",
+    "61"
+  ],
+  "source_manifest_sha256": "5147d971b12cb82765b39743e3a94c8c933914ffadc8acecf322e61de4ddd5a3",
+  "checks": [
+    "64 input scopes",
+    "every system actual rules equals budget",
+    "coverage union uses assigned-group rules only",
+    "coverage is subset of antecedent triggers",
+    "coverage monotonic with budget"
+  ],
+  "script_sha256": "ba0deccd2d5d27dae899ea318b01da306c5d4df2086236a5bfcc08c964a0c9f8"
+}

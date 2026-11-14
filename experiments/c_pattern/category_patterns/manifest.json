@@ -1,0 +1,40 @@
+{
+  "config": {
+    "config_id": "l2_discovery_baseline_v1",
+    "status": "exploratory_not_validation_selected",
+    "granularity": "l2",
+    "taxonomy_version": "taxonomy_v1",
+    "min_support": 0.01,
+    "min_joint_count": 20,
+    "min_antecedent_count": 20,
+    "min_confidence": 0.2,
+    "min_lift": 1,
+    "max_itemset_length": 3,
+    "ranking": "joint_count desc, confidence desc, lift desc, rule_id asc",
+    "empty_baskets": "retained in denominator",
+    "other": "excluded before within-basket deduplication"
+  },
+  "common_pool_rules": 91535,
+  "evidence_rows": 5858240,
+  "n_scopes": 64,
+  "n_baskets": 7521,
+  "n_l2": 76,
+  "empty_baskets": 2,
+  "elapsed_seconds": 550.5238648999948,
+  "inputs": {
+    "discovery_baskets.csv": "090bbb7f561cdc388980f539f454159b2ddc2658f2f2cc4b8eb9a33b9278658a",
+    "labels/customer_clusters.csv": "fc3826532fde31491d6f76d1930629ce347719edd71114651ae162365c765bcf",
+    "labels/random_groups.csv": "f6004881ba824a3275ac5be018a3db5c5488800db444bdf96cef52e313a7c3aa",
+    "taxonomy_analysis/item_taxonomy_v1.csv": "67c9c22ce3e3816a09e89ffc412546396950d904f0457e549072b71fd4353434",
+    "taxonomy_analysis/manifest.json": "4ff893278586d684e9d4a8f78ac6da8e4bf113236baa2ee9e8dd045fb9cd4446"
+  },
+  "code_sha256": "88cb2d5f24b148d02e04f3bf32ced7eaefea910ed97951e8251c56809f846af7",
+  "checks": [
+    "all SKU mapped",
+    "basket IDs unique and denominator unchanged",
+    "random customer counts matched",
+    "64 scopes",
+    "rule IDs unique",
+    "top rule exact count checked in each scope"
+  ]
+}

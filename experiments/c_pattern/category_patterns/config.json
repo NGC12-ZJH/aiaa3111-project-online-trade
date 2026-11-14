@@ -1,0 +1,15 @@
+{
+  "config_id": "l2_discovery_baseline_v1",
+  "status": "exploratory_not_validation_selected",
+  "granularity": "l2",
+  "taxonomy_version": "taxonomy_v1",
+  "min_support": 0.01,
+  "min_joint_count": 20,
+  "min_antecedent_count": 20,
+  "min_confidence": 0.2,
+  "min_lift": 1,
+  "max_itemset_length": 3,
+  "ranking": "joint_count desc, confidence desc, lift desc, rule_id asc",
+  "empty_baskets": "retained in denominator",
+  "other": "excluded before within-basket deduplication"
+}

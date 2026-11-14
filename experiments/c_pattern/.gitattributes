@@ -1,0 +1,10 @@
+taxonomy_analysis/** -text
+cross_category_analysis/** -text
+category_patterns/** -text
+category_screening/** -text
+category_fixed_budget/** -text
+category_visualizations/** -text
+labels/** -text
+discovery_baskets.csv -text
+discovery.npy -text
+items.json -text

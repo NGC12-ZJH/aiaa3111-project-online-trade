@@ -1,0 +1,7 @@
+{
+  "source_sha256": "3b0696010077d04229c008eca9c2b39bf28c2b7816ce1bb93db3a4ba4b034bf1",
+  "qualified_rows": 121556,
+  "retained_rows": 68324,
+  "removed_rows": 53232,
+  "checks": "partition reconciled; all retained rules have >=2 l2; original metrics and ordering preserved"
+}
