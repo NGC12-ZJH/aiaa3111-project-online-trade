@@ -328,6 +328,19 @@ G的规则作用于所有订单，而分群规则拆分名额、局部使用，�
 
 ## 10. 交付入口
 
+### 品类层 Top10／20／50 查看器
+
+- **[打开／下载交互式规则查看器](../experiments/c_pattern/category_top_rules/品类层G_L_R_Top规则.html)**：GitHub通常显示HTML源码；请通过文件页的下载按钮保存HTML，再用浏览器打开。查看器为自包含文件，离线可用。
+- [全部64个范围的混合Top10（可在GitHub直接阅读）](../experiments/c_pattern/category_top_rules/全部范围Top10.md)
+- CSV：[Top10](../experiments/c_pattern/category_top_rules/G_L_R_Top10.csv) · [Top20](../experiments/c_pattern/category_top_rules/G_L_R_Top20.csv) · [Top50](../experiments/c_pattern/category_top_rules/G_L_R_Top50.csv)
+
+查看器涵盖G、C0/C1/C2，以及20个随机种子各3组，支持二品类、三品类和混合榜切换，并可按中文名称或类别代码搜索当前榜单。每条规则提供联合／前件订单数、support、confidence、lift、三品类增量及群外指标。
+
+口径为严格档＋三品类增量≥5个百分点，按联合次数↓、confidence↓、lift↓、rule_id↑排序。正反方向分别计数，未做组合去重，不足K条不补齐。**这是每个范围独立Top-K，不是系统总预算B的部署结果，也不同于Jaccard热力图的去重组合Top-K。** CSV中ranking_length=0表示混合，2/3表示分长度。
+
+生成脚本：[export_category_top_rules.py](../experiments/c_pattern/export_category_top_rules.py)，以`--root experiments/c_pattern`指定输入目录。
+
+
 - [D交接注意事项与复现命令](c_taxonomy_handoff_D.md)
 - [图表汇总与CSV表格](../experiments/c_pattern/category_visualizations/品类层图表汇总.md)
 - [交付文件校验与无损压缩说明](../experiments/c_pattern/taxonomy_delivery_manifest.json)
