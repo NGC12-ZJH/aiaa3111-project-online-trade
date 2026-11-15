@@ -1,0 +1,20 @@
+{
+  "layers": [
+    "sku",
+    "l2"
+  ],
+  "scopes_per_layer": 304,
+  "seeds_per_layer": 100,
+  "checks": [
+    "stratum membership and exact per-stratum labels",
+    "G/L native eligible rule IDs match originals",
+    "all budgets filled",
+    "shared coverage contains restricted",
+    "G/L coverage matches S reference",
+    "S/A1 real similarity values match",
+    "25 sampled global counts exact per layer"
+  ],
+  "status": "passed",
+  "A2_run": false,
+  "B_results_read": false
+}

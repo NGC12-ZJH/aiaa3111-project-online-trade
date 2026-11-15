@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "scope_count": 664,
+  "system_count": 222,
+  "configs": {
+    "P1": [
+      0.01,
+      0.2,
+      1,
+      null
+    ],
+    "P2": [
+      0.02,
+      0.4,
+      1.3,
+      null
+    ],
+    "P3": [
+      0.03,
+      0.5,
+      1.5,
+      null
+    ],
+    "P4": [
+      0.02,
+      0.4,
+      1.3,
+      5
+    ],
+    "P5": [
+      0.02,
+      0.4,
+      1.3,
+      10
+    ]
+  },
+  "scope_summary_rows": 9960,
+  "system_metric_rows": 6660,
+  "selected_rows": 188700,
+  "independently_verified_metric_rows": 6660,
+  "empty_scope_rows": 0,
+  "budget_shortfall_rows": 0,
+  "validation_used": false,
+  "eligible_scope_config_exports_verified": 3320
+}

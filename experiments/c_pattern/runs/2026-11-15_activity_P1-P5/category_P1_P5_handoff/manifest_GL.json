@@ -1,0 +1,65 @@
+{
+  "control": "GL",
+  "scopes": 4,
+  "systems": 2,
+  "configs": {
+    "P1": [
+      0.01,
+      0.2,
+      1.0,
+      null
+    ],
+    "P2": [
+      0.02,
+      0.4,
+      1.3,
+      null
+    ],
+    "P3": [
+      0.03,
+      0.5,
+      1.5,
+      null
+    ],
+    "P4": [
+      0.02,
+      0.4,
+      1.3,
+      5.0
+    ],
+    "P5": [
+      0.02,
+      0.4,
+      1.3,
+      10.0
+    ]
+  },
+  "source_candidate_sha256": "7eb7ab25f1fc425721803d08b98d135e396e3ac022b4306e4a7149d80773f051",
+  "script_sha256": "b2797c3aafcbbc5c01a21b2d09b910b62fb5dc1f1d8c1401c92a4fb32637c96c",
+  "sources": [
+    {
+      "path": "category_patterns\\evidence\\G__GLOBAL.csv.gz",
+      "sha256": "533b11733268d86f99e94dbc8ac137bb1bedfd02f875864b1671c849a890449f"
+    },
+    {
+      "path": "category_patterns\\evidence\\L__0.csv.gz",
+      "sha256": "f6385fa0c6c3cfab1ab6a39cff787d59dfbbc2a0e08f9e848140a95541afa8ef"
+    },
+    {
+      "path": "category_patterns\\evidence\\L__1.csv.gz",
+      "sha256": "1970ad6ba6a615fb735e83686e27344600f4d9af157e6bb843b31300101efde2"
+    },
+    {
+      "path": "category_patterns\\evidence\\L__2.csv.gz",
+      "sha256": "be895bad8c11c6b0cfa1912c2d77500131a1789207dcabf6db8e576ec50c1b2c"
+    }
+  ],
+  "checks": [
+    "P2 P4 P5 pair rules identical",
+    "P5 subset P4 subset P2 subset P1; P3 subset P2",
+    "sample joint and antecedent counts from source orders",
+    "shared coverage superset; full match subset antecedent match",
+    "all quota sums equal system budget"
+  ],
+  "validation_used": false
+}

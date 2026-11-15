@@ -1,0 +1,1249 @@
+{
+  "control": "A1",
+  "scopes": 300,
+  "systems": 100,
+  "configs": {
+    "P1": [
+      0.01,
+      0.2,
+      1.0,
+      null
+    ],
+    "P2": [
+      0.02,
+      0.4,
+      1.3,
+      null
+    ],
+    "P3": [
+      0.03,
+      0.5,
+      1.5,
+      null
+    ],
+    "P4": [
+      0.02,
+      0.4,
+      1.3,
+      5.0
+    ],
+    "P5": [
+      0.02,
+      0.4,
+      1.3,
+      10.0
+    ]
+  },
+  "source_candidate_sha256": "7159601bd6ac6d556ffb8d0b864b2f035f5fe63386514f1b76966ce95076c452",
+  "script_sha256": "b2797c3aafcbbc5c01a21b2d09b910b62fb5dc1f1d8c1401c92a4fb32637c96c",
+  "sources": [
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1000_0.npz",
+      "sha256": "d1448344d93e7d5295b7c3a9a30ab2fd536add62d6089799bd919f7b5afa7088"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1000_1.npz",
+      "sha256": "6086c5b24262fbd16e01b3283657e33c9e602fa2bd03fe7f2d6c86309a4ce349"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1000_2.npz",
+      "sha256": "33a73f30e999c564815a181e2799911ea306a8c0595973384763e1493a3f88ae"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1001_0.npz",
+      "sha256": "0b52274d27a0e81328ae4167dbbc10cbf285eaa1dbf31509b6d839b37594a0c9"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1001_1.npz",
+      "sha256": "53dc485624d236a3393b684c51777dd3bc8639d1809ecc4d9bed0bf551549da7"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1001_2.npz",
+      "sha256": "17068dacac2a5a13e9dd19e9ad067387e84d3c135920462702171e16cbcad5ad"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1002_0.npz",
+      "sha256": "c02f4a909b5d4baf5cfb97a77a6ddc421ab2d78a837048c05a87671388b1c14b"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1002_1.npz",
+      "sha256": "16885c6b65581dca121913c6720f455dca12cde18f524dfcfc5ba02441ba7c80"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1002_2.npz",
+      "sha256": "bca71e868e291ab3eed462919f56cf329c8b5917db788301834498416e52c3c3"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1003_0.npz",
+      "sha256": "8cf5b3cce788457d0277b40f8d2e98b999c4f37b9de58c7da6cc874c88d42670"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1003_1.npz",
+      "sha256": "6eb1bf237345fc6d54645a7f9f93bf8991fec22c3f4ab6c9b07eccade2d3a449"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1003_2.npz",
+      "sha256": "6af64215921ce4f8d54ea8937e5c6adf25e301fe895a6908a070f0a8e5053b03"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1004_0.npz",
+      "sha256": "585c55959988b92f8fc82bb94ef527547088eab53fce3edd2f278df413600569"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1004_1.npz",
+      "sha256": "37255bf2c95aad05f632676a72ddf37a5111e27d8c1c2f1eb2a591bdc0a6ac63"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1004_2.npz",
+      "sha256": "d71e5209ffb300eefb2e5fb1b94de6d933f51f8667c0b9e19f7efc502938a080"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1005_0.npz",
+      "sha256": "7b2d425d478e279570ba6549bc63ea9d0b543026baef1b729e436727facbfd2e"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1005_1.npz",
+      "sha256": "76fceaa45131d6067ca55621971d0cb6ba14a46981c33a148e295f5d04df77aa"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1005_2.npz",
+      "sha256": "55767fc70228e0265b015e82b8265d638e1a320e36acfe4da2729442469a942c"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1006_0.npz",
+      "sha256": "da8bc1f602d73fc95bfe3ae76ae02d74553a2581bea8edea031eb84aee10e001"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1006_1.npz",
+      "sha256": "d62846fc03d85c192357a2234da8267ffb3089bda7e92257eca4a6b1f8a76f27"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1006_2.npz",
+      "sha256": "a7f0a7e018b86cccfbdb47f61f77dcd67f5acdbfd3c9646902237e9f1f01d14d"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1007_0.npz",
+      "sha256": "54a59868efe1b64c67bfa6b34d9887f79655602207436ee4091252c54863393e"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1007_1.npz",
+      "sha256": "9c7f87405319f7d3a98cc4a9a94a76acc58ece4a95872f8884d7a063970e45b7"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1007_2.npz",
+      "sha256": "5397643ec9775b9d0f482e118e77e57464ebaab0882d6cda32d68d370f7b38ef"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1008_0.npz",
+      "sha256": "65a3f3e6d6d4a7f7cb15f13faee6ca4b86a0a6fc39719b3e8614ee1d3a1a04b0"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1008_1.npz",
+      "sha256": "41dc9c5a5b3657f6da180012c09d73fca6ce5cb24503b8f7fb9ed6713670da36"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1008_2.npz",
+      "sha256": "9bab6aef42ac6e8c29c0f8afaac660d1802e40bed033066fd995eafaeb1b3ad9"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1009_0.npz",
+      "sha256": "390dc18203b31e81568618fcdaaa587c0264d236c76e56241f2133a6decb86a9"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1009_1.npz",
+      "sha256": "fcf39e316ec543961f7fd3e288a47d360ddb1671b4ab19b70564c90548f75cf1"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1009_2.npz",
+      "sha256": "9e3ef5f24d9f015b79a601df9aafd0621d0633f80502e199072073201838c416"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1010_0.npz",
+      "sha256": "40d3b18e3c4e13dcd26da24217e351a9a3317fca1370a036b77925302742aa8f"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1010_1.npz",
+      "sha256": "e623c357ab4faebd8eea65fcb86539e585f392f7622df60a244d2b365b1c973d"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1010_2.npz",
+      "sha256": "c6c7650797266ad976e8d44134e9befbfa13e6378fb3b6cbe9d9e7f72a2be4bb"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1011_0.npz",
+      "sha256": "efbf56aa55c0befa77d7af72f228f6814882b9de71a6895231715fc046579103"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1011_1.npz",
+      "sha256": "7e0a6b92ee54591975bd05d01fcb8e3c3e9741e90963a246817b76cdf6564040"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1011_2.npz",
+      "sha256": "cd78d848290cf832f143cdf53fd973d1793676de181756a0e9482d126b1ae140"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1012_0.npz",
+      "sha256": "e097cec7832d77d4b343119a793827143e3d5e516bd129908529fd5668b0688c"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1012_1.npz",
+      "sha256": "44f0579ea25e0eed8d4bb5a52fd4fb706530d1a30bac90c2d2d837c3ae699fb9"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1012_2.npz",
+      "sha256": "4832bf1a1a08f01e3553a49bfaac7b0f8f98ebad1efa787509f2fd6e9cf1a53e"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1013_0.npz",
+      "sha256": "fd8721378b51ced11e61dbc1a380326be40ddb89e4d234f699f1da9502561450"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1013_1.npz",
+      "sha256": "642fc9605640f9f02372fbe2b7da85c9780491092c1f2543ac7ec90239d85233"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1013_2.npz",
+      "sha256": "bbb21db9ca5e3831f21d90cedf2dced4f0b6123f023cfabdb45ca94c18b6d31f"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1014_0.npz",
+      "sha256": "117437f2f0bf86e65d4e1b12657a456c436f91d73029f6b6365d401269104616"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1014_1.npz",
+      "sha256": "ceed7ba9d8bf61f2399d0cc6636f144882a44fbf17785490651c252b3964807d"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1014_2.npz",
+      "sha256": "9a0cfb06d57268855d26d70956a96d1ea27b0a25bf193a97d192d5647b095cd7"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1015_0.npz",
+      "sha256": "e6e07271ed9b3eb38b1713df27ca212ed72c5a67f76a449f1843fcff075be490"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1015_1.npz",
+      "sha256": "40cc43302797709d47592ca4fe08e588cbd403505073d992b57beaec68a297b5"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1015_2.npz",
+      "sha256": "4a629e3017e5dc6a408649c67ae3073175da14317e59e0f2a21418fab4820b3f"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1016_0.npz",
+      "sha256": "dbf16615a4d5c4254724b4e3d24c0aadfccb50b7e1a0582b586be4e0e029cad6"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1016_1.npz",
+      "sha256": "54be57c98ed514a19b5eba471f6a2a61a46d58beaa6d1ff56425edd73130f6a9"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1016_2.npz",
+      "sha256": "99e311dd953598c06f375db6abc2c020162a7e8158d0762b5b38cd1e230da651"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1017_0.npz",
+      "sha256": "843b6504ec3cec0287cfc6637003e0a2386b244cc6a04a162ce835223d4aead9"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1017_1.npz",
+      "sha256": "7dbc30d9ae2242da569139b6448645295e9e2011bdc71ff4f35c82a180ae4d54"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1017_2.npz",
+      "sha256": "c671448d91fb1127c0d517a6fe66b9c3ab02ef27868b68e0237685052b86d8c0"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1018_0.npz",
+      "sha256": "a5c266d54463c56a1973737b92f8eec6e454c95d4c70a3f18357dda7537a0713"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1018_1.npz",
+      "sha256": "0518d93eef200f2e3b02456f5915f7e58f8a012598f82954e9fba3c8a00ac777"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1018_2.npz",
+      "sha256": "d427958ca82d1fde15861ea5fefdc810a19979ae9e05d8386532e8a72c8f53ab"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1019_0.npz",
+      "sha256": "b0fddaea4e33f809dad949e58f2ceb615b7b603c5c0285c1a28a8a4c2c5af957"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1019_1.npz",
+      "sha256": "19a5756f74e39b225824d57a8fd849ccfb18c52341c3dbc6b3f7bbbc17f3b1d3"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1019_2.npz",
+      "sha256": "4a061158e5a545fffa4b603b8f55987ec7a299710d6c7638177604ce3f61565c"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1020_0.npz",
+      "sha256": "3be5e937127feaa0f36d064a7b4b1ae40e0a8e9f371681bb35777f05eb8b40c5"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1020_1.npz",
+      "sha256": "c0434b1d71d275f6bf6f17453c7c7045ba12a3f246bd2a49aca21016472de2cc"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1020_2.npz",
+      "sha256": "6d9b746556f7e786603a9bb91983bdb323c7f6888dbdc3a9b937aee29d10e0ab"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1021_0.npz",
+      "sha256": "5504b537b199c4fc91de5a8a228a4582cc575406eeb8ab6ba6e66acda9a4c4e4"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1021_1.npz",
+      "sha256": "5409163ad1c35d960c89d463811f15a2fb1bf83a76736804b36410b236a53017"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1021_2.npz",
+      "sha256": "31409996a6af2831981e8afb12bd6a8ce734aa09dd3b782b587e1c0ba100ef63"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1022_0.npz",
+      "sha256": "5b7e1921d723e7a2904853949a6601dc0b4a2e975684ecb5dd00c49efb411b08"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1022_1.npz",
+      "sha256": "5de6857b9e387da23440d4598c6d87135caad5c1422994cd34425460ded779f3"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1022_2.npz",
+      "sha256": "287f89430f522bbe5bf8f59066afb27b8b41484586000bd311480e77ef42f5f8"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1023_0.npz",
+      "sha256": "1d4baaf86da1c99d29c7221d77dd99c7418cde2c1e53ca76ca17f8a5a4991e85"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1023_1.npz",
+      "sha256": "85ea8f336f8a3239b37022432351b7a35e819f76588113b49502297aea8c6564"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1023_2.npz",
+      "sha256": "4b92e3400e362892ecdee970c12a77ced798fe4f0999b7131ebc9cdbf41c6204"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1024_0.npz",
+      "sha256": "332e01c8679697f6d523c557b3d3dd84ab83ca1f9e95f945a5c65d00ba878746"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1024_1.npz",
+      "sha256": "4b01dba48de83db2e7eff7a096e6655b0be1b04a41ae80d3cc971904feec6687"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1024_2.npz",
+      "sha256": "b8705e93164606f8cbb402fb4a7262e9759bb71fec64818c8f44b7053188d17a"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1025_0.npz",
+      "sha256": "51ae1c696d0abb7a569b989bc9054c86e8a597b98a197a989558fca9e9799ce3"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1025_1.npz",
+      "sha256": "dfc1ead472f4511db5cb2a29f0a581f9f84d313302d45a6815722732f01ab4af"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1025_2.npz",
+      "sha256": "eeb6e66d563b3e230c25520b1d0ca4c3accdc4f78e60f21cd6a97e7700c41e30"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1026_0.npz",
+      "sha256": "fefa015817574fbb0582edc70ced31bc7d5f5e4c00174c7d1cbf16fa76348519"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1026_1.npz",
+      "sha256": "5ba31beb8ec0f826d04626c944ce38d23029abe298a87d7b2f0e1e51ec34ef6a"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1026_2.npz",
+      "sha256": "a40e287e61ed69e5e8958fb00fd4e0855db7d16330516ddb714e457ccc11e806"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1027_0.npz",
+      "sha256": "9f18ab27b4f55e3588f87b4172cc7aa0d22b6c7385c1b38a5d597715c4ba8d6c"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1027_1.npz",
+      "sha256": "24bf4d67c4d92a3341d1325b5228b241a80bb6aad91b79c702cd33d9ef1ad9dd"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1027_2.npz",
+      "sha256": "d5b74755ebba141de79eaf47dece740da6b00bc6e7c8fe39ad5447cf5dc1310c"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1028_0.npz",
+      "sha256": "165e37c8156ff741e98c1027d896b0f08872f1007ec4e0c7ed869fe6d825da76"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1028_1.npz",
+      "sha256": "38ecc7ec4b8a8700395822f99bfa4303228b2c2f47552626cb420d3faed8c9fa"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1028_2.npz",
+      "sha256": "d84378ff20f2564921ee8d7ea67dc829cfccef88b888277cd18adffb0914428a"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1029_0.npz",
+      "sha256": "6bb3f5935c4d10c64bbb440d9f176faaee8177f168d98f49bd50f3f790a0a9d9"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1029_1.npz",
+      "sha256": "17b676a026753d9cc635a36661d491524286150c70820d1175072859b540acbb"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1029_2.npz",
+      "sha256": "6f20df2a2b081a0d3d6f5323d198fac4fd9d7f8f120a33263aaf4b40e393c8c8"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1030_0.npz",
+      "sha256": "4b3b1a16a7722f4e716d10d4c2b0e00bdc30a24efcd6677aa2bdf632d80c9161"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1030_1.npz",
+      "sha256": "f593737f95b092c9f434636a731e25890a0b8805e46d048c4c77fdff0cee44c7"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1030_2.npz",
+      "sha256": "fb7a947660a5c697b8a16964209542675bd912f36ec9d25c52573293629b5a99"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1031_0.npz",
+      "sha256": "4a2c41b1250915d0ed64e5452e9daecb67683f83017f0b7ff16b6f1afb674de1"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1031_1.npz",
+      "sha256": "1f967f8fa3b97d2f40d5cfd270dfa51fd378ffd7fd500fbb90967dfe3e6e7168"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1031_2.npz",
+      "sha256": "f3fd86ced43ba73a62c77b76ad6137602f9ff489fccae98b68435cbb12e4009d"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1032_0.npz",
+      "sha256": "a058cd8ad82d1fc6eb0b2d8ac952d371a39e656b417ede472554b1c0e3a6c749"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1032_1.npz",
+      "sha256": "ee5dd2eaf3655b76ffd9f223b33ff40bdd0bc69132b0d8ce3d5557d5cca86468"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1032_2.npz",
+      "sha256": "bc9dc91e9533ec93c4e407dfdcc879b3f09a330c4db8a1452a130ca85f2db9b0"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1033_0.npz",
+      "sha256": "8bd3c11c64836b4d5565f8a44b9bd516edb70969ce1760ee0413ae3d129a6b73"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1033_1.npz",
+      "sha256": "3779c82b39b96f4e191ea87efdd586b1c868b8fd75621f47b3ccc78bba19ec45"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1033_2.npz",
+      "sha256": "f75a14c4bf81dfcac1dd59737b09f2b9ccc687bcaa732dd1ed5f3890df60d0c1"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1034_0.npz",
+      "sha256": "f62761a07fa2028367bcd522dabb90e98be4ffb8aa40672b74fd7e8072c8a9da"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1034_1.npz",
+      "sha256": "9597c08f593317d936e62d511625cc93c4a94cf5e656ec1202835597ff87c3ed"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1034_2.npz",
+      "sha256": "8677b8438eaa3cd8a80556959a4b63d275d1af597e1402d1a87ddc93380a8b78"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1035_0.npz",
+      "sha256": "ac91a881ec11ebe6962d1d4c5c6da958243e40f04a35b01236ce109c3423af50"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1035_1.npz",
+      "sha256": "1ba90fd7a4ca0ebd6bee71d14157499da90937e578f4bbe21ef68854f8edff2c"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1035_2.npz",
+      "sha256": "47fcfad411dad2bd870e6adf3b51c94100fb6843ae6c5d1283881b471bb540c7"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1036_0.npz",
+      "sha256": "e3d1517150e7ca86711e36d617e85e2c83986560fb8d52a89aa194671fc7ad60"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1036_1.npz",
+      "sha256": "c476c067a60a8f18233adba277e4be7a8cd30f3def67fe4be7b9415ed65c8fc7"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1036_2.npz",
+      "sha256": "28e49eab0cd1a7106a28ed33c3c64a556251f099f6ba40ba60f0fd9e53708d6e"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1037_0.npz",
+      "sha256": "6673160d29c5e13b9e5de6806cbbe8cd55a25b845216ea6fa701ce7973907ae6"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1037_1.npz",
+      "sha256": "bfada9ed0119088226c05e233371d621febbd989110c658b2223dfc6a7354e0f"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1037_2.npz",
+      "sha256": "d9b41d12e6493d14e059c149e024a1012703cdf8b6da0d05545fb4b3d3f2827c"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1038_0.npz",
+      "sha256": "b69774d7f0a3b8f065eab5e64dc2e4526ccbfa43d746552a885110bb1c8b46f9"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1038_1.npz",
+      "sha256": "0dd91d95a6994ab3c23c3c42dfabd800a2a8e665acf91a19fa58831ffaa6704c"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1038_2.npz",
+      "sha256": "89f34a2cd628eb5b8b5593edffba0a3a8b04c5dee6a82c38f56eaf7c14c23e6c"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1039_0.npz",
+      "sha256": "4cb38ade83054559ee7d09848ebd241ed32875eec943ae5fe3747012706943d0"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1039_1.npz",
+      "sha256": "a2a88d68a8978593ecd5bed3aa5e0c5d0a3e5b261e55efdf4f351984fae0daa7"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1039_2.npz",
+      "sha256": "3a80d7f9247ed4e554519db478abe1dcf25abf3118805b4aab39d3cd667b0ac7"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1040_0.npz",
+      "sha256": "d017008a28fc10ce2d743553227d6986c00ca238f974679493ad92ebd4d62b85"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1040_1.npz",
+      "sha256": "9992ab72cc488e7e7e070c907c4d54b783484aa3aecd241948dd1191c6643eda"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1040_2.npz",
+      "sha256": "f526ba13543a32c4cfa78def44b3c123048bce8e8cbff44a5e7f64faded153fa"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1041_0.npz",
+      "sha256": "2f4a673321f1a570340b8e6db461aa490b1494ca54bdc8facd12bd17b18edf77"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1041_1.npz",
+      "sha256": "8f8397b52520b7924ddb00b2e598e5385c62ac7962619a60d53e9f004c293c6b"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1041_2.npz",
+      "sha256": "66c76ea5b01f0e0e8ed9f020f2b3c86956a09cd9f1a03908ca1f780527c16deb"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1042_0.npz",
+      "sha256": "fe9c45f520e049becac0dd27bba2065a2a42918ebb077742555f32dfd29ecc66"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1042_1.npz",
+      "sha256": "55684950c1589052583bbfb19b2182759a754e6f03c0e18c7f5687d1454231b7"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1042_2.npz",
+      "sha256": "e855527f8c66dc1f1a3e6e86f0c9dfc8d365d52e55ec5aa57f71934969ed24bc"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1043_0.npz",
+      "sha256": "fada87153f7693b571c7226e3a0c8fcf71a7a5bfb6ccf232faa34376bdf5f342"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1043_1.npz",
+      "sha256": "c06826014d9e5020cbb878f8ae2bfc031b8b4eb540fe830695c6adfacbb375a1"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1043_2.npz",
+      "sha256": "0678163cd5f00a1fd73ae28f7f66054e94520b3607e28679e762cc3a5651b66f"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1044_0.npz",
+      "sha256": "2f59d4a8711c5f55c2b129da6c5b89935eed86d7a8d87dda3affcc853c6ce708"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1044_1.npz",
+      "sha256": "62ef34269eb95eab54b5bb0c8a376faf80bdbfc01b0541d6f097c85d43f65682"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1044_2.npz",
+      "sha256": "fef689b68ce0a4d95b6d5322f67ca2f15b7073960bb23fe6617ffff9fda4372a"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1045_0.npz",
+      "sha256": "c2ba27dcc822d15109d6bede9073ba65b6d74e186715de0260e4fbeaba0e2b9b"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1045_1.npz",
+      "sha256": "dbbb07726525d841fbdc525b644f3fa59c0c051a2ee1931b12af81a9cd82099d"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1045_2.npz",
+      "sha256": "2f6e972769975f02db83eedb5da5777a56c6f846ed301b30f88c2fcdfb4f5404"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1046_0.npz",
+      "sha256": "3ba85b162f2cee865d1aa7563435605a8e5f567a7b915ce788130bf7f101364b"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1046_1.npz",
+      "sha256": "970c7bdfd63a6fa50b81448bc31bcfa9d9d47760b976971abe8b2d77741dbbe8"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1046_2.npz",
+      "sha256": "f4f2819f823b49ca3283cc767fcd3c67cb338ecd2a14eeb5b5a5798bd0405780"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1047_0.npz",
+      "sha256": "82b987f5b2bdcf23f1db5378b23b0c51b71000503ec09a25b99ac45003b68958"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1047_1.npz",
+      "sha256": "50ae06f45ae3ebdd39dbfd70659ab6dd55caae604d62b3c822535a57bed1748c"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1047_2.npz",
+      "sha256": "f4749f78dd5ec4239bd59d20a99f20182346c7d07503181b639b0ddae239b441"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1048_0.npz",
+      "sha256": "70f2cb6f64c7fa0628e0ec3c28c889d21c72dbf34ee8606f930f00b627645dd7"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1048_1.npz",
+      "sha256": "893091e70eb5b3c51763ca56e0f4c9e8fb64099f5ede7bd92ac34262becd6f0e"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1048_2.npz",
+      "sha256": "5761f7c589f49b0e48b37fc3624d5c43c04511b0b60645e78d65d801b39afea2"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1049_0.npz",
+      "sha256": "8ebd022541ee708f8c27976e9be0a09a000024084f93cc9b06d0be940efae7a1"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1049_1.npz",
+      "sha256": "916c728b855e4f8ef90caff7ad07186ccd43e2ebdfc165e6b29112056758b798"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1049_2.npz",
+      "sha256": "e895f5fe12a32dfb368c68dcb42e8333b1492a88c938e425d96fa143cb61ce21"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1050_0.npz",
+      "sha256": "ec65863aae194d4bc6465d9f4013000dc2f573c35ed1be6620b307f73d34b5f6"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1050_1.npz",
+      "sha256": "f48d12f5faa8f85dfabd20a9bf1b1f0fbd497e21f68f7df3d45d825cbdde9bbd"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1050_2.npz",
+      "sha256": "6ef23510cb86926bc0b4f04c444a0b72f1b02efc66f39502ae2dc0f90a8bca08"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1051_0.npz",
+      "sha256": "e9ecb543bc43a20fc3d13bb918a9d6c89b210a347403d80ff3e8a8034b72cbe6"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1051_1.npz",
+      "sha256": "9760e04b37112fe718ec9dcafa978cbc3122c4548d4839677aa176ead6db426e"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1051_2.npz",
+      "sha256": "7af39ed2d49642bbd3ad8152ee3631879f2027eb0ab05db9e8c0e816fb1a25e5"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1052_0.npz",
+      "sha256": "97ebfc62d54ff05d86a612f91fcd956494cbfbcd0deaf5db4cc1ca833b7274bf"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1052_1.npz",
+      "sha256": "bfc46fb6de771d8e83cfc9ea93efc91a97594cbfd6c3ec33b66677671ce7fc63"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1052_2.npz",
+      "sha256": "58fb2948e09ebc4cb23981c3e5ad28d67a5f3beb18546f79882518beb24c76de"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1053_0.npz",
+      "sha256": "d212191de33b0d18ac1afe216c56a83daaea3e15230c8d517d8a88a2e74a721a"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1053_1.npz",
+      "sha256": "fd5c21c34cc2c07754d1a30b217656e986cac1ba0d8df477cf7374f0a729834d"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1053_2.npz",
+      "sha256": "6406fbddf1cdf72217a5b8c2c54e57297c5c690a4086e7ff93790e9d0e668c8b"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1054_0.npz",
+      "sha256": "e46ef00777fd9884c88b1ef6e2f0bd062f48ca904488ac60a6322d635a7c77d9"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1054_1.npz",
+      "sha256": "88e723358836f03124936da9fb5eb3088b4f48fee11d3e8d58f030ac53c5c336"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1054_2.npz",
+      "sha256": "c2c4bfd881dc9c72d47c8ad331c5b8f6f24b92c9414b2f346b3b15ff8d39b317"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1055_0.npz",
+      "sha256": "e5d25710eef687391f05b036179399afcd6deec1ed26c8d11ba15ac08804e6dc"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1055_1.npz",
+      "sha256": "d7fe1114f95f3180130ed10d2dead9ed6cdfc8c43e5f404c1a6e4cd3aed70a87"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1055_2.npz",
+      "sha256": "8f8871aac4964f4f4ef022fbaa929480e8bd59d489e5eb3725eaaeea6efedd10"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1056_0.npz",
+      "sha256": "cee61c00e19a912e3cf1f796744021b5c5904e743475a59b993529ee1d25c366"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1056_1.npz",
+      "sha256": "aa3de57b994c505333071c6b0924243a36a6ea5342ccebf04807a51460205708"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1056_2.npz",
+      "sha256": "e738637c360e9515a7b231680304d6209a0363e0015c3f68be9edc8f3f4aa84c"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1057_0.npz",
+      "sha256": "ea129fe6ec1f99f856d458472afc23b91e8c982b73a8ac2bbb8b201a0912c716"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1057_1.npz",
+      "sha256": "f320a795fc5449554576f83951ca08758bd408629dcbb7e65ec287074ef08bb3"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1057_2.npz",
+      "sha256": "d9dfb996487df0edc45e9f0b15ffce3e620e0852699f85a52819ff50abda3e24"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1058_0.npz",
+      "sha256": "0d03991f63668fd48b5e9b7c6d65791f755878f7721b381244d2ea7292749e5b"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1058_1.npz",
+      "sha256": "ac80cb56b05a32d172ac13e47ab5b8884e060057653c4de43b52db7d8285a3a4"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1058_2.npz",
+      "sha256": "2178aa562ff2d616b83b9685cdb3312a5ea6285b3c4b328881294b09428b0a8f"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1059_0.npz",
+      "sha256": "81c63af1cab49dc535a27dce878cf33fc77b3be0a35f77738e2a8f00859108e3"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1059_1.npz",
+      "sha256": "c8950558010541c23f55c69e0124d8ab3e7e4a8b11ddb4e94e044083a7842d85"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1059_2.npz",
+      "sha256": "b54d5aca5e3cc0b76bacbc70e61e15febf650c44281c84cfeb33d2950e6b27e0"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1060_0.npz",
+      "sha256": "9c2d1bdcc6d9b62bc9993abae524f723c929ebd095e9a10a267a2c05f4f32488"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1060_1.npz",
+      "sha256": "698563a3dfaf0b8fc8debaf1a606d62a7b9cd573ba84312dbc27228e85ac93a8"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1060_2.npz",
+      "sha256": "d7e1a018b8292f7b42ae768a9958699c1b0420c2e4a2f56ac9d7846e221d94e5"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1061_0.npz",
+      "sha256": "f543e7d0df101e2a564c7a5f051005909d40970dff3ed76a9909dac4acc13180"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1061_1.npz",
+      "sha256": "251d5af4c6f6b39b53d233bf18af608ebe5b13744ab2252abe551dec0befefc2"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1061_2.npz",
+      "sha256": "9d53fa058dd18ed7bd2ddc614459dee031eaaa724e86836a8b28b1033871a11a"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1062_0.npz",
+      "sha256": "9cb1f818aa2f2dca28eba1dfbda2a539c37eb21e0ccbce9fd0a89dc54417b3f6"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1062_1.npz",
+      "sha256": "87ced6bba066d6b11b5b314c5c5fa200d624c19b2d2b696ad61898db1fdb84da"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1062_2.npz",
+      "sha256": "46560ee1ea3e32e4698823c3d9b566b20519e1efb09ae7f527bca57fd68facbd"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1063_0.npz",
+      "sha256": "4b110e0e6127a61b2d92ce9cafb071385f10e86f96a081205df7ee531a8c58a8"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1063_1.npz",
+      "sha256": "f52792ae2813b75e2baec4206c329d757fec261ba4e8d35fc3300ff3133fe862"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1063_2.npz",
+      "sha256": "9eac8aace248f49e6a157aaaddc34dce284670e3cc2e7d56f2449b671877990f"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1064_0.npz",
+      "sha256": "4a6d76799dc5e678b8c0993ba0d441cf9966f8dcbb4eb67a2019f1ff1981c65c"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1064_1.npz",
+      "sha256": "56aa19721d1f0d22fb5a029bf310d885d06112dfc2a647c7e041a2c00455915b"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1064_2.npz",
+      "sha256": "23f5ecd5ada46e815d94e5825824d966890ceb268d487638ee47ca1032e161f9"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1065_0.npz",
+      "sha256": "ad24b575eeb4160ae545ed2a2b64c0e84f323d270e15368824e7d0a2404ce215"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1065_1.npz",
+      "sha256": "25c60ab32e6a9632e49aa163b0d3c9458f1e09f64476e507b4e62296b39a03ba"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1065_2.npz",
+      "sha256": "86fdf6c99e5eb9440fe154ee5fb235667d7f8bf62ccdc8378349ae2a5a63dcdc"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1066_0.npz",
+      "sha256": "047d69d8f5f3b66b9df6054406a5c37c94f8564ddefec437569f9b9788e645ca"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1066_1.npz",
+      "sha256": "bd59c3bb0fbabae2954b00056ef35a07c89d52ae5ded331a781895ebc47134a0"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1066_2.npz",
+      "sha256": "011fc048c9a37cd54e11042263ece0dfbde3d9967143b84584258dd14e93e20d"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1067_0.npz",
+      "sha256": "96e5dbbfcc8b0ec3ab6ab590a7a2853cb3afb08b9a97a3806aab92b603799202"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1067_1.npz",
+      "sha256": "cfc283acc490061a68b0da4811aac2fd1b62f35e314fd1598788c52483cf4aa2"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1067_2.npz",
+      "sha256": "a681078fe31ae2d9d6735c6d54888e66d8726019afe74b2379f47a8493db21ff"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1068_0.npz",
+      "sha256": "b944f3e4e19af3e5fdb31f4b7c7e6d281398e1db85f539648142362e856928c0"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1068_1.npz",
+      "sha256": "2218be59717d2ce185adfc15e0c1aa4a2ce44e0e94057de1d724e41a48549cf9"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1068_2.npz",
+      "sha256": "2e35107e800d5e81df9aac42db7b04acc5f46a40045a740ba82e99d5fcd7cb79"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1069_0.npz",
+      "sha256": "ac0d27efdda03a10c5a0defdc368556664a5527071fb85f048ca4faa85323534"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1069_1.npz",
+      "sha256": "df5f9c5412e4a696d83c4b3ac97b587b35149f1ba8263ef3d6a0b775ea5b425d"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1069_2.npz",
+      "sha256": "d4a0836dc75a3a01740c7f0c4b8bc239864133557c42e4c566979ab642e081f4"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1070_0.npz",
+      "sha256": "51e84fc2f374a8df35830d57c2ba2e9a3317b7b54a9c3f0dc7bc41c82d47c5db"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1070_1.npz",
+      "sha256": "0be4007543fe8d374f7934083aca4e4b41b9bbedb607915b908abc0402d959fe"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1070_2.npz",
+      "sha256": "9d417ee73f85d4aa44ea3ba4134324007c84df67314b74cc9943a82912b9c127"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1071_0.npz",
+      "sha256": "4ae93abd8d6ff6bfef727581276850b8b6befef99f07b9d61fb7691286d4fdd5"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1071_1.npz",
+      "sha256": "1ea940c17ed720f8ccfe87b0ef6b0ee4270e8dbefb951ea71d158a180cd49d06"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1071_2.npz",
+      "sha256": "dec96cd7af10f72ead1834cd69c924e7ac060fd7b9dfafad98abadc04da21bb6"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1072_0.npz",
+      "sha256": "bb36681a56ec0903b5d71f3efe8c2c5f3508060a4196a01840c1dffec5678420"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1072_1.npz",
+      "sha256": "a63db6c00dca8d23c98a4ef7bc053c9867355abbc4e1711e6b40879ca4425232"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1072_2.npz",
+      "sha256": "21f1be1857b27dafd61a641e20212bcd5f912be700a17f613e643b404e394474"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1073_0.npz",
+      "sha256": "aa70219e5bd0dc0534575fd61e072988a0617872bc8a28bc7bdfd986a2de3697"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1073_1.npz",
+      "sha256": "aaa80aa17c446db240fcc00189e79dbf81376de0b2d0ce82d3869cba3ce9430f"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1073_2.npz",
+      "sha256": "357bc54f4900bc6078897259a035dd9dd8ea84f3887ebea1e41cb0b4d0e6db63"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1074_0.npz",
+      "sha256": "b95ab67a572db2b3ed5affcf6fdcf1071f125f2f08e4597511aeaedc3ed34089"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1074_1.npz",
+      "sha256": "37c86a711f94d5080978053c33692ee2f3e068f1cd9f58b2e6386e681def8fcb"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1074_2.npz",
+      "sha256": "5969a2513875a0c91e68d52c6be7e5b9c1a06357fe7ec5a1b237bddd9aace19d"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1075_0.npz",
+      "sha256": "6704f43bc7a8db35597cc23e2bdcc7b76006bc50b561e18dfccc27cdbdb407d5"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1075_1.npz",
+      "sha256": "691cf3f57d59cfdcc9d4619e77da12950d85eb6ecc8bec98ec27c0a489655d19"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1075_2.npz",
+      "sha256": "9e2a984e18f216dfec9b7ed445cdf22e4a6441ecdccde61d0a135dc9f2239618"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1076_0.npz",
+      "sha256": "ca39642f34c9e4e6861c823170c94b5ba2b1175884feba704cbef3f62d180e11"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1076_1.npz",
+      "sha256": "e69858a935a5a606233e51d272a761443063f81cadb6293013f0805b2654bfe5"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1076_2.npz",
+      "sha256": "33c745dae14d6d180cf1f30f390002ae32b60b34dfa77c7e5b985891a97edff2"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1077_0.npz",
+      "sha256": "62f7de1d2ba94c3acc9b378f0a92ffe6e7c742e2f2fcb1063317eedb50e98fec"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1077_1.npz",
+      "sha256": "15f65940bb77b0409f6417058e0d40de1d0e67c847ce1e8eeed3ef483094644c"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1077_2.npz",
+      "sha256": "bae00eaeae3c7c1177455b0ac15c5a22f25247fa223000c72a746891e0f3dd49"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1078_0.npz",
+      "sha256": "e25906beca63b7cc64701060492a09ea288cf9297a9f442c90d29bb13bf419dd"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1078_1.npz",
+      "sha256": "740236435703550b87c75dd31f6b30e13fdfe79377c141127d78e42e5c1ea5bb"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1078_2.npz",
+      "sha256": "adc3675b9854a3e15636e4dfeed42bae6c149f297c8eb4d993074d93eaf160d7"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1079_0.npz",
+      "sha256": "bfa7b22db95a706cedb976ba4543fbdcd3e74c116c85faefe81f16e64dc96cbb"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1079_1.npz",
+      "sha256": "5fee47ee95267b93a6f91b4f51a73efbee62ee33a203e84b0407dc6f9b7fb313"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1079_2.npz",
+      "sha256": "e4c1c1dc2e6c5e680cfb8e53b2e2b4c9fe4d3fb6cf578d516b15e97ed1e54894"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1080_0.npz",
+      "sha256": "f127d214dfd34423a895e9a7306c2aa980dfba46654f1fadd39118af33d5c3ec"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1080_1.npz",
+      "sha256": "c684dc7d5027cc68faa14d599543aed869d14f2fdbfa016b29816a70360eaadd"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1080_2.npz",
+      "sha256": "7b80f6d2e41a61717826c16f13c7b82ad935a2d675a4a7de08a35d89153dfa37"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1081_0.npz",
+      "sha256": "be58f60d4e3af9113c7cb85a61a030d3e7542eff77cb5b90c59176200bcf0a7c"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1081_1.npz",
+      "sha256": "e5eb6e25a7441f144d4b63bf6e111114426d746cefc97d4c63dcb5c76be97fac"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1081_2.npz",
+      "sha256": "3cd7d8153e7952b6cb7b245cd45fbecc867ced84bdeb0550d72bf1aaf011a97f"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1082_0.npz",
+      "sha256": "8e84efab7eca1ba65866e6e4e46b845001479cc9f8221d6dc5c6980170b1eee0"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1082_1.npz",
+      "sha256": "9e3065528310dc2fa4bc21439f296c379e719a0de929dde2cdbff00735a0a9d4"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1082_2.npz",
+      "sha256": "7e4cb0121442121ed265dd4942fe71fc4d2a915b05a596a5796c41636837521c"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1083_0.npz",
+      "sha256": "2f895104ef48a586a05076ad9ebcfcc65213b74467d987eefd59b9e42731350e"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1083_1.npz",
+      "sha256": "6bcf4ed74f6427d94f0897d091a334b748e7b598a1f69ad9cf56a6d4315971cc"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1083_2.npz",
+      "sha256": "f4146c2ed6bb72d49c7a0297b144697f938234859fd0a48974d98fdddc5179bf"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1084_0.npz",
+      "sha256": "5920d10c2ba3c821dc395e2febd5b2016402c5e6295548ede27880eb5233eaf8"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1084_1.npz",
+      "sha256": "7d73f4d2bc8deb85a5c3ed14d970600904378cdfc4674120c1711f890761a83c"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1084_2.npz",
+      "sha256": "928926660018b814533749a5e506ee626be89972b474526f4a527c951dc56c77"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1085_0.npz",
+      "sha256": "b321cdf39517735c6a842b29cb48cc84f17c1845e6b063fc429335d383fdaa5a"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1085_1.npz",
+      "sha256": "6d28118f4f0ab7063deb17995b322d4916777f35243752014ff91309ec953b96"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1085_2.npz",
+      "sha256": "1a535aa9fbb172673c30363b3d96014e7a9d2250a50badf2ce7dd49739f76ff4"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1086_0.npz",
+      "sha256": "58d7a0e5317c1c72ba4f7c8b66fc52f215dbef7d3e28bb7069866ebf5df951cd"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1086_1.npz",
+      "sha256": "e3efa816ec0c736ec56b1a6f40881f2c0771abeb562a4a96670c9f20d7ecca3d"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1086_2.npz",
+      "sha256": "5e66c7038fab3e94a788a3bade45cab290fb6943f7c43e97dfa0e8f0e5d263ad"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1087_0.npz",
+      "sha256": "763a031dab7e9e605cd441c5711bf00d57e3f5185f51b07d685a48837e66839d"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1087_1.npz",
+      "sha256": "6f0553204f3da9dc43d7a027b6c1d16dec9b206cce86e3e153b5a83b13995e74"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1087_2.npz",
+      "sha256": "6f1960d4760bd948940fadaef25dc8d12a50a767a69ece3c6adaf66a01b0b3b0"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1088_0.npz",
+      "sha256": "68f3c3e2d99f7fd12e015de2232e5c55cf7bcf5fede168104465f6258a43a117"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1088_1.npz",
+      "sha256": "f56cb659d333f3aded5585da0494839399779c7d5fab7bf4204f648402a0dda2"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1088_2.npz",
+      "sha256": "89a7a47c17c00da5250618466fc271ca83f42e9dce5bc7789099eb78b59ee249"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1089_0.npz",
+      "sha256": "bf8514bbf45d685ff593281ceefb19f27bf22c2ad85a12a326dd17a046e4104b"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1089_1.npz",
+      "sha256": "afc0cdd8f00c0f6f9fd30a0b151cb9e2371d596d6490b1cd434d00ccd2521f7a"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1089_2.npz",
+      "sha256": "a42367075ad2fde6b740d692bc35ebf64e75cb37e00fd1e7c1a542ed56ae60f6"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1090_0.npz",
+      "sha256": "1d81a64c630208494d864819487e15c5f922f8f22cfa123c59e3134f76c349a1"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1090_1.npz",
+      "sha256": "dacacdfea0be9325f7af96416894c830e21975e41e7256d5724030d896114317"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1090_2.npz",
+      "sha256": "e6d449c01dcfc759e68ea071ae6ca7a6bf3e6b07998884073b053fb062c6fb7c"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1091_0.npz",
+      "sha256": "66fc0a5188700f28a05bd384a9ed0489957c180a2a5ac4f194969b60603e2ae3"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1091_1.npz",
+      "sha256": "60746e13558b5557cd84d3d0eacba39d35a3bde95146f1332ca1aaf57638439a"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1091_2.npz",
+      "sha256": "2510d2bac20e3ad156d93eea1d61f6eaa432c1741f386289bdc3b8ee864ec8e2"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1092_0.npz",
+      "sha256": "caaa366f2cc9fce7d671784bac9cb9baf25fb5092c161194ce4dc066f5532890"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1092_1.npz",
+      "sha256": "ccc2ec081378d4c603789473f1b7a8c5ee8558a7709dedb1c6789020f6774cf9"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1092_2.npz",
+      "sha256": "4ceda2fc82f7f6c8f2e17bd7334e463571cbaa8467b938668b0af2291a18167a"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1093_0.npz",
+      "sha256": "53dcc765493d6f76c32e0f59156e70f5997b0e192e6cad5d02048ad85603f510"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1093_1.npz",
+      "sha256": "cc23aefc6eb7132cd2cea06e69728601b837ac8050d99c1796a6a9e80f6b751c"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1093_2.npz",
+      "sha256": "d2535f1f5e25f66024bae876c9a0e1dbfe513aa4d5fdaa3f56f864a13c9b3e3b"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1094_0.npz",
+      "sha256": "9ce2c2ce5295f267b07a02818ea9be7ebf4603ebbef283e9b0c2422811a04ab1"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1094_1.npz",
+      "sha256": "c916cf28bc50b40cfb8710aabae37876b388d595f4f2f0f07d08b94a325dc6b8"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1094_2.npz",
+      "sha256": "961ff06b25febeee5f991925fa30b26526c4b2d47659ca391a5c6a3ecfbb02d9"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1095_0.npz",
+      "sha256": "45af32b728f17b00135b2564a1a30825a94e83ec2f26978d38b30a6a0cb6aa28"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1095_1.npz",
+      "sha256": "2e8d1cef5515b40d21a233123ef7338f738a4dc767ffcda5fd851e5819d193cb"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1095_2.npz",
+      "sha256": "89e9deb2b705b3c99b524eef1004da764b1b071d0fa44bad00c18cf94ca1d51d"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1096_0.npz",
+      "sha256": "282d0fd4cc4fc84300ff55062dd9ae4cd06082e17b376b1cc7586fbf00b951c5"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1096_1.npz",
+      "sha256": "631aba1f42ae61208c46d632e53f10f79b024da9b97fcb15630e5d761a323856"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1096_2.npz",
+      "sha256": "74ad63cdeb32646704cb9d355ed05934fd4467de3d8a34b1ceecb6b18b096189"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1097_0.npz",
+      "sha256": "c5086b8686b037c9154ababf37569d7d79f07934627f43d886a7fbdf8ddda99e"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1097_1.npz",
+      "sha256": "9633eedef4a8341a2e6e42abede88bf28758874fefb68826af11ae2dd77d3fb6"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1097_2.npz",
+      "sha256": "d9a95ade07b31d835bf494597807ff2359fe640ab61adda8205f241ac2d796e4"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1098_0.npz",
+      "sha256": "08f2d3074357cc655f4daa95e119351ebad8de3fc4e16165739762c698bb747f"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1098_1.npz",
+      "sha256": "4ad04f7c0aa9191be685d719c99379fcdef51f4a80acca2bd270f4a0dea00531"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1098_2.npz",
+      "sha256": "44b920b516ee0fecd8590c3acb89db3d0c45fdf3c3ce21d0166997cbc12c8297"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1099_0.npz",
+      "sha256": "c073b9cca5116a976c1c221ca7a483ea37b27356f86710c9a0b03d841c390578"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1099_1.npz",
+      "sha256": "a1e977280250cc06c97c9cc3d564a83a4c2c1d0d817c95e19267e09680655c32"
+    },
+    {
+      "path": "activity_controls_A1\\l2\\counts\\R_1099_2.npz",
+      "sha256": "afe801c7761900d198b28c0c10f537c357a182cbd96e5f46a336a9d04300f229"
+    }
+  ],
+  "checks": [
+    "P2 P4 P5 pair rules identical",
+    "P5 subset P4 subset P2 subset P1; P3 subset P2",
+    "sample joint and antecedent counts from source orders",
+    "shared coverage superset; full match subset antecedent match",
+    "all quota sums equal system budget"
+  ],
+  "validation_used": false
+}

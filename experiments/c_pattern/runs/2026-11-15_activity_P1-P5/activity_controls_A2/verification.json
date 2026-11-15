@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "seeds": 100,
+  "scopes_per_layer": 304,
+  "layers": [
+    "sku",
+    "l2"
+  ],
+  "checks": [
+    "exact strata and customer labels in mining runner",
+    "G/L eligible rule IDs unchanged",
+    "G/L coverage identical to A1",
+    "all system budgets filled",
+    "shared coverage superset",
+    "all seed order totals 7521",
+    "304 count files each layer",
+    "real similarity identical across controls",
+    "225 sampled random evidence rows per layer independently recounted for joint antecedent and outside joint"
+  ],
+  "B_results_read": false,
+  "Validation_run": false
+}

@@ -1,5 +1,8 @@
 # Taxonomy Pattern Mining 阶段进展汇报
 
+> **2026-11-15 新结果入口：** [A1/A2 与 P1–P5 独立批次](../experiments/c_pattern/runs/2026-11-15_activity_P1-P5/README.md)。下文保留此前结果作为历史对照；新五套配置及 D 的验证交付以新批次为准。
+
+
 > C · 更新日期：2026-11-14  
 > 分支：`c/pattern-mining-taxonomy`  
 > 状态：Discovery 开发期分析已完成；参数尚未由 Validation 选定，未使用 Test。  

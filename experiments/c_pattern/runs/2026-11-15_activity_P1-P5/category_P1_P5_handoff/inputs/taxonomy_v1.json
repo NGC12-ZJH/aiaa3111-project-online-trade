@@ -1,0 +1,1139 @@
+{
+ "version": "taxonomy_v1_rc1",
+ "status": "FROZEN structure (release candidate 1). Subcategories, definitions, examples and seed pool are fixed for R1-R6. Final name `taxonomy_v1` only after the gold-standard acceptance rule is met.",
+ "built": "2026-11-12",
+ "seed_labels": "data/taxonomy/v1_work/seed_labels_v1.csv",
+ "l2": [
+  {
+   "id": "fashion_handbags",
+   "l1": "bags",
+   "origin": "split_of:small_fabric_bag",
+   "name_en": "Fashion Handbags",
+   "name_zh": "时尚手袋",
+   "definition": "Handbags, shoulder bags, evening bags, bum bags and small fashion bags carried as personal accessories.",
+   "boundary": "Includes children's character bags and Charlotte bags; excludes cosmetic/toiletry bags, travel bags, shopping totes and storage bags.",
+   "edited_by_human": true,
+   "examples": [
+    "PINK STRIPES SHOULDER BAG",
+    "GREY FLORAL FELTCRAFT SHOULDER BAG",
+    "PINK DISCO HANDBAG"
+   ]
+  },
+  {
+   "id": "household_laundry_storage",
+   "l1": "bags",
+   "origin": "split_of:small_fabric_bag",
+   "name_en": "Household & Laundry Storage",
+   "name_zh": "家居洗衣收纳",
+   "definition": "Bags, baskets and folding aids used for household organization, laundry and recycling.",
+   "boundary": "Includes peg bags, drawstring bags, recycling bags, folding shirt tidies and laundry baskets; excludes gift, fashion, cosmetic, travel and shopping bags.",
+   "examples": [
+    "RED SPOTTY PEG BAG",
+    "ENGLISH ROSE DESIGN PEG BAG",
+    "PEG BAG APPLES DESIGN"
+   ]
+  },
+  {
+   "id": "jumbo_shopper_bag",
+   "l1": "bags",
+   "origin": "v0",
+   "definition": "Large reusable bags designed for shopping and carrying groceries or goods.",
+   "boundary": "Includes cotton or fabric shopper bags; excludes lunch bags (lunch_bag) and travel bags (travel_bags_luggage).",
+   "name_en": "Jumbo Shopper Bags",
+   "name_zh": "大号购物袋",
+   "examples": [
+    "RED SPOTTY SHOPPER BAG",
+    "MODERN VINTAGE COTTON SHOPPING BAG",
+    "JUMBO BAG PINK WITH WHITE SPOTS"
+   ]
+  },
+  {
+   "id": "lunch_bag",
+   "l1": "bags",
+   "origin": "v0",
+   "definition": "Insulated or non-insulated bags designed to carry packed meals and snacks.",
+   "boundary": "Includes lunch bags with handles or zippers; excludes jumbo shopper bags (jumbo_shopper_bag) and lunch boxes (lunch_box_cutlery).",
+   "name_en": "Lunch Bags",
+   "name_zh": "午餐包",
+   "examples": [
+    "LUNCH BAG RED SPOTTY",
+    "LUNCH BAG WOODLAND",
+    "LUNCH BAG CARS BLUE"
+   ]
+  },
+  {
+   "id": "travel_bags_luggage",
+   "l1": "bags",
+   "origin": "split_of:small_fabric_bag",
+   "name_en": "Travel, Picnic & Beach Bags",
+   "name_zh": "旅行、野餐与沙滩包",
+   "definition": "Bags and cases designed for travel, including cabin bags, airline bags, and picnic bags.",
+   "boundary": "Includes luggage and travel bags; excludes jumbo shopper bags (jumbo_shopper_bag) and lunch bags (lunch_bag).",
+   "merged_from": [
+    "picnic_beach_bags"
+   ],
+   "edited_by_human": true,
+   "examples": [
+    "PINK VINTAGE PAISLEY PICNIC BAG",
+    "CABIN BAG VINTAGE RETROSPOT",
+    "AIRLINE BAG VINTAGE JET SET RED"
+   ]
+  },
+  {
+   "id": "wash_cosmetic_bags",
+   "l1": "bags",
+   "origin": "split_of:small_fabric_bag",
+   "name_en": "Wash & Cosmetic Bags",
+   "name_zh": "洗漱化妆包",
+   "definition": "Zip or pouch bags designed to store toiletries, makeup and small personal care items.",
+   "boundary": "Includes washbags, cosmetic and make-up bags and toiletry pouches; excludes purses and wallets (purse_wallet) and drawstring or laundry bags (household_laundry_storage).",
+   "edited_by_human": true,
+   "examples": [
+    "GOLD WASHBAG",
+    "PINK ROSE WASHBAG",
+    "PINK BUTTERFLY WASHBAG"
+   ]
+  },
+  {
+   "id": "bunting_garland",
+   "l1": "baking_party",
+   "origin": "v0",
+   "definition": "Decorative strings of flags or paper shapes used to adorn spaces for celebrations.",
+   "boundary": "Includes paper or fabric garlands and bunting; excludes individual hanging ornaments (hanging_ornaments).",
+   "name_en": "Bunting & Garlands",
+   "name_zh": "彩旗和花环",
+   "examples": [
+    "WHITE BELL HONEYCOMB PAPER GARLAND",
+    "3D HEARTS HONEYCOMB PAPER GARLAND",
+    "MINI WOODEN HAPPY BIRTHDAY GARLAND"
+   ]
+  },
+  {
+   "id": "cake_cases",
+   "l1": "baking_party",
+   "origin": "v0",
+   "definition": "Disposable paper or foil cups used to line muffin or fairy cake tins.",
+   "boundary": "Includes baking paper liners; excludes reusable cake tins (baking_tools) and paper napkins/cups (party_tableware).",
+   "name_en": "Cake Cases",
+   "name_zh": "蛋糕纸托",
+   "examples": [
+    "PACK OF 60 PINK PAISLEY CAKE CASES",
+    "60 GOLD AND SILVER FAIRY CAKE CASES",
+    "60 CAKE CASES VINTAGE CHRISTMAS"
+   ]
+  },
+  {
+   "id": "party_bags_supplies",
+   "l1": "baking_party",
+   "origin": "v0",
+   "definition": "Disposable or decorative items for parties, including party bags, balloons, invitations, and candy cones.",
+   "boundary": "Includes party favours and decorations; excludes party tableware (party_tableware) and bunting/garlands (bunting_garland).",
+   "name_en": "Party Bags & Supplies",
+   "name_zh": "派对袋和派对用品",
+   "examples": [
+    "12 COLOURED PARTY BALLOONS",
+    "PINK PARTY BAGS",
+    "GIRLS PARTY BAG"
+   ]
+  },
+  {
+   "id": "party_tableware",
+   "l1": "baking_party",
+   "origin": "v0",
+   "definition": "Disposable paper or plastic tableware for parties, such as napkins, plates, and cups.",
+   "boundary": "Includes paper napkins and paper cups; excludes reusable plates (plates) and party bags/supplies (party_bags_supplies).",
+   "name_en": "Party Tableware",
+   "name_zh": "派对餐具",
+   "examples": [
+    "SET/20 RED SPOTTY PAPER NAPKINS",
+    "SET/6 STRAWBERRY PAPER CUPS",
+    "SET/6 POSIES PAPER CUPS"
+   ]
+  },
+  {
+   "id": "candle_holder_lantern",
+   "l1": "candles_lighting",
+   "origin": "v0",
+   "definition": "Holders, plates, or lanterns designed to safely contain candles or tea lights.",
+   "boundary": "Includes candle plates and tea light holders; excludes string lights (lights_lamps) and incense holders (incense).",
+   "name_en": "Candle Holders & Lanterns",
+   "name_zh": "烛台和灯笼",
+   "examples": [
+    "FLUTED ANTIQUE CANDLE HOLDER",
+    "LIGHT PINK FLOCK GLASS CANDLEHOLDER",
+    "PINK GLASS CANDLEHOLDER"
+   ]
+  },
+  {
+   "id": "decorative_candles",
+   "l1": "candles_lighting",
+   "origin": "split_of:candles_incense",
+   "name_en": "Decorative & Novelty Candles",
+   "name_zh": "装饰造型蜡烛",
+   "definition": "Candles made or decorated for display rather than standard lighting: figural and novelty shapes, candles in decorative cups or teacups, and pebble or ball candles.",
+   "boundary": "Includes shaped and novelty candles, cup/teacup candles and decorative candle sets; excludes tealights (tealight_candles), dinner, taper and pillar candles (dinner_taper_pillar_candles) and scented jar or tin candles (scented_candles).",
+   "edited_by_human": true,
+   "examples": [
+    "ORANGE CANDLE",
+    "RETRO SPOT CANDLE SMALL",
+    "LARGE WHITE CHOCOLATE CANDLE"
+   ]
+  },
+  {
+   "id": "dinner_taper_pillar_candles",
+   "l1": "candles_lighting",
+   "origin": "split_of:candles_incense",
+   "name_en": "Dinner, Taper & Pillar Candles",
+   "name_zh": "餐用/柱形/锥形蜡烛",
+   "definition": "Standard cylindrical, tapered, or pillar candles used in holders/candelabras for dining, church, or general lighting; includes dinner, taper, pillar, church, and advent candles.",
+   "boundary": "Includes items with DINNER, TAPER, PILLAR, CHURCH, ADVENT, or standard round/rectangular/cube candle formats. Excludes tealights, shaped/figural candles, and scented container candles.",
+   "examples": [
+    "S/4 BLUE DINNER CANDLE SILVER FLOCK",
+    "BLACK FLOCK GOLD CANDLE",
+    "COLUMBIAN CANDLE ROUND"
+   ]
+  },
+  {
+   "id": "incense",
+   "l1": "candles_lighting",
+   "origin": "split_of:candles_incense",
+   "name_en": "Incense & Fragrance Accessories",
+   "name_zh": "香与香薰配件",
+   "definition": "Incense sticks and cones and other non-candle home-fragrance items: incense holders, oil burners, fragrance oils and scented sachets.",
+   "boundary": "Includes incense, incense holders, oil burners, fragrance oils and sachets, and incense-and-candle sets; excludes candles (the four candle subcategories) and candle holders (candle_holder_lantern).",
+   "merged_from": [
+    "fragrance_accessories"
+   ],
+   "edited_by_human": true,
+   "examples": [
+    "ORIGAMI VANILLA INCENSE+FLOWER",
+    "ORIGAMI ROSE INCENSE/CANDLE SET",
+    "ORIGAMI LAVENDER INCENSE CONES"
+   ]
+  },
+  {
+   "id": "lights_lamps",
+   "l1": "candles_lighting",
+   "origin": "v0",
+   "definition": "Lighting products including string lights, lamps, and lampshades for illumination or decoration.",
+   "boundary": "Includes fairy lights and lampshades; excludes candle holders (candle_holder_lantern) and non-electric lanterns.",
+   "name_en": "Lights & Lamps",
+   "name_zh": "灯饰",
+   "examples": [
+    "LIGHT PINK CHERRY LIGHTS",
+    "BLUE ORGANDY ROUND LAMPSHADE W BEA",
+    "IVORY ROSE LAMPSHADE"
+   ]
+  },
+  {
+   "id": "scented_candles",
+   "l1": "candles_lighting",
+   "origin": "split_of:candles_incense",
+   "name_en": "Scented Candles",
+   "name_zh": "香薰蜡烛",
+   "definition": "Candles marketed primarily for fragrance, usually in glass, tin, jar, or box; includes scented container candles and scented gift sets.",
+   "boundary": "Includes items with SCENT or fragrance in the name that are not tealights, dinner/taper/pillar, or shaped novelty candles. Tealights, even if scented, go to tealight_candles.",
+   "examples": [
+    "F.FAIRY S/3 CANDLE/GLASS,LAVENDER",
+    "ROSE SCENT CANDLE IN JEWELLED BOX",
+    "S/3 ROSE GARDEN SCENT SQU CANDLE"
+   ]
+  },
+  {
+   "id": "tealight_candles",
+   "l1": "candles_lighting",
+   "origin": "split_of:candles_incense",
+   "name_en": "Tealight Candles",
+   "name_zh": "茶蜡/蜡烛杯",
+   "definition": "Small tea light candles in cups, typically sold in sets; includes all t-light/tea-light items regardless of scent or decorative design.",
+   "boundary": "Includes any item named T-LIGHT, T-LIGHTS, TEA LIGHT, or small candle sets in cups. Excludes larger candles, dinner/taper/pillar, and scented container candles.",
+   "examples": [
+    "SET/6 SILVER REINDEER T-LIGHTS",
+    "SET/9 CHRISTMAS T-LIGHTS SCENTED",
+    "SET/6 IVORY BIRD T-LIGHT CANDLES"
+   ]
+  },
+  {
+   "id": "clothing_slippers",
+   "l1": "fashion_accessories",
+   "origin": "v0",
+   "definition": "Wearable clothing and footwear (slippers, socks, scarves, hats, dresses, baby bibs) and hand-held fans.",
+   "boundary": "Includes slippers, socks, scarves, sun hats, children's clothing, bibs and fans; excludes knitting kits (sewing_craft), sock puppets (soft_toys), rainwear (umbrella_rainwear) and hand warmers (hand_warmer).",
+   "name_en": "Clothing, Footwear & Fans",
+   "name_zh": "服装、鞋袜与扇子",
+   "edited_by_human": true,
+   "examples": [
+    "COSY SLIPPER SHOES LARGE GREEN",
+    "ASSORTED COLOURS SILK FAN",
+    "AFGHAN SLIPPER SOCK PAIR"
+   ]
+  },
+  {
+   "id": "hair_accessories",
+   "l1": "fashion_accessories",
+   "origin": "split_of:jewellery_accessories",
+   "name_en": "Hair Accessories",
+   "name_zh": "发饰",
+   "definition": "Items designed to style, hold, or decorate hair, such as clips, slides, combs, hairbands, hair ties, and hair grips.",
+   "boundary": "Includes all hair clips, slides, combs, hairbands, hair ties, hair grips, and hair bands. Excludes ear muffs and headwear not intended for hair styling.",
+   "examples": [
+    "BLUE BLOSSOM HAIR CLIP",
+    "PAIR BUTTERFLY HAIR CLIPS",
+    "WHITE ENAMEL FLOWER HAIR TIE"
+   ]
+  },
+  {
+   "id": "hand_warmer",
+   "l1": "fashion_accessories",
+   "origin": "v0",
+   "definition": "Portable items that generate heat to warm hands, often reusable.",
+   "boundary": "Includes pocket warmers and reusable hand warmers; excludes gloves and clothing/slippers (clothing_slippers).",
+   "name_en": "Hand Warmers",
+   "name_zh": "暖手宝",
+   "examples": [
+    "HAND WARMER RED RETROSPOT",
+    "HI TEC ALPINE HAND WARMER",
+    "LOVE HEART POCKET WARMER"
+   ]
+  },
+  {
+   "id": "jewellery",
+   "l1": "fashion_accessories",
+   "origin": "split_of:jewellery_accessories",
+   "name_en": "Jewellery",
+   "name_zh": "珠宝首饰",
+   "definition": "Fashion jewellery worn on the body, including necklaces, bracelets, earrings, rings, brooches, and jewellery sets.",
+   "boundary": "Includes all items that are primarily worn as body adornment (necklaces, bracelets, earrings, rings, brooches, jewellery sets). Excludes hair accessories, bag/phone charms, key rings, and jewellery display stands.",
+   "examples": [
+    "RESIN NECKLACE W PASTEL BEADS",
+    "AMBER GLASS/SHELL/PEARL NECKLACE",
+    "AMBER CHUNKY GLASS+BEAD NECKLACE"
+   ]
+  },
+  {
+   "id": "keyrings_tags",
+   "l1": "fashion_accessories",
+   "origin": "v0",
+   "definition": "Small attachable accessories: keyrings and key fobs, bag and phone charms, and luggage tags.",
+   "merged_from": [
+    "bag_phone_charms"
+   ],
+   "boundary": "Includes keyrings, key fobs, bag charms, phone charms and luggage tags; excludes jewellery worn on the body (jewellery) and gift tags (gift_wrap_tags).",
+   "name_en": "Keyrings, Bag Charms & Luggage Tags",
+   "name_zh": "钥匙扣、包挂与行李牌",
+   "edited_by_human": true,
+   "examples": [
+    "AMBER BERTIE GLASS BEAD BAG CHARM",
+    "GREEN WITH METAL BAG CHARM",
+    "PINK BEADS+HAND PHONE CHARM"
+   ]
+  },
+  {
+   "id": "purse_wallet",
+   "l1": "fashion_accessories",
+   "origin": "v0",
+   "definition": "Purses, wallets, coin purses and card or passport holders for carrying money and documents.",
+   "boundary": "Includes purses, wallets and passport covers; excludes toiletry and cosmetic bags (wash_cosmetic_bags), handbags (fashion_handbags) and keyrings (keyrings_tags).",
+   "name_en": "Purses & Wallets",
+   "name_zh": "钱包",
+   "edited_by_human": true,
+   "examples": [
+    "RED SPOTTY PURSE",
+    "BLUE FLOWER DES PURSE",
+    "SILVER PURSE GOLD PINK BUTTERFLY"
+   ]
+  },
+  {
+   "id": "umbrella_rainwear",
+   "l1": "fashion_accessories",
+   "origin": "v0",
+   "definition": "Umbrellas, parasols and rainwear such as ponchos and rain hats.",
+   "boundary": "Includes folding umbrellas, decorative parasols, ponchos and rain hats; excludes other clothing (clothing_slippers) and paper cocktail parasols (party_tableware).",
+   "name_en": "Umbrellas, Parasols & Rainwear",
+   "name_zh": "雨伞、阳伞与雨具",
+   "edited_by_human": true,
+   "examples": [
+    "VINTAGE PINK DECORATIVE PARASOL",
+    "FOLDING UMBRELLA , RED/WHITE SPOT",
+    "BLUE/BROWN DOTS RUFFLED UMBRELLA"
+   ]
+  },
+  {
+   "id": "garden_outdoor",
+   "l1": "garden_outdoor",
+   "origin": "v0",
+   "definition": "Decorative and functional items for gardens and outdoor spaces, such as birdhouses, plant cages, and garden markers.",
+   "boundary": "Includes garden ornaments and plant holders; excludes indoor vases/planters (vases_planters) and pet bowls (pet_items).",
+   "name_en": "Garden & Outdoor Decor",
+   "name_zh": "花园户外装饰",
+   "examples": [
+    "BIRDHOUSE GARDEN MARKER",
+    "MINATURE COLOURED GARDENING SET",
+    "ENCHANTED BIRD PLANT CAGE"
+   ]
+  },
+  {
+   "id": "pet_items",
+   "l1": "garden_outdoor",
+   "origin": "v0",
+   "definition": "Items for pets, particularly feeding bowls and related accessories.",
+   "boundary": "Includes dog and cat bowls; excludes human kitchen storage (kitchen_storage) and garden decor (garden_outdoor).",
+   "name_en": "Pet Bowls & Accessories",
+   "name_zh": "宠物碗和用品",
+   "examples": [
+    "PINK DOG BOWL",
+    "CAT BOWL",
+    "DOG BOWL , CHASING BALL DESIGN"
+   ]
+  },
+  {
+   "id": "artificial_flowers",
+   "origin": "from_other",
+   "l1": "home_decor",
+   "name_en": "Artificial Flowers & Plants",
+   "name_zh": "人造花卉",
+   "definition": "Artificial flowers, stems, and floral garlands for decorative use.",
+   "boundary": "Includes artificial flowers, floral picks, leis; excludes fresh flowers and potted live plants.",
+   "examples": [
+    "RED POPPY ARTIFICIAL FLOWER",
+    "LARGE WHITE/PINK ROSE ART FLOWER",
+    "PURPLE FOXGLOVE ARTIIFCIAL FLOWER"
+   ]
+  },
+  {
+   "id": "chalkboards_memo_boards",
+   "l1": "home_decor",
+   "origin": "split_of:signs_boards",
+   "name_en": "Chalkboards & Memo Boards",
+   "name_zh": "黑板和备忘板",
+   "definition": "Reusable writing/notice boards including blackboards, chalkboards and memo boards, with or without an easel.",
+   "boundary": "Use for plain writing surfaces (blackboards, chalkboards, memo boards); boards whose main function is storage with hooks or pockets go to hooks_racks_shelves; worded decorative signs go to wall_signs.",
+   "edited_by_human": true,
+   "examples": [
+    "NATURAL SLATE CHALKBOARD LARGE",
+    "HOME SWEET HOME BLACKBOARD",
+    "BEACH HUT DESIGN BLACKBOARD"
+   ]
+  },
+  {
+   "id": "clocks",
+   "l1": "home_decor",
+   "origin": "v0",
+   "definition": "Timepieces designed for wall or tabletop display.",
+   "boundary": "Includes wall clocks and table clocks; excludes watches or alarm clocks not intended as decor.",
+   "name_en": "Clocks",
+   "name_zh": "时钟",
+   "examples": [
+    "WHITE BAROQUE WALL CLOCK",
+    "BLACK DINER WALL CLOCK",
+    "BLACK SQUARE TABLE CLOCK"
+   ]
+  },
+  {
+   "id": "cushions_textiles",
+   "l1": "home_decor",
+   "origin": "v0",
+   "definition": "Cushions, cushion covers and other soft-furnishing textiles such as throws.",
+   "boundary": "Includes filled cushions and cushion covers; excludes kitchen and table textiles (kitchen_textiles), bath towels (bath_beauty), hot water bottles (hot_water_bottle) and doorstops (doorstops_paperweights).",
+   "name_en": "Cushions & Cushion Covers",
+   "name_zh": "靠垫与靠垫套",
+   "edited_by_human": true,
+   "examples": [
+    "PINK PAISLEY CUSHION COVER",
+    "GREEN ROSE CUSHION COVER",
+    "GOLD FLOWER CUSHION COVER"
+   ]
+  },
+  {
+   "id": "door_hangers_signs",
+   "l1": "home_decor",
+   "origin": "split_of:signs_boards",
+   "name_en": "Door & House-Number Signs",
+   "name_zh": "门牌、门挂与数字牌",
+   "definition": "Decorative signs, number tiles, and door hangers used for identification or display.",
+   "boundary": "Includes number/letter tiles and door signs; excludes wall art (wall_art) and hanging ornaments (hanging_ornaments).",
+   "merged_from": [
+    "number_tiles"
+   ],
+   "edited_by_human": true,
+   "examples": [
+    "NUMBER TILE VINTAGE FONT 0",
+    "FRENCH BLUE METAL DOOR SIGN, 0",
+    "CHARLIE+LOLA MY ROOM DOOR SIGN"
+   ]
+  },
+  {
+   "id": "doormats",
+   "l1": "home_decor",
+   "origin": "v0",
+   "definition": "Mats placed at entrances to wipe shoes and protect floors.",
+   "boundary": "Includes indoor/outdoor doormats; excludes bath mats and pet mats.",
+   "name_en": "Doormats",
+   "name_zh": "门垫",
+   "examples": [
+    "DOOR MAT RED SPOT",
+    "DOORMAT WELCOME TO OUR HOME",
+    "DOORMAT HOME SWEET HOME BLUE"
+   ]
+  },
+  {
+   "id": "doorstops_paperweights",
+   "l1": "home_decor",
+   "origin": "v0",
+   "definition": "Weighted items used to hold doors open or keep papers in place.",
+   "boundary": "Includes decorative doorstops and paperweights; excludes tabletop decorations (tabletop_decorations) not designed as weights.",
+   "name_en": "Doorstops & Paperweights",
+   "name_zh": "门挡和镇纸",
+   "examples": [
+    "SPOTTY PINK DUCK DOORSTOP",
+    "OWL DOORSTOP",
+    "SPOTTY CAT DOORSTOP"
+   ]
+  },
+  {
+   "id": "furniture_knobs",
+   "l1": "home_decor",
+   "origin": "v0",
+   "definition": "Small furniture such as cabinets, drawer units and side, occasional or coffee tables, plus furniture hardware such as drawer knobs and handles.",
+   "boundary": "Includes cabinets, drawer units, small tables, drawer knobs and pulls; excludes wall shelves and hooks (hooks_racks_shelves), storage baskets (storage_baskets_decor), table linens (kitchen_textiles) and TV tray tables (serving_trays_platters).",
+   "name_en": "Furniture & Drawer Knobs",
+   "name_zh": "家具与抽屉把手",
+   "edited_by_human": true,
+   "examples": [
+    "WOOD 2 DRAWER CABINET WHITE FINISH",
+    "EDWARDIAN 2 DRAWER WALL CABINET",
+    "WHITE SWEETHEARTS CABINET 4 DRAWERS"
+   ]
+  },
+  {
+   "id": "hanging_ornaments",
+   "l1": "home_decor",
+   "origin": "split_of:hanging_decoration",
+   "name_en": "Hanging Ornaments (incl. Christmas tree)",
+   "name_zh": "悬挂装饰（含圣诞树挂饰）",
+   "definition": "Ornaments designed to be hung from a tree, branch, hook, window or wall, for any season: tree decorations, baubles, hanging hearts, stars and birds, and mobiles.",
+   "boundary": "Includes tree decorations, baubles, hanging hearts, stars and birds, and mobiles; excludes garlands and bunting (bunting_garland), wreaths (wreaths), freestanding figures (tabletop_decorations) and hanging candle holders (candle_holder_lantern). Season is recorded separately and does not change the subcategory.",
+   "merged_from": [
+    "tree_ornaments",
+    "mobiles"
+   ],
+   "edited_by_human": true,
+   "examples": [
+    "HEART WOODEN CHRISTMAS DECORATION",
+    "PINK STAR CHRISTMAS DECORATION",
+    "PINK FEATHER CHRISTMAS DECORATION"
+   ]
+  },
+  {
+   "id": "hooks_racks_shelves",
+   "l1": "home_decor",
+   "origin": "v0",
+   "definition": "Wall-mounted or hanging hardware for hanging and storing items such as coats, keys, and magazines.",
+   "merged_from": [
+    "wall_organisers"
+   ],
+   "boundary": "Includes coat hooks, shelving units, and magazine racks; excludes freestanding cabinets (furniture_knobs) and doorstops.",
+   "name_en": "Hooks, Racks & Shelves",
+   "name_zh": "挂钩、挂架和搁板",
+   "examples": [
+    "CREAM SWEETHEART SHELF + HOOKS",
+    "FLOWERS TILE HOOK",
+    "DECORATIVE HANGING SHELVING UNIT"
+   ]
+  },
+  {
+   "id": "hot_water_bottle",
+   "l1": "home_decor",
+   "origin": "v0",
+   "definition": "Containers filled with hot water and often covered with fabric, used to provide warmth.",
+   "boundary": "Includes hot water bottles with covers; excludes hand warmers (hand_warmer) and cushions.",
+   "name_en": "Hot Water Bottles",
+   "name_zh": "热水袋",
+   "examples": [
+    "PINK STRIPE HOT WATER BOTTLE",
+    "PINK HEART DOTS HOT WATER BOTTLE",
+    "SILVER SKULL HOT WATER BOTTLE"
+   ]
+  },
+  {
+   "id": "mirrors",
+   "l1": "home_decor",
+   "origin": "v0",
+   "definition": "Reflective surfaces for viewing oneself, available as wall-mounted or handheld/compact styles.",
+   "boundary": "Includes wall mirrors and compact mirrors; excludes photo frames (photo_frame_album) and mirrored wall art (wall_art).",
+   "name_en": "Mirrors",
+   "name_zh": "镜子",
+   "examples": [
+    "PINK OVAL JEWELLED MIRROR",
+    "ARCHED GREY MIRROR",
+    "GREEN ROUND COMPACT MIRROR"
+   ]
+  },
+  {
+   "id": "photo_frame_album",
+   "l1": "home_decor",
+   "origin": "v0",
+   "definition": "Frames for displaying photographs and albums for storing them.",
+   "boundary": "Includes photo frames and photo albums; excludes mirrors (mirrors) and wall art (wall_art).",
+   "name_en": "Photo Frames & Albums",
+   "name_zh": "相框和相册",
+   "examples": [
+    "GOLD PHOTO FRAME",
+    "PINK JEWELLED PHOTO FRAME",
+    "BLACK GRAND BAROQUE PHOTO FRAME"
+   ]
+  },
+  {
+   "id": "storage_baskets_decor",
+   "l1": "home_decor",
+   "origin": "split_of:hanging_decoration",
+   "name_en": "Decorative Storage Baskets & Toy Tidies",
+   "name_zh": "装饰收纳篮与玩具收纳",
+   "definition": "Woven, wicker, wooden or fabric baskets, chests and tidies for storage or display, including toy tidies and picnic baskets.",
+   "boundary": "Includes storage and picnic baskets, nesting basket sets, wooden chests and toy tidies; excludes laundry and peg bags (household_laundry_storage), food tins and jars (kitchen_storage) and small trinket boxes (trinket_jewellery_box).",
+   "merged_from": [
+    "toy_storage",
+    "baskets_storage"
+   ],
+   "edited_by_human": true,
+   "examples": [
+    "SET OF 3 BLUE STRIPE BASKET",
+    "PICNIC BASKET WICKER SMALL",
+    "FAIRY CAKE WICKER PICNIC BASKET"
+   ]
+  },
+  {
+   "id": "tabletop_decorations",
+   "l1": "home_decor",
+   "origin": "split_of:hanging_decoration",
+   "name_en": "Tabletop Decorations",
+   "name_zh": "桌面装饰",
+   "definition": "Freestanding small decorative objects for display on tables, shelves, or mantels.",
+   "boundary": "Includes figurines and small seasonal decorations; excludes hanging ornaments (hanging_ornaments) and candle holders (candle_holder_lantern).",
+   "merged_from": [
+    "decorative_objects"
+   ],
+   "examples": [
+    "BIRD DECORATION RED SPOT",
+    "WHITE/PINK CHICK EASTER DECORATION",
+    "GREEN GOOSE FEATHER CHRISTMAS TREE"
+   ]
+  },
+  {
+   "id": "trinket_jewellery_box",
+   "l1": "home_decor",
+   "origin": "v0",
+   "definition": "Decorative small boxes, pots and trays for jewellery and small items: jewellery boxes, trinket pots and trays, jewellery stands, sewing boxes and tissue box covers.",
+   "merged_from": [
+    "jewellery_stands"
+   ],
+   "boundary": "Includes jewellery boxes, trinket pots and trays, jewellery stands, sewing boxes and tissue boxes; excludes gift boxes (gift_boxes), food storage tins and jars (kitchen_storage) and storage baskets (storage_baskets_decor).",
+   "name_en": "Jewellery & Trinket Boxes",
+   "name_zh": "首饰盒与小饰品盒",
+   "edited_by_human": true,
+   "examples": [
+    "GOLD JEWELERY BOX",
+    "RED POLKA DOT TISSUE BOX",
+    "VICTORIAN SEWING BOX MEDIUM"
+   ]
+  },
+  {
+   "id": "vases_planters",
+   "l1": "home_decor",
+   "origin": "v0",
+   "definition": "Vases, posy holders, plant pots and planters for cut flowers or plants, including wall and hanging planters.",
+   "boundary": "Includes vases, posy holders, indoor plant pots and planters; excludes small trinket pots (trinket_jewellery_box), garden ornaments and tools (garden_outdoor) and candle holders (candle_holder_lantern).",
+   "name_en": "Vases & Planters",
+   "name_zh": "花瓶和花盆",
+   "edited_by_human": true,
+   "examples": [
+    "ZINC HEART LATTICE 2 WALL PLANTER",
+    "S/2 ZINC HEART DESIGN PLANTERS",
+    "CREAM WALL PLANTER HEART SHAPED"
+   ]
+  },
+  {
+   "id": "wall_art",
+   "origin": "from_other",
+   "l1": "home_decor",
+   "name_en": "Wall Art & Plaques",
+   "name_zh": "墙面装饰画与挂牌",
+   "definition": "Decorative pieces designed to be mounted on walls, including mirrored art and plaques.",
+   "boundary": "Includes wall plaques and mirrored wall art; excludes mirrors (mirrors) and hanging ornaments (hanging_ornaments).",
+   "merged_from": [
+    "decorative_wall_art"
+   ],
+   "edited_by_human": true,
+   "examples": [
+    "MIRRORED WALL ART POPPIES",
+    "FLOWERS AND BIRDS WALL PLAQUE",
+    "FRUIT TREE AND BIRDS WALL PLAQUE"
+   ]
+  },
+  {
+   "id": "wall_signs",
+   "l1": "home_decor",
+   "origin": "split_of:signs_boards",
+   "name_en": "Wall Signs",
+   "name_zh": "墙面标牌",
+   "definition": "Decorative or novelty signs with printed text or motifs for wall or shelf display, including metal signs, calendar signs, and signs with single hooks.",
+   "boundary": "Use for non-door signs with wording or motifs; excludes chalkboards/memo boards and non-text decorative wall art. Calendar signs and cupcake single-hook signs stay here because the sign is the primary object.",
+   "examples": [
+    "PLEASE ONE PERSON METAL SIGN",
+    "WELCOME METAL SIGN",
+    "WASHROOM METAL SIGN"
+   ]
+  },
+  {
+   "id": "word_blocks_letters",
+   "l1": "home_decor",
+   "origin": "v0",
+   "definition": "Decorative wooden letters or words used for display on shelves, walls, or tables.",
+   "boundary": "Includes freestanding or wall-mountable wooden letters/words; excludes door signs (door_hangers_signs) and wall art (wall_art).",
+   "name_en": "Wooden Word Blocks & Letters",
+   "name_zh": "木质字母块",
+   "examples": [
+    "WELCOME WOODEN BLOCK LETTERS",
+    "PEACE WOODEN BLOCK LETTERS",
+    "JOY WOODEN BLOCK LETTERS"
+   ]
+  },
+  {
+   "id": "wreaths",
+   "l1": "home_decor",
+   "origin": "split_of:hanging_decoration",
+   "name_en": "Wreaths",
+   "name_zh": "花环",
+   "definition": "Ring-shaped decorative arrangements made of foliage, flowers, twigs, or other materials, typically hung on doors or walls.",
+   "boundary": "Include all items with WREATH in the description, regardless of material or season. Exclude wreath-shaped card holders or functional items not intended as display wreaths.",
+   "examples": [
+    "WICKER WREATH SMALL",
+    "IVY HEART WREATH",
+    "GINGHAM HEART WREATH"
+   ]
+  },
+  {
+   "id": "baking_tools",
+   "l1": "kitchen_dining",
+   "origin": "v0",
+   "definition": "Items used for baking, including cake tins and cookie cutters.",
+   "boundary": "Includes baking pans, moulds, and cutters; excludes general kitchen utensils (kitchen_tools) and disposable paper cases (cake_cases).",
+   "name_en": "Baking Tools & Tins",
+   "name_zh": "烘焙工具和模具",
+   "examples": [
+    "ROUND CAKE TIN VINTAGE RED",
+    "SET OF 3 BUTTERFLY COOKIE CUTTERS",
+    "TEATIME CAKE TIN WITH HANDLE"
+   ]
+  },
+  {
+   "id": "bowls",
+   "l1": "kitchen_dining",
+   "origin": "split_of:plates_bowls",
+   "name_en": "Bowls",
+   "name_zh": "碗",
+   "definition": "Open-top round containers used for serving or eating food, including mixing bowls, fruit bowls, pudding bowls, and snack bowls.",
+   "boundary": "Includes all bowl-shaped items for food, even if decorative (e.g. fruit bowls, sundae dishes, finger bowls). Excludes plates, flat dishes, trays, and pet bowls (assigned to pet_items).",
+   "examples": [
+    "BLUE SPOTTY PUDDING BOWL",
+    "GREEN SPOTTY BOWL",
+    "LARGE CHUNKY GLASS ROMAN BOWL"
+   ]
+  },
+  {
+   "id": "cake_stand",
+   "l1": "kitchen_dining",
+   "origin": "v0",
+   "definition": "Elevated plates or stands used to display and serve cakes and desserts.",
+   "boundary": "Includes glass, metal, or ceramic cake stands; excludes general serving plates (plates) and tabletop decorations (tabletop_decorations).",
+   "name_en": "Cake Stands",
+   "name_zh": "蛋糕架",
+   "examples": [
+    "GLASS CAKE STAND",
+    "RETRO SPOT CAKE STAND",
+    "VINTAGE METAL CAKE STAND CREAM"
+   ]
+  },
+  {
+   "id": "coasters_placemats",
+   "l1": "kitchen_dining",
+   "origin": "split_of:plates_bowls",
+   "name_en": "Coasters and Placemats",
+   "name_zh": "杯垫和餐垫",
+   "definition": "Small protective mats or discs placed under drinks or tableware to protect surfaces.",
+   "boundary": "Includes all coasters and placemats regardless of material/design. Excludes trays and tablecloths.",
+   "examples": [
+    "SET OF 4 FAIRY CAKES COASTERS",
+    "FLOWERS TILE COASTER",
+    "S/4 PISTACHIO LOVEBIRD COASTERS"
+   ]
+  },
+  {
+   "id": "egg_cups",
+   "l1": "kitchen_dining",
+   "origin": "v0",
+   "definition": "Items used to hold boiled eggs upright or cover them to keep warm.",
+   "boundary": "Includes egg cups and knitted/felt egg cosies; excludes general kitchen tools (kitchen_tools) and tableware (plates).",
+   "name_en": "Egg Cups & Egg Cosies",
+   "name_zh": "蛋杯和蛋套",
+   "examples": [
+    "PINK KNITTED EGG COSY",
+    "FELT EGG COSY CHICKEN",
+    "CREAM KNITTED HEN"
+   ]
+  },
+  {
+   "id": "kitchen_storage",
+   "l1": "kitchen_dining",
+   "origin": "v0",
+   "definition": "Containers such as tins, jars, and bread bins used to store food or kitchen items.",
+   "boundary": "Includes biscuit tins, glass jars, and bread bins; excludes decorative storage boxes (trinket_jewellery_box) and baskets (storage_baskets_decor).",
+   "name_en": "Kitchen Storage Containers",
+   "name_zh": "厨房储物罐",
+   "examples": [
+    "RED SPOTTY BISCUIT TIN",
+    "BREAD BIN DINER STYLE MINT",
+    "JARDIN ETCHED GLASS LARGE BELL JAR"
+   ]
+  },
+  {
+   "id": "kitchen_textiles",
+   "l1": "kitchen_dining",
+   "origin": "v0",
+   "definition": "Fabric items for the kitchen and dining table: tea towels, aprons, oven gloves, tablecloths and table runners.",
+   "boundary": "Includes tea towels, aprons, oven gloves, tablecloths, table runners and fabric napkins; excludes paper napkins (party_tableware), bath towels (bath_beauty) and cushions (cushions_textiles).",
+   "name_en": "Kitchen & Table Textiles",
+   "name_zh": "厨房与餐桌纺织品",
+   "edited_by_human": true,
+   "examples": [
+    "TEA TIME KITCHEN APRON",
+    "BLUE TEA TOWEL CLASSIC DESIGN",
+    "SET OF 2 FANCY FONT TEA TOWELS"
+   ]
+  },
+  {
+   "id": "kitchen_tools",
+   "l1": "kitchen_dining",
+   "origin": "v0",
+   "definition": "Handheld tools and utensils used for cooking, serving, or eating.",
+   "boundary": "Includes spoons, spatulas, chopsticks, and small pans; excludes baking-specific tools (baking_tools), kitchen storage (kitchen_storage), and tableware (plates, mugs_cups).",
+   "name_en": "Kitchen Tools & Utensils",
+   "name_zh": "厨房工具和餐具",
+   "examples": [
+    "RED EGG SPOON",
+    "RED PUDDING SPOON",
+    "SET OF 6 DOTS CHOPSTICKS"
+   ]
+  },
+  {
+   "id": "lunch_box_cutlery",
+   "l1": "kitchen_dining",
+   "origin": "v0",
+   "definition": "Containers for packed meals, often with accompanying mini cutlery sets.",
+   "boundary": "Includes lunchboxes with cutlery and standalone mini cutlery sets; excludes lunch bags (lunch_bag) and full-size kitchen utensils (kitchen_tools).",
+   "name_en": "Lunch Boxes & Cutlery Sets",
+   "name_zh": "午餐盒和餐具套装",
+   "examples": [
+    "LUNCHBOX WITH CUTLERY RETROSPOT",
+    "BLUE 3 PIECE MINI DOTS CUTLERY SET",
+    "DINOSAUR LUNCHBOX WITH CUTLERY"
+   ]
+  },
+  {
+   "id": "mugs_cups",
+   "l1": "kitchen_dining",
+   "origin": "v0",
+   "definition": "Drinking vessels intended for hot beverages such as tea and coffee.",
+   "merged_from": [
+    "drinkware"
+   ],
+   "boundary": "Includes mugs, coffee cups, and saucers; excludes teapots/coffee pots (teapot_tea_set) and disposable paper cups (party_tableware).",
+   "name_en": "Mugs & Cups",
+   "name_zh": "杯子和马克杯",
+   "examples": [
+    "RED SPOTTY COFFEE MUG",
+    "ORANGE FLOWER MUG",
+    "POTTERING MUG"
+   ]
+  },
+  {
+   "id": "plates",
+   "l1": "kitchen_dining",
+   "origin": "split_of:plates_bowls",
+   "name_en": "Plates",
+   "name_zh": "盘子",
+   "definition": "Flat or shallow dishes used for serving or eating food.",
+   "boundary": "Includes dinner plates, cake plates, and pizza plates; excludes cake stands (cake_stand) and disposable paper plates (party_tableware).",
+   "merged_from": [
+    "ashtrays"
+   ],
+   "examples": [
+    "RED SPOTTY PLATE",
+    "PIZZA PLATE IN BOX",
+    "CAKE PLATE LOVEBIRD WHITE"
+   ]
+  },
+  {
+   "id": "serving_trays_platters",
+   "l1": "kitchen_dining",
+   "origin": "split_of:plates_bowls",
+   "name_en": "Serving Trays and Platters",
+   "name_zh": "托盘和浅盘",
+   "definition": "Large flat or slightly raised items with handles or rims used to carry or present multiple food items, including trays, platters, and TV dinner trays.",
+   "boundary": "Includes items designed to carry multiple servings or used as a base for serving; excludes individual plates, bowls, and tableware sets. TV tray tables with stands are included due to their tray function.",
+   "examples": [
+    "TV DINNER TRAY VINTAGE PAISLEY",
+    "RETRO PLASTIC 70'S TRAY",
+    "BLUE & WHITE BREAKFAST TRAY"
+   ]
+  },
+  {
+   "id": "tableware_sets",
+   "l1": "kitchen_dining",
+   "origin": "split_of:plates_bowls",
+   "name_en": "Table Accessories & Sets",
+   "name_zh": "餐桌配件与套装",
+   "definition": "Decorative accessories for table settings, such as napkin charms, napkin rings, and place card holders.",
+   "boundary": "Includes napkin rings and place setting decorations; excludes actual plates/cutlery (plates, kitchen_tools) and party tableware.",
+   "merged_from": [
+    "napkin_rings_charms"
+   ],
+   "edited_by_human": true,
+   "examples": [
+    "SET OF 4 NAPKIN CHARMS HEARTS",
+    "SCANDINAVIAN 3 HEARTS NAPKIN RING",
+    "12 PINK ROSE PEG PLACE SETTINGS"
+   ]
+  },
+  {
+   "id": "teapot_tea_set",
+   "l1": "kitchen_dining",
+   "origin": "v0",
+   "definition": "Teapots, coffee pots, tea sets and matching tea-time serving pieces such as milk jugs, sugar bowls and tea, coffee or sugar caddies.",
+   "boundary": "Includes teapots, coffee pots, multi-piece tea sets, milk jugs, sugar bowls and tea caddies; excludes single mugs and cup-and-saucer items (mugs_cups) and general food storage tins (kitchen_storage).",
+   "name_en": "Teapots & Tea/Coffee Sets",
+   "name_zh": "茶壶和茶/咖啡套装",
+   "edited_by_human": true,
+   "examples": [
+    "VINTAGE GLASS TEA CADDY",
+    "WHITE TEA,COFFEE,SUGAR JARS",
+    "FUNKY FLOWER COFFEE POT"
+   ]
+  },
+  {
+   "id": "bath_beauty",
+   "l1": "personal_care",
+   "origin": "v0",
+   "definition": "Towels, soap holders, and bath sponges used for personal care in the bath or shower.",
+   "boundary": "Includes bath linens and bath accessories; excludes kitchen textiles (kitchen_textiles) and tissues (tissues_plasters).",
+   "name_en": "Bath & Beauty Accessories",
+   "name_zh": "洗浴美容用品",
+   "examples": [
+    "SOFT PINK ROSE TOWEL",
+    "LARGE CAKE TOWEL PINK SPOTS",
+    "FAIRY SOAP SOAP HOLDER"
+   ]
+  },
+  {
+   "id": "sewing_craft",
+   "l1": "personal_care",
+   "origin": "v0",
+   "definition": "Kits and supplies for sewing, felt craft, and similar handmade projects.",
+   "boundary": "Includes sewing kits and felt doll kits; excludes art supplies (pens_pencils_art) and finished textile products.",
+   "name_en": "Sewing & Craft Kits",
+   "name_zh": "缝纫和手工艺套装",
+   "examples": [
+    "VICTORIAN SEWING KIT",
+    "BASKET OF FLOWERS SEWING KIT",
+    "MIDNIGHT GLAMOUR SCARF KNITTING KIT"
+   ]
+  },
+  {
+   "id": "tissues_plasters",
+   "l1": "personal_care",
+   "origin": "v0",
+   "definition": "Disposable paper tissues and adhesive bandages for personal hygiene and first aid.",
+   "boundary": "Includes pocket tissue packs and plasters; excludes bath sponges (bath_beauty) and kitchen towels (kitchen_textiles).",
+   "name_en": "Tissues & Plasters",
+   "name_zh": "纸巾和创可贴",
+   "examples": [
+    "PACK OF 12 RED SPOTTY TISSUES",
+    "PLASTERS IN TIN SKULLS",
+    "WHITE TISSUE REAM"
+   ]
+  },
+  {
+   "id": "gift_boxes",
+   "l1": "stationery_gift_wrap",
+   "origin": "v0",
+   "definition": "Decorative boxes used to present gifts, sometimes with a small item included.",
+   "boundary": "Includes pre-filled gift boxes; excludes gift wrap/tags (gift_wrap_tags) and decorative storage boxes (trinket_jewellery_box).",
+   "name_en": "Gift Boxes",
+   "name_zh": "礼品盒",
+   "examples": [
+    "FAIRY CAKES RECTANGLUAR BOXES",
+    "PACK OF 6 SWEETIE GIFT BOXES",
+    "BLUE DIAMANTE PEN IN GIFT BOX"
+   ]
+  },
+  {
+   "id": "gift_wrap_tags",
+   "l1": "stationery_gift_wrap",
+   "origin": "v0",
+   "definition": "Wrapping paper, tape, and tags used to wrap and label gifts.",
+   "merged_from": [
+    "gift_bags"
+   ],
+   "boundary": "Includes rolls/sheets of wrap and gift tags; excludes gift boxes (gift_boxes) and greeting cards (greeting_cards).",
+   "name_en": "Gift Wrap & Tags",
+   "name_zh": "礼品包装纸和标签",
+   "examples": [
+    "PINK SPOTS WRAP",
+    "CURIOUS IMAGES GIFT WRAP SET",
+    "PINK PAISLEY ROSE GIFT WRAP"
+   ]
+  },
+  {
+   "id": "greeting_cards",
+   "l1": "stationery_gift_wrap",
+   "origin": "v0",
+   "definition": "Greeting cards, postcards, notelets and envelopes for occasions and messages.",
+   "boundary": "Includes single cards, card packs, postcards, notelets and envelopes; excludes gift tags (gift_wrap_tags), card games such as snap cards (games_puzzles) and card holders (tabletop_decorations).",
+   "name_en": "Greeting Cards",
+   "name_zh": "贺卡与明信片",
+   "edited_by_human": true,
+   "examples": [
+    "FOLK ART GREETING CARD,pack/12",
+    "VINTAGE CARAVAN GREETING CARD",
+    "FAIRY CAKE GREETINGS CARD"
+   ]
+  },
+  {
+   "id": "magnets",
+   "l1": "stationery_gift_wrap",
+   "origin": "v0",
+   "definition": "Decorative magnets designed to attach to refrigerators or other magnetic surfaces.",
+   "boundary": "Includes fridge magnets in sets or singles; excludes magnetic hooks or tools.",
+   "name_en": "Fridge Magnets",
+   "name_zh": "冰箱贴",
+   "examples": [
+    "SET 5 MINI CHOCOLATE FRIDGE MAGNETS",
+    "BIG DOUGHNUT FRIDGE MAGNETS",
+    "ASSORTED CAKES FRIDGE MAGNETS"
+   ]
+  },
+  {
+   "id": "notebooks_journals",
+   "l1": "stationery_gift_wrap",
+   "origin": "v0",
+   "definition": "Bound paper products for writing, note-taking, or sketching.",
+   "boundary": "Includes notebooks, journals, and sketchbooks; excludes greeting cards and stationery sets.",
+   "name_en": "Notebooks & Journals",
+   "name_zh": "笔记本和日记本",
+   "examples": [
+    "VINTAGE NOTEBOOK PINK FLOWER",
+    "DAISY SKETCHBOOK",
+    "GREEN FERN NOTEBOOK"
+   ]
+  },
+  {
+   "id": "pens_pencils_art",
+   "l1": "stationery_gift_wrap",
+   "origin": "v0",
+   "definition": "Writing and drawing instruments and related art materials.",
+   "boundary": "Includes pencils, pens, and erasers; excludes notebooks (notebooks_journals) and craft kits (sewing_craft).",
+   "name_en": "Pens, Pencils & Art Supplies",
+   "name_zh": "笔和美术用品",
+   "examples": [
+    "36 PENCILS TUBE RED SPOTTY",
+    "PACK OF 12 COLOURED PENCILS",
+    "FLOWER PENCIL/RUBBER+5 MINI PENCILS"
+   ]
+  },
+  {
+   "id": "stickers_tattoos",
+   "l1": "stationery_gift_wrap",
+   "origin": "v0",
+   "definition": "Adhesive decorative stickers and temporary tattoos for personalising items or skin.",
+   "boundary": "Includes paper and 3D stickers; excludes gift wrap/tags (gift_wrap_tags) and magnets (magnets).",
+   "name_en": "Stickers & Temporary Tattoos",
+   "name_zh": "贴纸和纹身贴",
+   "examples": [
+    "ANIMAL STICKERS",
+    "3D VINTAGE CHRISTMAS STICKERS",
+    "FLOWERS STICKERS"
+   ]
+  },
+  {
+   "id": "games_puzzles",
+   "l1": "toys_kids",
+   "origin": "split_of:toys_games",
+   "name_en": "Games & Puzzles",
+   "name_zh": "游戏和拼图",
+   "definition": "Tabletop board games, card games, matching/top trumps games, bingo, dominoes, jigsaws and puzzle blocks.",
+   "boundary": "Includes classic and licensed card/board games and jigsaw puzzles. Excludes outdoor/garden skittles, croquet, flying discs, traditional action toys and construction/play figure sets.",
+   "examples": [
+    "MINI JIGSAW DINOSAUR",
+    "JIGSAW TREE WITH BIRDHOUSE",
+    "JIGSAW TOADSTOOLS 3 PIECE"
+   ]
+  },
+  {
+   "id": "money_boxes",
+   "l1": "toys_kids",
+   "origin": "split_of:toys_games",
+   "name_en": "Money Boxes & Coin Banks",
+   "name_zh": "存钱罐",
+   "definition": "Ceramic, wooden or novel money boxes, piggy banks and coin banks used for saving money.",
+   "boundary": "Includes items described as money box, money bank, piggy bank or coin bank. Excludes tins that are for storage even if stacking/nesting (kitchen_storage).",
+   "examples": [
+    "CERAMIC HEART FAIRY CAKE MONEY BANK",
+    "BLUE YELLOW FLOWER PIGGY BANK",
+    "CERAMIC STRAWBERRY MONEY BOX"
+   ]
+  },
+  {
+   "id": "outdoor_active_toys",
+   "l1": "toys_kids",
+   "origin": "split_of:toys_games",
+   "name_en": "Outdoor & Active Toys",
+   "name_zh": "户外运动玩具",
+   "definition": "Toys designed for outdoor or physical active play, including garden games, windmills, flying toys, skittles, skipping ropes, catch cups, spinning tops and similar.",
+   "boundary": "Includes garden croquet, skittles, flying discs, gliders, toy helicopters, windmills, inflatable globes/balls, skipping ropes and traditional action toys. Excludes tabletop board/card games and jigsaw puzzles.",
+   "examples": [
+    "SMALL RED SPOT WINDMILL",
+    "SMALL SKULL WINDMILL",
+    "FLOWER WINDMILL"
+   ]
+  },
+  {
+   "id": "playsets_figurines",
+   "l1": "toys_kids",
+   "origin": "split_of:toys_games",
+   "name_en": "Playsets & Figurines",
+   "name_zh": "游戏套装和玩偶",
+   "definition": "Small play figures, dollhouse room sets and pretend-play tool sets, including single figurines and multi-piece sets.",
+   "boundary": "Includes multi-piece animal/dinosaur/creepy crawly sets, dollhouse furniture rooms, and child's role-play tool sets. Excludes soft toys, board/card games, puzzles and outdoor toys.",
+   "examples": [
+    "EIGHT PIECE CREEPY CRAWLIE SET",
+    "POPPY'S PLAYHOUSE LIVINGROOM",
+    "ASSORTED CREEPY CRAWLIES"
+   ]
+  },
+  {
+   "id": "soft_toys",
+   "l1": "toys_kids",
+   "origin": "split_of:toys_games",
+   "name_en": "Soft Toys & Plush",
+   "name_zh": "毛绒玩具",
+   "definition": "Stuffed, plush and soft knitted toys including teddies, soft dolls, soft animals and character plush.",
+   "boundary": "Includes items described as soft toy, teddy, plush/knitted doll or soft animal. Excludes feltcraft doll kits (sewing_craft), doorstops shaped like dolls/animals, money boxes, and decorative wall plaques such as flying ducks.",
+   "examples": [
+    "GOLD TEDDY BEAR",
+    "FLORAL ELEPHANT SOFT TOY",
+    "STRIPES DESIGN MONKEY DOLL"
+   ]
+  }
+ ],
+ "frozen_at": "2026-11-12T13:59:48+00:00"
+}

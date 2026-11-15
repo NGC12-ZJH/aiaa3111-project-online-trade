@@ -1,0 +1,289 @@
+{
+  "control": "S",
+  "scopes": 60,
+  "systems": 20,
+  "configs": {
+    "P1": [
+      0.01,
+      0.2,
+      1.0,
+      null
+    ],
+    "P2": [
+      0.02,
+      0.4,
+      1.3,
+      null
+    ],
+    "P3": [
+      0.03,
+      0.5,
+      1.5,
+      null
+    ],
+    "P4": [
+      0.02,
+      0.4,
+      1.3,
+      5.0
+    ],
+    "P5": [
+      0.02,
+      0.4,
+      1.3,
+      10.0
+    ]
+  },
+  "source_candidate_sha256": "7eb7ab25f1fc425721803d08b98d135e396e3ac022b4306e4a7149d80773f051",
+  "script_sha256": "b2797c3aafcbbc5c01a21b2d09b910b62fb5dc1f1d8c1401c92a4fb32637c96c",
+  "sources": [
+    {
+      "path": "category_patterns\\evidence\\R_42_0.csv.gz",
+      "sha256": "61e7c088c7810005b4e150b13da36412dba4ac063ccfea095b8ed86da570cb51"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_42_1.csv.gz",
+      "sha256": "63963cf7dbcd298d53afa7d01e7ddc0ee5b67493c827016701f2d7f64e30e1b5"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_42_2.csv.gz",
+      "sha256": "2049f9924044cdb159ced831c236e30f992190025c3a46e8a7c717fca2707848"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_43_0.csv.gz",
+      "sha256": "6193e63d25bafebd1e6fc24e5edb1d8b59c29e43f4a1d5ce54dadc43ae480ec8"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_43_1.csv.gz",
+      "sha256": "8b3585561de9a215e64a5dc0074a6088079d11e1ec359a0704741e246c027fdc"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_43_2.csv.gz",
+      "sha256": "df31158965b051c9713e91e456b585d8c343055ab8f4cb94669db1fd6a8ef8af"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_44_0.csv.gz",
+      "sha256": "f5ffe0108615a9b450f05e2b6ff83f0bd07fcbad297dc8e6cb6d219aa07d2479"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_44_1.csv.gz",
+      "sha256": "7ec8c1b8dd01783bb5f082318efd2f9083fc8a9bf1cbb03bbe0feec7553378dd"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_44_2.csv.gz",
+      "sha256": "fbfe356d71ad078b74ab606342e1f10d0b0e1fcae32049e42157ea88225b1b5d"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_45_0.csv.gz",
+      "sha256": "10f8d80bc7e9d7dd8e69737c14499bd5de045cce6438ccd7e9d96340df2347b4"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_45_1.csv.gz",
+      "sha256": "522f67fefc18a6287c2383b0daa706682c0de1cacd695ddfe98e3b6e7b415508"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_45_2.csv.gz",
+      "sha256": "e8fe2449300552d34ee8c56ef2a02f3a370663267b16dba572a0db1d0d3475ba"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_46_0.csv.gz",
+      "sha256": "ca477382ba89727ca1bee5eb1307b940b71e677c4fb3ac38cb2cd7d0b510d889"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_46_1.csv.gz",
+      "sha256": "e8ec1eb5c45272ffb2aaeb41cf3b0073d25cc4ae39da14769253d85c775dc897"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_46_2.csv.gz",
+      "sha256": "7ad3b034163d99c0aeb21607d42fb79f52a5c497d1791f0b0f004a091f77669e"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_47_0.csv.gz",
+      "sha256": "11ce755bdc2f048926c16c83251c120e7f902ff7cc303482a09bb9f3a9fb2d29"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_47_1.csv.gz",
+      "sha256": "2a90b0898e859c89e1fbb2189fbef8f37bf2856a55c2bf85d1580d3733f16181"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_47_2.csv.gz",
+      "sha256": "1c5b008d14b5f6a07d37c6241c0275923e4aa52d1b22eb774b4eca6d3af679dd"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_48_0.csv.gz",
+      "sha256": "cb2816acc8349b07c60ae5570ebc46622e1572b5c9aad947cf72ec435c2c5211"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_48_1.csv.gz",
+      "sha256": "ffadc0b314fe97332b6c8acf2fb035ae5f48a59ec93f8765b3cc766d48d0f52f"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_48_2.csv.gz",
+      "sha256": "63f02ca99f23a8a57a62e167b97bc7d9ba13617fde71ab511740ba0ceac1d6ec"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_49_0.csv.gz",
+      "sha256": "b576c4d4a80c27b90394fa59d2538c3e705607e753be1c7c8550645b0f01da5c"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_49_1.csv.gz",
+      "sha256": "35de25c07c302889ca53f69b806f103552687ba6e645e496c28ee6f02f4e61c5"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_49_2.csv.gz",
+      "sha256": "807e95b28d754136784b8597ffb1696666437f757a54b7909a6b9597aee4ac4f"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_50_0.csv.gz",
+      "sha256": "f0bc3ea4be45ad5db71b680ee06d07e336804751206df6430a7e457c2a209d2d"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_50_1.csv.gz",
+      "sha256": "f5cae995947dcd2c15483d52993126757ca4b8a8f1e8982b54150bc38ed28de9"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_50_2.csv.gz",
+      "sha256": "2ee1dd9095f9624de642b42ffc947628aaa0fc8f20f191d1fb760e21010e3367"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_51_0.csv.gz",
+      "sha256": "57465b614bd073424796894dbfc8ad148945c4deb1555d859bb9ccec0e930fac"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_51_1.csv.gz",
+      "sha256": "ce54945a8595d438db8e94a464e3daaca0b21b99a2ffd5669e9345e00e35b211"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_51_2.csv.gz",
+      "sha256": "0b4619204b597e6ad247b21e971ebb12cae00a3d0f3874011d4f22b16dbdfd60"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_52_0.csv.gz",
+      "sha256": "85a178dbdfe1a204acc0bec48f5a943585f88bd7b7ac8a33818c3e16601d9ae6"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_52_1.csv.gz",
+      "sha256": "f0057478f85bd2c9744b8ff4fc488d9be7b17ce4d81428408bd5ebcf4a8a86fb"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_52_2.csv.gz",
+      "sha256": "077d9ed52ceeec078995c6e2c37c139876dcc4c9cc3c708af40466e8fe6019a7"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_53_0.csv.gz",
+      "sha256": "a61598fb855a1ed803b874869112f3a1e59653d28520767fbca6481d9fffaaa2"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_53_1.csv.gz",
+      "sha256": "806f43ef69d188cec34a6452eaf86028436179815742682d6b242bc604305053"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_53_2.csv.gz",
+      "sha256": "8f197cd23af85de471638a4ece6b11d3a5313834deab7780301af177c912b9f3"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_54_0.csv.gz",
+      "sha256": "c44071f0a1f1d3233278b982c8b44529e139e74840ca975311d4e98cbf4b0fa2"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_54_1.csv.gz",
+      "sha256": "114223639a38dc799f49c44036dd672bfaa6002d4b097bccac5887cbc63eefdb"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_54_2.csv.gz",
+      "sha256": "a7f6212e81403e49c34d4a97727522782e1df3db76b9b6b5634811a9526798ff"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_55_0.csv.gz",
+      "sha256": "fd9c05317d70b4ce3e9fb8779b6b3ab6a0e91c6e4b581d20842bc109650a5bd1"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_55_1.csv.gz",
+      "sha256": "03513eeccb88f2d424c6e9519d6841d1cf7e7d538c56af851323acfe005ce127"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_55_2.csv.gz",
+      "sha256": "7bcd9f842947b4ef332bf9e07d66e6cb51e6de12fcf5a45943e121298f4a2121"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_56_0.csv.gz",
+      "sha256": "8afd1cdb4c62761a9d73cdafe1315412c0f603c96211c3b6b2d8d9f04afe3835"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_56_1.csv.gz",
+      "sha256": "09247a78d6a6f2d82fba2c65a6f0ab11b528aea957d76c4f242a3e7a60867a86"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_56_2.csv.gz",
+      "sha256": "8ac1f583647b20abb3b791e9294a912f61f5e7618a361365e43b81be1bb48161"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_57_0.csv.gz",
+      "sha256": "5734a5ac7fc09c633d6427f3bb27dfe416046df6088ac0649e6d60931f141afa"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_57_1.csv.gz",
+      "sha256": "aafd027a11a30b902fefc44db1c4038a5ad06bab1ad3e480f24ca5ced5da22de"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_57_2.csv.gz",
+      "sha256": "740e3bf2b49d4adcc612d9dce531a9c7304aad7a9c14c361c6f43061ba0e8af8"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_58_0.csv.gz",
+      "sha256": "708b153d2574d55d43af57a65de4b9e38a566662bd024b3fc7108e5508ef594f"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_58_1.csv.gz",
+      "sha256": "b5e9942b6f07694e6eec615c3f094531030657f8237c79438cf4ffd87ac53460"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_58_2.csv.gz",
+      "sha256": "fd34c45116bab70cd0b730b54acff5831470028424fdcd31152a1d715119c400"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_59_0.csv.gz",
+      "sha256": "f0cdd6298ae728a661d4b7057f261cced95787ce71ed7d618497c9f8f36b6b85"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_59_1.csv.gz",
+      "sha256": "96adb076e780d7c742237b8e5144b3e831ccda804bd4775c05c80e905bd65c2e"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_59_2.csv.gz",
+      "sha256": "75898cce9a5f926f807bfd7d939434053a5e2c9f7fc16656ceb148874d00d66d"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_60_0.csv.gz",
+      "sha256": "806f5373a16f4ee2f797802083486c6b101996ca93b8d8c702cd3a48c404ea5c"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_60_1.csv.gz",
+      "sha256": "44a40873fc3048c49c85668c37def5af45ba0de5b83f9e49385242b6c53cd26a"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_60_2.csv.gz",
+      "sha256": "8a22b73436e0a09d869b753fcc9a59b94cdb904e13fa7ab1f1c1e2ab69717f50"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_61_0.csv.gz",
+      "sha256": "b87198d8e8e53b9f133549a0dc615b554e4e63c4217b757e40d682bbbd3d1da0"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_61_1.csv.gz",
+      "sha256": "51816867812fb8ad1f7be02c82d733956d8fe15fa1b2c851ece167d0adad14b0"
+    },
+    {
+      "path": "category_patterns\\evidence\\R_61_2.csv.gz",
+      "sha256": "659d9d72929864d7c0514a5b8d05a494e5e8d9c3f34c9ba1c6658f4f182df48c"
+    }
+  ],
+  "checks": [
+    "P2 P4 P5 pair rules identical",
+    "P5 subset P4 subset P2 subset P1; P3 subset P2",
+    "sample joint and antecedent counts from source orders",
+    "shared coverage superset; full match subset antecedent match",
+    "all quota sums equal system budget"
+  ],
+  "validation_used": false
+}
