@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "version": "validation_quality_v1",
+  "recorded_date": "2026-11-18",
+  "protocol_sha256": "407bf20cf4f303b19816fdc134efb41d78239b3d167c1ca3a464009a208dd5d9",
+  "prior_results_seen": true,
+  "test_evaluated": false,
+  "configurations_selected": false,
+  "native_rule_scope_checks": 50161,
+  "unique_statistical_evidence": 50227,
+  "family_count": 222,
+  "primary_system_rows": 6660,
+  "sensitivity_settings": 11,
+  "customer_cluster_uncertainty": "ratio delta method, one-sided t; BY within-system",
+  "sample": {
+    "period": "validation",
+    "all_valid_baskets": 8067,
+    "eligible_baskets": 4862,
+    "eligible_customers": 1458,
+    "eligible_order_share": 0.6027023676707574,
+    "non_profile_baskets": 3205,
+    "anonymous_baskets": 703,
+    "identified_non_profile_baskets": 2502,
+    "empty_l2_eligible_baskets": 2,
+    "single_l2_eligible_baskets": 549,
+    "unmapped_codes": 0
+  },
+  "python": "3.13.13",
+  "numpy": "2.4.6",
+  "pandas": "3.0.3",
+  "elapsed_seconds": 349.96,
+  "implementation_sha256": "ef0520d0b7a36606652d23437d8f0cbef75fdb750bb1fa07c788117ebd60c9a2",
+  "source_validation_manifest_sha256": "92d35c700ce05a0db6f60ae6b0322dad880a11c8f3944cac85404e041b683605",
+  "input_hashes": {
+    "configs\\validation_quality.json": "407bf20cf4f303b19816fdc134efb41d78239b3d167c1ca3a464009a208dd5d9",
+    "data\\processed\\local\\D_validation\\validation_baskets.csv": "47d416dd70f64920df19193fc56704d834de18d2298443d767f0383cd3e4e2c0",
+    "data\\processed\\local\\D_validation\\discovery_baskets.csv": "32e5f8dcfffa99ae7ab7c2cbc8cebf088352467de9b205a5f1e86b2146d7bdb1",
+    "data\\processed\\local\\D_validation\\input_provenance.json": "b38f3d39b094b57cb26ca3bd69f6754abc39fb6af23f19a5b82c2af7f757caf5"
+  },
+  "checks": [
+    "All 50,161 unique native scope-rule counts and point estimates match existing evidence",
+    "Every 6,660 primary raw system coverage matches original output",
+    "Quality coverage is subset of raw coverage; no replacement or refill",
+    "Shared rules re-evaluated globally; exact duplicate hypotheses collapsed",
+    "Protocol hash unchanged during calculation"
+  ],
+  "output_hashes": {
+    "results\\tables\\validation_quality\\family_audit.csv": "b905660503fdb7e425242f021d9392e10b675df9498624dfd97921feb0b3be36",
+    "results\\tables\\validation_quality\\GL_quality_summary.csv": "4c0aeda2ba9f89bad00bcaf8b36434aac4d0afa54e94ccfed3f1eadce219117b",
+    "results\\tables\\validation_quality\\GL_rule_quality.csv": "97d7e0f24a4466f7b60c59ef1e0782af1c1f1a056b00d61f01ecca587369bc69",
+    "results\\tables\\validation_quality\\GL_sensitivity.csv": "94f04a8c6781965f3bae855373d308f564df238f5aa89648319fb0b5783f5573",
+    "results\\tables\\validation_quality\\random_quality_comparisons.csv": "554cfb67238a99e5ee64eab25d3bd0ecd928bdca018ff2b18c8c42854c452689",
+    "results\\tables\\validation_quality\\sensitivity_random_comparisons.csv": "34a29e74e9e7d2299bb0c89acf24fd996bf9ac6e250699b10e60ab2a58730ba6",
+    "results\\tables\\validation_quality\\system_quality.csv": "1e23ab4fc93b8ae47d6d3f938a8999e6309ec074bd489a11a15914c91dfffc0b"
+  }
+}

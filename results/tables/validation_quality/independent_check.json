@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "fdr_library": "scipy.stats.false_discovery_control",
+  "fdr_families_checked": 222,
+  "direct_set_GL_systems_checked": 60,
+  "all_GL_gate_decisions_match": true,
+  "checks": [
+    "BY/BH adjusted values match independent library",
+    "All 60 GL accepted-slot counts match direct gates",
+    "All 60 GL quality coverage and customer macro coverage match direct sets"
+  ],
+  "elapsed_seconds": 3.48
+}

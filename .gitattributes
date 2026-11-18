@@ -9,3 +9,7 @@
 # Preserve the exact bytes recorded in the taxonomy final freeze manifest.
 /data/taxonomy/v1_work/review_v1_decisions.csv -text whitespace=cr-at-eol
 /data/taxonomy/gold/gold_final_v1.csv -text whitespace=cr-at-eol
+
+# Preserve D Validation output bytes recorded in run manifests.
+/results/tables/validation/** -text whitespace=cr-at-eol
+/results/tables/validation_quality/** -text whitespace=cr-at-eol

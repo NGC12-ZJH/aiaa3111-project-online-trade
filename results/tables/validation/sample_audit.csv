@@ -1,0 +1,3 @@
+period,all_valid_baskets,eligible_baskets,eligible_customers,eligible_order_share,non_profile_baskets,anonymous_baskets,identified_non_profile_baskets,empty_l2_eligible_baskets,single_l2_eligible_baskets,unmapped_codes
+discovery,11273,7521,1928,0.6671693426771933,3752,819,2933,2,974,0
+validation,8067,4862,1458,0.6027023676707574,3205,703,2502,2,549,0

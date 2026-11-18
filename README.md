@@ -1,5 +1,8 @@
 # aiaa3111-project-online-trade
 
+<!-- D_VALIDATION_DELIVERY -->
+> **D分支交付（2026-11-18，`d/evaluation`）**：已完成P1–P5、预算20/50/100的品类层Validation比较，以及统一未来质量验收、随机对照和敏感性补算。请从 [D交付与复现入口](docs/d_validation_handoff.md) 开始阅读；[一页验收方案](docs/validation_quality_plan.md)、[新质量结果](docs/validation_quality_results.md)、[原Validation结果](docs/validation_results.md) 分别保留。未正式选参/冻结、未评价Test。下文11-13的主分支状态作为历史背景保留。
+
 AIAA3111 数据挖掘课程项目 · H2 分群购物模式。研究历史消费行为分群能否在相同规则预算下发现全局规则未充分体现的商品关联，并在未来交易中保持价值。
 
 **当前状态（2026-11-13，`main`）：A 的数据处理、B 的顾客分群与 20 套随机对照，以及 B 扩展的商品分类 `taxonomy_v1` 已整合到主分支。分类代码已按主仓库结构整理，4,724 个商品的最终标签已冻结。C 的 Discovery 商品层规则开发版仍在 `c/pattern-mining`，本次未合入；D 的正式未来评价尚无仓库交付。下一阶段是 C 接入 v1、B 补充活跃度匹配对照、C/D 在 Validation 选择配置，再冻结并进行 Test。尚无 Test 性能结果，也尚未证明分群整体优于全局。**

@@ -1,0 +1,5 @@
+{
+  "scipy": "1.18.0",
+  "protocol_sha256": "407bf20cf4f303b19816fdc134efb41d78239b3d167c1ca3a464009a208dd5d9",
+  "independent_check": "independent_check.json"
+}

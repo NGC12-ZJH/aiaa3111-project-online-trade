@@ -1,0 +1,5 @@
+# Tested on Python 3.13.13 (Windows, CPU)
+numpy==2.4.6
+pandas==3.0.3
+matplotlib==3.11.0
+scipy==1.18.0

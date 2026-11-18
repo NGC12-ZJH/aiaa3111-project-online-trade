@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "implementation": "direct Python set inclusion; no evaluator imports",
+  "checked_systems": 150,
+  "covers": "all GL; S seed 42, A1 seed 1000, A2 seed 1000; all five configs, budgets, flows",
+  "checks": [
+    "covered_orders",
+    "triggered_orders",
+    "customer_macro_coverage"
+  ],
+  "elapsed_seconds": 14.15
+}

@@ -1,0 +1,59 @@
+{
+  "version": "validation_quality_v1",
+  "recorded_date": "2026-11-18",
+  "status": "post_existing_validation_exploratory_extension_comparison_only",
+  "prior_results_seen": true,
+  "selection_or_recommendation": false,
+  "test_evaluation": false,
+  "primary": {
+    "min_antecedent_orders": 20,
+    "min_joint_orders": 10,
+    "min_antecedent_customers": 10,
+    "min_joint_customers": 5,
+    "max_customer_joint_share": 0.5,
+    "min_confidence_uplift": 0.05,
+    "min_lift": 1.2,
+    "min_triple_increment_pp": 5.0,
+    "adjustment": "BY",
+    "alpha": 0.05
+  },
+  "inference": {
+    "unit": "customer",
+    "method": "customer-cluster delta-method sandwich SE, m/(m-1) correction, one-sided t(m-1) approximation",
+    "association_contrast": "joint/antecedent - consequent/all_orders",
+    "triple_contrasts": "joint_AB_C/antecedent_AB minus each singleton confidence separately",
+    "triple_combined_p": "maximum of association p and both incremental p-values (intersection-union test)",
+    "family": "within each system (control, method, seed), union of all selected rule-by-evaluation-scope hypotheses across five configs and three budgets; native and shared roles included and exact duplicates collapsed",
+    "primary_adjustment": "Benjamini-Yekutieli; BH also exported as exploratory sensitivity",
+    "confidence_intervals": "pointwise 95% t intervals for uplift/increment, not simultaneous intervals",
+    "limits": "Asymptotic, not exact. Adjustments are within system, not across 222 system comparisons. No confirmatory global significance claim."
+  },
+  "scope": {
+    "restricted": "quality assessed in original assigned group; matching restricted to that group",
+    "shared": "quality recomputed on all 4862 eligible Validation baskets; deduplicate shared rule identity; repeated source slots do not return budget",
+    "keep_empty_baskets": true,
+    "frozen_rules": true,
+    "replace_or_refill_rules": false
+  },
+  "metrics": {
+    "accepted_slot_share": "accepted deployed slots / original actual slots, not only evaluable rules",
+    "accepted_unique_rule_share": "accepted unique (scope, rule) / selected unique (scope, rule)",
+    "quality_coverage": "union of orders jointly matching accepted rules / all eligible orders; retrospective persistence, not prospective deployment performance",
+    "quality_customer_macro_coverage": "mean over active customers of their quality-covered order share",
+    "evaluable_share": "enough orders and customers and no >50% single-customer joint concentration",
+    "temporal_changes": "Validation minus Discovery confidence, lift ratio and confidence ratio; descriptive, no same-customer cross-period CI claimed"
+  },
+  "sensitivity": [
+    {"id": "primary", "overrides": {}},
+    {"id": "uplift_2_5pp", "overrides": {"min_confidence_uplift": 0.025}},
+    {"id": "uplift_10pp", "overrides": {"min_confidence_uplift": 0.1}},
+    {"id": "lift_1_1", "overrides": {"min_lift": 1.1}},
+    {"id": "lift_1_5", "overrides": {"min_lift": 1.5}},
+    {"id": "evidence_looser", "overrides": {"min_antecedent_orders": 10, "min_joint_orders": 5, "min_antecedent_customers": 5, "min_joint_customers": 3}},
+    {"id": "evidence_stricter", "overrides": {"min_antecedent_orders": 30, "min_joint_orders": 15, "min_antecedent_customers": 15, "min_joint_customers": 8}},
+    {"id": "increment_0pp", "overrides": {"min_triple_increment_pp": 0.0}},
+    {"id": "increment_10pp", "overrides": {"min_triple_increment_pp": 10.0}},
+    {"id": "BH_exploratory", "overrides": {"adjustment": "BH"}},
+    {"id": "no_concentration_cap", "overrides": {"max_customer_joint_share": 1.0}}
+  ]
+}
