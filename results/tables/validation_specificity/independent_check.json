@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "direct_order_real_rule_period_checks": 440,
+  "checks": [
+    "target/rest counts",
+    "confidence and baseline-adjusted gaps",
+    "customer-cluster contrast intervals and p values"
+  ],
+  "elapsed_seconds": 1.76
+}

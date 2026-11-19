@@ -1,0 +1,6 @@
+config,K,global50_unique,local50_slots,local50_unique,overlap_G50_L50,local_new_vs_G50,same_rules_H_GK,hybrid_rules_outside_GK,global_K_rules_outside_H
+P1,50,50,50,33,33,0,50,0,0
+P2,58,50,50,37,29,8,50,8,8
+P3,60,50,50,39,29,10,50,10,10
+P4,58,50,50,37,29,8,50,8,8
+P5,58,50,50,37,29,8,50,8,8

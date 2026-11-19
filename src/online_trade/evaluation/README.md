@@ -35,3 +35,15 @@ python -X utf8 scripts/check_validation_quality.py
 ```
 
 结果在 `results/tables/validation_quality/`，中文报告在 `docs/validation_quality_results.md` / `.html`。这是已看过原Validation后的探索性扩展。按顾客聚类的t近似、BY校正及工作性阈值的边界见 `docs/validation_quality_methods.md`。可靠关联覆盖是同一期验收后的回顾性指标；不选参数、不运行Test。
+
+## 群体特异性与优势保持（2026-11-19）
+
+方案：`docs/validation_specificity_plan.md`；协议：`configs/validation_specificity.json`。先准备原输入并运行 `scripts/run_validation.py`，再执行：
+
+```powershell
+python -X utf8 scripts/run_validation_specificity.py
+python -X utf8 scripts/report_validation_specificity.py
+python -X utf8 scripts/check_validation_specificity.py
+```
+
+不依赖GPU或完整大候选包。报告在 `docs/validation_specificity_results.md` / `.html`，汇总在 `results/tables/validation_specificity/`。真实/随机完整规则证据在忽略目录，不上传顾客级数据。分开解释Top榜名单差异、群内关联、群间强度、方向保持和同预算互补覆盖。严格主标准和探索性限制详见报告。

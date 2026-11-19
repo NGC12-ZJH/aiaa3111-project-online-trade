@@ -13,3 +13,7 @@
 # Preserve D Validation output bytes recorded in run manifests.
 /results/tables/validation/** -text whitespace=cr-at-eol
 /results/tables/validation_quality/** -text whitespace=cr-at-eol
+
+/results/tables/validation_hybrid/** -text whitespace=cr-at-eol
+
+/results/tables/validation_specificity/** -text whitespace=cr-at-eol

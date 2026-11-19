@@ -1,0 +1,20 @@
+{
+  "version": "validation_hybrid_g50_l50_v1",
+  "recorded_date": "2026-11-18",
+  "status": "user_requested_post_validation_exploratory_comparison",
+  "anchor_global_slots": 50,
+  "local_system_slots": 50,
+  "configs": ["P1", "P2", "P3", "P4", "P5"],
+  "deduplication": "exact directed rule_id; A->B and B->A remain separate; no refill after deduplication",
+  "hybrid": "union of C frozen G budget50 and all three L groups' system-budget50 slots; all rules shared globally",
+  "matched_baseline": "G first K directed rules from frozen budget100 ranking, K=hybrid unique rule count",
+  "secondary_baseline": "G budget50, showing marginal gain from adding L rules",
+  "population": "same 4862 eligible Validation orders / 1458 active customers; empty and single-category baskets retained",
+  "metrics": ["raw full-cooccurrence coverage", "customer macro coverage", "accepted-rule retrospective quality coverage", "hybrid-only and G_K-only covered orders"],
+  "quality": "same primary point/count/customer gates as validation_quality_v1; all unioned/shared rules evaluated globally; one common BY family of unique GLOBAL rule_ids across all five hybrid and matched baseline lists; no refilling",
+  "bootstrap": {"unit": "customer", "paired": true, "repeats": 2000, "seed": 3112, "interval": "percentile95 for fixed-list raw coverage differences only"},
+  "limits": ["Intervals are exploratory and pointwise; five configs not multiplicity-corrected", "Quality-filtered coverage is retrospective within Validation; no predictive claim", "Different configs can have different K; compare each hybrid only with its own matched G_K", "No random-hybrid control in this batch; improvement would not by itself establish RFM-specific advantage"],
+  "test_evaluation": false,
+  "parameter_selection": false,
+  "push_to_github": false
+}

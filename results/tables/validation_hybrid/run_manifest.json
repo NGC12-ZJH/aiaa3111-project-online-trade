@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "protocol_sha256": "4f35076dfc1e5205f34070d244b3e32a5f8f8d1af2483a22becaeb56d923b668",
+  "quality_protocol_sha256": "407bf20cf4f303b19816fdc134efb41d78239b3d167c1ca3a464009a208dd5d9",
+  "c_handoff_commit": "ac2b8a3338198c24c7cf6203aa623be11a02d2f8",
+  "sample_orders": 4862,
+  "sample_customers": 1458,
+  "unique_GLOBAL_quality_hypotheses": 134,
+  "quality_family": "common across five hybrid/matched lists; reused raw GLOBAL p-values, BY recalculated",
+  "independent_direct_set_systems": 15,
+  "test_evaluated": false,
+  "parameters_selected": false,
+  "elapsed_seconds": 3.09,
+  "implementation_sha256": "5085ad7c20cf068a2d507acfd43e92085deecfc833f5c22f3a1bac6ca0937f12",
+  "input_hashes": {
+    "data\\processed\\local\\D_validation\\core\\selected_rules\\P1_GL.csv.gz": "a7427cc7c08a2f19f8574f3f66454538fce8fbcfd396353e978a16c9be810d2b",
+    "data\\processed\\local\\D_validation\\core\\selected_rules\\P2_GL.csv.gz": "89d8bd6f2afba64e32c837b52e5d88a1fc7ba7bd1daa1b9264836e29b2353d59",
+    "data\\processed\\local\\D_validation\\core\\selected_rules\\P3_GL.csv.gz": "9974226947a9b291de4edc9fbc4be8a93f004f803039fcf58d0f3ce5a2da8403",
+    "data\\processed\\local\\D_validation\\core\\selected_rules\\P4_GL.csv.gz": "d5f201786c1287c363f81211bb056dd12ddcff092aff218da342b12bfed923eb",
+    "data\\processed\\local\\D_validation\\core\\selected_rules\\P5_GL.csv.gz": "0778365dae21252a333ce026d883518d6a7f9f829e561e1ac8c1a66ba564ac2b",
+    "data\\processed\\local\\D_validation\\validation_baskets.csv": "47d416dd70f64920df19193fc56704d834de18d2298443d767f0383cd3e4e2c0",
+    "data\\processed\\local\\D_validation\\quality_rule_evidence.csv.gz": "7ae351f547436385d804b55edbd541069e06b09730333b1809774db6ecf990ee",
+    "configs\\validation_hybrid.json": "4f35076dfc1e5205f34070d244b3e32a5f8f8d1af2483a22becaeb56d923b668"
+  },
+  "output_hashes": {
+    "results\\tables\\validation_hybrid\\paired_comparisons.csv": "ffd1c1fa8613e5011c666db651a8e3db19f09e828faa205c9cc38490e260f2ca",
+    "results\\tables\\validation_hybrid\\rule_composition.csv": "c28fb5ba6987596b36f938d1297fba39305d7174ae17b9e0da3fd963272a0c4e",
+    "results\\tables\\validation_hybrid\\rule_membership.csv": "3d22880d51bab7607a2f6d3fb33aac352c685975b9e2e73fdf733170cfe81aee",
+    "results\\tables\\validation_hybrid\\shared_rule_quality.csv": "4f2746d17b3e1c9e50a1bdb9513d8aaacda607e31216c8dde403f1877d32f797",
+    "results\\tables\\validation_hybrid\\system_comparison.csv": "400c7a438ab1772c092383795b57fd6c0e88b7fff520796363280d21ad7804d4"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "protocol_sha256": "e9755379ad780f2d519619dac466583b7aeea4a2a1ce2a95487f999588a23461",
+  "recorded_date": "2026-11-19",
+  "test_evaluated": false,
+  "parameters_selected": false,
+  "systems": 221,
+  "native_discovery_validation_rule_checks": 49934,
+  "raw_validation_system_checks": 6630,
+  "BY_families_checked_against_scipy": 221,
+  "true_rule_identities": 220,
+  "supported_discovery_candidates": 0,
+  "elapsed_seconds": 371.59,
+  "implementation_sha256": "41b6310c2a6e422defe10d163671adba4564154f482d3374111a637460036cd6",
+  "input_hashes": {
+    "configs\\validation_specificity.json": "e9755379ad780f2d519619dac466583b7aeea4a2a1ce2a95487f999588a23461",
+    "configs\\validation_quality.json": "407bf20cf4f303b19816fdc134efb41d78239b3d167c1ca3a464009a208dd5d9",
+    "data\\processed\\local\\D_validation\\discovery_baskets.csv": "32e5f8dcfffa99ae7ab7c2cbc8cebf088352467de9b205a5f1e86b2146d7bdb1",
+    "data\\processed\\local\\D_validation\\validation_baskets.csv": "47d416dd70f64920df19193fc56704d834de18d2298443d767f0383cd3e4e2c0",
+    "data\\processed\\local\\D_validation\\validation_rule_evidence.csv.gz": "d896f41efb913bb2172ff6e314365bbc45aaffdd3a977028f8a1901c9b38377b"
+  },
+  "output_hashes": {
+    "results\\tables\\validation_specificity\\advantage_system_summary.csv": "74c3e9e73470680890c8390f3f70a52370ba8f28d5f225c256cad792a8f36a29",
+    "results\\tables\\validation_specificity\\complementarity_systems.csv": "0ee88d15ee6194b46f47895ea6414d8deeea7b6128c272a9a62742fe9fb7e9f0",
+    "results\\tables\\validation_specificity\\family_audit.csv": "f4784d8082bccd3ff13abdc0c8b5bd3b124260a5988f21fa85ff556b744feba8",
+    "results\\tables\\validation_specificity\\GL_advantage_summary.csv": "d5c6ccdb2f2ab969d5ca7b306f5e361fa79e0ae0e29e4721affa8d5363cbb6a5",
+    "results\\tables\\validation_specificity\\GL_complementarity.csv": "849c8cdcde92fab3435eecef500c098546bd78290ef037838ebafedfdf742d85",
+    "results\\tables\\validation_specificity\\GL_group_advantage_summary.csv": "71c61edb1ab49f9d5909462e407b917b25f7a34a61b5f190d9ec13e5964ef41c",
+    "results\\tables\\validation_specificity\\GL_rule_advantage_retention.csv": "c40f0d7b12e92bc77c23aeef08a0fe90c68889e135a3de1476a8ae7e7edefc0e",
+    "results\\tables\\validation_specificity\\GL_rule_set_difference.csv": "f6200cde24b7b31c2a2e16a0d59dd1b4c96af3aeb350d487d9761328076298e9",
+    "results\\tables\\validation_specificity\\GL_rule_strength.csv": "31e15252609daf623f813c77e842e8755732ef54517228e04d3b32bb8e81951c",
+    "results\\tables\\validation_specificity\\GL_supported_survivor_examples.csv": "92a0b26c4ce179cb8ecd9fcf191687df694116dfd50aa97a03481b79ce6b33a6",
+    "results\\tables\\validation_specificity\\random_advantage_comparisons.csv": "4f736782ff420e4b6838785ae65959a757f3a0dcfebff192e04b40daf59ce35c"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "version": "validation_cluster_specificity_v1",
+  "recorded_date": "2026-11-19",
+  "status": "post_validation_exploratory_extension",
+  "configs": ["P1", "P2", "P3", "P4", "P5"],
+  "budgets": [20, 50, 100],
+  "periods": ["discovery", "validation"],
+  "control_systems": ["GL_L", "S_R", "A1_R", "A2_R"],
+  "rules": "only C frozen budget-selected category rules; union across configs/budgets for inference; no re-mining",
+  "content_difference": "directed-rule and unordered-combination Jaccard; new-rule share relative to G at same original system budget; report effective unique counts; also flag absence from G top100",
+  "global_absence_limit": "absence from Top-B or Top100 is not absence from all Global eligible/discovered rules; complete eligible pool not used",
+  "main_contrasts": {
+    "confidence_gap": "Conf(target)-Conf(pooled other two groups)",
+    "association_gap": "[Conf(target)-P(consequent|target)] - [Conf(rest)-P(consequent|rest)]",
+    "lift_diagnostics": "target/global and target/rest lift ratios; descriptive, undefined denominator remains missing",
+    "strict_specificity": "minimum target-minus-other confidence difference, plus minimum association difference; compare each other group separately"
+  },
+  "discovery_advantage_candidate": "target passes common point/count/concentration gates (no Discovery significance claim); rest antecedent orders>=20 from >=10 customers; target-rest confidence gap>=5pp and association gap>0",
+  "validation_supported_advantage": "same common target point/count gates; rest opportunity; confidence gap>=5pp; association gap>0; new one-vs-rest combined BY q<=0.05",
+  "strict_all_others": "also requires >=5pp confidence gap and positive association gap versus each other group, adequate antecedent opportunity in each, and strict combined BY q<=0.05",
+  "inference": {
+    "variance": "customer-cluster delta method; disjoint target/rest variances added; t df=min(customer_counts)-1; conservative treatment of degenerate SE",
+    "combined_one_vs_rest_p": "max(target quality association/increment p, confidence-gap p, association-gap p)",
+    "combined_strict_p": "max(one-vs-rest p, all pairwise confidence-gap and association-gap p)",
+    "family": "one system (control,method,seed); all unique (group,rule_id) across five configs and three budgets; one-vs-rest and strict hypotheses corrected together using BY; BH sensitivity also reported",
+    "period": "BY acceptance on Validation only; Discovery used to define fixed descriptive advantage candidates",
+    "limits": "pointwise approximate CIs; system-wise nominal correction, not all-system global inference; random upper tails descriptive"
+  },
+  "retention": {
+    "denominator": "all frozen Discovery advantage candidates, including future untriggered/insufficient candidates",
+    "direction": "future confidence gap>0 and future association gap>0",
+    "effect_retention_ratio": "Validation confidence gap / Discovery confidence gap only when Discovery gap>=5pp",
+    "survival": "Discovery candidate AND Validation supported advantage"
+  },
+  "complementarity": "full co-occurrence and antecedent-only uniqueness kept distinct; report local-only, global-only, net and union; no precision/recall/F1 claim",
+  "hybrid": "reuse existing G50+L50 deduplicated matched-K experiment; no remine or new budget fitting",
+  "test_evaluation": false,
+  "parameter_selection": false,
+  "push_to_github": false
+}
