@@ -1,0 +1,70 @@
+{
+  "status": "registered_before_computation",
+  "registered_date": "2026-11-21",
+  "registered_by": "B (Jinghan ZHAO)",
+  "plan_document": "docs/future_work_B_purchase_pattern.md, section 5",
+  "nature": "EXPLORATORY. The registered pre-check failed (check3: ridge gap_closed 0.090 < 0.10; random forest 0.205), so by precheck.json the formal experiment would not be run. It is run anyway on the user's explicit decision, as a deviation from precheck.json; no result here is a confirmatory finding and the report must say so. Post-hoc relative to D's frozen Test.",
+  "known_information_before_registration": [
+    "precheck results (results/tables/future_B/precheck/): 52% pack lines; 65% of customers bulk-dominant; form type almost independent of RFM clusters (ARI 0.008, Cramer's V 0.069); form features add 9.0% (ridge) / 20.5% (RF) of the gap to the ceiling for predicting the Discovery category profile",
+    "tier pricing exists (median item-month rho -0.49), so relative unit price is used",
+    "all E10/E9/E5 Validation results for the RFM grouping (docs/extra_evaluation.md)",
+    "no clustering on purchase-form features has been run"
+  ],
+  "population": "the 2,684 Profile customers of B's frozen labels",
+  "features": {
+    "source": "Profile lines exactly as in precheck.json (A snapshot clean_transactions, is_valid_basket_item == 1); a basket is an invoice_id; pack(i) and relative price as in precheck.json",
+    "order_level": {
+      "basket_size": "log1p(distinct stock codes), capped at its 95% quantile over Profile orders and divided by it",
+      "qty_per_line": "log1p(median quantity over the order's lines), capped and scaled the same way",
+      "pack_share": "share of the order's lines (in the pack denominator) that are pack lines; orders with no denominator line get the order-level median",
+      "unit_price": "median relative unit price over the order's lines, capped at the 95% quantile and divided by it",
+      "business_hours": "1 if Monday-Friday and hour in [9, 17), else 0"
+    },
+    "excluded": "order value (sensitivity only, not run here); any category-based quantity (circular)",
+    "customer_level_for_backup": "the 5 customer form features of precheck.json (customer_form_features.csv), standardized"
+  },
+  "segmentation": {
+    "F_main_two_stage": {
+      "stage1": "KMeans on the 7,738 Profile orders x 5 order features; K_order chosen below; final model = lowest inertia among the 50 stability runs at the chosen K",
+      "K_order_rule": "for K in 3..8: 50 runs KMeans(n_clusters=K, n_init=1, random_state=0..49); median pairwise ARI of the 50 labelings; choose the smallest K with median ARI >= 0.80, otherwise the K with the highest median ARI",
+      "stage2": "customer feature = share of the customer's Profile orders in each order type (Sokol & Holy eq. 11); KMeans(n_clusters=3, n_init=10, random_state=42), unscaled shares",
+      "labels": "groups renamed '0','1','2' by ascending mean customer basket_size",
+      "K_cust": "fixed at 3 (same number of groups as RFM, so rule budgets split the same way); a free-K description is not run"
+    },
+    "F6_backup_two_step": "inside each frozen RFM cluster c, KMeans(n_clusters=2, n_init=10, random_state=42) on the standardized customer form features; groups 'c-0','c-1' with '-0' the lower mean basket_size; 6 groups"
+  },
+  "comparisons_of_partitions": ["ARI(F, RFM)", "purity in both directions", "cross-tab F x RFM", "per-group means of customer form features and RFM", "decision tree (max_depth=3, random_state=0) on the 5 customer form features predicting F, training accuracy and rules as text"],
+  "random_controls": {
+    "seeds": "1000-1099 for every control",
+    "S": "shuffle F labels over all customers (size only)",
+    "A1": "shuffle F labels within the A1 strata (Profile orders 1, 2, 3-4, 5-9, 10+; configs/experiment.json)",
+    "B1": "shuffle F labels within quintiles of customer basket_size",
+    "B2": "shuffle F labels within A1 strata x tertiles of customer basket_size (15 cells) -- PRIMARY control",
+    "R1": "for F6 only: shuffle F6 labels within each RFM cluster (primary control for F6)",
+    "F6_also": "S and A1 for F6 (shuffle F6 labels)"
+  },
+  "systems": "G (global), L (RFM, frozen), F, F6, and every random seed",
+  "metrics": {
+    "M1_category_difference": "Discovery: mean over groups of Bray-Curtis between in-group and out-of-group supports of 2-category combinations (category_controls.evaluate, rest_bc_len2), and 3-category; between-group pair_bc as secondary",
+    "M2_E9": "E9 per-customer lists (configs/extra_eval/E9.json), budgets 20/50/100, primary B=100; Discovery build, Validation evaluate; F - G paired customer bootstrap interval",
+    "M3_E10": "E10 V1 and V3 restricted/shared coverage, budgets 20/50/100 (descriptive)",
+    "M4_E5a": "E5 group-specific rules (configs/extra_eval/E5.json): Discovery -> Validation direction retention",
+    "M5_size_stratified": "E9 B=100 Validation coverage computed inside order-size bins (number of stock codes in the basket's items list) 1-5, 6-15, 16-30, 31+ and averaged with the bins' order shares; F minus G and F vs B2",
+    "engine": "src/online_trade/extra_eval engine and modules unchanged, P5 rules, same Pool"
+  },
+  "interpretation_rules_validation": {
+    "form_adds_information": "M1 rest_bc_len2 AND M2 Validation coverage of F both have empirical p <= 0.05 against B2",
+    "only_basket_size": "M1 or M2 has p <= 0.05 against A1 but not against B2",
+    "nothing_beyond_random": "neither M1 nor M2 has p <= 0.05 against A1",
+    "F_vs_G": "M2: interval above 0 = F lists beat G; contains 0 = tie; below 0 = worse",
+    "F6": "same rules with R1 in place of B2",
+    "note": "exploratory: these labels describe the result, they are not hypothesis tests"
+  },
+  "periods": {
+    "profile": "features and segmentation",
+    "discovery": "build lists; descriptions and M1",
+    "validation": "M2-M5 evaluation; nothing is selected from Validation",
+    "test": "NOT read in this run. Running Test requires a separate explicit user decision and a committed configs/future_B/FREEZE.json listing the frozen labels file hash"
+  },
+  "outputs": "results/tables/future_B/experiment/"
+}
