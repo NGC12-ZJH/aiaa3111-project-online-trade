@@ -1,0 +1,121 @@
+system,group,rank,antecedent,consequent,discovery_advantage_pp,validation_advantage_pp,direction_retained,q_BY
+L,0,1,candle_holder_lantern + door_hangers_signs,tissues_plasters,45.01866232203311,11.42289603461647,True,1.0
+L,0,2,greeting_cards + household_laundry_storage,tissues_plasters,38.54518455241801,-9.72973388648836,False,1.0
+L,0,3,cushions_textiles + wall_signs,sewing_craft,36.521929493556996,6.709676120612879,True,1.0
+L,0,4,household_laundry_storage + money_boxes,kitchen_textiles,36.374798726995564,51.434908251965474,True,5.891822896946499e-14
+L,0,5,bunting_garland + cushions_textiles,tissues_plasters,35.90894035516829,9.876616492454977,True,1.0
+L,0,6,keyrings_tags + kitchen_storage,tissues_plasters,35.888532191902975,9.545075273816984,True,1.0
+L,0,7,door_hangers_signs + hanging_ornaments,tissues_plasters,35.22944128281206,20.368473187378836,True,1.0
+L,0,8,household_laundry_storage + photo_frame_album,sewing_craft,35.227774763182815,14.857824268761027,True,1.0
+L,0,9,cushions_textiles + outdoor_active_toys,tissues_plasters,34.2712482412857,-3.471275844943772,False,1.0
+L,0,10,hanging_ornaments + jewellery,garden_outdoor,33.74288900953639,3.355596852171558,True,1.0
+L,1,1,party_tableware + wash_cosmetic_bags,pens_pencils_art,42.5138733247297,50.11812138537225,True,1.9460250555724036e-05
+L,1,2,bath_beauty + umbrella_rainwear,kitchen_storage,38.32009665042523,-14.61850847912186,False,1.0
+L,1,3,cake_cases + incense,trinket_jewellery_box,36.34850033610976,-12.076306234207562,False,1.0
+L,1,4,hair_accessories + wall_signs,party_bags_supplies,36.065286350708575,-5.694206445401084,False,1.0
+L,1,5,clothing_slippers + tissues_plasters,games_puzzles,35.61673675432972,-29.299903009170347,False,1.0
+L,1,6,hair_accessories + storage_baskets_decor,party_bags_supplies,35.09937725979949,11.558540807346168,True,1.0
+L,1,7,clocks + tabletop_decorations,party_tableware,35.035093323089995,2.0821918324790856,True,1.0
+L,1,8,clocks + doormats,cake_stand,34.18412372034045,7.6993784283777424,True,1.0
+L,1,9,greeting_cards + playsets_figurines,games_puzzles,33.92581676305003,-7.542314822131785,False,1.0
+L,1,10,gift_wrap_tags + wash_cosmetic_bags,trinket_jewellery_box,33.59739703437715,-19.455223613124943,False,1.0
+L,2,1,decorative_candles + wash_cosmetic_bags,wall_signs,53.57290530225309,28.073074636742014,True,1.0
+L,2,2,hand_warmer + travel_bags_luggage,wall_signs,51.06961149461144,14.38259844626582,True,1.0
+L,2,3,pet_items + storage_baskets_decor,mugs_cups,48.66140637840062,-1.5070096331410376,False,1.0
+L,2,4,jewellery + word_blocks_letters,lights_lamps,48.44782566808823,-29.78042158329286,False,1.0
+L,2,5,bath_beauty + stickers_tattoos,mugs_cups,47.897355614349856,18.166036618852576,True,1.0
+L,2,6,mirrors + outdoor_active_toys,mugs_cups,46.83841455540879,28.04735756828499,True,1.0
+L,2,7,mirrors + outdoor_active_toys,sewing_craft,46.40891038667886,-15.767904365802105,False,1.0
+L,2,8,bath_beauty + gift_boxes,mugs_cups,45.546312348672444,5.5816911397702675,True,1.0
+L,2,9,cake_stand + wash_cosmetic_bags,doormats,45.01311685835827,-34.74598972448648,False,1.0
+L,2,10,magnets + storage_baskets_decor,cake_stand,44.676550892183336,16.25258936444806,True,1.0
+F,0,1,magnets + playsets_figurines,kitchen_textiles,61.35924701820937,11.536534594314915,True,1.0
+F,0,2,egg_cups + hooks_racks_shelves,furniture_knobs,46.64780201524542,0.7819331458085554,True,1.0
+F,0,3,coasters_placemats + tealight_candles,bunting_garland,46.10629696468005,-22.85048285048285,False,1.0
+F,0,4,party_tableware + pet_items,kitchen_storage,43.447841975682216,-4.059931296773406,False,1.0
+F,0,5,doormats + egg_cups,cake_stand,43.075857529728665,16.016369001203966,True,0.9269933416939077
+F,0,6,coasters_placemats + furniture_knobs,cake_stand,42.49144194531309,31.370997423629003,True,0.08430218138627911
+F,0,7,coasters_placemats + umbrella_rainwear,cake_cases,41.123173963188954,12.05818304502515,True,1.0
+F,0,8,teapot_tea_set + travel_bags_luggage,outdoor_active_toys,40.51595564927035,35.9392162586355,True,0.08430218138627911
+F,0,9,lunch_bag + magnets,cake_stand,39.396203850075,11.926552979184557,True,1.0
+F,0,10,hair_accessories + plates,trinket_jewellery_box,39.10161677615031,9.092442645074229,True,1.0
+F,1,1,coasters_placemats + notebooks_journals,party_tableware,45.316665389940205,-7.103139068416659,False,1.0
+F,1,2,kitchen_tools + wreaths,jumbo_shopper_bag,42.05078585706166,15.23455412221732,True,1.0
+F,1,3,fashion_handbags + serving_trays_platters,hanging_ornaments,41.64710608718386,2.674104734348198,True,1.0
+F,1,4,door_hangers_signs + jumbo_shopper_bag,keyrings_tags,40.29878266670966,20.196183453917463,True,1.0
+F,1,5,baking_tools + plates,fashion_handbags,39.18839887693354,1.6019432159411928,True,1.0
+F,1,6,baking_tools + money_boxes,kitchen_tools,39.05776753244613,-23.298955781192994,False,1.0
+F,1,7,money_boxes + travel_bags_luggage,hooks_racks_shelves,38.13936624987227,-32.95056280876615,False,1.0
+F,1,8,teapot_tea_set + travel_bags_luggage,plates,37.735247556700145,8.691979465235883,True,1.0
+F,1,9,door_hangers_signs + keyrings_tags,hooks_racks_shelves,37.618844872843646,-35.61722947543282,False,1.0
+F,1,10,kitchen_storage + wreaths,jumbo_shopper_bag,36.99018412876074,28.567887455550668,True,1.0
+F,2,1,tableware_sets + wash_cosmetic_bags,gift_wrap_tags,42.60333836737019,-1.6589789852351489,False,1.0
+F,2,2,incense + mugs_cups,decorative_candles,38.03136621190531,26.605701080413525,True,0.19312338051699213
+F,2,3,games_puzzles + serving_trays_platters,bowls,35.825509036917815,-9.259359843719917,False,1.0
+F,2,4,keyrings_tags + scented_candles,gift_wrap_tags,35.81062128053545,-6.3648613381763255,False,1.0
+F,2,5,soft_toys + wash_cosmetic_bags,trinket_jewellery_box,35.72978422953265,3.674077997100722,True,1.0
+F,2,6,candle_holder_lantern + wash_cosmetic_bags,fashion_handbags,35.4765617288909,12.373876371916843,True,1.0
+F,2,7,incense + kitchen_textiles,decorative_candles,34.433513486966575,36.6563696236929,True,0.12098099814043016
+F,2,8,bowls + pet_items,sewing_craft,33.589222347416644,-14.24465959585579,False,1.0
+F,2,9,incense + pens_pencils_art,scented_candles,33.119887291494585,19.715290914470618,True,1.0
+F,2,10,clothing_slippers + fashion_handbags,kitchen_textiles,32.723757880628604,-3.4027437045073827,False,1.0
+F6,0-0,1,lunch_box_cutlery + sewing_craft,pens_pencils_art,32.702412229232806,-3.5481940993853267,False,1.0
+F6,0-0,2,party_tableware + pens_pencils_art,cake_cases,24.280468039274073,7.070809236077719,True,1.0
+F6,0-0,3,cake_cases + trinket_jewellery_box,pens_pencils_art,23.029384453206152,34.02422083523433,True,0.7766517593508558
+F6,0-0,4,gift_wrap_tags + party_tableware,bunting_garland,22.96622314931499,-8.448650643902218,False,1.0
+F6,0-0,5,kitchen_storage + pens_pencils_art,tissues_plasters,19.313264185937623,-5.521645592415847,False,1.0
+F6,0-0,6,games_puzzles + outdoor_active_toys,candle_holder_lantern,18.76264356020183,-6.241182060909378,False,1.0
+F6,0-0,7,bunting_garland + sewing_craft,pens_pencils_art,17.46684249616105,-3.5449079015590774,False,1.0
+F6,0-0,8,cake_stand + kitchen_storage,hanging_ornaments,17.26066878743605,12.37186743996357,True,1.0
+F6,0-0,9,bunting_garland + jumbo_shopper_bag,trinket_jewellery_box,16.504070100913786,-11.847477150078934,False,1.0
+F6,0-0,10,greeting_cards,gift_wrap_tags,16.262108915696377,5.007293696874599,True,1.0
+F6,0-1,1,tabletop_decorations + tissues_plasters,keyrings_tags,32.004159230183085,15.591312444492155,True,1.0
+F6,0-1,2,door_hangers_signs,tissues_plasters,29.883042487325206,24.07230542390041,True,1.0
+F6,0-1,3,cushions_textiles + pens_pencils_art,notebooks_journals,26.028481049648676,-12.341829611464373,False,1.0
+F6,0-1,4,candle_holder_lantern + doormats,tissues_plasters,25.118313407558745,-17.126064517127475,False,1.0
+F6,0-1,5,tableware_sets + wall_signs,tissues_plasters,25.024239261915817,6.616805185204375,True,1.0
+F6,0-1,6,cushions_textiles + trinket_jewellery_box,outdoor_active_toys,23.947890167551932,-6.583873077666344,False,1.0
+F6,0-1,7,bowls + candle_holder_lantern,tissues_plasters,22.445532220339263,3.7961069209577203,True,1.0
+F6,0-1,8,doormats + hanging_ornaments,tissues_plasters,22.29470891883104,-15.739321364470566,False,1.0
+F6,0-1,9,cake_cases + teapot_tea_set,hanging_ornaments,22.26967296405341,4.598841222284506,True,1.0
+F6,0-1,10,candle_holder_lantern + household_laundry_storage,tissues_plasters,21.94283390597991,0.9747232048018833,True,1.0
+F6,1-0,1,hooks_racks_shelves + kitchen_textiles,doormats,36.85578284186929,2.882530000079514,True,1.0
+F6,1-0,2,bunting_garland + household_laundry_storage,jumbo_shopper_bag,28.746266767353145,4.422680316930844,True,1.0
+F6,1-0,3,cake_cases + money_boxes,party_tableware,28.651992321321735,-7.341734349021628,False,1.0
+F6,1-0,4,hot_water_bottle + kitchen_tools,doormats,26.607775313194725,5.3718736275562335,True,1.0
+F6,1-0,5,cake_cases + soft_toys,pens_pencils_art,25.23187825931098,4.259272348631954,True,1.0
+F6,1-0,6,gift_wrap_tags + money_boxes,kitchen_storage,24.67739106049346,9.561263487437778,True,1.0
+F6,1-0,7,kitchen_textiles + lunch_box_cutlery,party_tableware,24.606826018090917,3.5833780076920005,True,1.0
+F6,1-0,8,clocks + gift_wrap_tags,kitchen_storage,24.389676596611032,-1.8457401242902405,False,1.0
+F6,1-0,9,cake_cases + storage_baskets_decor,party_tableware,22.817180731793158,2.7280906824402376,True,1.0
+F6,1-0,10,gift_wrap_tags + plates,party_tableware,22.567581492970994,7.42256866913833,True,1.0
+F6,1-1,1,gift_boxes + hand_warmer,jumbo_shopper_bag,35.77040111361767,20.661446396740512,True,1.0
+F6,1-1,2,lights_lamps + lunch_bag,pens_pencils_art,34.602296311940705,-0.6179441473559116,False,1.0
+F6,1-1,3,gift_boxes + kitchen_textiles,hot_water_bottle,33.77082453109558,10.383244206773618,True,1.0
+F6,1-1,4,gift_boxes + tabletop_decorations,jumbo_shopper_bag,32.88868068351014,15.701128936423054,True,1.0
+F6,1-1,5,fashion_handbags + travel_bags_luggage,chalkboards_memo_boards,32.75830538753075,3.9088362617774375,True,1.0
+F6,1-1,6,gift_boxes + sewing_craft,hand_warmer,31.525094231991584,9.190390378668608,True,1.0
+F6,1-1,7,gift_boxes + pens_pencils_art,hot_water_bottle,31.10418082014807,31.733946350158693,True,0.7766517593508558
+F6,1-1,8,playsets_figurines + tissues_plasters,games_puzzles,31.02553705317408,-25.656144411631686,False,1.0
+F6,1-1,9,greeting_cards + hooks_racks_shelves,pens_pencils_art,30.9250839740141,19.382055852644083,True,1.0
+F6,1-1,10,clothing_slippers + party_bags_supplies,outdoor_active_toys,30.90157057615499,11.82227831844201,True,1.0
+F6,2-0,1,candle_holder_lantern + sewing_craft,trinket_jewellery_box,38.31563300035017,12.5544765549008,True,1.0
+F6,2-0,2,cake_stand + kitchen_storage,candle_holder_lantern,34.96825371002686,25.341586876593205,True,1.0
+F6,2-0,3,sewing_craft,trinket_jewellery_box,29.280490520432558,6.630393618333172,True,1.0
+F6,2-0,4,gift_boxes,bunting_garland,28.728661795728964,-11.939104386279729,False,1.0
+F6,2-0,5,sewing_craft,candle_holder_lantern,24.911048690733644,8.669818972127358,True,1.0
+F6,2-0,6,pens_pencils_art,bunting_garland,23.750227899619453,14.387850467043714,True,1.0
+F6,2-0,7,kitchen_storage,candle_holder_lantern,20.27840187053561,11.81599933661267,True,1.0
+F6,2-0,8,kitchen_storage,cake_stand,19.32489144751078,5.255958858022125,True,1.0
+F6,2-0,9,gift_wrap_tags,candle_holder_lantern,18.159797489782303,27.38522061348935,True,0.7766517593508558
+F6,2-0,10,trinket_jewellery_box,candle_holder_lantern,17.759209534018332,12.404167643106707,True,1.0
+F6,2-1,1,decorative_candles + wash_cosmetic_bags,wall_signs,49.47159387024163,26.52393832581702,True,1.0
+F6,2-1,2,pet_items + storage_baskets_decor,mugs_cups,47.97685646024025,-19.975193028041886,False,1.0
+F6,2-1,3,hand_warmer + travel_bags_luggage,wall_signs,46.96830006259998,12.833462135340834,True,1.0
+F6,2-1,4,hair_accessories + storage_baskets_decor,kitchen_tools,46.271524384249254,23.779502233588108,True,1.0
+F6,2-1,5,jewellery + word_blocks_letters,lights_lamps,46.00864044825206,-31.8735483150951,False,1.0
+F6,2-1,6,kitchen_textiles + mirrors,wall_signs,44.5891026834026,2.8772146790933677,True,1.0
+F6,2-1,7,cake_stand + wash_cosmetic_bags,doormats,44.370895257085,-35.66796242222919,False,1.0
+F6,2-1,8,bath_beauty + stickers_tattoos,mugs_cups,43.375660554696516,13.658892184990695,True,1.0
+F6,2-1,9,magnets + storage_baskets_decor,cake_stand,41.97128708662756,15.637922024566187,True,1.0
+F6,2-1,10,coasters_placemats + soft_toys,jumbo_shopper_bag,41.075997983993396,-15.15517996059938,False,1.0
