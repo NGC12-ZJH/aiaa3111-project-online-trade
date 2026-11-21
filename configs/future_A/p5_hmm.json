@@ -1,0 +1,44 @@
+{
+  "status": "registered_before_computation",
+  "registered_date": "2026-11-22",
+  "registered_by": "B (Jinghan ZHAO)",
+  "plan_document": "docs/future_work_A_rolling_rfm.md section 8.3 (optional P5)",
+  "nature": "exploratory and descriptive; run at B's explicit request after the pre-check verdict 'stop'. It answers 'how much of the hard-label switching is measurement noise', not coverage. No decision depends on it. Idea borrowed from Netzer, Lattin & Srinivasan (2008) at abstract level only.",
+  "data": {
+    "customers": "the 2,684 Profile customers (B's frozen labels)",
+    "sequence": "monthly counts of distinct valid orders (is_valid_rfm_order == 1, identified customer) for the 12 calendar months 2009-12 .. 2010-11 (orders before 2010-12-01 only)",
+    "selection_note": "every customer has >= 1 valid order in months 1-6 by construction (Profile customers); this conditions the first half of each sequence and is reported, not corrected"
+  },
+  "models": {
+    "M1": "K-state Poisson HMM, homogeneous transition matrix, parameters shared by all customers (no hierarchical Bayes); initial distribution estimated",
+    "M2_season_emission": "M1 + one multiplicative peak effect on every state's Poisson mean in the peak months Sep, Oct, Nov 2010",
+    "M3_season_transition": "M1 with a separate transition matrix for transitions INTO the peak months",
+    "K": "3 for all models (primary, matches K-means); M1 also fitted with K = 2 and 4 (descriptive)",
+    "state_order": "states renumbered by ascending off-peak Poisson mean (state 0 = least active)"
+  },
+  "fitting": {
+    "algorithm": "EM (Baum-Welch with scaled forward-backward), numpy/scipy implementation in src/online_trade/future_a/hmm.py (hmmlearn is not installed)",
+    "starts": "20 random starts, seeds 0-19; keep the highest log-likelihood",
+    "stopping": "log-likelihood increase < 1e-6 or 2,000 iterations",
+    "model_comparison": "BIC = -2 logL + p ln(n_obs), n_obs = 2,684 x 12; descriptive"
+  },
+  "simulation_check": {
+    "how": "simulate 2,684 sequences of length 12 from the fitted K=3 M1 parameters (seed 12345), refit with the same procedure",
+    "pass": "after matching states by mean, max absolute error of transition probabilities < 0.05 and max relative error of Poisson means < 10%; a failure is reported and the HMM results are labelled unreliable"
+  },
+  "outputs_descriptive": [
+    "parameters, log-likelihood, BIC of every model",
+    "monthly transition matrix, persistence per state, stationary-share-weighted diagonal (compared descriptively with Chen et al. 2019's 0.85)",
+    "6-month persistence diag(A^6)",
+    "filtered state posteriors (forward only, no look-ahead) at month 6 (May 2010, end of Profile) and month 12 (Nov 2010, end of Discovery); MAP-state switch share between them; Viterbi switch share",
+    "noise indicator: 1 - (HMM filtered-MAP switch share / hard-label switch share 48.7% from pre-check P1), with the caveat that HMM states (monthly activity) and K-means clusters (RFM) are different partitions",
+    "correspondence: frozen K-means labels x filtered MAP state at month 6; pre-check P1 labels x filtered MAP state at month 12; counts, Hungarian-aligned agreement and kappa",
+    "share of customers whose maximum filtered posterior at month 12 is >= 0.8"
+  ],
+  "known_information_before_registration": [
+    "Pre-check P1-P4 results (hard-label 6-month retention 51.3%, i.e. switch 48.7%; drift curve; silence 28% in Discovery).",
+    "No HMM had been fitted on these data."
+  ],
+  "outputs": "results/tables/future_A/p5_hmm/",
+  "entry_point": "python scripts/run_future_a.py p5"
+}

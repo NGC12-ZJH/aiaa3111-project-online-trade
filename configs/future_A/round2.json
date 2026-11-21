@@ -1,0 +1,45 @@
+{
+  "status": "registered_before_computation",
+  "registered_date": "2026-11-22",
+  "registered_by": "B (Jinghan ZHAO)",
+  "plan_document": "docs/future_work_A_rolling_rfm.md section 6.1 (round 2: Discovery -> Validation)",
+  "nature": "exploratory; run at B's explicit request AFTER the registered pre-check verdict was 'stop' (configs/future_A/precheck.json, results/tables/future_A/precheck/decision.json). It does not overturn that verdict and never replaces any registered result. Test is not read.",
+  "question": "At the 2010-12-01 time point, if customers are re-labelled from their Discovery RFM AND the group rules are re-mined on Discovery baskets by the new groups, do the group rules cover more Validation orders than the current static deployment, than G, and than activity-matched random regrouping?",
+  "inputs": {
+    "baskets": "as configs/extra_eval/common.json (A snapshot 2ae672b, eligible baskets, taxonomy_v1 l2, P5 rules, rule_id as C)",
+    "new_labels": "P1 labels of the pre-check: Discovery-window RFM (cutoff 2010-12-01) assigned with the frozen scaler and centroids of results/tables/future_A/frozen_scaler_centroids.json; recomputed by the same code and asserted identical to the pre-check's P1 group sizes (1,053 / 829 / 802)",
+    "orders_for_labels": "orders before 2010-12-01 only (pre-check loader)"
+  },
+  "systems": {
+    "G": "global P5 rules from Discovery",
+    "L_orig": "Profile labels; rules mined on Discovery by Profile groups; customers use their Profile group's rules (= E9/E10 L)",
+    "L_swap": "L_orig's lists, customers use the list of their new label (E9 only; = pre-check P4 swap_P1)",
+    "L_new": "new labels; rules re-mined on Discovery baskets by the new groups; customers use their new group's rules",
+    "A1": "existing A1 controls (seeds 1000-1099): reference null for L_orig",
+    "A2p": "new null for L_new: the new labels shuffled within strata of eligible Discovery basket counts (same strata as A2: 0, 1, 2, 3-4, 5-9, 10+), seeds 2000-2099, using clustering.activity_control.matched_permutations; per-stratum label counts asserted equal to the real new labels"
+  },
+  "evaluations": {
+    "E9_primary": "same slots per customer (E9 construction), budgets 20/50/100, primary budget 100, order coverage on Validation; customer-macro coverage alongside",
+    "E10": "variants V1_restricted, V1_shared, V3_shared (E10 construction), budgets 20/50/100; descriptive",
+    "E5a": "group-specific rule selection and Discovery -> Validation direction retention (E5 construction, top 10 per group) for L_new and every A2p seed; L_orig and A1 from the same code for reference; descriptive",
+    "E5b": "marginal coverage of 10 group-specific slots on top of G's top 50 (E5 primary setting B0=50, k=10, unconfirmed version) for L_new vs A2p; descriptive",
+    "sensitivity": "E9 at budget 100 restricted to baskets of customers who were active in the Discovery window (silent customers removed); descriptive"
+  },
+  "primary_hypothesis": {
+    "H_R2": "E9, budget 100, Validation order coverage: L_new - L_orig, paired customer bootstrap (2,000 repeats, seed 20261121)",
+    "interpretation": {
+      "refresh_helps": "interval above 0 AND L_new at or above the A2p 95th percentile (empirical p <= 0.05)",
+      "refresh_helps_like_any_split": "interval above 0 but L_new not above the A2p 95th percentile",
+      "no_gain": "interval contains 0",
+      "refresh_hurts": "interval below 0"
+    },
+    "secondary": ["L_new - G (paired interval): does refreshing close the gap to G?", "L_new - L_swap (paired interval): what re-mining adds beyond swapping lists"]
+  },
+  "known_information_before_registration": [
+    "Pre-check results: 6-month label retention 51% (kappa 0.28); swapping lists to new labels -0.25 pp [-0.68, +0.20]; oracle gain +3.13 pp equals the A1 oracle gain (median +3.33); registered verdict 'stop'.",
+    "E9/E10/E5 Validation results for L_orig, G and A1.",
+    "No list has been mined by the new labels; no A2p seed exists."
+  ],
+  "outputs": "results/tables/future_A/round2/",
+  "entry_point": "python scripts/run_future_a.py round2"
+}
