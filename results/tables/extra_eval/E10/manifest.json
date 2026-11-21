@@ -3,7 +3,7 @@
   "test_read": false,
   "protocol_sha256": "a7829a57804a88fedfe9ca577a602ff77bbe870ddd0414abb92c61bc2e3e0d19",
   "common_sha256": "9963c4adc8974d39cd5b9e1d265a0f9929f32047681a595ed82a02a9052e948f",
-  "git_head": "bd1b03ea7e8e02056168ee02af4b21a34e9a50df",
+  "git_head": "5a908b61b58f24272b0340cca4196b20a021e7d1",
   "python": "3.11.15",
   "numpy": "2.4.4",
   "pandas": "3.0.2",
@@ -16,7 +16,7 @@
     "system_metrics.csv": "a18cf5a0a6fc265b6a1dc7a0f5acbcd414ec665bcef6f3d32069e3a8350631bb"
   },
   "systems": 222,
-  "elapsed_seconds": 21.2,
+  "elapsed_seconds": 20.6,
   "checks": {
     "V1_slots_equal_budget": true,
     "shared_variants_fill_budget": true,

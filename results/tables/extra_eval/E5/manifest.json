@@ -1,0 +1,42 @@
+{
+  "experiment": "E5",
+  "test_read": false,
+  "protocol_sha256": "ae34e00ccc82cf41b2edad851d1a0b81a3da6b56edaa883b68265b928da8bf53",
+  "common_sha256": "9963c4adc8974d39cd5b9e1d265a0f9929f32047681a595ed82a02a9052e948f",
+  "git_head": "5a908b61b58f24272b0340cca4196b20a021e7d1",
+  "python": "3.11.15",
+  "numpy": "2.4.4",
+  "pandas": "3.0.2",
+  "outputs": {
+    "e5a_summary.csv": "7ed3d7db3dbf0a92166be61eefdcedc9319b23e55c193d10675890d12bcf965c",
+    "e5b_summary.csv": "19a453da89d05812530f95614f4fac10ec8c2204e41bef2802480cc156bef4eb",
+    "gain_by_system.csv": "eec2c982f165355a0f0c6256362ffbc84d656bfeec4381bb8216f7a0e94b2840",
+    "interpretation.csv": "8ac7d328d812cf519698c1a3e2a2d4bcfb4cb50486d30fa420de4b3eeaad35f6",
+    "real_specific_rules.csv": "3ff14d0ccf844f37d9961cfbe9716bc74dd0538cb7b27d13863da2f149a4e482",
+    "retention_by_system.csv": "b73b0114e38dd4aa482e3f3616107826a092fa02b3f6628e2e254d0f3355ab0a"
+  },
+  "systems": 221,
+  "elapsed_seconds": 42.8,
+  "settings_B0_k": [
+    [
+      50,
+      10
+    ],
+    [
+      20,
+      10
+    ],
+    [
+      100,
+      10
+    ],
+    [
+      50,
+      5
+    ],
+    [
+      50,
+      20
+    ]
+  ]
+}

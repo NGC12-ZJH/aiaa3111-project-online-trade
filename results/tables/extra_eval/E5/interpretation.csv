@@ -1,0 +1,4 @@
+rule,value,A1_p95,A1_empirical_p,passes,ci_low_pp,ci_high_pp,note
+"group_preference_real (E5a, Discovery->Validation)",0.6,0.7333333333333333,0.5643564356435643,False,,,
+"slots_worth_it (E5b, unconfirmed)",-2.1596051007815698,-2.1174413821472617,0.24752475247524752,False,-2.612879938867149,-1.7122275196303278,
+"slots_worth_it (E5b, confirmed)",-0.10283833813246046,0.0,0.3465346534653465,False,-0.2309020420429,0.00048751950077737086,descriptive only: confirmation used Validation

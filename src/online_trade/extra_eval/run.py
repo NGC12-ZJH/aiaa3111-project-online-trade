@@ -126,3 +126,118 @@ def run_e9():
     pd.DataFrame(rows).to_csv(out / "real_lists.csv", index=False)
     manifest("E9", out, dict(systems=len(systems), elapsed_seconds=round(time.time() - started, 1)))
     print(f"E9 done in {time.time() - started:.1f}s", flush=True)
+
+
+E5_SETTINGS = [(50, 10), (20, 10), (100, 10), (50, 5), (50, 20)]  # (B0, k); first is primary
+
+
+def run_e5():
+    from . import e5
+    started = time.time()
+    pool, systems, maps, periods = setup()
+    disc, val = periods["discovery"], periods["validation"]
+    weights = E.bootstrap_weights(len(val.customers))
+    g_rows = e5.g_list(pool, disc, 100 + 3 * 20)
+    ret_rows, gain, real = [], [], {}
+    for i, key in enumerate(systems):
+        if key[1] == "G":
+            continue
+        sel = e5.select_specific(pool, disc, key)
+        ev10 = e5.evaluate_rules(val, pool, key, sel, k=e5.K_PRIMARY)
+        ev20 = e5.evaluate_rules(val, pool, key, sel, k=e5.K_MAX)
+        ret_rows += e5.retention_summary(ev10, key)
+        confirmed = {(r.group, r.rank) for r in ev20.itertuples() if r.confirmed} if len(ev20) else set()
+        lists = {g: [(it["combo"], (g, rank) in confirmed) for rank, it in enumerate(items, 1)] for g, items in sel.items()}
+        for period in (disc, val):
+            for b0, k in E5_SETTINGS:
+                for version in ("unconfirmed", "confirmed"):
+                    row, hyb, comp = e5.gain_rows(pool, period, key, g_rows, lists, b0, k, version)
+                    gain.append(row)
+                    if key[0] == "GL" and period is val and (b0, k) == E5_SETTINGS[0]:
+                        real[version] = (hyb, comp)
+        if key[0] == "GL":
+            real_sel, real_ev10, real_ev20 = sel, ev10, ev20
+        if i % 50 == 0:
+            print(f"  system {i + 1}/{len(systems)}", flush=True)
+    out = OUT / "E5"
+    out.mkdir(parents=True, exist_ok=True)
+    ret = pd.DataFrame(ret_rows)
+    ret.to_csv(out / "retention_by_system.csv", index=False)
+    gains = pd.DataFrame(gain)
+    gains.to_csv(out / "gain_by_system.csv", index=False)
+    # real rule table
+    name = lambda c: " + ".join(pool.cols[k] for k in pool.combos[c])
+    rows = []
+    for g, items in real_sel.items():
+        for rank, it in enumerate(items, 1):
+            r = it["rule"]
+            e20 = real_ev20[(real_ev20.group == g) & (real_ev20["rank"] == rank)]
+            e10 = real_ev10[(real_ev10.group == g) & (real_ev10["rank"] == rank)]
+            rows.append(dict(group=g, rank=rank, antecedent=name(pool.r_ant[r]), consequent=name(pool.r_con[r]),
+                             discovery_joint=it["joint"], discovery_confidence=it["confidence"],
+                             discovery_outside_confidence=it["outside_confidence"],
+                             discovery_advantage_pp=it["discovery_advantage_pp"],
+                             validation_advantage_pp=float(e20.future_advantage_pp.iloc[0]),
+                             validation_q_BY_top10=float(e10.q_BY.iloc[0]) if len(e10) else np.nan,
+                             direction_retained=bool(e20.direction_retained.iloc[0]),
+                             evidence_ok=bool(e20.evidence_ok.iloc[0]), confirmed=bool(e20.confirmed.iloc[0]),
+                             evidence_retained_top10=bool(e10.evidence_retained.iloc[0]) if len(e10) else np.nan,
+                             in_primary_top10=rank <= 10))
+    pd.DataFrame(rows).to_csv(out / "real_specific_rules.csv", index=False)
+    # E5a summary: real vs random controls
+    summ = []
+    for group in ("ALL", "0", "1", "2"):
+        r = ret[ret.group.eq(group)]
+        realrow = r[r.control.eq("GL")]
+        if realrow.empty:
+            continue
+        realrow = realrow.iloc[0]
+        for metric in ("direction_retention", "effect_ratio_median", "evidence_retained", "confirmed"):
+            row = dict(group=group, metric=metric, real=realrow[metric], real_rules=realrow.rules)
+            for control in ("A1", "S", "A2"):
+                vals = r[r.control.eq(control)][metric].dropna()
+                pos = random_position_safe(realrow[metric], vals)
+                row.update({f"{control}_{k}": v for k, v in pos.items()})
+            summ.append(row)
+    pd.DataFrame(summ).to_csv(out / "e5a_summary.csv", index=False)
+    # E5b summary
+    gs = []
+    for (period, version, b0, k), d in gains.groupby(["period", "version", "B0", "k"], sort=False):
+        realrow = d[d.control.eq("GL")].iloc[0]
+        row = dict(period=period, version=version, B0=b0, k=k, real_gain_pp=realrow.gain_pp,
+                   real_hybrid=realrow.hybrid, real_comparator=realrow.comparator,
+                   **{c: realrow[c] for c in d.columns if c.startswith("extra_slots_")})
+        if period == "validation" and (b0, k) == E5_SETTINGS[0]:
+            hyb, comp = real[version]
+            ci = E.paired_interval(val, hyb, comp, weights)
+            row.update(ci_low_pp=100 * ci["order"][1], ci_high_pp=100 * ci["order"][2],
+                       macro_gain_pp=100 * ci["customer_macro"][0])
+        for control in ("A1", "S", "A2"):
+            pos = random_position_safe(realrow.gain_pp, d[d.control.eq(control)].gain_pp)
+            row.update({f"{control}_{kk}": v for kk, v in pos.items()})
+        gs.append(row)
+    gsum = pd.DataFrame(gs)
+    gsum.to_csv(out / "e5b_summary.csv", index=False)
+    # registered interpretation (Validation preliminary)
+    a = pd.DataFrame(summ)
+    allrow = a[(a.group == "ALL") & (a.metric == "direction_retention")].iloc[0]
+    prim = gsum[(gsum.period == "validation") & (gsum.B0 == 50) & (gsum.k == 10)]
+    interp = [dict(rule="group_preference_real (E5a, Discovery->Validation)", value=allrow.real,
+                   A1_p95=allrow.A1_random_p95, A1_empirical_p=allrow.A1_empirical_p,
+                   passes=bool(allrow.A1_empirical_p <= 0.05))]
+    for _, r in prim.iterrows():
+        note = "" if r.version == "unconfirmed" else "descriptive only: confirmation used Validation"
+        interp.append(dict(rule=f"slots_worth_it (E5b, {r.version})", value=r.real_gain_pp, ci_low_pp=r.ci_low_pp,
+                           ci_high_pp=r.ci_high_pp, A1_p95=r.A1_random_p95, A1_empirical_p=r.A1_empirical_p,
+                           passes=bool(r.real_gain_pp > 0 and r.ci_low_pp > 0 and r.A1_empirical_p <= 0.05), note=note))
+    pd.DataFrame(interp).to_csv(out / "interpretation.csv", index=False)
+    manifest("E5", out, dict(systems=len(systems) - 1, elapsed_seconds=round(time.time() - started, 1),
+                             settings_B0_k=E5_SETTINGS))
+    print(f"E5 done in {time.time() - started:.1f}s", flush=True)
+
+
+def random_position_safe(real, values):
+    values = pd.Series(values).dropna()
+    if values.empty or pd.isna(real):
+        return dict(random_n=len(values))
+    return E.random_position(float(real), values.to_numpy())
