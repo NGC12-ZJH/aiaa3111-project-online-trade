@@ -1,0 +1,74 @@
+{
+  "status": "registered_before_computation",
+  "registered_date": "2026-11-21",
+  "registered_by": "B (Jinghan ZHAO)",
+  "plan_document": "docs/future_work_A_rolling_rfm.md (v2), sections 4 and 5; P5 (hidden Markov model) is NOT part of this run",
+  "nature": "exploratory pre-check for future work A (rolling RFM labels); post-hoc relative to D's frozen Test; never replaces any registered result",
+  "steps": ["P0", "P1", "P2", "P3", "P4"],
+  "data": {
+    "orders": "A snapshot 2ae672b7ea6edb7f5e1561b6a64823004dea833e, data/processed/A_data_preparation/orders.csv.gz; rows with invoice_datetime >= 2010-12-01 are dropped immediately after reading and the maximum date is asserted < 2010-12-01 (P0-P3 use no Validation or Test orders)",
+    "validation_use": "P1 flags which Profile customers have eligible Validation baskets (population flag only); P4 evaluates on Validation eligible baskets through the extra_eval engine. Test is never read (engine lock).",
+    "population": "the 2,684 Profile customers of B's frozen K-means labels; customers first seen after 2010-06-01 are only counted (section 6.3 of the plan)"
+  },
+  "rfm_definition": {
+    "valid_orders": "is_valid_rfm_order == 1 and is_identified_customer == 1 (same filter as src/online_trade/clustering/features.py)",
+    "window": "6 months [cutoff - 6 months, cutoff)",
+    "R": "days from the customer's last valid order before the cutoff (any time since 2009-12-01) to the cutoff",
+    "F": "distinct valid basket_id in the window (0 if none)",
+    "M": "sum of gross_purchase_amount of valid orders in the window (0 if none)",
+    "features": "[R, log1p(F), log1p(max(M, 0))], identical to feature_matrix()",
+    "self_check": "at cutoff 2010-06-01 the computed R/F/M must equal build_rfm() for every Profile customer"
+  },
+  "P0_reconstruction": {
+    "scaler": "StandardScaler fit on the 2,684 Profile customers' features at cutoff 2010-06-01 (deterministic)",
+    "centroids": "mean standardized feature vector of each frozen cluster",
+    "check": "nearest-centroid reassignment of the Profile features must reproduce 100% of the frozen labels; otherwise report mismatches and stop",
+    "output": "results/tables/future_A/frozen_scaler_centroids.json"
+  },
+  "P1_primary": {
+    "new_window": "Discovery [2010-06-01, 2010-12-01), cutoff 2010-12-01",
+    "assignment": "frozen scaler and centroids from P0, nearest centroid (Euclidean)",
+    "outputs": ["3x3 transition matrix (counts and row shares)", "retention per cluster and overall", "silence rate per old cluster (no valid order in the window)", "Cohen's kappa and ARI between old and new labels", "share with R above the Profile maximum R", "cluster sizes old/new and mean standardized position of each old cluster's members in the new window vs its centroid"],
+    "populations": ["all 2,684 Profile customers", "Profile customers with at least one eligible Validation basket"]
+  },
+  "P2_sensitivity": {
+    "P2a_relative": "refit StandardScaler on the 2,684 customers' Discovery-window features (silent customers included), assign to the frozen centroids",
+    "P2b_refit": "fit StandardScaler and KMeans(n_clusters=3, n_init=10, random_state=42) on customers active in the Discovery window; silent customers assigned to the nearest fitted centroid; new clusters aligned to old labels by the Hungarian algorithm on the 3x3 member-overlap matrix (MONIC-style); report the overlap matrix and agreement",
+    "P2c_active_only": "P1 labels restricted to customers with >= 1 valid order in the Discovery window"
+  },
+  "P3_drift_curve": {
+    "cutoffs": ["2010-06-01", "2010-07-01", "2010-08-01", "2010-09-01", "2010-10-01", "2010-11-01", "2010-12-01"],
+    "labels": "each cutoff's 6-month window, frozen scaler and centroids",
+    "compare": "frozen labels (cutoff 2010-06-01) vs labels at 2010-06-01 + delta, delta = 1..6 months",
+    "metrics": "retention, chance retention sum_i p_i q_i, Cohen's kappa; all customers and active-in-both-windows customers"
+  },
+  "P4_impact_bound": {
+    "rules": "P5 Discovery lists, E9 construction (V3 combination de-duplication), budget 100 per customer; budgets 20 and 50 reported descriptively",
+    "period": "Validation eligible baskets",
+    "systems": {
+      "L_orig": "each customer uses the list of their frozen label (must equal E9's L Validation coverage; asserted against results/tables/extra_eval/E9/summary.csv)",
+      "L_swap": "same three lists, each customer uses the list of their P1 label",
+      "L_swap_P2a": "same, P2a label",
+      "L_oracle": "each customer uses, after the fact, whichever of the three lists covers most of their own Validation orders (ties: keep the frozen label's list, then lowest group id)",
+      "G": "global top-100 list (reference)",
+      "A1": "100 seeds 1000-1099: each seed's three lists, orig assignment and oracle assignment; oracle gain per seed"
+    },
+    "primary_metric": "order coverage on Validation at budget 100; customer-macro coverage reported alongside",
+    "intervals": "paired customer bootstrap, 2,000 repeats, seed 20261121 (same as extra_eval) for L_swap - L_orig, L_swap_P2a - L_orig, L_oracle - L_orig",
+    "adjusted_oracle_gain": "(L_oracle - L_orig) minus the A1 median of the same quantity; descriptive"
+  },
+  "decision_rules": {
+    "stage1_labels_stable": "P1 kappa (all customers) >= 0.6 AND P2c retention >= 0.80 -> 'labels essentially stable'; plan section 6 is not run. The same rule applied with P2a kappa is reported as 'stable after season adjustment' (descriptive)",
+    "stage2_no_room": "raw oracle gain (L_oracle - L_orig, order coverage, B=100) < 1.0 percentage point -> 'label refresh cannot matter for these lists'; section 6 is not run",
+    "stage3_go": "otherwise, if L_swap - L_orig >= 0.5 percentage point -> run section 6 round 2 (separately registered); else stop",
+    "note": "all five steps are computed and reported regardless of the stage at which the decision route stops"
+  },
+  "known_information_before_registration": [
+    "E9, E10 and E5 Validation results (results/tables/extra_eval/) and D's Validation and Test results had been read.",
+    "Chen, Guo & Li (2019) report month-to-month group stability (diagonal sum 0.85) on the one-year Online Retail data.",
+    "The A2 random controls (2026-11-15) were stratified by each Profile customer's Discovery eligible-basket count, so the distribution of Discovery basket counts (including customers with zero) had been seen; no Discovery-window RFM, label or transition had been computed.",
+    "No P0-P4 quantity had been computed."
+  ],
+  "outputs": "results/tables/future_A/precheck/; write-up docs/future_work_A_results.md",
+  "entry_point": "python scripts/run_future_a.py precheck"
+}
