@@ -17,3 +17,4 @@
 /results/tables/validation_hybrid/** -text whitespace=cr-at-eol
 
 /results/tables/validation_specificity/** -text whitespace=cr-at-eol
+/results/tables/test/** -text whitespace=cr-at-eol

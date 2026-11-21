@@ -2,10 +2,7 @@
 
 > **D 最终 Test 已完成（2026-11-21）**
 
-冻结配置为 P5，主预算 100，主口径为限群使用，A1 为主随机对照。见 [Test 结果](docs/test_results.md) 与 [冻结协议](configs/test_frozen.json)。下方 Validation 说明保留为选参阶段记录。
-
-<!-- D_VALIDATION_DELIVERY -->
-> **D分支交付（2026-11-19，`d/evaluation`）**：已完成P1–P5、预算20/50/100的品类层Validation比较、统一未来质量验收、G50＋L50去重匹配预算、群内/群外差异及优势保持补算，含随机对照和敏感性。请从 [D交付与复现入口](docs/d_validation_handoff.md) 开始阅读；[一页验收方案](docs/validation_quality_plan.md)、[新质量结果](docs/validation_quality_results.md)、[原Validation结果](docs/validation_results.md) 分别保留。未正式选参/冻结、未评价Test。下文11-13的主分支状态作为历史背景保留。
+冻结配置为 P5，主预算 100，主口径为限群使用，A1 为主随机对照。见 [Test 结果](docs/test_results.md) 与 [冻结协议](configs/test_frozen.json)。[D 分支交付入口](docs/d_validation_handoff.md)汇总了选参、冻结、Test 结果和复现命令。
 
 AIAA3111 数据挖掘课程项目 · H2 分群购物模式。研究历史消费行为分群能否在相同规则预算下发现全局规则未充分体现的商品关联，并在未来交易中保持价值。
 

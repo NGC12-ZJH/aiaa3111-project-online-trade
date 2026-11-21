@@ -22,7 +22,7 @@ python -X utf8 scripts/check_validation_independently.py
 
 配置见 `configs/validation.json`；中文结果说明见 `docs/validation_results.md` 和可离线打开的 `docs/validation_results.html`。汇总输出在 `results/tables/validation/` 和 `results/figures/validation/`；顾客级输入与逐订单/逐规则证据在被忽略的 `data/processed/local/D_validation/`。
 
-本批次仅评价冻结预算规则的品类层结果，未覆盖全部候选池、SKU层未来评价或等每用户预算重选。人工科学复核与最终Test冻结仍待全组完成。
+本批次仅评价冻结预算规则的品类层结果，未覆盖全部候选池、SKU层未来评价或等每用户预算重选。这是 Validation 阶段的评价范围。
 
 ## 统一质量扩展（2026-11-18）
 
@@ -47,3 +47,7 @@ python -X utf8 scripts/check_validation_specificity.py
 ```
 
 不依赖GPU或完整大候选包。报告在 `docs/validation_specificity_results.md` / `.html`，汇总在 `results/tables/validation_specificity/`。真实/随机完整规则证据在忽略目录，不上传顾客级数据。分开解释Top榜名单差异、群内关联、群间强度、方向保持和同预算互补覆盖。严格主标准和探索性限制详见报告。
+
+## 正式 Test（2026-11-21）
+
+冻结的 P5／100 主结果及补充比较见 [Test 报告](../../../docs/test_results.md)。独立工作树复现命令和冻结提交见 [D 交付入口](../../../docs/d_validation_handoff.md)。
