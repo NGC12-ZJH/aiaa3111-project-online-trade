@@ -1,0 +1,52 @@
+{
+  "experiment": "E10",
+  "question": "How much of L's coverage gap to G comes from slots wasted on duplicate rules (the same rule picked by several groups, A->B plus B->A, or a superset of an already chosen combination)?",
+  "practical_meaning": "When several groups' display plans are merged, how many display slots are spent on the same combination twice?",
+  "rules": "P5 from common.json; systems G, L and every random seed (A1 primary, S, A2)",
+  "quota": "L and random systems: largest-remainder quota by each group's own Discovery basket count, ties by group id (C's rule)",
+  "variants": {
+    "V1_original": {
+      "unit": "directed rule",
+      "flows": ["restricted", "shared"],
+      "construction": "each group takes its top q_g directed rules; G takes its top B (identical to C's/D's frozen lists)"
+    },
+    "V2_teammate": {
+      "unit": "directed rule",
+      "flows": ["shared"],
+      "construction": "V1 lists merged in group order 0,1,2 and de-duplicated by rule_id (first group gets the credit); then refill: among groups with candidates left, pick the group with the smallest credited-unique-rules / Discovery baskets (ties by group id) and add its next not-yet-selected directed rule; repeat until B distinct directed rules"
+    },
+    "V3_combination": {
+      "unit": "category combination (A->B and B->A are one slot)",
+      "flows": ["restricted", "shared"],
+      "construction_restricted": "each group walks its own ranking, keeps a rule's combination only if it is neither already kept nor a superset of a kept combination, until q_g combinations; cross-group duplicates are NOT removed because they serve different customers",
+      "construction_shared": "each group first builds its restricted V3 list; the lists are merged in group order 0,1,2, dropping a combination already in the pool or a superset of a pool combination (credit to the first group); refill as in V2 but adding combinations (skip already-present and superset combinations) until B distinct combinations",
+      "G": "G walks its ranking with the same rule until B combinations"
+    },
+    "V4_fractional": {
+      "unit": "category combination",
+      "flows": ["shared"],
+      "construction": "as V3 shared, except that a combination selected in the initial lists of m groups credits 1/m to each of them before refill"
+    }
+  },
+  "metrics_per_system": [
+    "slots, distinct directed rules, distinct combinations, refilled slots",
+    "coverage (order) and customer-macro coverage",
+    "for L: share of its distinct combinations also in G's list of the same variant and budget"
+  ],
+  "comparisons": [
+    "L - G per variant/flow/budget; paired customer bootstrap interval in Validation",
+    "L position in the A1 / S / A2 distributions: median, min, max, #random >= L, empirical p",
+    "home_advantage = (L - G in Validation) - (L - G in Discovery) per variant/flow/budget"
+  ],
+  "periods": {
+    "discovery": "build all lists; in-sample coverage only as the baseline of home_advantage",
+    "validation": "evaluate all variants; nothing is selected",
+    "test": "later single run; V1 must reproduce D's frozen Test numbers exactly (consistency check) before other variants are read"
+  },
+  "interpretation_rules": {
+    "gap_mainly_duplicates": "same flow and budget: |L-G| under V3 <= 0.5 * |L-G| under V1",
+    "attribution_irrelevant": "|coverage(L,V3 shared) - coverage(L,V4 shared)| < 0.5 percentage points",
+    "discovery_overstates_G": "home_advantage > 0 for V1 at B=100",
+    "status": "E10 is a descriptive diagnostic; it is not one of the primary hypotheses"
+  }
+}

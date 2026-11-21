@@ -1,0 +1,56 @@
+{
+  "status": "registered_before_computation",
+  "registered_date": "2026-11-21",
+  "registered_by": "B (Jinghan ZHAO)",
+  "nature": "post-hoc exploratory evaluation, designed after the first frozen Test (D, commit 0bb4815) had been opened; it never replaces D's frozen primary result",
+  "experiments": ["E10", "E9", "E5"],
+  "execution_order": "E10 -> E9 -> E5 (E10 fixes the de-duplication used by E9 and E5)",
+  "inputs": {
+    "baskets": "A snapshot 2ae672b7ea6edb7f5e1561b6a64823004dea833e, data/processed/A_data_preparation/baskets.csv.gz, rows with is_eligible_for_main_comparison == 1",
+    "taxonomy": "data/taxonomy/item_taxonomy_v1.csv (frozen taxonomy_v1); stock codes mapped to l2_id, 'other' dropped, one count per category per basket, empty baskets kept in the denominator",
+    "true_labels": "B frozen K-means K=3 labels (700 / 1,263 / 721 customers)",
+    "random_controls": {
+      "A1": "primary; profile-order strata; seeds 1000-1099",
+      "S": "reference; size-only; seeds 42-61",
+      "A2": "sensitivity; Discovery-basket strata; seeds 1000-1099"
+    }
+  },
+  "periods": {
+    "discovery": "[2010-06-01, 2010-12-01): build every rule list; in-sample descriptions only, never a conclusion",
+    "validation": "[2010-12-01, 2011-06-01): first out-of-sample evaluation; no setting is chosen from Validation results; E5 additionally confirms rules here by a pre-written rule",
+    "test": "[2011-06-01, 2011-12-01): NOT read in this stage. After the whole group confirms, every list and setting is frozen and committed, then Test is run exactly once and all results are reported"
+  },
+  "rule_config_P5": {
+    "support": 0.02,
+    "confidence": 0.4,
+    "lift": 1.3,
+    "min_joint_count": 20,
+    "min_antecedent_count": 20,
+    "triple_increment_pp": 10.0,
+    "ranking": "joint count desc, confidence desc, lift desc, rule_id asc (C's ranking)",
+    "rule_id": "sha256(json.dumps(['l2', antecedent_l2_ids, consequent_l2_ids]))[:16], identical to C"
+  },
+  "budgets": [20, 50, 100],
+  "primary_budget": 100,
+  "coverage_definition": "share of evaluated orders that contain every category of at least one deployed combination; each order counted once",
+  "customer_macro_coverage": "mean over customers of each customer's own order coverage",
+  "bootstrap": {
+    "unit": "customer",
+    "repeats": 2000,
+    "seed": 20261121,
+    "interval": "percentile 95%, paired (same resampled customers for both systems)"
+  },
+  "empirical_p": "(1 + #random seeds with value >= real) / (1 + #seeds); one-sided, descriptive",
+  "primary_hypotheses_for_the_single_test_run": {
+    "H_E9": "E9, B=100: coverage(L per-customer lists) - coverage(G), paired customer interval",
+    "H_E5a": "E5a: direction-retention rate of real group-specific rules from Discovery to Test, versus the A1 distribution",
+    "H_E5b": "E5b: marginal coverage gain of Validation-confirmed group-specific slots, versus the A1 distribution",
+    "multiplicity": "Holm over these three; all E10 results and all other numbers are descriptive"
+  },
+  "known_information_before_registration": [
+    "D's Validation and Test results for P5 (restricted/shared coverage, quality, specificity, P3 hybrid) had been read.",
+    "B had computed on Validation (P5, B=100): shared L has 100 directed slots but 55 distinct combinations, G has 92; at the same number of combinations shared L covers 70.44% vs G top-55 70.24%.",
+    "B had computed on Discovery P5 B=100 that L's combinations are mostly also in G's top-100 (C0 11/11, C1 28/29, C2 48/60).",
+    "No E5 group-specific list had been built or evaluated in any period."
+  ]
+}

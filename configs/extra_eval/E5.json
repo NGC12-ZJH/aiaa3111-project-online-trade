@@ -1,0 +1,52 @@
+{
+  "experiment": "E5",
+  "question": "Do each group's most group-specific rules stay specific in later periods, and are a few extra group-specific slots worth more than the next global rules?",
+  "practical_meaning": "On top of one store-wide display, is it worth reserving a few slots per customer group for the combinations that group especially buys?",
+  "candidate_rules_per_group": {
+    "period": "Discovery",
+    "in_group": "joint >= 20 orders from >= 10 distinct customers, largest single-customer share of joint orders <= 0.5, antecedent >= 20 orders, confidence >= 0.40, lift >= 1.3, 3-category increment >= 10 percentage points; no relative support threshold",
+    "outside": "outside = the other groups of the same system; outside antecedent >= 20 orders from >= 10 customers",
+    "advantage_pp": "100 * [(conf_in - base_in(consequent)) - (conf_out - base_out(consequent))], base = consequent count / orders in that scope",
+    "minimum_advantage_pp": 5.0,
+    "ranking": "advantage desc, joint desc, confidence desc, rule_id asc",
+    "de_duplication": "unit = combination; keep the first directed rule of a combination; skip a combination that is a superset of a kept one",
+    "k_per_group": 10,
+    "random_controls": "every seed of A1 (primary), S and A2 builds its own lists with exactly the same procedure"
+  },
+  "E5a_specificity_retention": {
+    "evaluated_rules": "the up to 30 directed rules (10 per group) of each system",
+    "direction_retained": "future advantage > 0; a rule whose advantage is undefined in the future (no antecedent in or out of the group) counts as not retained; the denominator is all selected rules",
+    "effect_retention_ratio": "median of future advantage / Discovery advantage",
+    "evidence_retained": "future advantage >= 5pp; target antecedent >= 20 orders from 10 customers, target joint >= 10 orders from 5 customers, largest customer share of target joint <= 0.5; outside antecedent >= 20 orders from 10 customers; one-sided customer-cluster t test of advantage > 0 with BY q <= 0.05 inside the system's own rules",
+    "variance": "advantage = d_in - d_out with d = J/A - C/N; customer influence u_i = (J_i - conf*A_i)/A - (C_i - base*N_i)/N per side, var = m/(m-1) * sum u_i^2, sides added (disjoint customers), df = min(m_in, m_out) - 1",
+    "primary_statistic": "direction-retention rate pooled over the system's rules",
+    "comparison": "real vs A1 seeds, empirical p"
+  },
+  "validation_confirmation": {
+    "rule": "a Discovery-selected rule is confirmed if its Validation advantage > 0 and the target and outside evidence counts of E5a are met (no significance requirement)",
+    "applies_to": "real groups and every random seed identically"
+  },
+  "E5b_marginal_gain": {
+    "base_list": "G's top B0 combinations under P5 with E10 V3 de-duplication",
+    "B0": 50,
+    "hybrid": "a customer of group g sees G's top B0 plus their group's specific combinations that are not already in, or supersets of, G's top B0 (k_g' of them)",
+    "comparator": "the same customer sees G's top B0 + k_g' combinations",
+    "gain": "coverage(hybrid) - coverage(comparator) over all evaluated orders; paired customer bootstrap interval",
+    "lists": {
+      "unconfirmed": "Discovery top-k lists",
+      "confirmed": "only Validation-confirmed rules; evaluated on Validation only descriptively, because confirmation used Validation; its real test is the Test run"
+    },
+    "sensitivity": {"B0": [20, 100], "k": [5, 20]},
+    "comparison": "real vs A1 seeds, empirical p"
+  },
+  "periods": {
+    "discovery": "build candidate lists; describe them; no conclusions",
+    "validation": "E5a Discovery->Validation (first test of specificity); confirmation; E5b preliminary with both lists",
+    "test": "later single run: H_E5a (Discovery->Test retention) and H_E5b (confirmed-list gain), plus Validation->Test retention of confirmed rules"
+  },
+  "interpretation_rules": {
+    "group_preference_real": "E5a direction retention above the A1 95th percentile (empirical p <= 0.05)",
+    "slots_worth_it": "E5b gain > 0, paired interval excludes 0, and gain above the A1 95th percentile",
+    "report_per_group": "results are also reported per group; if only C0 passes, the claim is limited to C0"
+  }
+}
