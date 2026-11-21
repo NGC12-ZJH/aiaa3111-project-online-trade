@@ -20,7 +20,7 @@
 |P4|8|58|66.23%|66.66%|69.05%|-2.39 [-2.96, -1.84]|-116|
 |P5|8|58|67.65%|68.06%|69.54%|-1.48 [-1.96, -1.03]|-72|
 
-![合并与同预算比较](../results/figures/validation_hybrid/hybrid_comparison.png)
+![合并与同预算比较](../../../../results/figures/validation_hybrid/hybrid_comparison.png)
 
 每个配置内部预算K一致；不同配置的K不同，不能仅凭表中绝对覆盖宣布跨配置最优。区间按顾客整簇配对bootstrap 2,000次、种子3112，五个配置未做多重比较校正。
 

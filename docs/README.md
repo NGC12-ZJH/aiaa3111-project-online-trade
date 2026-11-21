@@ -17,3 +17,7 @@
 - [完整研究工作流](taxonomy_workflow.md)
 - [交接给 C](taxonomy_v1_handoff_C.md)
 - [模块架构与路径迁移](../src/online_trade/taxonomy/README.md)
+
+## D 评价
+
+[D 交付入口](evaluation/README.md)汇总 Validation、Test、冻结协议及复现方法。

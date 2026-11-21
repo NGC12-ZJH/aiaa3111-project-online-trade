@@ -66,11 +66,11 @@ def main():
     fig.tight_layout(rect=[0,.16,1,.93]);fig.savefig(figure/'quality_coverage.png',dpi=170);plt.close(fig)
     text=f'''# Validation统一质量补算结果
 
-2026-11-18 · 主标准quality_v1 · **只比较，不推荐配置、不冻结Test、不运行Test。**
+2026-11-18 · 主标准quality_v1 · **本轮仅做 Validation 补算，阶段结果供后续选参。**
 
 ## 先看什么
 
-先读[一页验收方案](validation_quality_plan.md)。本批次把“未来仍然出现”与“未来仍有可靠且足够幅度的关联”分开。所有P1–P5使用相同验收门槛。原规则清单、原始覆盖率与旧报告保持不变。
+先读[一页验收方案](../methods.md#共同质量验收方案)。本批次把“未来仍然出现”与“未来仍有可靠且足够幅度的关联”分开。所有P1–P5使用相同验收门槛。原规则清单、原始覆盖率与旧报告保持不变。
 
 主标准：前件≥20单/10人，联合≥10单/5人，单人联合贡献≤50%；confidence超过后件基础率至少5个百分点、lift≥1.2；三品类比两个单前件都至少提高5个百分点；按顾客聚类的近似检验经系统内BY校正≤0.05。阈值是工作性定义，不是公认最优值；敏感性全部并列报告。
 
@@ -88,7 +88,7 @@ def main():
 
 {table(tabs['shared'])}
 
-![原覆盖与可靠关联覆盖](../results/figures/validation_quality/quality_coverage.png)
+![原覆盖与可靠关联覆盖](../../../../results/figures/validation_quality/quality_coverage.png)
 
 ## 预算100：为什么没有通过
 
@@ -107,7 +107,7 @@ def main():
 - 重复订单按顾客聚类；使用ratio差值的delta-method近似标准误和t分布，不是逐规则2,000次bootstrap，也不是精确检验。小群和稀疏规则的近似可能不准，因此同时有证据量门槛。
 - 每个系统把所有P1–P5/预算的验收身份合并去重，原范围与全局共享范围共同校正。三品类把关联及两个增量的单侧p取最大值，要求同时有证据；BY主校正允许检验间依赖。校正家族内重复规则不重复增加检验次数。
 - q≤0.05是系统内名义错误发现率标准，不是每条规则有95%概率正确。不同系统之间未做总体校正；随机上尾比例仍是描述统计，不作全研究显著性结论。
-- 置信度提升/三品类增量的区间是逐项95%区间，不是多重校正后的同时区间。统计方法与公式见[方法说明](validation_quality_methods.md)。
+- 置信度提升/三品类增量的区间是逐项95%区间，不是多重校正后的同时区间。统计方法与公式见[方法说明](../methods.md#质量统计方法与字段)。
 - 关联/增量检验只检验是否为正；5个百分点与lift1.2是点估计幅度要求，不代表区间下限也超过该幅度。
 - G的样本更多，通常检验力更高；小群通过较少可能反映证据较弱，不能直接推成偏好较弱，需结合证据不足比例和效应量解读。
 - 保持率分母包含全部原名额，证据不足规则不会被排除来抬高通过率。另报告去重后的保持率，避免规则重复名额造成误读。
@@ -132,14 +132,14 @@ def main():
 
 复现：`python -X utf8 scripts/run_validation_quality.py`，然后 `python -X utf8 scripts/report_validation_quality.py`。无需GPU、不重新挖规则。
 '''
-    (ROOT/'docs/validation_quality_results.md').write_text(text,encoding='utf-8')
+    (ROOT/'docs/evaluation/validation/details/validation_quality_results.md').write_text(text,encoding='utf-8')
     image=base64.b64encode((figure/'quality_coverage.png').read_bytes()).decode()
-    page='''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>Validation统一质量比较</title><style>body{font:15px/1.7 "Microsoft YaHei",sans-serif;color:#183044;max-width:1250px;margin:36px auto;padding:0 20px}h1,h2{color:#1261a0}table{border-collapse:collapse;width:100%;font-size:13px}td,th{padding:7px;border-bottom:1px solid #dbe5ed;text-align:right}th{background:#edf4f9}img{width:100%}.note{background:#edf4f9;padding:18px}</style><h1>Validation统一质量比较</h1><p>2026-11-18 · CPU · 只比较，不推荐配置，未评价Test</p><p class="note">可靠关联覆盖是用同一期Validation验收后得到的回顾性指标，不是预测准确率。统一证据量、lift/置信度提升、三品类增量和系统内BY校正；不删除或补齐冻结清单。详见同目录一页方案和方法说明。</p>'''
+    page='''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>Validation统一质量比较</title><style>body{font:15px/1.7 "Microsoft YaHei",sans-serif;color:#183044;max-width:1250px;margin:36px auto;padding:0 20px}h1,h2{color:#1261a0}table{border-collapse:collapse;width:100%;font-size:13px}td,th{padding:7px;border-bottom:1px solid #dbe5ed;text-align:right}th{background:#edf4f9}img{width:100%}.note{background:#edf4f9;padding:18px}</style><h1>Validation统一质量比较</h1><p>2026-11-18 · CPU · Validation 阶段质量补算</p><p class="note">可靠关联覆盖是用同一期Validation验收后得到的回顾性指标，不是预测准确率。统一证据量、lift/置信度提升、三品类增量和系统内BY校正；不删除或补齐冻结清单。详见同目录一页方案和方法说明。</p>'''
     page+=f'<img src="data:image/png;base64,{image}">'
     for title,d in [('限群使用（主比较）',tabs['restricted']),('共享使用（补充）',tabs['shared']),('预算100规则状态',status_table),('验收门槛敏感性',sens)]:
         page+=f'<h2>{html.escape(title)}</h2>'+d.to_html(index=False,escape=True)
     page+='</html>'
-    (ROOT/'docs/validation_quality_results.html').write_text(page,encoding='utf-8')
+    (ROOT/'docs/evaluation/validation/details/validation_quality_results.html').write_text(page,encoding='utf-8')
     print(tabs['restricted'].to_string(index=False))
     print('Saved Chinese quality report, HTML, figure and sensitivity interpretation.')
 

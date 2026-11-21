@@ -1,8 +1,8 @@
 # Validation补算：分群规则与Global到底有什么不同？
 
-2026-11-19 · **新增探索性分析，未选参数、未运行Test。**
+2026-11-19 · **Validation 阶段探索性分析。**
 
-先读[补算方案](validation_specificity_plan.md)。本批次把“名单不同”“同一规则在群内更强”“群体优势未来保持”“给Global补充覆盖”分成四层，避免相互替代。
+先读[补算方案](../methods.md#群体差异与优势保持方案)。本批次把“名单不同”“同一规则在群内更强”“群体优势未来保持”“给Global补充覆盖”分成四层，避免相互替代。
 
 ## 先看结论：有方向性信号，但单条规则的强证据不足
 
@@ -96,7 +96,7 @@ Validation支持主优势要求：共同目标群证据量/集中度/效应/三�
 
 本表专门展示原有D候选中V点估计仍满足条件的例子，BY未通过者仍是“证据未解决”。它不替代全量正负结果，也不等于新发现已被证实。
 
-![Discovery到Validation群间差异](../results/figures/validation_specificity/confidence_gap_retention.png)
+![Discovery到Validation群间差异](../../../../results/figures/validation_specificity/confidence_gap_retention.png)
 
 图中点位仅是差值，右上角不自动等于有统计证据；须看计数、不同顾客数、相对基础率差异和校正值。效应保留比例=V置信度差/D置信度差，只在D差值≥5pp且可估时计算，可大于1或为负，不截断。
 
@@ -128,7 +128,7 @@ Validation支持主优势要求：共同目标群证据量/集中度/效应/三�
 
 “仅L完整覆盖”是前后件都出现且G没有完整覆盖；“仅L前件触达”只看前件，两者不能混用。净订单=仅L完整覆盖−仅G完整覆盖。L能覆盖部分G遗漏订单，与G总体更高并不矛盾。
 
-已有G50+L50去重匹配K实验见 `docs/validation_hybrid_results.md`；该实验使用共享规则，与限群比较分开解释。
+已有G50+L50去重匹配K实验见 [同预算合并实验](validation_hybrid_results.md)；该实验使用共享规则，与限群比较分开解释。
 
 | 配置 | 去重后K | 合并−G前K/百分点 | 95%区间pp | 净增加订单 |
 |---|---|---|---|---|

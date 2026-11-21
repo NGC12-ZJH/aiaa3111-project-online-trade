@@ -81,7 +81,7 @@ def main():
     ax.set_title('Do group advantages persist?\nOne dot per frozen target-group / rule identity; not a significance plot')
     ax.grid(alpha=.15);ax.legend(frameon=False);fig.tight_layout();fig.savefig(figdir/'confidence_gap_retention.png',dpi=170);plt.close(fig)
     hybrid_path=ROOT/'results/tables/validation_hybrid/paired_comparisons.csv'
-    hybrid_note='已有G50+L50去重匹配K实验见 `docs/validation_hybrid_results.md`；该实验使用共享规则，与限群比较分开解释。'
+    hybrid_note='已有G50+L50去重匹配K实验见 [同预算合并实验](validation_hybrid_results.md)；该实验使用共享规则，与限群比较分开解释。'
     if hybrid_path.exists():
         h=pd.read_csv(hybrid_path);h=h.query("comparison=='HYBRID_minus_G_K' and metric=='order'")
         ht=pd.DataFrame({'配置':h.config,'去重后K':h.K,'合并−G前K/百分点':h.estimate.map(lambda x:f'{x*100:+.2f}'),
@@ -89,9 +89,9 @@ def main():
         hybrid_note+='\n\n'+md(ht)+'\n\n这是额外探索：P3有补充收益，但其他配置不支持普遍收益；尚无随机合并匹配K对照，不能归因为RFM独有优势。'
     text=f'''# Validation补算：分群规则与Global到底有什么不同？
 
-2026-11-19 · **新增探索性分析，未选参数、未运行Test。**
+2026-11-19 · **Validation 阶段探索性分析。**
 
-先读[补算方案](validation_specificity_plan.md)。本批次把“名单不同”“同一规则在群内更强”“群体优势未来保持”“给Global补充覆盖”分成四层，避免相互替代。
+先读[补算方案](../methods.md#群体差异与优势保持方案)。本批次把“名单不同”“同一规则在群内更强”“群体优势未来保持”“给Global补充覆盖”分成四层，避免相互替代。
 
 ## 先看结论：有方向性信号，但单条规则的强证据不足
 
@@ -141,7 +141,7 @@ Validation支持主优势要求：共同目标群证据量/集中度/效应/三�
 
 本表专门展示原有D候选中V点估计仍满足条件的例子，BY未通过者仍是“证据未解决”。它不替代全量正负结果，也不等于新发现已被证实。
 
-![Discovery到Validation群间差异](../results/figures/validation_specificity/confidence_gap_retention.png)
+![Discovery到Validation群间差异](../../../../results/figures/validation_specificity/confidence_gap_retention.png)
 
 图中点位仅是差值，右上角不自动等于有统计证据；须看计数、不同顾客数、相对基础率差异和校正值。效应保留比例=V置信度差/D置信度差，只在D差值≥5pp且可估时计算，可大于1或为负，不截断。
 
@@ -190,11 +190,11 @@ Validation支持主优势要求：共同目标群证据量/集中度/效应/三�
 
 所有表位于 `results/tables/validation_specificity/`。随机逐规则明细、完整群诊断和全部名单差异位于忽略目录 `data/processed/local/D_validation/`，不含进功能分支。先运行原输入准备和 `scripts/run_validation.py`，再执行 `python -X utf8 scripts/run_validation_specificity.py`、`python -X utf8 scripts/report_validation_specificity.py`。无需GPU，不重新挖规则。
 '''
-    (ROOT/'docs/validation_specificity_results.md').write_bytes(text.encode('utf-8'))
-    page='''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>群体差异与优势保持</title><style>body{font:15px/1.7 "Microsoft YaHei",sans-serif;max-width:1280px;margin:36px auto;padding:0 20px;color:#183044}table{border-collapse:collapse;width:100%;font-size:13px}td,th{padding:7px;border-bottom:1px solid #dbe5ed;text-align:right}th{background:#edf4f9}h1,h2{color:#1261a0}img{width:100%;max-width:900px}.note{background:#edf4f9;padding:18px}</style><h1>Validation：群体差异与优势保持</h1><p>2026-11-19 · 探索性补算 · 未运行Test、未选参</p><p class="note">名单不同 ≠ 同一规则在群内更强 ≠ 优势能在未来保持 ≠ 系统覆盖更好。四层证据分别报告。Top榜缺席不等于Global未发现；统计证据不足不等于无差异。</p>'''
+    (ROOT/'docs/evaluation/validation/details/validation_specificity_results.md').write_bytes(text.encode('utf-8'))
+    page='''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>群体差异与优势保持</title><style>body{font:15px/1.7 "Microsoft YaHei",sans-serif;max-width:1280px;margin:36px auto;padding:0 20px;color:#183044}table{border-collapse:collapse;width:100%;font-size:13px}td,th{padding:7px;border-bottom:1px solid #dbe5ed;text-align:right}th{background:#edf4f9}h1,h2{color:#1261a0}img{width:100%;max-width:900px}.note{background:#edf4f9;padding:18px}</style><h1>Validation：群体差异与优势保持</h1><p>2026-11-19 · Validation 探索性补算</p><p class="note">名单不同 ≠ 同一规则在群内更强 ≠ 优势能在未来保持 ≠ 系统覆盖更好。四层证据分别报告。Top榜缺席不等于Global未发现；统计证据不足不等于无差异。</p>'''
     for title,d in [('名单差异与优势保持',main_table),('预算100按群诊断',group_table),('A1随机对照',random_table),('方向保持与A1',direction_table),('独有覆盖与净差',coverage_table)]:page+=f'<h2>{html.escape(title)}</h2>'+d.to_html(index=False,escape=True)
     encoded=base64.b64encode((figdir/'confidence_gap_retention.png').read_bytes()).decode();page+=f'<h2>群体优势跨期变化</h2><img src="data:image/png;base64,{encoded}"><p>全部规则和统计限制见同目录validation_specificity_results.md。</p></html>'
-    (ROOT/'docs/validation_specificity_results.html').write_bytes(page.encode('utf-8'))
+    (ROOT/'docs/evaluation/validation/details/validation_specificity_results.html').write_bytes(page.encode('utf-8'))
     print(main_table.to_string(index=False));print('Saved specificity comparison report and offline HTML.')
 
 

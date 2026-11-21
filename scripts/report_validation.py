@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'results/tables/validation'
-DOC = ROOT / 'docs/validation_results.md'
+DOC = ROOT / 'docs/evaluation/validation/details/validation_results.md'
 
 
 def md_table(df):
@@ -58,7 +58,7 @@ def main():
     win=int((restricted.L > restricted.G).sum());shared_win=int((shared.L > shared.G).sum())
     text=f'''# D：Validation 比较报告（2026-11-16）
 
-**状态：仅比较，不推荐配置，不冻结 Test 方案。** 根据用户明确要求，不选择 P1–P5 中的任何配置，也不选择预算。下述结果来自本地 CPU 实算。
+**阶段记录：本轮仅比较，最终选择另见 Validation 总览。** 根据用户明确要求，不选择 P1–P5 中的任何配置，也不选择预算。下述结果来自本地 CPU 实算。
 
 ## 评价对象与口径
 
@@ -82,7 +82,7 @@ Validation 窗口为 `[2010-12-01, 2011-06-01)`。有效购物篮共 **{audit.al
 
 {md_table(shared_table)}
 
-![Validation覆盖率](../results/figures/validation/coverage_comparison.png)
+![Validation覆盖率](../../../../results/figures/validation/coverage_comparison.png)
 
 ## G/L规则在未来的状态
 
@@ -128,8 +128,8 @@ Validation 窗口为 `[2010-12-01, 2011-06-01)`。有效购物篮共 **{audit.al
     import base64
     encoded=base64.b64encode((fdir/'coverage_comparison.png').read_bytes()).decode()
     tables=''.join(f'<h2>{html.escape(title)}</h2>{table.to_html(index=False,escape=True)}' for title,table in [('限群使用（主比较）',main_table),('共享使用（补充）',shared_table),('原范围规则状态',stability)])
-    page=f'''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>Validation 比较报告</title><style>body{{font:15px/1.6 "Microsoft YaHei",sans-serif;max-width:1250px;margin:40px auto;padding:0 24px;color:#183044}}h1,h2{{color:#1261a0}}table{{border-collapse:collapse;width:100%;font-size:13px}}td,th{{padding:8px;border-bottom:1px solid #dce5ed;text-align:right}}th{{background:#eef4f9}}img{{width:100%}}.note{{padding:18px;background:#eef4f9;border-radius:10px}}</style><h1>D · Validation 比较报告</h1><p>2026-11-16 · 本地CPU · 五套配置 × 三个预算</p><p class="note">仅比较，不推荐配置、不冻结方案、未评价Test。主比较为4,862张Validation订单、1,458名历史客户；A1为主随机对照。覆盖指完整共现，不等于推荐准确率。</p><img src="data:image/png;base64,{encoded}">{tables}<h2>复算与边界</h2><p>C的6,660条Discovery系统计数及预算规则计数复算一致。Validation输出6,660条系统指标；95%区间按顾客配对bootstrap 2,000次。随机范围不是置信区间，多指标未作校正。完整说明、复现命令及文件索引见同目录validation_results.md。</p></html>'''
-    (ROOT/'docs/validation_results.html').write_text(page,encoding='utf-8')
+    page=f'''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>Validation 比较报告</title><style>body{{font:15px/1.6 "Microsoft YaHei",sans-serif;max-width:1250px;margin:40px auto;padding:0 24px;color:#183044}}h1,h2{{color:#1261a0}}table{{border-collapse:collapse;width:100%;font-size:13px}}td,th{{padding:8px;border-bottom:1px solid #dce5ed;text-align:right}}th{{background:#eef4f9}}img{{width:100%}}.note{{padding:18px;background:#eef4f9;border-radius:10px}}</style><h1>D · Validation 比较报告</h1><p>2026-11-16 · 本地CPU · 五套配置 × 三个预算</p><p class="note">这是初次 Validation 的阶段记录。主比较为4,862张Validation订单、1,458名历史客户；A1为主随机对照。覆盖指完整共现，不等于推荐准确率。</p><img src="data:image/png;base64,{encoded}">{tables}<h2>复算与边界</h2><p>C的6,660条Discovery系统计数及预算规则计数复算一致。Validation输出6,660条系统指标；95%区间按顾客配对bootstrap 2,000次。随机范围不是置信区间，多指标未作校正。完整说明、复现命令及文件索引见同目录validation_results.md。</p></html>'''
+    (ROOT/'docs/evaluation/validation/details/validation_results.html').write_text(page,encoding='utf-8')
     print('Saved comparison report, HTML and coverage figure.')
     print(main_table.to_string(index=False))
 

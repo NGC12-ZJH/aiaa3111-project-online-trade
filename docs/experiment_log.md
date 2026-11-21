@@ -43,11 +43,11 @@ Windows克隆自动换行会破坏冻结哈希：已将本地CSV恢复为Git原�
 
 ## 2026-11-18：统一未来质量验收补算
 
-用户要求先写一页共同验收方案，再利用既有计数补算质量。先保存 `configs/validation_quality.json` 和 `docs/validation_quality_plan.md`，方案SHA-256为407bf20cf4f303b19816fdc134efb41d78239b3d167c1ca3a464009a208dd5d9，再执行补算。
+用户要求先写一页共同验收方案，再利用既有计数补算质量。先保存 `configs/validation_quality.json` 和 `docs/evaluation/validation/methods.md`，方案SHA-256为407bf20cf4f303b19816fdc134efb41d78239b3d167c1ca3a464009a208dd5d9，再执行补算。
 
 所有P1–P5统一使用前件/联合订单和不同顾客数、顾客集中度、未来lift与置信度提升、三品类相对单前件增量及系统内BY校正。顾客聚类ratio-delta近似处理同人重复订单。限群原范围与共享全局范围分开计算质量，家族跨五配置/三预算去重；另做11套主/敏感性定义。新报告不覆盖旧Validation结果，不重新挖掘、不选参、不运行Test。既有Validation已被看过，明确记录为探索性扩展；验收后覆盖是同一期回顾性指标。
 
-输出与核验见 `results/tables/validation_quality/`、`docs/validation_quality_results.md`、`docs/validation_quality_methods.md`；质量明细留在忽略目录。程序核验不代替人工方法复核。
+输出与核验见 `results/tables/validation_quality/`、`docs/evaluation/validation/details/validation_quality_results.md`、`docs/evaluation/validation/methods.md`；质量明细留在忽略目录。程序核验不代替人工方法复核。
 
 ## 2026-11-18：D分支交付整理
 
@@ -55,13 +55,13 @@ Windows克隆自动换行会破坏冻结哈希：已将本地CSV恢复为Git原�
 
 ## 2026-11-18：G50＋L50去重补充比较
 
-用户提出合并全局与分群规则，按去重后实际K与全局前K公平比较。固定Discovery清单、共享使用、不补齐预算；五配置实际K为50/58/60/58/58。Codex辅助实现顾客配对区间、共同全局质量复核与独立集合核验。结果记录在 `docs/validation_hybrid_results.md`。这是既有Validation后的新增探索，无新选参、无Test、无自动推送。
+用户提出合并全局与分群规则，按去重后实际K与全局前K公平比较。固定Discovery清单、共享使用、不补齐预算；五配置实际K为50/58/60/58/58。Codex辅助实现顾客配对区间、共同全局质量复核与独立集合核验。结果记录在 `docs/evaluation/validation/details/validation_hybrid_results.md`。这是既有Validation后的新增探索，无新选参、无Test、无自动推送。
 
 ## 2026-11-19：群体差异与优势保持补算
 
 根据用户提供的增量评价框架，先记录 `configs/validation_specificity.json`（SHA-256 e9755379ad780f2d519619dac466583b7aeea4a2a1ce2a95487f999588a23461），再补算方向规则/组合名单差异、目标群相对群外和各其他群的效应、Discovery优势的Validation方向与证据保持，以及独有/净覆盖。加入S/A1/A2，共221个真实/随机系统。顾客聚类近似重新计算新对比检验和BY/BH，不沿用旧质量q值；不重新挖掘、不选参、不评价Test、不自动推送。
 
-49,934个原范围规则身份的两时期计数与源证据一致；6,630条原L/R系统覆盖复现；221个校正家族由SciPy独立核对；440个真实规则×时期的效应/区间由直接订单算法核对。23项测试通过，含重复顾客完整订单范围和热门程度混淆的针对性例子。主BY标准无单条未来群体优势通过，保留方向性信号及BH敏感性，不改变主标准追求正面结果。详见 `docs/validation_specificity_results.md`。
+49,934个原范围规则身份的两时期计数与源证据一致；6,630条原L/R系统覆盖复现；221个校正家族由SciPy独立核对；440个真实规则×时期的效应/区间由直接订单算法核对。23项测试通过，含重复顾客完整订单范围和热门程度混淆的针对性例子。主BY标准无单条未来群体优势通过，保留方向性信号及BH敏感性，不改变主标准追求正面结果。详见 `docs/evaluation/validation/details/validation_specificity_results.md`。
 
 ## 2026-11-19：补算结果发布整理
 
@@ -69,4 +69,4 @@ Windows克隆自动换行会破坏冻结哈希：已将本地CSV恢复为Git原�
 
 ## 2026-11-21：P5 冻结与正式 Test
 
-按用户确认，先将 P5／100、预算曲线、限群、A1 及 C 的排序清单哈希和各群名额提交为 `0bb4815`，再计算 Test。结果、区间、样本审计与已有脚本之外的逐订单交叉核验见 [Test 报告](test_results.md)。P3 混合仅作探索性分析。
+按用户确认，先将 P5／100、预算曲线、限群、A1 及 C 的排序清单哈希和各群名额提交为 `0bb4815`，再计算 Test。结果、区间、样本审计与已有脚本之外的逐订单交叉核验见 [Test 报告](evaluation/test/README.md)。P3 混合仅作探索性分析。

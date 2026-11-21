@@ -47,7 +47,7 @@ def main():
 
 '''+ '\n'.join(lines)+f'''
 
-![合并与同预算比较](../results/figures/validation_hybrid/hybrid_comparison.png)
+![合并与同预算比较](../../../../results/figures/validation_hybrid/hybrid_comparison.png)
 
 每个配置内部预算K一致；不同配置的K不同，不能仅凭表中绝对覆盖宣布跨配置最优。区间按顾客整簇配对bootstrap 2,000次、种子3112，五个配置未做多重比较校正。
 
@@ -79,7 +79,7 @@ python -X utf8 scripts/report_validation_hybrid.py
 
 原始15组系统的完整覆盖和可靠覆盖已通过直接集合匹配独立核验。完整测试含本批次规则去重、匹配预算、无新增规则与新规则不保证更好等语义例子。协议中的push_to_github=false记录计算当时不自动推送的约定，发布由用户后续授权，不是当前分支上传状态。
 '''
-    (ROOT/'docs/validation_hybrid_results.md').write_bytes(text.encode('utf-8'))
+    (ROOT/'docs/evaluation/validation/details/validation_hybrid_results.md').write_bytes(text.encode('utf-8'))
     print('Rendered hybrid comparison report and figure from saved results.')
 
 
