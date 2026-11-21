@@ -1,0 +1,20 @@
+{
+  "experiment": "E9",
+  "test_read": false,
+  "protocol_sha256": "9b56aa9f0f238de3814e379583b6e3e76c45e6fa401324121cd2c363cace8ca4",
+  "common_sha256": "9963c4adc8974d39cd5b9e1d265a0f9929f32047681a595ed82a02a9052e948f",
+  "git_head": "bd1b03ea7e8e02056168ee02af4b21a34e9a50df",
+  "python": "3.11.15",
+  "numpy": "2.4.4",
+  "pandas": "3.0.2",
+  "outputs": {
+    "discovery_list_description.csv": "44c07798ccaa94004e65a6f46149e5baaee52b9e8d0f1985bf5271762cbd0767",
+    "interpretation.csv": "8f540473acd94d7c5b344bd297ad2bb217ca92023a40ac9229dc9b7e163c27a7",
+    "per_group.csv": "ef3534e60992359f0aef801140af531bcb6123a5324f415cf208556fba0b4f7d",
+    "real_lists.csv": "09fca2e8b663411aa83d0e622b974e34aefe68113e4e7927ed23d9fb0010ca11",
+    "summary.csv": "f38356bb18d4d2b5407c749e80de0d13a09f715acb883f392c8438d6e7dc85ef",
+    "system_metrics.csv": "d6117d389530a723a47d36c782899ea3eff2f60901dc69d7fd0c5342db7f8d3c"
+  },
+  "systems": 222,
+  "elapsed_seconds": 17.8
+}

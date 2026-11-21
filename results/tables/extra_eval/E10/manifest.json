@@ -1,0 +1,25 @@
+{
+  "experiment": "E10",
+  "test_read": false,
+  "protocol_sha256": "a7829a57804a88fedfe9ca577a602ff77bbe870ddd0414abb92c61bc2e3e0d19",
+  "common_sha256": "9963c4adc8974d39cd5b9e1d265a0f9929f32047681a595ed82a02a9052e948f",
+  "git_head": "bd1b03ea7e8e02056168ee02af4b21a34e9a50df",
+  "python": "3.11.15",
+  "numpy": "2.4.4",
+  "pandas": "3.0.2",
+  "outputs": {
+    "L_G_overlap.csv": "fe327500b0a139d3d7a3925c1db83668a44c2e19a19a9ec9eefb1ab8a6417d67",
+    "home_advantage.csv": "2107fcc7f933877a62ce9026637977793c4d9ac0d952b2db1cfbe9b81a6ae0b9",
+    "interpretation.csv": "fc2a9358cb3949d99d4c0c2ecf5a1c18ea440e97540ced178f02b5b3e79c3961",
+    "real_lists.csv": "71c7447741d1668d92bbcf07d20bf6cb72f35bbb8cf690a0f258b49c4b8acff7",
+    "summary.csv": "2e389876cbbec7a35e042b367e82b40df3f3670f9ff026469c4205a23bdf3ba7",
+    "system_metrics.csv": "a18cf5a0a6fc265b6a1dc7a0f5acbcd414ec665bcef6f3d32069e3a8350631bb"
+  },
+  "systems": 222,
+  "elapsed_seconds": 21.2,
+  "checks": {
+    "V1_slots_equal_budget": true,
+    "shared_variants_fill_budget": true,
+    "V1_validation_matches_D": "1332 system rows, covered orders identical"
+  }
+}

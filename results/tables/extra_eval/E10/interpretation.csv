@@ -1,0 +1,12 @@
+rule,flow,budget,V1_gap_pp,V3_gap_pp,ratio,passes,V3_vs_V4_pp,home_advantage_pp
+gap_mainly_duplicates,restricted,20,-13.944878650761,-10.941999177293289,0.7846607669616517,False,,
+gap_mainly_duplicates,restricted,50,-16.721513780337315,-12.23776223776224,0.7318573185731857,False,,
+gap_mainly_duplicates,restricted,100,-11.990950226244346,-10.016454134101194,0.8353344768439107,False,,
+gap_mainly_duplicates,shared,20,-9.37885643767996,2.5503907856849084,0.27192982456140424,True,,
+gap_mainly_duplicates,shared,50,-8.720691073632258,-0.12340600575894145,0.014150943396225774,True,,
+gap_mainly_duplicates,shared,100,-4.4220485396956,-0.3085150143973592,0.06976744186046324,True,,
+attribution_irrelevant,shared,20,,,,True,0.08227067050596837,
+attribution_irrelevant,shared,50,,,,True,0.2879473467708782,
+attribution_irrelevant,shared,100,,,,True,0.4524886877828149,
+discovery_overstates_G,restricted,100,,,,False,,-1.3939551458029165
+discovery_overstates_G,shared,100,,,,False,,-0.08751855698053745
