@@ -110,6 +110,34 @@
     "repeats": 20,
     "freeze_before_discovery": true
   },
+  "activity_matched_control": {
+    "status": "added_2026-11-14_discovery_only",
+    "purpose": "test whether real RFM groups differ more than random groups with the same activity mix, not only the same head count",
+    "assignment_unit": "customer_id",
+    "method": "shuffle the real cluster labels only inside each activity stratum, so every stratum keeps the real label counts",
+    "seed": 1000,
+    "repeats": 100,
+    "controls": {
+      "A1_profile_frequency": {
+        "role": "primary (pre-planned in HANDOFF)",
+        "activity": "number of profile-period orders",
+        "strata_upper_bounds": [1, 2, 4, 9, null],
+        "strata_labels": ["1", "2", "3-4", "5-9", "10+"]
+      },
+      "A2_discovery_baskets": {
+        "role": "supplementary: matches the number of Discovery baskets per group; uses Discovery activity only to build the null groups, never the clustering",
+        "activity": "number of eligible Discovery baskets",
+        "strata_upper_bounds": [0, 1, 2, 4, 9, null],
+        "strata_labels": ["0", "1", "2", "3-4", "5-9", "10+"]
+      }
+    },
+    "comparison": {
+      "category_pool": "all 2- and 3-category combinations with at least 20 joint Discovery baskets overall (independent of any grouping)",
+      "difference_metrics": ["group_vs_rest_bray_curtis", "between_group_bray_curtis"],
+      "fixed_budget": "C strict_increment5pp config (support>=3%, joint/antecedent>=20, confidence>=50%, lift>=1.5, 3-category increment>=5pp), budgets 20/50/100, largest-remainder quota by Discovery baskets",
+      "empirical_p": "(1 + #random >= real) / (1 + repeats), one-sided"
+    }
+  },
   "eligibility": {
     "profile_customer_definition": "identified customer with at least one valid positive-price profile order",
     "main_comparison_requires_valid_basket": true,

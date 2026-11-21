@@ -1,0 +1,15 @@
+check,ours,C,match
+G strict rules,1116.0,1116.0,True
+C0 strict rules,2371.0,2371.0,True
+C1 strict rules,856.0,856.0,True
+C2 strict rules,1500.0,1500.0,True
+G coverage B20,0.550592,0.550592,True
+G coverage B50,0.632496,0.632496,True
+G coverage B100,0.661215,0.661215,True
+L coverage B20,0.387847,0.387847,True
+L coverage B50,0.521207,0.521207,True
+L coverage B100,0.593139,0.593139,True
+S coverage median B20,0.3756,0.3756,True
+S coverage median B50,0.5117,0.5117,True
+S coverage median B100,0.5915,0.5915,True
+L local-not-global share,0.683548,0.683548,True
