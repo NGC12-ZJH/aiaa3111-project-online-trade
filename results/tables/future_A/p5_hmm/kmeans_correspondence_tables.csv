@@ -1,0 +1,7 @@
+,comparison,HMM_state0,HMM_state1,HMM_state2
+Kmeans_C0,frozen_vs_state_m6,699,1,0
+Kmeans_C1,frozen_vs_state_m6,1261,2,0
+Kmeans_C2,frozen_vs_state_m6,337,355,29
+Kmeans_C0,P1_vs_state_m12,1052,1,0
+Kmeans_C1,P1_vs_state_m12,821,8,0
+Kmeans_C2,P1_vs_state_m12,305,454,43

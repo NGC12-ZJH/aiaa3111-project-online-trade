@@ -1,7 +1,7 @@
 # 未来工作 A：从"静态标签"到"滚动更新的标签"
 
 > B（Jinghan ZHAO）· 初稿 2026-11-21，**v2 2026-11-21（读文献、核对代码后细化）** · 分支 `b/extra-evaluation`
-> 状态：**前置检查 P0–P4 已完成（2026-11-21）**，结果见 [future_work_A_results.md](future_work_A_results.md)。按登记的决策路线，结论是**停止**：标签变化很快，但更新标签对规则覆盖率没有帮助，第 6 节不做。P5 未做。
+> 状态：**已执行**，结果见 [future_work_A_results.md](future_work_A_results.md)。前置检查 P0–P4（2026-11-21）的登记结论是**停止**；之后应 B 的要求又做了第 6 节第 2 轮和第 8 节 P5（2026-11-22，均为探索性，结论不变）：标签更新对规则覆盖率没有帮助，硬标签的换群大多是 R 边界上的时点波动。第 3 轮（Test）未做。
 > 姊妹文档：[未来工作 B：RFM + 采购形态](future_work_B_purchase_pattern.md)。背景结果见 [补充评价 E10/E9/E5](extra_evaluation.md)。
 
 **v2 相对初稿的主要修改**

@@ -1,0 +1,38 @@
+{
+  "protocol": "configs/future_A/round2.json",
+  "protocol_sha256": "fa031f31af2f18fb1f1123a9c095af512bf7f528151ba24f704efe083f295da5",
+  "test_read": false,
+  "git_head": "55329f0a68de8121f1dd3325d2dbfe38326f31a3",
+  "python": "3.11.15",
+  "numpy": "2.4.4",
+  "pandas": "3.0.2",
+  "systems": 203,
+  "a2p_strata_sizes": {
+    "0": 756,
+    "1": 571,
+    "10+": 116,
+    "2": 414,
+    "3-4": 469,
+    "5-9": 358
+  },
+  "checks": {
+    "new_label_sizes": [
+      1053,
+      829,
+      802
+    ]
+  },
+  "elapsed_seconds": 47.4,
+  "outputs": {
+    "E10_summary.csv": "e40c3594e8465b35ffc035f991ad66ca9245ef3e2f4e2b765ea48b96e568fa83",
+    "E10_system_metrics.csv": "c053d0b0959a12e9218f372c8a439adad17e3e9882943274a2935aaeb24b663a",
+    "E5_gain_by_system.csv": "8834a0884d0dc517b6c794776147b40e22e215b802402a747a2047571636cdf6",
+    "E5_retention_by_system.csv": "67cb9a1a5511aea67ee804195036f056b44950c066b894a625c308da84b943c1",
+    "E5_summary.csv": "a6b0d66c968472962fe27dccad5fad48603a40557a315c0a42a91f111d0ccf65",
+    "E9_summary.csv": "3cf110e77de3887ef9c15bb37e3ab1996e7105bd99a71f6b0cf24284a07b5f61",
+    "E9_system_metrics.csv": "311287d84d5e2688e225fd6ce20edd81ac2ea29a93a1c3010dc1e4f41d444887",
+    "list_description.csv": "6af8d04f3cefb60318402e98f37de2e1f6e374b5fa26f40e8591789f289be3a9",
+    "lists_B100.csv": "6db2eab26ff7c772417f85818f3efe8af696f78e5011e1e7a214d80b02f0bee9",
+    "decision.json": "1bed8c98e1ecc4341ed750ae3e64f520285ef15179a91f03a7124a8ad0139323"
+  }
+}

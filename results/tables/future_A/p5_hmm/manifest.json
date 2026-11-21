@@ -1,0 +1,20 @@
+{
+  "protocol": "configs/future_A/p5_hmm.json",
+  "protocol_sha256": "fa9c0d620b933f03a9c6ceabe41d441f489c37acf62ee599261234442a854588",
+  "test_read": false,
+  "git_head": "55329f0a68de8121f1dd3325d2dbfe38326f31a3",
+  "python": "3.11.15",
+  "numpy": "2.4.4",
+  "pandas": "3.0.2",
+  "simulation_check_passed": true,
+  "elapsed_seconds": 229.3,
+  "outputs": {
+    "M1_K3_persistence.csv": "19d53eeb8dbdc7fdef4bc4182e5df057d0dbf442b10f0828513d9a50a0d9f49f",
+    "M1_K3_state_m6_to_m12.csv": "498ac4286be2502069349ff406149ac6fa1565169dbdddc8d54096933a1aee93",
+    "kmeans_correspondence.csv": "b21f7c243dd2c079de24472ec028b78e5fc371167802e22768a4e3b0106e7f6a",
+    "kmeans_correspondence_tables.csv": "ce1102be452de09d4c508ea5ef726bc0eb3e7f1e0fb7b164a3a691649f4550b7",
+    "models.csv": "09e9345cbb6c5984a5f52ee1e349e8a22765803c4852716014ebe9657a851fad",
+    "switching.csv": "05577e3dc01408e7d3be57c3d378bd66ec483ff5c62794d87cd6d1efd8b2bf66",
+    "parameters.json": "21852df62d7158ea07e72d175345c494a442784f0606aa1cb5f9139b6047d350"
+  }
+}
