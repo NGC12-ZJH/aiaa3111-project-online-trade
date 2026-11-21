@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "freeze_commit": "0bb4815333d2d3d774862fe3e55b3ed6f700a0af",
+  "freeze_sha256": "4efb49b8fe81dff7b12965c5ced4b48fffba0c02d04b35369ed3d317e587c76a",
+  "test_evaluated": true,
+  "sample": {
+    "period": "test",
+    "all_valid_baskets": 10890,
+    "eligible_baskets": 5730,
+    "eligible_customers": 1510,
+    "eligible_share": 0.5261707988980716,
+    "anonymous_baskets": 628,
+    "non_profile_baskets": 5160,
+    "empty_l2_eligible_baskets": 5,
+    "single_l2_eligible_baskets": 650
+  },
+  "systems": 1332,
+  "output_hashes": {
+    "GL_rule_quality.csv": "82cf17a65639dedcb40e4d9a62892ea2179bcaf4d0ba7265fd14015ff805e18a",
+    "non_profile_global_fallback.csv": "5a927368c21dd81c10f43180f5db70210ea75d0f5da640908ce5f023317320fc",
+    "P3_hybrid_exploratory.csv": "bbfc26b1c768065479b872ed811ded59bdec3c2a2e8208a1bd3b2d754c512710",
+    "paired_customer_intervals.csv": "a48e4c1042e24461d8e7095bf128d9365e060af8ff10c89f59079fb5767e5fa6",
+    "random_comparisons.csv": "13c7a33fe2e363eb3b6a8f0489681a91432866be274097b4260dd198d9179918",
+    "random_quality_comparisons.csv": "32630d9dd9a9bbc827e5c3bd25efda928d466729d71159df80441ea64c7b27a5",
+    "sample_audit.csv": "5541ae6f660b5d4acd0c30cc80181e9a6b93068cb62486f247474715531f2794",
+    "system_metrics.csv": "51e9ffc09113251a1ae17b762124cd639517ddfc856e0eea381e280abeef07b3",
+    "system_quality.csv": "2329cef2d5edefb8c06baa71707f1fd4af185a542b45cf773045e5b47c74e460"
+  }
+}

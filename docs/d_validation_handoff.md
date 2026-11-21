@@ -1,5 +1,9 @@
 # D：Validation 交付与阅读入口
 
+## 最终 Test 交付（2026-11-21）
+
+正式主设置采用 P5／100，20／50／100 预算曲线完整保留。见 [Test 结果](test_results.md)、[冻结协议](../configs/test_frozen.json) 和 [Test 原始汇总](../results/tables/test/)。下文保留交付时的 Validation 阶段记录。
+
 更新：2026-11-19 · 分支：`d/evaluation` · 负责人：Chenrui XIANG。
 
 ## 当前交付与阅读顺序

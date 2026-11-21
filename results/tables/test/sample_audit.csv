@@ -1,0 +1,2 @@
+period,all_valid_baskets,eligible_baskets,eligible_customers,eligible_share,anonymous_baskets,non_profile_baskets,empty_l2_eligible_baskets,single_l2_eligible_baskets
+test,10890,5730,1510,0.5261707988980716,628,5160,5,650
