@@ -69,6 +69,15 @@
     "The A2 random controls (2026-11-15) were stratified by each Profile customer's Discovery eligible-basket count, so the distribution of Discovery basket counts (including customers with zero) had been seen; no Discovery-window RFM, label or transition had been computed.",
     "No P0-P4 quantity had been computed."
   ],
+  "amendments": [
+    {
+      "date": "2026-11-21",
+      "step": "P0_reconstruction.centroids",
+      "before_any_P1_P4_quantity": true,
+      "finding": "with centroids = per-cluster means, nearest-centroid reassignment reproduced 2,683 of 2,684 frozen labels; customer 17907 (R 83.5 days, F 1, M 291.76) lies on the C0/C1 boundary (squared distances 0.981 vs 0.973). sklearn KMeans stops at a tolerance, so its final centres differ slightly from the member means.",
+      "change": "centroids = cluster_centers_ of KMeans(n_clusters=3, n_init=10, random_state=42) refit on the same standardized Profile features (the original procedure, which reproduces all 2,684 frozen labels in this environment), each fitted cluster mapped to the frozen label it shares all members with. The 100% reproduction check is unchanged; the member-mean centroids are kept in the output for reference."
+    }
+  ],
   "outputs": "results/tables/future_A/precheck/; write-up docs/future_work_A_results.md",
   "entry_point": "python scripts/run_future_a.py precheck"
 }
