@@ -1,0 +1,89 @@
+{
+  "status": "registered_before_computation",
+  "registered_date": "2026-11-21",
+  "registered_by": "B (Jinghan ZHAO)",
+  "plan_document": "docs/future_work_B_purchase_pattern.md (refined version), section 4",
+  "nature": "exploratory pre-check for future work B (RFM + purchase form); post-hoc relative to D's frozen Test; never replaces any registered result",
+  "known_information_before_registration": [
+    "B's frozen K-means K=3 labels: cluster 0/1/2 = 700/1,263/721 customers; cluster 2 is the high-value group (C2, ~27% of customers, ~75% of Profile sales)",
+    "category-level results: RFM groups differ from random groups mainly through C0; C2 does not differ from activity-matched random groups",
+    "the hypothesis 'many within-category variant rules come from wholesalers buying only one product' was already refuted with our data",
+    "Chen et al. (2012) report ~18 lines per invoice in 2011 and suggest many organisational customers; UCI describes many customers as wholesalers",
+    "no quantity, unit-price or order-time distribution of this dataset was inspected for this registration"
+  ],
+  "execution_order": "check1 -> check2 -> check3; stop at the first check that fails its rule (later checks are not computed)",
+  "data": {
+    "snapshot": "A snapshot 2ae672b7ea6edb7f5e1561b6a64823004dea833e, read through git show",
+    "lines": "data/processed/A_data_preparation/clean_transactions.csv.gz, rows with split == 'profile', is_valid_basket_item == 1 and customer_id in the population; a basket is an invoice_id",
+    "discovery_baskets": "data/processed/A_data_preparation/baskets.csv.gz, split == 'discovery' and is_eligible_for_main_comparison == 1 (the 7,521 baskets used by C and D); check3 only",
+    "profile_baskets": "same file, split == 'profile' and is_eligible_for_main_comparison == 1; only used for the check3 ceiling",
+    "population": "the 2,684 Profile customers of B's frozen labels (data/processed/B_customer_clustering/customer_clusters.csv in the snapshot)",
+    "taxonomy": "data/taxonomy/item_taxonomy_v1.csv (frozen); l2_id, 'other' dropped, one count per category per basket; only used for the check3 target and ceiling",
+    "no_validation_or_test": "no Validation or Test rows are read; the code asserts that every line used has split in {profile} and every basket in {profile, discovery}"
+  },
+  "check1_bulk_buying_exists": {
+    "pack_size": "pack(i) = most frequent quantity of item i over Profile lines (ties -> smaller quantity), defined only for items with >= 20 Profile lines",
+    "pack_line_primary": "line of an item with defined pack(i) >= 2, quantity >= pack(i) and quantity % pack(i) == 0",
+    "pack_line_denominator": "all Profile lines of items with defined pack(i) (lines of items with pack(i) == 1 count as non-pack)",
+    "pack_line_generic_descriptive": "quantity >= 6 and quantity % 6 == 0 (item-independent version; descriptive only)",
+    "customer_pack_share": "share of a customer's lines (in the primary denominator) that are pack lines; customers with >= 5 such lines",
+    "descriptives": [
+      "top 20 quantities with counts and shares",
+      "distribution of pack(i) over items",
+      "distinct items per basket: quantiles 10/25/50/75/90 and histogram bins 1, 2-5, 6-10, 11-20, 21-50, 51+",
+      "share of orders placed Monday-Friday with hour in [9, 17)",
+      "tier pricing: for each item x calendar month with >= 10 lines, Spearman rho between quantity and unit_price; report median rho and the share of item-months with rho < 0"
+    ],
+    "pass_rule": {
+      "P1_1": "pack lines >= 30% of the primary denominator",
+      "P1_2": "share of customers (>= 5 lines) with customer_pack_share >= 0.5 lies in [0.20, 0.80]",
+      "P1_3": "interquartile range of customer_pack_share >= 0.20",
+      "decision": "continue only if P1_1, P1_2 and P1_3 all hold"
+    },
+    "tier_pricing_rule": "if median item-month rho <= -0.30, check2/check3 replace the unit-price feature by the relative price unit_price / median unit_price of the same item in the same month; otherwise raw unit price is used"
+  },
+  "customer_form_features": {
+    "basket_size": "log1p(mean over the customer's Profile baskets of distinct stock codes)",
+    "qty_per_line": "log1p(median quantity over the customer's lines)",
+    "pack_share": "customer_pack_share from check1 (customers with < 5 primary-denominator lines get the population median)",
+    "unit_price": "median unit price (or relative price, see tier_pricing_rule) over the customer's lines, capped at the population 95% quantile and divided by it",
+    "business_hours": "share of the customer's Profile baskets placed Monday-Friday with hour in [9, 17)"
+  },
+  "check2_redundancy_with_rfm": {
+    "form_type": "bulk if pack_share >= 0.5 else scattered (customers with < 5 lines excluded from the cross-tab)",
+    "outputs": [
+      "cross-tab form_type x frozen cluster (counts and row/column shares)",
+      "ARI and Cramer's V between form_type and cluster",
+      "purity in both directions (Sokol & Holy 2021, eq. 13)",
+      "for each of the 5 form features: in-sample OLS R^2 on standardized [R, log1p(F), log1p(M)] (B's feature_matrix)",
+      "mean of each form feature by cluster"
+    ],
+    "stop_rule": {
+      "S2_a": ">= 80% of bulk customers are in cluster 2 AND >= 80% of scattered customers are in clusters 0/1",
+      "S2_b": "R^2 >= 0.60 for each of basket_size, qty_per_line and pack_share",
+      "decision": "stop if S2_a or S2_b holds"
+    }
+  },
+  "check3_form_predicts_categories": {
+    "population": "population customers with >= 3 eligible Discovery baskets",
+    "target": "for each l2 category (excluding 'other'), share of the customer's eligible Discovery baskets that contain it",
+    "feature_groups": {
+      "G1_scale": "log1p(number of Profile baskets from lines), basket_size",
+      "G2_scale_rfm": "G1 + standardized [R, log1p(F), log1p(M)]",
+      "G3_scale_rfm_form": "G2 + qty_per_line, pack_share, unit_price, business_hours",
+      "G4_ceiling": "G3 + the customer's Profile category profile (same definition as target, on eligible Profile baskets; zeros if none). Uses category content: reference ceiling only"
+    },
+    "models": {
+      "ridge": "StandardScaler + multi-output Ridge; alpha chosen inside each training fold by RidgeCV over [0.1, 1, 10, 100, 1000] (5-fold, mean squared error)",
+      "random_forest": "RandomForestRegressor(n_estimators=200, min_samples_leaf=5, max_features=0.5, random_state=0, n_jobs=-1), multi-output"
+    },
+    "cross_validation": "KFold(5, shuffle=True, random_state=20261122); identical folds for every group and model; predictions clipped to [0, 1]",
+    "metric": "mean over customers of Bray-Curtis(pred, actual) = sum|p-a| / sum(p+a)",
+    "statistic": "gap_closed = (BC_G2 - BC_G3) / (BC_G2 - BC_G4), per model",
+    "permutation_null": "within quintile bins of basket_size, permute the 4 added form features jointly (rows kept together) across customers, then recompute BC_G3 and gap_closed; ridge 200 repeats, random forest 100 repeats; seeds 0..n-1",
+    "descriptive_interval": "paired customer bootstrap (2000 repeats, seed 20261121) of BC_G2 - BC_G3, per model",
+    "pass_rule": "for BOTH models: gap_closed >= 0.10 AND gap_closed > 95% quantile of its permutation distribution",
+    "decision": "if it fails, the formal experiment (plan section 5) is not run"
+  },
+  "outputs": "results/tables/future_B/precheck/ (CSV/JSON) and a results section added to the plan document"
+}
