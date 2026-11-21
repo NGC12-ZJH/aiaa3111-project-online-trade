@@ -1,0 +1,55 @@
+{
+  "status": "registered_before_computation",
+  "registered_date": "2026-11-22",
+  "registered_by": "B (Jinghan ZHAO)",
+  "plan_document": "docs/future_work_B_purchase_pattern.md, section 12",
+  "nature": "EXPLORATORY follow-up of the formal experiment (experiment.json). Four alternative ways to compare segmented rule lists with the global list. The motivating lead (F6 beats G at budget 20 on Validation) was found on Validation, so Validation results here are DESCRIPTIVE ONLY. A confirmatory-style check is only possible on Test, which requires a separate explicit user decision and a committed configs/future_B/FREEZE.json.",
+  "known_information_before_registration": [
+    "all results of experiment.json on Discovery/Validation (docs section 11), in particular: E9 Validation F6 - G = +4.03 pp at B=20 (R1 p=0.030), +0.02 at B=50, -0.88 at B=100; F ties G at all budgets",
+    "per-group E9 Validation coverage of F and F6 own lists vs G's list at B=20 and B=100 (computed descriptively on 2026-11-22): F6 group 2-0 (74 customers) G covers 47% at B=100, own list +6.5 pp at B=20",
+    "Validation coverage by order size: 1-5 items ~24%, 6-15 ~81%, 16-30 ~98%, 31+ ~100%",
+    "D: future mean confidence of deployed rules G 0.532 vs RFM L 0.527 (Test, RFM groups)",
+    "nothing was computed for budgets 5 or 10, for the leave-one-out metric, for worst-group gains of random controls, or for revenue weighting"
+  ],
+  "frozen_inputs": {
+    "labels": "results/tables/future_B/experiment/labels.csv (sha256 a129b88e27de7b7f2ee09e32e501dbb5d7304fb518bb0ed0022b3ecfb518d892), columns rfm, F, F6",
+    "controls": "regenerated exactly as experiment.json: F -> S, A1, B1, B2; F6 -> S, A1, R1; seeds 1000-1099",
+    "rules": "P5 (configs/extra_eval/common.json), Discovery counts, E9 per-group lists with E10 V3 combination de-duplication (extra_eval.e9.build)",
+    "systems": "G, L (RFM, reference only), F, F6 and all control seeds"
+  },
+  "main_target": "F6 (the lead). F is reported alongside with its controls; L is a reference without controls.",
+  "budgets": [5, 10, 20, 50, 100],
+  "small_budgets": [5, 10, 20],
+  "C1_small_budget_curve": {
+    "question": "With only a few recommendation slots, are segmented lists better than the global list?",
+    "metric": "E9 order coverage (restricted: each customer uses own group's list of B combinations) at every budget; summary = mean coverage over the small budgets 5, 10, 20",
+    "primary": "H1: F6 small-budget mean minus G, paired customer bootstrap (2000, seed 20261121) 95% interval; and F6 vs the R1 distribution (empirical p)"
+  },
+  "C2_leave_one_out": {
+    "question": "Hide one category of an order: do the rules guess it?",
+    "cases": "every (order, category c) with the order's mapped l2 set S of size >= 2 ('other' dropped)",
+    "rules_used": "the directed P5 rules whose combination is in the customer's group list at budget B (B = 100 primary, B = 20 secondary); score of a rule = its Discovery confidence in its own scope",
+    "prediction": "context = S minus c; a rule fires if its antecedent is a subset of the context and its consequent is not in the context; each candidate consequent gets the maximum score of its fired rules; candidates are ranked by score desc, then by Discovery joint count desc, then by category index asc",
+    "hit_at_k": "1 if c is among the first k candidates; cases with no fired rule are misses; k = 3 primary, also 1 and 5",
+    "summary": "mean hit over cases (case-weighted) and customer-macro mean",
+    "controls": "to keep runtime bounded: F with A1 and B2 only, F6 with A1 and R1 only (100 seeds each)",
+    "primary": "H2: F6 hit@3 at B=100 minus G, paired customer bootstrap interval; F6 vs R1"
+  },
+  "C3_worst_group": {
+    "question": "Does segmentation help the group that the global list serves worst?",
+    "metric": "for a system with groups g: own(g) = coverage of g's Validation orders by g's own list, glob(g) = coverage of the same orders by G's list; g* = group with the lowest glob(g); worst_gain = own(g*) - glob(g*); equal_gain = unweighted mean over groups of own(g) - glob(g)",
+    "budgets": "all five; summary over small budgets = mean of worst_gain over 5, 10, 20",
+    "primary": "H3: F6 worst_gain small-budget mean vs the R1 distribution (empirical p); also its value"
+  },
+  "C4_revenue_weighted": {
+    "question": "If orders are weighted by money, are segmented lists better?",
+    "metric": "share of Validation gross_purchase_amount in covered orders (E9 lists), every budget; summary = mean over 5, 10, 20",
+    "interval": "paired customer bootstrap of the weighted share difference (same resampling as C1)",
+    "primary": "H4: F6 revenue-weighted small-budget mean minus G, interval; F6 vs R1"
+  },
+  "reading_rules": {
+    "validation": "descriptive only. A comparison 'looks favourable' if the F6 - G interval is above 0 (H1, H2, H4) or worst_gain > 0 (H3), AND F6 is above the R1 95th percentile (empirical p <= 0.05).",
+    "test_if_run": "the same four statistics, Holm correction over H1-H4 on the empirical p versus R1; a hypothesis is supported only if its interval (H1, H2, H4) is above 0 / worst_gain > 0 (H3) AND its Holm-adjusted p <= 0.05. All four are reported whatever the outcome."
+  },
+  "outputs": "results/tables/future_B/comparisons/"
+}
