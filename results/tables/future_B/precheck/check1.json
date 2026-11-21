@@ -1,0 +1,171 @@
+{
+  "n_lines": 161050,
+  "n_baskets": 7738,
+  "n_customers": 2684,
+  "items_with_pack": 1718,
+  "denominator_lines": 147514,
+  "denominator_share_of_lines": 0.9159515678360758,
+  "pack_size_distribution": {
+    "12": 443,
+    "1": 392,
+    "6": 251,
+    "2": 148,
+    "4": 102,
+    "24": 86,
+    "10": 68,
+    "3": 66,
+    "8": 57,
+    "48": 27,
+    "25": 21,
+    "16": 19,
+    "5": 11,
+    "36": 9,
+    "20": 5
+  },
+  "pack_line_share": 0.5196116978727443,
+  "generic_pack_line_share": 0.3646321018317293,
+  "customers_with_5_lines": 2474,
+  "customer_pack_share_quantiles": {
+    "0.1": 0.09090909090909091,
+    "0.25": 0.25,
+    "0.5": 0.8,
+    "0.75": 0.9090909090909091,
+    "0.9": 0.972747747747748
+  },
+  "share_customers_pack_ge_half": 0.6471301535974131,
+  "customer_pack_share_iqr": 0.6590909090909091,
+  "basket_items_quantiles": {
+    "0.1": 2.0,
+    "0.25": 7.0,
+    "0.5": 16.0,
+    "0.75": 27.0,
+    "0.9": 45.0
+  },
+  "basket_items_bins": {
+    "1": 0.07211165675885242,
+    "2-5": 0.132333936417679,
+    "6-10": 0.15055569914706643,
+    "11-20": 0.27616955285603517,
+    "21-50": 0.2937451537865081,
+    "51+": 0.07508400103385887
+  },
+  "business_hours_order_share": 0.7787542000516929,
+  "tier_pricing": {
+    "item_months": 3057,
+    "median_rho": -0.4869327391646222,
+    "share_rho_negative": 0.9842983316977428
+  },
+  "top_quantities": [
+    {
+      "quantity": 1,
+      "lines": 29713,
+      "share": 0.18449549829245576
+    },
+    {
+      "quantity": 2,
+      "lines": 23604,
+      "share": 0.146563179136914
+    },
+    {
+      "quantity": 12,
+      "lines": 23148,
+      "share": 0.1437317603228811
+    },
+    {
+      "quantity": 6,
+      "lines": 17778,
+      "share": 0.1103880782365725
+    },
+    {
+      "quantity": 4,
+      "lines": 11918,
+      "share": 0.07400186277553555
+    },
+    {
+      "quantity": 3,
+      "lines": 11704,
+      "share": 0.07267308289351133
+    },
+    {
+      "quantity": 24,
+      "lines": 8791,
+      "share": 0.05458553244334058
+    },
+    {
+      "quantity": 10,
+      "lines": 7387,
+      "share": 0.0458677429369761
+    },
+    {
+      "quantity": 8,
+      "lines": 5071,
+      "share": 0.03148711580254579
+    },
+    {
+      "quantity": 5,
+      "lines": 3564,
+      "share": 0.02212977336230984
+    },
+    {
+      "quantity": 48,
+      "lines": 2559,
+      "share": 0.015889475318224155
+    },
+    {
+      "quantity": 25,
+      "lines": 1759,
+      "share": 0.010922073890096244
+    },
+    {
+      "quantity": 16,
+      "lines": 1487,
+      "share": 0.009233157404532753
+    },
+    {
+      "quantity": 20,
+      "lines": 1482,
+      "share": 0.009202111145606954
+    },
+    {
+      "quantity": 36,
+      "lines": 1304,
+      "share": 0.008096864327848494
+    },
+    {
+      "quantity": 72,
+      "lines": 778,
+      "share": 0.004830797888854393
+    },
+    {
+      "quantity": 18,
+      "lines": 751,
+      "share": 0.004663148090655076
+    },
+    {
+      "quantity": 9,
+      "lines": 673,
+      "share": 0.004178826451412604
+    },
+    {
+      "quantity": 96,
+      "lines": 673,
+      "share": 0.004178826451412604
+    },
+    {
+      "quantity": 100,
+      "lines": 647,
+      "share": 0.004017385904998448
+    }
+  ],
+  "P1_1": true,
+  "P1_2": true,
+  "P1_3": true,
+  "pass": true,
+  "use_relative_price": true,
+  "rule_text": {
+    "P1_1": "pack lines >= 30% of the primary denominator",
+    "P1_2": "share of customers (>= 5 lines) with customer_pack_share >= 0.5 lies in [0.20, 0.80]",
+    "P1_3": "interquartile range of customer_pack_share >= 0.20",
+    "decision": "continue only if P1_1, P1_2 and P1_3 all hold"
+  }
+}

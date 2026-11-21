@@ -1,0 +1,66 @@
+{
+  "n_customers_crosstab": 2474,
+  "crosstab_counts": {
+    "bulk": {
+      "0": 346,
+      "1": 781,
+      "2": 474
+    },
+    "scattered": {
+      "0": 242,
+      "1": 385,
+      "2": 246
+    }
+  },
+  "crosstab_row_shares": {
+    "bulk": {
+      "0": 0.2161149281698938,
+      "1": 0.48782011242973145,
+      "2": 0.29606495940037475
+    },
+    "scattered": {
+      "0": 0.27720504009163804,
+      "1": 0.44100801832760594,
+      "2": 0.281786941580756
+    }
+  },
+  "ARI": 0.008184475146673581,
+  "cramers_v": 0.06933529243397582,
+  "purity_form_given_cluster": 0.6471301535974131,
+  "purity_cluster_given_form": 0.47130153597413094,
+  "bulk_share_in_C2": 0.29606495940037475,
+  "scattered_share_in_C0_C1": 0.718213058419244,
+  "R2_on_RFM": {
+    "basket_size": 0.24374851728473168,
+    "qty_per_line": 0.111294348624702,
+    "pack_share": 0.055667721897447286,
+    "unit_price": 0.0324132726090246,
+    "business_hours": 0.0010789508168478346
+  },
+  "feature_means_by_cluster_logscale": {
+    "0": {
+      "basket_size": 2.661488080406192,
+      "qty_per_line": 1.9503680227296107,
+      "pack_share": 0.6037002426450884,
+      "unit_price": 0.9882371086580495,
+      "business_hours": 0.7563095238095238
+    },
+    "1": {
+      "basket_size": 2.8229219103198067,
+      "qty_per_line": 2.0895785674532825,
+      "pack_share": 0.6497827255050076,
+      "unit_price": 0.9922150086663521,
+      "business_hours": 0.7860253365003959
+    },
+    "2": {
+      "basket_size": 2.946895152431861,
+      "qty_per_line": 2.221134452606346,
+      "pack_share": 0.6366971176724195,
+      "unit_price": 0.9828541276950791,
+      "business_hours": 0.7649787663503407
+    }
+  },
+  "S2_a": false,
+  "S2_b": false,
+  "stop": false
+}
