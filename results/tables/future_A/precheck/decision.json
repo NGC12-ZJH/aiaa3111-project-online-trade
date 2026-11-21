@@ -1,0 +1,20 @@
+{
+  "stage1": {
+    "P1_kappa_all": 0.27598607617866167,
+    "P2c_retention_active": 0.5518672199170125,
+    "labels_stable": false,
+    "season_adjusted_P2a_kappa_all": 0.26668021911281314,
+    "season_adjusted_P2a_retention_active": 0.5544605809128631,
+    "stable_after_season_adjustment": false
+  },
+  "stage2": {
+    "oracle_gain_pp_B100": 3.1262854792266537,
+    "adjusted_oracle_gain_pp_B100": -0.20567667626490982,
+    "no_room": false
+  },
+  "stage3": {
+    "swap_P1_gain_pp_B100": -0.24681201151789386,
+    "go": false
+  },
+  "verdict": "stop: oracle room exists but the simple label swap gains < 0.5 pp"
+}

@@ -1,0 +1,57 @@
+{
+  "protocol": "configs/future_A/precheck.json",
+  "protocol_sha256": "023dab6d0701882eefc56ac54c2a9ff3cda8274ac37a0a3ca754186a4b841674",
+  "test_read": false,
+  "orders_max_datetime_read": "2010-11-30 19:35:00",
+  "git_head": "3dd994ed6667e2bb26a8efc77d2d8f38d2df3c77",
+  "python": "3.11.15",
+  "numpy": "2.4.4",
+  "pandas": "3.0.2",
+  "checks": {
+    "P0_mismatches": 0,
+    "P4_vs_E9": "L_orig and G equal E9 Validation coverage at budgets 20/50/100",
+    "window_rfm_equals_build_rfm": true
+  },
+  "newcomers": {
+    "new_customers_in_discovery": 1555,
+    "their_valid_discovery_orders": 2933,
+    "profile_customers_valid_discovery_orders": 7521
+  },
+  "p2b": {
+    "p2b_alignment": {
+      "0": "0",
+      "1": "1",
+      "2": "2"
+    },
+    "p2b_centroids_raw": [
+      [
+        120.09096102150535,
+        0.8323124955507383,
+        5.59647637800127
+      ],
+      [
+        34.483939605922814,
+        1.0869968723123338,
+        6.349199238950756
+      ],
+      [
+        17.668128109452738,
+        2.0504548421975244,
+        7.902657316945609
+      ]
+    ]
+  },
+  "systems": 102,
+  "elapsed_seconds": 12.8,
+  "outputs": {
+    "P2b_member_overlap.csv": "12ea51c1dec735655fa210b205a79f618667acf4c92a60624d25fb5ba57a0384",
+    "P4_paired_intervals.csv": "cf84a86062ccc6cee2dbffa784f345c98cdd9bc77f53dd4bcb9964258fb8aca5",
+    "P4_summary.csv": "b621e89bb4f0cff87933e3d8ffc00fb84ccca75fadfbca588233dc64dfb9bc48",
+    "P4_system_metrics.csv": "15977c83da90abeeda9cbe27b25001f45d702a552d1aa23d7f63c9b0a7f3933e",
+    "cluster_level.csv": "68dcc30522f825633c92bd6b01cea5c1122ee4fb4038138d8d5cda6d7f0698ef",
+    "drift_curve.csv": "4d5a95329ccb02f9d5b6a617954c1d2823722352ea5fe369ca8cf92593d7f66a",
+    "label_drift_summary.csv": "750bc6efb83e2d2b8845c7251703f7a7133da50e5df4305f53679682ac52e533",
+    "transition_matrices.csv": "ff9a1b1a5ed7497aa99d2c3c0d8b1a50af20d8039561353dcf134527b91cc03f",
+    "decision.json": "fad046a1782c140db643a2bbe6d7873a5448208cf6619c42bd3638277523256a"
+  }
+}
