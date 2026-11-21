@@ -1,0 +1,15 @@
+{
+  "protocol_sha256": "3af95a7caf091cdb70f165dda26054a9f3a7374ace8b9d7f7733f03f7e9f1fe3",
+  "period": "validation",
+  "labels_sha256": "a129b88e27de7b7f2ee09e32e501dbb5d7304fb518bb0ed0022b3ecfb518d892",
+  "systems": 704,
+  "c2_systems": 404,
+  "elapsed_seconds": 179.6,
+  "outputs": {
+    "C134_summary.csv": "25d8ce8d56fb48a5ca401e201ed1a45c355ef444656a15a259238c926d480e76",
+    "C134_systems.csv": "e458359277b760e950933fb784081efdffbb3806b1aa921811413e4d7fd9949a",
+    "C2_summary.csv": "887cbb2a3138272c84f8852ae02dea45eb3764bd4c9e9fbb7293bf49d7a4a253",
+    "C2_systems.csv": "52a83dade819c0c304a5b4a2e35a219417c653c72086e7723f9e0a7d804be38b",
+    "primary_H1_H4.csv": "c8c584ce455ddf7446e05773ae6c0906d2e514ad1faa4b7a2e39ff4cb696a2c0"
+  }
+}
