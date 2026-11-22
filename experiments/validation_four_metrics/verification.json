@@ -1,0 +1,11 @@
+{
+  "validation_orders": 4862,
+  "validation_customers": 1458,
+  "discovery_orders_for_scoring": 7521,
+  "masked_eligible_orders": 4311,
+  "gross_total_minor_currency": 231101322,
+  "idf_total_weight": 12791.07513429766,
+  "rule_system_flows_reconciled_to_official_counts": 3060,
+  "systems_exhaustively_checked_by_scalar_topk": 5,
+  "random_seeds": 100
+}

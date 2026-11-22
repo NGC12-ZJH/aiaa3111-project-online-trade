@@ -1,0 +1,13 @@
+{
+  "candidate_scope_configs": 1520,
+  "candidate_original_order": 4560,
+  "original_top_reconciled": 1530,
+  "original_complete_reconciled": 1530,
+  "hybrid_full_top5": 1530,
+  "residual_filled": 3030,
+  "validation_orders": 4862,
+  "masked_orders": 4311,
+  "hybrid_total_rows": 6120,
+  "residual_total_rows": 6060,
+  "residual_unfilled_rows": 0
+}

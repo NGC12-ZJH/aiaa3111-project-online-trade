@@ -1,0 +1,2 @@
+masked_orders,recommendable_orders,recommendable_order_rate,top5_recommendations,top5_hits,hit_at_1,hit_at_3,hit_at_5,precision_at_5,issued_precision_at_5,ndcg_at_5,distinct_top5_consequents
+4311,4311,1.0,21555,1091,0.07701229413129204,0.1679424727441429,0.2530735328230109,0.05061470656460218,0.05061470656460218,0.16374028964651874,30
