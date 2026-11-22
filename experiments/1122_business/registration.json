@@ -1,0 +1,82 @@
+{
+  "name": "1122 business extension: money-weighted metrics and category-to-SKU feasibility",
+  "author": "B (Jinghan ZHAO)",
+  "registered": "2026-11-22",
+  "status": "Registered before computation. Exploratory and descriptive; Validation only; does not change any frozen result.",
+  "base_commit": "8bc5b0e (origin/experiments/1122)",
+  "known_before_registration": [
+    "All order-level 1122 numbers in experiments/1122/1122_实验方案与结果汇总.md (Validation, front/late halves).",
+    "D four-metric money-weighted coverage on P5/100: G 77.81%, L restricted 69.63%, A1 median 68.21%.",
+    "future B H4 money-weighted coverage (F6, Validation, exploratory).",
+    "1122 fusion and route C outputs were re-run into a scratch folder and matched the committed CSVs exactly; no weighted or SKU-level quantity was computed before this file was committed."
+  ],
+  "data": {
+    "snapshot": "2ae672b7ea6edb7f5e1561b6a64823004dea833e",
+    "taxonomy": "data/taxonomy/item_taxonomy_v1.csv",
+    "cutoff_exclusive": "2011-06-01",
+    "test_access": "forbidden; the 1122 loader already drops every row on or after the cutoff and the script asserts it again"
+  },
+  "weights": {
+    "W_order": "gross_purchase_amount of the whole order (A snapshot orders.csv.gz), counted once per order",
+    "W_target": "sum of quantity x unit_price over the masked target category's lines in that order (the value of what the recommender is asked to guess)",
+    "primary": {"coverage": "W_order", "hit_at_5": "W_target"},
+    "secondary": {"hit_at_5": "W_order"}
+  },
+  "part_M_money": {
+    "M1_coverage": {
+      "orders": "4,862 Validation orders of Profile customers (1122 route A view)",
+      "systems": ["global", "frequency", "rfm", "rfm_form", "rfm_form_country", "rfm_form_cancel"],
+      "rules": "P5, budget 100 (primary) plus 20 and 50 (descriptive), identity = undirected combination, shared pool, as in 1122 section 1.2",
+      "metric": "money-weighted raw co-purchase coverage = sum W_order of covered orders / sum W_order of all orders",
+      "random_control": "A1 for rfm and rfm_form, seeds 1000-1099, same group_random as 1122",
+      "intervals": "weighted paired bootstrap versus global: resample customers (anonymous orders not present in this view), 1,500 replicates, RNG seed 1122; statistic = 100 x sum_w(left - right) / sum_w",
+      "reproduction_checks": ["order-level hits for global and rfm_form at budget 100 combination equal 3,667 and 3,715"]
+    },
+    "M2_ladder": {
+      "orders": "late half (2011-03-01 to 2011-05-31) of the 4,311 maskable orders, 2,237 orders; early half reported descriptively",
+      "steps": [
+        "pure global popularity",
+        "G100 + global popularity",
+        "G100 + L1 conditional popularity",
+        "fusion G100 + G101-200 + L1, aggregation and weights as selected on the early half by 1122 (discounted second, 1/0.25/0.25)",
+        "fusion G100 + L100 shared, as selected on the early half (discounted, 1/1/0.25)",
+        "fusion G100 + L100 restricted, as selected on the early half (discounted, 1/1/3)"
+      ],
+      "descriptive_extra": ["fusion G200 max-aggregation variant (not selected on the early half)", "L1 + gated G tail (prior 1122 system)", "form x L1 conditional popularity"],
+      "metric": "Hit@5 weighted by W_target (primary) and W_order (secondary), plus the unweighted Hit@5 for reconciliation",
+      "intervals": "weighted paired bootstrap of each step against the previous step, using the 1122 Paired blocks (customer, or date for anonymous), 1,500 replicates, seed 1122",
+      "reproduction_checks": ["late hits: pure global popularity 586, G+global 629, G+L1 660, gated tail 684, fusion arms equal fusion_late.csv"]
+    },
+    "M3_cold_start": {
+      "orders": "1122 route C aggregate: 8,067 Validation orders, 7,122 with a common Top-5, all segments",
+      "systems": "all eight route C systems against the same references as c_aggregate.csv",
+      "metric": "Hit@5 weighted by W_target (primary) and W_order (secondary)",
+      "intervals": "weighted paired bootstrap, same blocks as 1122 route C, 1,500 replicates, seed 1122",
+      "reproduction_checks": ["unweighted hits equal c_aggregate.csv for every system x reference x segment"]
+    },
+    "interpretation": "Descriptive. Large wholesale orders carry most of the weight and have larger baskets, so weighted results translate order-level results into sales terms and are not a better metric. No new claim is made unless the weighted and unweighted signs agree; any disagreement is reported as such."
+  },
+  "part_S_category_to_sku": {
+    "question": "After a category is recommended, how often does one concrete SKU from that category match what the customer actually bought?",
+    "orders": "same 4,311 maskable orders (route A/B view); late half 2,237 primary, full and early half descriptive",
+    "hidden_sku_set": "stock codes on the masked target category's lines in that order (all of them were masked before any feature was computed)",
+    "sku_choice": {
+      "S_pop": "Discovery training orders (the 7,521 orders the rules were mined on): within the category, SKU with the most orders containing it; ties by stock_code ascending",
+      "S_hist": "the customer's own valid orders strictly before this order's invoice_datetime (from 2009-12-01): within the category, SKU in the most of those orders; ties by most recent purchase, then by S_pop rank; fall back to S_pop when the customer never bought the category",
+      "S_hist_frozen": "sensitivity: same as S_hist but history limited to orders before 2010-12-01, matching the frozen rules"
+    },
+    "slots": "one SKU per recommended category (primary, keeps five slots); three SKUs per category reported descriptively",
+    "metrics": {
+      "conditional_sku_rate": "share of masked orders whose chosen SKU for the target category is in the hidden SKU set; equals SKU-hit given category-hit because the choice does not depend on the ranking",
+      "sku_hit_at_5": "category hit at 5 AND chosen SKU for the target category in the hidden set",
+      "systems": ["G100 + global popularity", "G100 + L1", "fusion G100 + G101-200 + L1 (early-selected)"]
+    },
+    "intervals": "paired bootstrap S_hist versus S_pop on each system, 1122 Paired blocks, 1,500 replicates, seed 1122",
+    "interpretation": "Descriptive feasibility check. SKU-level and category-level rates are not compared as better or worse; only the share that survives the category-to-SKU step is reported. History uses information available at order time, which a deployed system would also have."
+  },
+  "not_done": [
+    "No basket-size-matched (B2) control for 1122 route A; this registration does not address it.",
+    "No Test access.",
+    "No SKU step on route C first-order or anonymous orders."
+  ]
+}
