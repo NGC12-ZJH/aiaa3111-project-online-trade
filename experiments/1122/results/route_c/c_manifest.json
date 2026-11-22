@@ -1,0 +1,30 @@
+{
+  "evaluation_cutoff_exclusive": "2011-06-01",
+  "all_pretest_validation_orders": 8067,
+  "masked_eval_orders": 7122,
+  "maskable_before_common_top5_check": 7136,
+  "excluded_fewer_than_5_candidates": 14,
+  "folds": [
+    [
+      "winter",
+      "2010-12-01",
+      "2011-03-01",
+      "2010-06-01"
+    ],
+    [
+      "early_spring",
+      "2011-03-01",
+      "2011-05-01",
+      "2010-09-01"
+    ],
+    [
+      "late_spring",
+      "2011-05-01",
+      "2011-06-01",
+      "2010-11-01"
+    ]
+  ],
+  "rules_per_pool_target": 100,
+  "abstention_radius_training_quantile": 0.95,
+  "masked_cart_features": true
+}

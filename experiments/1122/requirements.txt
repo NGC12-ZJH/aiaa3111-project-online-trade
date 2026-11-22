@@ -1,0 +1,4 @@
+# CPU environment in addition to D Validation requirements.
+-r ../../requirements-validation.txt
+scikit-learn==1.9.0
+threadpoolctl==3.6.0

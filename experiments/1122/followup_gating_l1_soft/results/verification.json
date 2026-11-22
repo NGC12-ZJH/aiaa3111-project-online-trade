@@ -1,0 +1,14 @@
+{
+  "conditional_fallback_selected_early": "form_l1_pop",
+  "ab_early_masked": 2074,
+  "ab_late_masked": 2237,
+  "training_context_orders": 6545,
+  "original_global_hit_orders": 1173,
+  "c_early_masked": 3263,
+  "c_late_masked": 3859,
+  "c_common_top5_orders": 7122,
+  "fixed_global_hits_reconciled": 1958,
+  "validation_tune_before": "2011-03-01",
+  "evaluation_end_exclusive": "2011-06-01",
+  "source_maximum_date": "2011-05-31 15:53:00"
+}

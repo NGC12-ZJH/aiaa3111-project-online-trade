@@ -1,0 +1,28 @@
+{
+  "original_validation_reproduced": {
+    "G": 3640,
+    "L_restricted": 3057,
+    "L_shared": 3425
+  },
+  "rule_config": "P5",
+  "budgets": [
+    20,
+    50,
+    100
+  ],
+  "seeds_for_each_RFM_variant": 100,
+  "frequency_split_inclusive": [
+    1,
+    2
+  ],
+  "profile_customers": 2684,
+  "discovery_orders": 7521,
+  "validation_orders": 4862,
+  "masked_orders": 4311,
+  "profile_price_bands": [
+    1.65,
+    3.43
+  ],
+  "greedy_first_window_orders": 4466,
+  "greedy_objective_orders": 3055
+}

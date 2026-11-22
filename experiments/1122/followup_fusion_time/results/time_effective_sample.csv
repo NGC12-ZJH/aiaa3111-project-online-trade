@@ -1,0 +1,16 @@
+fold,arm,positive_weight_orders,effective_weighted_orders,off_window_strict_orders,off_window_s35_orders,off_window_s20_orders
+winter,fixed,7521,7521.0,0,652,1039
+winter,expanding_equal,7521,7521.0,0,652,1039
+winter,exp90,7521,6496.126033290203,0,652,1039
+winter,exp180,7521,7215.27683680572,0,652,1039
+winter,exp365,7521,7441.984267373562,0,652,1039
+early_spring,fixed,7521,7521.0,0,774,1152
+early_spring,expanding_equal,9869,9869.0,0,774,1152
+early_spring,exp90,9869,7529.2942821363295,0,774,1152
+early_spring,exp180,9869,9158.796902726875,0,774,1152
+early_spring,exp365,9869,9686.435953152606,0,774,1152
+late_spring,fixed,7521,7521.0,0,539,712
+late_spring,expanding_equal,11396,11396.0,0,539,712
+late_spring,exp90,11396,7444.059102340815,0,539,712
+late_spring,exp180,11396,10106.175684828591,0,539,712
+late_spring,exp365,11396,11063.033161815953,0,539,712
