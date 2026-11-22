@@ -1,0 +1,16 @@
+system,group,profile_customers,discovery_orders,validation_orders
+frequency,0,1202,1394,740
+frequency,1,600,1191,708
+frequency,2,882,4936,3414
+rfm,0,1247,2126,1215
+rfm,1,755,4637,3233
+rfm,2,682,758,414
+rfm_form,0,408,852,549
+rfm_form,1,1925,6010,3880
+rfm_form,2,351,659,433
+rfm_form_country,0,407,849,548
+rfm_form_country,1,1917,5988,3871
+rfm_form_country,2,360,684,443
+rfm_form_cancel,0,412,796,516
+rfm_form_cancel,1,1915,6056,3910
+rfm_form_cancel,2,357,669,436

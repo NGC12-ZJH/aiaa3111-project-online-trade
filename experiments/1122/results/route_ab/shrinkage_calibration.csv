@@ -1,0 +1,5 @@
+m,brier,rule_order_trials,selection_pool,flow
+0,0.23504779397467426,10951,fixed_local_added,restricted
+20,0.2344885111686772,10951,fixed_local_added,restricted
+50,0.2341828159211965,10951,fixed_local_added,restricted
+100,0.23393411272570208,10951,fixed_local_added,restricted

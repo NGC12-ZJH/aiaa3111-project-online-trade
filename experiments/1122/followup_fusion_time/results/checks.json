@@ -1,0 +1,34 @@
+{
+  "fusion_early": 2074,
+  "fusion_late": 2237,
+  "fusion_baseline_late_hits": 660,
+  "unavailable_targets": 0,
+  "prior_gated_g_tail_late_hits": 684,
+  "half_life_selected_early": 365,
+  "strong_seasonal_l2": {
+    "strict": {},
+    "s35": {
+      "hanging_ornaments": "christmas",
+      "tabletop_decorations": "christmas",
+      "wreaths": "christmas"
+    },
+    "s20": {
+      "bunting_garland": "christmas",
+      "gift_wrap_tags": "christmas",
+      "hanging_ornaments": "christmas",
+      "lights_lamps": "christmas",
+      "stickers_tattoos": "christmas",
+      "tabletop_decorations": "christmas",
+      "wreaths": "christmas"
+    }
+  },
+  "late_off_season_trigger_orders": {
+    "strict": 0,
+    "s35": 1313,
+    "s20": 1864
+  },
+  "temporal_available_rows": 12383,
+  "validation_end_exclusive": "2011-06-01",
+  "max_source_order": "2011-05-31 15:53:00",
+  "baseline_l1_reproduced": true
+}

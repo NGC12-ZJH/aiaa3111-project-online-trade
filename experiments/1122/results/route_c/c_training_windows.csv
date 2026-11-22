@@ -1,0 +1,7 @@
+fold,variant,from,until_exclusive,train_orders,eval_orders,masked_eval_orders,common_top5_orders,own_fewer_than_5,global_rule_count,cart_rule_count,hybrid_rule_count
+winter,fixed,2010-06-01,2010-12-01,11273,3724,3277,3263,14,100,100,100
+winter,rolling,2010-06-01,2010-12-01,11273,3724,3277,3263,14,100,100,100
+early_spring,fixed,2010-06-01,2010-12-01,11273,2675,2396,2396,0,100,100,100
+early_spring,rolling,2010-09-01,2011-03-01,10476,2675,2396,2396,0,100,100,100
+late_spring,fixed,2010-06-01,2010-12-01,11273,1668,1463,1463,0,100,100,100
+late_spring,rolling,2010-11-01,2011-05-01,9118,1668,1463,1463,0,100,100,100

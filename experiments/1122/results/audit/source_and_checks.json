@@ -1,0 +1,22 @@
+{
+  "snapshot": "2ae672b7ea6edb7f5e1561b6a64823004dea833e",
+  "taxonomy_sha256": "67c9c22ce3e3816a09e89ffc412546396950d904f0457e549072b71fd4353434",
+  "cutoff_exclusive": "2011-06-01",
+  "pretest_raw_canonical_rows": 711967,
+  "orders_by_split": {
+    "discovery": 11273,
+    "profile": 8470,
+    "validation": 8067
+  },
+  "maximum_date_in_analysis": "2011-05-31 15:53:00",
+  "unmapped_positive_lines": 0,
+  "usable_sales_lines": 682047,
+  "identified_cancellation_invoices": 5835,
+  "price_bands_profile": [
+    1.65,
+    3.43
+  ],
+  "random_strata_checks": 200,
+  "masked_cart_price_quantity_perturbations": 434,
+  "slot5_scalar_reconciliations": 123
+}
