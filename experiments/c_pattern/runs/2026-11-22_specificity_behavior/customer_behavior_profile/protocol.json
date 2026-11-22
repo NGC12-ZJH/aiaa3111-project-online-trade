@@ -1,0 +1,34 @@
+{
+  "period": "2009-12-01 inclusive to 2010-06-01 exclusive",
+  "customers": 2684,
+  "orders": 7738,
+  "large_quantity_threshold_units": 516.0,
+  "large_quantity_definition": "Profile eligible order total quantity >= pooled order 90th percentile; include ties; descriptive not identity label",
+  "large_quantity_order_count": 779,
+  "repeat_definition": "Number of order-SKU occurrences bought at strictly earlier timestamps / order-SKU occurrences in orders with earlier history; first timestamp excluded; no earlier history => NA",
+  "interval_definition": "Adjacent invoice timestamp differences in days; simultaneous orders may yield zero; one order => NA",
+  "category_definition": "Existing taxonomy_v1; missing and other excluded only from category features; SKU quantity and money retained",
+  "unknown_or_other_sku_occurrences": 701,
+  "customer_weighting": "Customer feature medians and IQR, one customer one vote",
+  "limitations": [
+    "No wholesale/retail ground truth or classification accuracy",
+    "RFM frequency and monetary are reused; their separation is expected, not independent validation",
+    "Replenishment observation opportunity differs with order frequency; first purchase is left-censored by Profile boundary",
+    "Same-subcategory SKUs are assortment proxies, not verified model/color variants",
+    "Taxonomy_v1 retrospectively applied; taxonomy built later, not a prospectively frozen Profile-only labeling experiment",
+    "No downstream Discovery/Validation/Test transactions used for feature values; no future validation performed",
+    "Outliers preserved under upstream cleaning; medians/IQR used; returns excluded so amounts are gross purchases"
+  ],
+  "checks": {
+    "sku_counts_match_existing_baskets": true,
+    "amounts_match_existing_orders": true,
+    "customer_frequency_matches_RFM": true,
+    "customer_monetary_matches_RFM": true
+  },
+  "inputs_sha256": {
+    "processed/clean_transactions.csv.gz": "01c6a69702b675723d2d9489f5771a45ea047946875eaae699384298afc9599b",
+    "processed/orders.csv.gz": "2ff8420a97ed2f89a303c57a6431590e130df35936ad143350adb40a5040d4c2",
+    "labels/customer_clusters.csv": "fc3826532fde31491d6f76d1930629ce347719edd71114651ae162365c765bcf",
+    "taxonomy_analysis/item_taxonomy_v1.csv": "67c9c22ce3e3816a09e89ffc412546396950d904f0457e549072b71fd4353434"
+  }
+}

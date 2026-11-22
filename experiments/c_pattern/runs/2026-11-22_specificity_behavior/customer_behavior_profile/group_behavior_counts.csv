@@ -1,0 +1,4 @@
+cluster_id,customers,single_order_customers,large_order_customers,repeated_large_order_customers,repeat_estimable_customers,single_order_customers_share,large_order_customers_share,repeated_large_order_customers_share
+0,700,567,30,1,132,0.81,0.04285714285714286,0.0014285714285714286
+1,1263,633,124,5,629,0.501187648456057,0.09817893903404593,0.00395882818685669
+2,721,2,220,119,719,0.0027739251040221915,0.30513176144244103,0.1650485436893204

@@ -1,0 +1,23 @@
+{
+  "source": "Frozen ranking_gap_sensitivity/selected_rules_evidence.csv.gz; unchanged candidates and ranks",
+  "period": "Validation",
+  "fixed_effect": "Validation confidence target-minus-rest >=5pp AND adjusted association gap >0",
+  "denominator": "ALL selected slots, not Discovery signal subset; nonestimable slots count as not retained",
+  "quartiles": "pandas linear quantiles across estimable selected group-rule slots; missing excluded and reported",
+  "duplicates": "Original allocation retained; same direction in different groups is a separate group-rule slot, not an independent statistical replicate",
+  "random": "One complete three-group system per seed; compare system median/gap/retention with real L; no pooling seed-rule observations",
+  "G": "No target/rest contrast for global scope; G not assigned artificial zero",
+  "flow": "These are target-group rule evidence measures, not coverage; identical under restricted/shared selection",
+  "scope": "P1-P5 x20/50/100 x3variants; S20,A1/A2 each100",
+  "limitations": [
+    "Posthoc descriptive analysis, not confirmatory significance",
+    "No new BY/BH or customer-bootstrap intervals; quartiles describe rule heterogeneity, not uncertainty",
+    "No added Validation count gate; low counts can yield unstable differences",
+    "Unchanged Test; no remine or rerank"
+  ],
+  "checks": {
+    "systems": 9945,
+    "all_budgets_filled": true,
+    "nonestimable_slots": 5
+  }
+}

@@ -1,0 +1,61 @@
+客户采购行为画像（Profile期探索性分析）
+
+{
+  "period": "2009-12-01 inclusive to 2010-06-01 exclusive",
+  "customers": 2684,
+  "orders": 7738,
+  "large_quantity_threshold_units": 516.0,
+  "large_quantity_definition": "Profile eligible order total quantity >= pooled order 90th percentile; include ties; descriptive not identity label",
+  "large_quantity_order_count": 779,
+  "repeat_definition": "Number of order-SKU occurrences bought at strictly earlier timestamps / order-SKU occurrences in orders with earlier history; first timestamp excluded; no earlier history => NA",
+  "interval_definition": "Adjacent invoice timestamp differences in days; simultaneous orders may yield zero; one order => NA",
+  "category_definition": "Existing taxonomy_v1; missing and other excluded only from category features; SKU quantity and money retained",
+  "unknown_or_other_sku_occurrences": 701,
+  "customer_weighting": "Customer feature medians and IQR, one customer one vote",
+  "limitations": [
+    "No wholesale/retail ground truth or classification accuracy",
+    "RFM frequency and monetary are reused; their separation is expected, not independent validation",
+    "Replenishment observation opportunity differs with order frequency; first purchase is left-censored by Profile boundary",
+    "Same-subcategory SKUs are assortment proxies, not verified model/color variants",
+    "Taxonomy_v1 retrospectively applied; taxonomy built later, not a prospectively frozen Profile-only labeling experiment",
+    "No downstream Discovery/Validation/Test transactions used for feature values; no future validation performed",
+    "Outliers preserved under upstream cleaning; medians/IQR used; returns excluded so amounts are gross purchases"
+  ],
+  "checks": {
+    "sku_counts_match_existing_baskets": true,
+    "amounts_match_existing_orders": true,
+    "customer_frequency_matches_RFM": true,
+    "customer_monetary_matches_RFM": true
+  },
+  "inputs_sha256": {
+    "processed/clean_transactions.csv.gz": "01c6a69702b675723d2d9489f5771a45ea047946875eaae699384298afc9599b",
+    "processed/orders.csv.gz": "2ff8420a97ed2f89a303c57a6431590e130df35936ad143350adb40a5040d4c2",
+    "labels/customer_clusters.csv": "fc3826532fde31491d6f76d1930629ce347719edd71114651ae162365c765bcf",
+    "taxonomy_analysis/item_taxonomy_v1.csv": "67c9c22ce3e3816a09e89ffc412546396950d904f0457e549072b71fd4353434"
+  }
+}
+
+群体中位数：
+group                        0           1           2         ALL
+label
+Profile订单数            1.000000    1.000000    5.000000    2.000000
+后续订单SKU中此前买过的比例       0.111111    0.166667    0.279070    0.220339
+大数量订单占比               0.000000    0.000000    0.000000    0.000000
+每单不同SKU数中位数          14.500000   17.000000   18.000000   17.000000
+每单不同子类数中位数            8.000000    9.500000    9.500000    9.000000
+每单同子类最大SKU数的客户中位数     4.000000    4.000000    4.000000    4.000000
+每单多SKU子类占比的客户中位数      0.409091    0.428571    0.442391    0.428571
+每单总件数中位数            107.500000  144.000000  185.000000  146.000000
+每单每子类SKU数均值的客户中位数     1.727273    1.777778    1.800000    1.777778
+每单金额中位数GBP          212.112500  277.040000  342.120000  291.465000
+相邻订单间隔中位数天           15.015278   57.896528   27.946875   36.831597
+订单内单SKU件数中位数的客户中位数    6.000000    7.500000    9.000000    7.000000
+
+行为计数：
+            customers  single_order_customers  large_order_customers  repeated_large_order_customers  repeat_estimable_customers  single_order_customers_share  large_order_customers_share  repeated_large_order_customers_share
+cluster_id
+0                 700                     567                     30                               1                         132                      0.810000                     0.042857                              0.001429
+1                1263                     633                    124                               5                         629                      0.501188                     0.098179                              0.003959
+2                 721                       2                    220                             119                         719                      0.002774                     0.305132                              0.165049
+
+所有特征为行为描述，不代表真实批发商/散客身份。单次购买不能判断补货倾向；不同群购买频次不同，不可直接把复购比例差解释为身份差。

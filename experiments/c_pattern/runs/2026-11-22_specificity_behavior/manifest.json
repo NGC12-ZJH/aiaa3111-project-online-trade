@@ -1,0 +1,167 @@
+[
+  {
+    "path": ".gitattributes",
+    "bytes": 9,
+    "sha256": "8b9c3028d6467ff3be7c793141927841d70f47f52d0590677438f488ca154992"
+  },
+  {
+    "path": "customer_behavior_profile.py",
+    "bytes": 10837,
+    "sha256": "53dbd1e934aac1277a01b8bad144df5cf4f94a3065fd959bb4e8c6ee08f52bb8"
+  },
+  {
+    "path": "ranking_future_metrics.py",
+    "bytes": 6138,
+    "sha256": "70c3e36cf46d39d06e2fa7ad669d1071abba387d1e9c88b54c36477b90bbd97f"
+  },
+  {
+    "path": "ranking_gap_sensitivity.py",
+    "bytes": 8782,
+    "sha256": "f19f6150437448216a7a85255c8580c7d4f443cb383e75edf76e8178fd502972"
+  },
+  {
+    "path": "README.md",
+    "bytes": 3683,
+    "sha256": "739be2fc64da8909c4610c524fdf6fae356eb03a067964b20db97ea06652f783"
+  },
+  {
+    "path": "report_ranking_gap.py",
+    "bytes": 8221,
+    "sha256": "1c31fbd0baf6e6c0d4e9a08f116f59d37bbbcbf948dfb2496a0ad345b6b49867"
+  },
+  {
+    "path": "customer_behavior_profile/customer_behavior_distributions.png",
+    "bytes": 186534,
+    "sha256": "60f7832f5f536b6279e88d49135e509d3d7ca394e88fc69d2f6fb9674a8b78c2"
+  },
+  {
+    "path": "customer_behavior_profile/customer_features.csv",
+    "bytes": 425393,
+    "sha256": "13e827067fa8c67dd08079738f02e30036c6e95d741fbd5a0247799b577cad3d"
+  },
+  {
+    "path": "customer_behavior_profile/group_behavior_counts.csv",
+    "bytes": 448,
+    "sha256": "e9d93ec884b0c1e5823817c041ef4a882ab350e1245459d6dd32cd34a80f9bc3"
+  },
+  {
+    "path": "customer_behavior_profile/group_feature_summary.csv",
+    "bytes": 5608,
+    "sha256": "ccfe45066f2e021744c515b278c76b713bde3cba7b3b7446e86e05525266187a"
+  },
+  {
+    "path": "customer_behavior_profile/profile_order_features.csv.gz",
+    "bytes": 340241,
+    "sha256": "a773b27ad73363db268d3bd268f653b4f086dbfc92b72d6f342f56c88c9de9f1"
+  },
+  {
+    "path": "customer_behavior_profile/protocol.json",
+    "bytes": 2373,
+    "sha256": "081cd2170eaa7ded9e4b3f92a47e2c68958dd29398405a7781ddca2e2d7c2479"
+  },
+  {
+    "path": "customer_behavior_profile/客户行为画像说明.txt",
+    "bytes": 4722,
+    "sha256": "274e496148ccb97e82fde31626aabf7b0496ed76c3c2435e0edf14100cfbcbda"
+  },
+  {
+    "path": "ranking_gap_sensitivity/allocation_audit.csv",
+    "bytes": 1197001,
+    "sha256": "6dfbd021a9309738ce3d5fa2a6afc383b0835ba51061f7b42f56d78ed7806796"
+  },
+  {
+    "path": "ranking_gap_sensitivity/comparison.csv",
+    "bytes": 114485,
+    "sha256": "469c4590fc10edc114f37e2633db948e48d8244615fe2a205aeabf23be0ab087"
+  },
+  {
+    "path": "ranking_gap_sensitivity/protocol.json",
+    "bytes": 994,
+    "sha256": "aae364b0767071259a0e98ec6fcc6e2c1745112f6ea4372cfec73ea9f9f45d96"
+  },
+  {
+    "path": "ranking_gap_sensitivity/selected_rules_evidence.csv.gz",
+    "bytes": 37512982,
+    "sha256": "a049dcb5233ff70d7bdd21e0afc3a4438f9d68a35c7c0c48d205077137ceba0c"
+  },
+  {
+    "path": "ranking_gap_sensitivity/system_metrics.csv",
+    "bytes": 5312899,
+    "sha256": "5436eb338b7723fd8a18502babb2961b4579c9a6e110a90bc59eb03e777285e3"
+  },
+  {
+    "path": "ranking_gap_sensitivity/Validation_B100_main.csv",
+    "bytes": 1985,
+    "sha256": "91041ab34acab81c1819491615d2370a18825cd27c01616dba1805a09a77da65"
+  },
+  {
+    "path": "ranking_gap_sensitivity/validation_ranking_coverage.png",
+    "bytes": 275508,
+    "sha256": "c869a63cc4d6ec284517a200d0581505ef1c33e753db24e264f6aac79059c3e3"
+  },
+  {
+    "path": "ranking_gap_sensitivity/verification.json",
+    "bytes": 317,
+    "sha256": "896069e0631bc799920a3f86b49e169c14a1b9ef24c0407d9054ecc5ff0e5b65"
+  },
+  {
+    "path": "ranking_gap_sensitivity/排序敏感性分析报告.md",
+    "bytes": 5516,
+    "sha256": "cada524730f2c43cfd94da07ff6cefabb00295e29756d19eeef435adc082f71e"
+  },
+  {
+    "path": "ranking_gap_sensitivity/future_specificity/group_metrics.csv",
+    "bytes": 4999378,
+    "sha256": "6376540f666e977e7995359b9e0dda2f5403b5ead4f3b0e9fffbb519031bf612"
+  },
+  {
+    "path": "ranking_gap_sensitivity/future_specificity/L_metrics.csv",
+    "bytes": 7169,
+    "sha256": "86eb3e6127d55ff7b5063224c8e799f91c9da609388c884c648c31190b969e52"
+  },
+  {
+    "path": "ranking_gap_sensitivity/future_specificity/protocol.json",
+    "bytes": 1464,
+    "sha256": "54a2410f0e55f166af5b9d5bad0cec0091db443d3f03649d73b5fd85c968ef2b"
+  },
+  {
+    "path": "ranking_gap_sensitivity/future_specificity/random_comparison.csv",
+    "bytes": 64702,
+    "sha256": "f49110e277a549fa6eff780f0ce15da91d4da9e971d1e616c1cc349119cdbb02"
+  },
+  {
+    "path": "ranking_gap_sensitivity/future_specificity/system_metrics.csv",
+    "bytes": 1578237,
+    "sha256": "cd65474b2e037957990ddbe30ea206a7293891547b71373f09a740339982c1cc"
+  },
+  {
+    "path": "ranking_gap_sensitivity/future_specificity/未来群体特色指标补充.md",
+    "bytes": 3018,
+    "sha256": "7daa32e7c59ba1e9bc90507c40102de8bd58b91ae3ec7d1ae17fb7e221eb82b7"
+  },
+  {
+    "path": "ranking_gap_sensitivity/inputs/discovery_baskets.csv",
+    "bytes": 4071688,
+    "sha256": "d972db20284bd7c7a71587a71771d99c4024bb5d8ed3294407b0670c8bc6ae1b"
+  },
+  {
+    "path": "ranking_gap_sensitivity/inputs/discovery_replay.csv",
+    "bytes": 1398256,
+    "sha256": "c3fb10133ccf61aa74be33e319fd17f3cd8175f8f9649acf1143bf560f66ff9f"
+  },
+  {
+    "path": "ranking_gap_sensitivity/inputs/system_metrics.csv",
+    "bytes": 1412482,
+    "sha256": "eb3085aa59f18487fe2758a29dae0c7c45d576ef79edf94ae035c0bf5453f225"
+  },
+  {
+    "path": "ranking_gap_sensitivity/inputs/validation_baskets.csv",
+    "bytes": 2990392,
+    "sha256": "014f252b8a503bb42dbac0a321a61226efe457762ecdba92fe70e1f0cdebdde5"
+  },
+  {
+    "path": "ranking_gap_sensitivity/vendor/validation.py",
+    "bytes": 20949,
+    "sha256": "bf265379a00e45372e81a2bd946d8c096414743f6af737e378e60e4bfba73dc9"
+  }
+]

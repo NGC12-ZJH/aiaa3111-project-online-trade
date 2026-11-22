@@ -1,0 +1,10 @@
+{
+  "original_period_systems_reproduced": 13320,
+  "system_rows": 39960,
+  "test_used": false,
+  "new_BY_tests_computed": false,
+  "code_sha256": "80214f84826321f38a19155bc4bd20e273775a5f7ca01340a65c36b1effa985f",
+  "independent_GL_coverage_checks": 360,
+  "gate_checks_passed": true,
+  "shortfall_rows": 0
+}

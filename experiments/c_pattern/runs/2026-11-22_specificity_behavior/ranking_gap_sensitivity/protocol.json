@@ -1,0 +1,30 @@
+{
+  "base_D_commit": "4461750",
+  "periods": [
+    "discovery",
+    "validation"
+  ],
+  "configs": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5"
+  ],
+  "budgets": [
+    20,
+    50,
+    100
+  ],
+  "variants": [
+    "original",
+    "evidence_frequency",
+    "evidence_gap"
+  ],
+  "evidence_gate": "Discovery target and rest antecedent orders >=20 and customers >=10; same gate for frequency/gap; missing rest confidence never zero-filled",
+  "ranking": "Discovery target-rest confidence DESC, then joint count/confidence/lift DESC, rule_id ASC",
+  "budgets_policy": "original per-group Discovery quotas; duplicate rule identities across groups retain slots; no refill between groups; restricted/shared separately",
+  "candidate_signal": "D gap >=5pp AND baseline-adjusted association gap >0, descriptive only, not D full quality definition",
+  "test_used": false,
+  "status": "post-Test-publication exploratory sensitivity; no change to frozen main experiment"
+}
