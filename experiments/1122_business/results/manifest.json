@@ -1,0 +1,86 @@
+{
+  "registration": "experiments/1122_business/registration.json",
+  "registration_commit": "272f872",
+  "code_commit": "acb7ad2",
+  "parts": [
+    "m1",
+    "m2",
+    "m3",
+    "s"
+  ],
+  "cutoff_exclusive": "2011-06-01",
+  "max_order_read": "2011-05-31 15:53:00",
+  "bootstrap_repeats": 1500,
+  "checks": {
+    "M1_unweighted_hits_global_rfm_form_B100": {
+      "global": 3667,
+      "rfm_form": 3715
+    },
+    "M1_order_amount_summary": {
+      "orders": 4862,
+      "total": 2311013.22,
+      "median": 309.01,
+      "top10pct_share": 0.4291750654719318
+    },
+    "M2_unweighted_late_hits": {
+      "pure_global_pop": 586,
+      "G100_global_pop": 629,
+      "G100_form_l1_pop": 645,
+      "G100_l1_pop": 660,
+      "l1_gated_G_tail": 684,
+      "fusion_G200": 685,
+      "fusion_G200_max": 688,
+      "fusion_G100_L100_restricted": 677,
+      "fusion_G100_L100_restricted_max": 675,
+      "fusion_G100_L100_shared": 679,
+      "fusion_G100_L100_shared_max": 675
+    },
+    "M2_fusion_selection": {
+      "G200": {
+        "mode": "discounted",
+        "weights": [
+          1.0,
+          0.25,
+          0.25
+        ],
+        "max_weights": [
+          1.0,
+          0.25,
+          0.25
+        ]
+      },
+      "G100_L100_restricted": {
+        "mode": "discounted",
+        "weights": [
+          1.0,
+          1.0,
+          3.0
+        ],
+        "max_weights": [
+          1.0,
+          1.0,
+          0.25
+        ]
+      },
+      "G100_L100_shared": {
+        "mode": "discounted",
+        "weights": [
+          1.0,
+          1.0,
+          0.25
+        ],
+        "max_weights": [
+          1.0,
+          1.0,
+          0.25
+        ]
+      }
+    },
+    "S_hidden_skus_per_masked_order": {
+      "mean": 1.9007190906982139,
+      "median": 1.0
+    },
+    "S_masked_orders_with_category_history": 3717,
+    "M3_unweighted_rows_matching_c_aggregate": 60
+  }
+}
