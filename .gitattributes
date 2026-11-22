@@ -18,3 +18,10 @@
 
 /results/tables/validation_specificity/** -text whitespace=cr-at-eol
 /results/tables/test/** -text whitespace=cr-at-eol
+
+# Preserve the exact bytes recorded by the P5/90 follow-up freeze.
+/experiments/validation_budget_redesign/results/verification.json -text whitespace=cr-at-eol
+/experiments/validation_budget_redesign/results/global_local_A1_rule_paths.csv.gz -text
+/experiments/validation_budget_redesign/test_p5_90/run.py -text whitespace=cr-at-eol,-blank-at-eof
+/experiments/validation_budget_redesign/test_p5_90/frozen_rule_lists.csv -text whitespace=cr-at-eol
+/experiments/validation_budget_redesign/test_p5_90/freeze.json -text whitespace=cr-at-eol

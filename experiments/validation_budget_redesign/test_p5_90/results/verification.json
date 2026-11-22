@@ -1,0 +1,22 @@
+{
+  "sample": {
+    "period": "test",
+    "all_valid_baskets": 10890,
+    "eligible_baskets": 5730,
+    "eligible_customers": 1510,
+    "eligible_share": 0.5261707988980716,
+    "anonymous_baskets": 628,
+    "non_profile_baskets": 5160,
+    "empty_l2_eligible_baskets": 5,
+    "single_l2_eligible_baskets": 650
+  },
+  "fallback": {
+    "orders": 5160,
+    "G_hits": 4013,
+    "G_coverage": 0.7777131782945736
+  },
+  "systems": 102,
+  "rules_per_system": 90,
+  "test_refit": false,
+  "freeze_sha256": "334e501e28a6b0d4750c25736e96d3cafdfa39d711d2a8b65f4da09e2d503d0d"
+}

@@ -1,0 +1,27 @@
+{
+  "verified_candidate_counts": 3320,
+  "verified_original_group_rule_lists": 9960,
+  "orders": 4862,
+  "customers": 1458,
+  "actual_budget_grid": [
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    100
+  ],
+  "systems": 222,
+  "evaluation_rows": 22200,
+  "group_random_seeds": {
+    "S": 20,
+    "A1": 100,
+    "A2": 100
+  },
+  "reliable_metric": "quality_v1_shared_BY_family_over_all_dense_budgets_and_both_identities",
+  "test_accessed": false
+}

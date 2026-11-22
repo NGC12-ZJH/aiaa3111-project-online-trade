@@ -13,3 +13,4 @@ D 使用固定的 Discovery 规则评价未来交易。Validation 用于比较�
 
 - [已测指标总览](metrics_index.md)列出各阶段的指标、分母和结果表。
 - [补充实验入口](../../experiments/README.md)汇总 Discovery 残差补位、Validation 四类指标、热门补齐、G 后续规则对照及复算顺序。
+- [密集预算重做与 P5／90 Test 补测](../../experiments/validation_budget_redesign/README.md)集中记录新去重口径、质量选参与独立冻结结果。

@@ -1,0 +1,78 @@
+{
+  "status": "frozen",
+  "recorded_at": "2026-11-22T17:33:44+08:00",
+  "status_relative_to_previous_test": "Exploratory follow-up on a historical Test period already reported under the original P5/100 restricted protocol.",
+  "selection_source": "Dense Validation only; at Added Value >=10pp, 90 is the smallest budget within 1pp of both G/L maxima.",
+  "config": "P5",
+  "budget": 90,
+  "identity": "unique undirected category combination",
+  "flow": "shared for all rules, with the chosen direction retained for rule quality",
+  "primary_metrics": [
+    "shared complete co-occurrence order coverage",
+    "shared reliable order coverage with Added Value >=10pp"
+  ],
+  "secondary_metrics": [
+    "rule quality pass share",
+    "customer macro coverage",
+    "base quality_v1 with Added Value >=5pp",
+    "global fallback on non-Profile orders"
+  ],
+  "primary_contrasts": [
+    "paired L-G",
+    "L compared with 100 A1 seeds"
+  ],
+  "correction_family": "BY within each system, 90 selected directions only, shared evaluation scope; same family for strict and base quality.",
+  "strict_quality": {
+    "min_antecedent_orders": 20,
+    "min_joint_orders": 10,
+    "min_antecedent_customers": 10,
+    "min_joint_customers": 5,
+    "max_customer_joint_share": 0.5,
+    "min_confidence_uplift": 0.1,
+    "min_lift": 1.2,
+    "min_triple_increment_pp": 5,
+    "adjustment": "BY",
+    "alpha": 0.05
+  },
+  "base_quality": {
+    "min_antecedent_orders": 20,
+    "min_joint_orders": 10,
+    "min_antecedent_customers": 10,
+    "min_joint_customers": 5,
+    "max_customer_joint_share": 0.5,
+    "min_confidence_uplift": 0.05,
+    "min_lift": 1.2,
+    "min_triple_increment_pp": 5,
+    "adjustment": "BY",
+    "alpha": 0.05
+  },
+  "test_window": {
+    "start": "2011-06-01T00:00:00",
+    "end_exclusive": "2011-12-01T00:00:00",
+    "uses": [
+      "single_final_future_evaluation"
+    ]
+  },
+  "source_baskets_sha256": "30aef702f812ab42224271871271daff5b4e37a594696eee82208252198367bf",
+  "a_snapshot_commit": "2ae672b7ea6edb7f5e1561b6a64823004dea833e",
+  "bootstrap": {
+    "repeats": 2000,
+    "seed": 3111,
+    "unit": "eligible customer"
+  },
+  "input_hashes": {
+    "experiments/validation_budget_redesign/results/global_local_A1_rule_paths.csv.gz": "48b568632522d876ddf40f97377c0d157ca70248dd3e40a9fcbf1b4f07846944",
+    "experiments/validation_budget_redesign/results/verification.json": "d2e1a7121c588a9514fd55fa36546d946bf59c5ad4affa9cc0ab96e4795205d5",
+    "src/online_trade/evaluation/quality.py": "ef0520d0b7a36606652d23437d8f0cbef75fdb750bb1fa07c788117ebd60c9a2",
+    "src/online_trade/evaluation/validation.py": "bf265379a00e45372e81a2bd946d8c096414743f6af737e378e60e4bfba73dc9",
+    "scripts/run_frozen_test.py": "b74df4ec1d9f11d5eb655a28bfa62428e53a6424913e3a9d5eb7343b28cbabcd",
+    "data/processed/local/D_validation/discovery_baskets.csv": "32e5f8dcfffa99ae7ab7c2cbc8cebf088352467de9b205a5f1e86b2146d7bdb1",
+    "data/processed/local/D_validation/core/configurations.csv": "5eba5c3c9c91e7b95c4440888aa96400839684aa133b74b376e38f8d983ac5dd",
+    "data/processed/local/D_validation/core/inputs/customer_clusters.csv": "fc3826532fde31491d6f76d1930629ce347719edd71114651ae162365c765bcf",
+    "data/processed/local/D_validation/core/inputs/item_taxonomy_v1.csv": "67c9c22ce3e3816a09e89ffc412546396950d904f0457e549072b71fd4353434",
+    "data/taxonomy/item_taxonomy_v1.csv": "67c9c22ce3e3816a09e89ffc412546396950d904f0457e549072b71fd4353434"
+  },
+  "frozen_rule_lists_sha256": "20b1c272789cc071c44bfd3cc521000bae32aa483ac3432a5b46e41ed3ab1378",
+  "runner_sha256": "8b98a4c16096ab400b9dc3a54ca114e3b323f093c2cf8d9a45020535a1500e9c",
+  "refit_or_refill_in_test": false
+}
