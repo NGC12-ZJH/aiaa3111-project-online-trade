@@ -1,0 +1,42 @@
+{
+  "recorded_at": "2026-11-23T22:52:48+08:00",
+  "evidence": "Historical Test supplementary evaluation",
+  "a_snapshot_commit": "2ae672b7ea6edb7f5e1561b6a64823004dea833e",
+  "source_baskets_sha256": "30aef702f812ab42224271871271daff5b4e37a594696eee82208252198367bf",
+  "orders_sha256": "2ff8420a97ed2f89a303c57a6431590e130df35936ad143350adb40a5040d4c2",
+  "transaction_sha256": "01c6a69702b675723d2d9489f5771a45ea047946875eaae699384298afc9599b",
+  "test_window": {
+    "start": "2011-06-01T00:00:00",
+    "end_exclusive": "2011-12-01T00:00:00",
+    "uses": [
+      "single_final_future_evaluation"
+    ]
+  },
+  "fusion_weights": [
+    1.0,
+    0.25,
+    0.25
+  ],
+  "proto_sha256": "c471c098af971a0e188b2f10c3b00de201a49a6542b3f14df5c81e4f958c378d",
+  "runner_sha256": "d2fa6d0474d105efec9a16c03038835de3a744e85a32c4e7449bad04abb080a9",
+  "input_hashes": {
+    "1123/results/freeze.json": "687fa796458d0711ec510a95d8bbde4b0f9068dc6e645c53785b6b811a120594",
+    "1123/results/frozen_rule_lists.csv": "282993d30c082eeeb052c68f3ab595b0ea31106e754773ea5b44bba0c42a36df",
+    "repository/data/processed/local/D_validation/discovery_baskets.csv": "32e5f8dcfffa99ae7ab7c2cbc8cebf088352467de9b205a5f1e86b2146d7bdb1",
+    "repository/data/taxonomy/item_taxonomy_v1.csv": "67c9c22ce3e3816a09e89ffc412546396950d904f0457e549072b71fd4353434",
+    "1123/results/test/recommendation.csv": "f3da99b0b76857212ca2faf698e561edf25a4629979829c5805ab786f58eb87b",
+    "repository/experiments/shared_full_store/run.py": "ecd3a96ad95418ad2e87b2ca7c1b778e1faef4f93e572d5f162feba1dada3102",
+    "repository/experiments/validation_four_metrics/run.py": "54fee5974a720e34d929acae7991382bffedd17dc1ca184e8f9f40674f6f02e7",
+    "repository/experiments/validation_hybrid_residual/run.py": "c26a38f598a229a760e792bde2716f11cbb26a10b12d6868ea729c3b3c0a2ae1",
+    "repository/experiments/discovery_residual_refill/run.py": "a0f90c552ae83d940715aa94073e212f96b39b13fccfb8a8ee2f7d3eb81bd336",
+    "repository/src/online_trade/evaluation/validation.py": "bf265379a00e45372e81a2bd946d8c096414743f6af737e378e60e4bfba73dc9",
+    "1122/retail_rules.py": "bf480fe82879aa096982b7921b4c8a1e0dc67686423cb96e52c40beb7dfa04fa",
+    "1122/followup_fusion_time/run.py": "e5bfe3d359f02da80c164be028996fff5762d134eca44844f8540c49fb425860",
+    "1122/followup_fusion_time/results/fusion_late.csv": "f8172961449fa39003e62bf371995e67b07e9040284e0ac1e01007f2ead21754"
+  },
+  "artifacts": {
+    "G120_frozen.csv": "3f7285b5568a43b653ae5ad2f46c647c8cdbfe43672f27e276cf14da1997ba73",
+    "fusion_G200_frozen.csv": "e6d8148cce98a710d0685830aa92e9b238ae2f86bdb50169573543a46d2b5e16",
+    "L1_discovery_counts.csv": "2738b7152873531197cbffe86f408963991dfa8a2e3f2ed6c0aabe7f2908dd51"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "sample": {
+    "all": 8067,
+    "profile": 4862,
+    "identified_non_profile": 2502,
+    "anonymous": 703,
+    "identified": 7364,
+    "identified_customers": 2716,
+    "maskable": 7136
+  },
+  "rows": 45600,
+  "test_accessed_for_evaluation": false,
+  "common_selection": {
+    "config": "P5",
+    "budget": 120,
+    "score_pp": 71.31531776208583
+  },
+  "runner_sha256": "15ff9c979c6b6895a03792e6c4740ac21919992b52e5cbb99de7125c9532c5f4",
+  "input_hashes": {
+    "configs/test_frozen.json": "4efb49b8fe81dff7b12965c5ced4b48fffba0c02d04b35369ed3d317e587c76a",
+    "configs/experiment.json": "c5915a6e1997bf0bb770697dadd7a274dfcc5df425756b1a38ecbcdb0b389f54",
+    "src/online_trade/evaluation/validation.py": "bf265379a00e45372e81a2bd946d8c096414743f6af737e378e60e4bfba73dc9",
+    "src/online_trade/evaluation/quality.py": "ef0520d0b7a36606652d23437d8f0cbef75fdb750bb1fa07c788117ebd60c9a2",
+    "experiments/discovery_residual_refill/run.py": "a0f90c552ae83d940715aa94073e212f96b39b13fccfb8a8ee2f7d3eb81bd336",
+    "experiments/validation_budget_redesign/run.py": "e68551a48624305d4f1af3df6a6ba3fa3070dde39748db883d9d1322c7f65eef",
+    "experiments/validation_four_metrics/run.py": "54fee5974a720e34d929acae7991382bffedd17dc1ca184e8f9f40674f6f02e7",
+    "experiments/validation_hybrid_residual/run.py": "c26a38f598a229a760e792bde2716f11cbb26a10b12d6868ea729c3b3c0a2ae1",
+    "experiments/validation_budget_redesign/results/global_local_A1_rule_paths.csv.gz": "48b568632522d876ddf40f97377c0d157ca70248dd3e40a9fcbf1b4f07846944",
+    "data/taxonomy/item_taxonomy_v1.csv": "67c9c22ce3e3816a09e89ffc412546396950d904f0457e549072b71fd4353434",
+    "data/processed/local/D_validation/discovery_baskets.csv": "32e5f8dcfffa99ae7ab7c2cbc8cebf088352467de9b205a5f1e86b2146d7bdb1",
+    "data/processed/local/D_validation/validation_baskets.csv": "47d416dd70f64920df19193fc56704d834de18d2298443d767f0383cd3e4e2c0",
+    "data/processed/local/D_validation/core/configurations.csv": "5eba5c3c9c91e7b95c4440888aa96400839684aa133b74b376e38f8d983ac5dd",
+    "data/processed/local/D_validation/core/inputs/customer_clusters.csv": "fc3826532fde31491d6f76d1930629ce347719edd71114651ae162365c765bcf",
+    "data/processed/local/D_validation/core/inputs/item_taxonomy_v1.csv": "67c9c22ce3e3816a09e89ffc412546396950d904f0457e549072b71fd4353434",
+    "data/processed/local/D_validation/core/inputs/random_groups_A1_profile_frequency.csv": "cec6323091538e1436e7075efe4e92b1caefb9c5dd9bad586fcb09b8c8c6839d",
+    "experiments/shared_full_store/run.py": "ecd3a96ad95418ad2e87b2ca7c1b778e1faef4f93e572d5f162feba1dada3102",
+    "experiments/shared_full_store/results/discovery_paths.csv.gz": "0bdecbcd553fad90ad23aba831c4d3a6b280e0042314e20771f08be6cf398768",
+    "src/online_trade/clustering/features.py": "12d1b77ce0d41ab40506b33ecfaca5d80b65b2e44203f890e931a786be1d70f3",
+    "src/online_trade/clustering/methods.py": "aec7b361e42ae621ae875aa98f75307346df13ed4924eef4c059d4d506fe1453",
+    "../1122/retail_data.py": "25bf0a1c6449696b8124ef3c4164de8a92b09da76c0e0d5552dd185934928d52"
+  },
+  "path_sha256": "86db3edd362af4db1189ae280dba467899cf89c3b7218a9cb212b679d501d0fd"
+}

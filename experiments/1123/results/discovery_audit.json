@@ -1,0 +1,26 @@
+{
+  "sample": {
+    "period": "discovery",
+    "all_valid_baskets": 11273,
+    "eligible_baskets": 7521,
+    "eligible_customers": 1928,
+    "eligible_order_share": 0.6671693426771933,
+    "non_profile_baskets": 3752,
+    "anonymous_baskets": 819,
+    "identified_non_profile_baskets": 2933,
+    "empty_l2_eligible_baskets": 2,
+    "single_l2_eligible_baskets": 974,
+    "unmapped_codes": 0
+  },
+  "systems": 304,
+  "limits": {
+    "P1": 300,
+    "P2": 300,
+    "P3": 300,
+    "P4": 300,
+    "P5": 300
+  },
+  "paths": 456000,
+  "original_rfm_and_global_paths_reproduced": 153000,
+  "protocol_sha256": "b227a9465226e06a6dbeda93cda6e533efd5ade4d79fcd1455e3719fbb7acb15"
+}

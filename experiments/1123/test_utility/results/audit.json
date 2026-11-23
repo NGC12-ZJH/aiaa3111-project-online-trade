@@ -1,0 +1,20 @@
+{
+  "sample": {
+    "all": 10890,
+    "profile": 5730,
+    "identified_non_profile": 4532,
+    "anonymous": 628,
+    "identified": 10262,
+    "identified_customers": 3465,
+    "maskable": 9728
+  },
+  "sku_history": {
+    "skus_tested": 9728,
+    "identified_orders": 9204,
+    "identified_orders_using_history": 7967,
+    "identified_orders_all_popular_fallback": 1237
+  },
+  "original_G120_hit_count_reproduced": 2907,
+  "runner_sha256": "5447500ab51ffca58c5bacb40fb95e224b0b753c0b3bedc8027e3eb378f4e3a5",
+  "freeze_sha256": "7dedd746aab27918144bec600fc6a7f19a73422525ff0815be1bb829242391c7"
+}

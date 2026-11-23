@@ -1,0 +1,15 @@
+{
+  "sample": {
+    "all": 10890,
+    "profile": 5730,
+    "identified_non_profile": 4532,
+    "anonymous": 628,
+    "identified": 10262,
+    "identified_customers": 3465,
+    "maskable": 9728
+  },
+  "systems": 102,
+  "test_runner_sha256": "ecd3a96ad95418ad2e87b2ca7c1b778e1faef4f93e572d5f162feba1dada3102",
+  "freeze_sha256": "dcdcb13b1d1f5722214aad8c1302b3e3a4d2d861fdb6ea8915f29b8a5f20818f",
+  "unable_to_fill_five": 13
+}

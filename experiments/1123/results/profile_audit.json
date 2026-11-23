@@ -1,0 +1,46 @@
+{
+  "profile_customers": 2684,
+  "price_bands": [
+    1.65,
+    3.43
+  ],
+  "features": {
+    "rfm": [
+      "recency",
+      "frequency",
+      "monetary"
+    ],
+    "rfm_form": [
+      "recency",
+      "frequency",
+      "monetary",
+      "qty",
+      "skus",
+      "concentration",
+      "price",
+      "low",
+      "high"
+    ],
+    "form": [
+      "qty",
+      "skus",
+      "concentration",
+      "price",
+      "low",
+      "high"
+    ]
+  },
+  "profile_rfm_labels_reproduced": true,
+  "original_rfm_A1_seeds_reproduced": 100,
+  "matched_random_systems": 300,
+  "label_sequence_sha256": {
+    "rfm": "ada130a39037bacd65c91c7ceaa8852e2c3fb18685d88270f1ce7862ebacb4df",
+    "rfm_form": "34722300c90ae3b8db304b79b3c4852a0708cb84d962418a081142ce83c9f4b9",
+    "form": "7cdfe7910dcccce25e9eedc8e27b4d4e4badbc9c3303a20b9887ee972153d65c"
+  },
+  "pairwise_ari": {
+    "rfm_vs_rfm_form": 0.2408940885617771,
+    "rfm_vs_form": 0.008560460334486621,
+    "rfm_form_vs_form": 0.26544112907920653
+  }
+}

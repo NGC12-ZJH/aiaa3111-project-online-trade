@@ -25,3 +25,9 @@
 /experiments/validation_budget_redesign/test_p5_90/run.py -text whitespace=cr-at-eol,-blank-at-eof
 /experiments/validation_budget_redesign/test_p5_90/frozen_rule_lists.csv -text whitespace=cr-at-eol
 /experiments/validation_budget_redesign/test_p5_90/freeze.json -text whitespace=cr-at-eol
+
+# Preserve the source and result bytes recorded by the shared-store and 1123 freezes.
+/experiments/shared_full_store/** -text whitespace=cr-at-eol
+/experiments/1123/** -text whitespace=cr-at-eol
+/experiments/1123/replay_inputs/1122/**/*.py -text whitespace=cr-at-eol,-blank-at-eof
+/experiments/discovery_residual_refill/run.py -text whitespace=cr-at-eol

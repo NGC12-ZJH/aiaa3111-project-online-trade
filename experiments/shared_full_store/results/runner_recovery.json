@@ -1,0 +1,9 @@
+{
+  "recorded_at": "2026-11-23T21:33:21+08:00",
+  "freeze_sha256": "dcdcb13b1d1f5722214aad8c1302b3e3a4d2d861fdb6ea8915f29b8a5f20818f",
+  "original_runner_sha256": "4d456629a84adc853a06cdd69d7f26ffe2546feb8888fdcde181a33107d5d4d5",
+  "corrected_runner_sha256": "ecd3a96ad95418ad2e87b2ca7c1b778e1faef4f93e572d5f162feba1dada3102",
+  "reason": "Original Test attempt stopped at an assertion that every masked basket must have five distinct unseen candidates. When fewer candidates exist, evaluate the available list and retain the basket in every system's denominator.",
+  "scope": "Candidate-count assertion and audit only. Frozen roster, Discovery scores, mask selection, fallback ranking, quality gates, evaluation cohorts and selection are identical.",
+  "completed_test_outputs_before_correction": false
+}

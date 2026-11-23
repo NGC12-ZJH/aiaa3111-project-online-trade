@@ -1,0 +1,7 @@
+{
+  "freeze_sha256": "7dedd746aab27918144bec600fc6a7f19a73422525ff0815be1bb829242391c7",
+  "corrected_runner_sha256": "5447500ab51ffca58c5bacb40fb95e224b0b753c0b3bedc8027e3eb378f4e3a5",
+  "reason": "The original Test replay stopped before scoring fusion because the 1122 adapter lacked the prior method. The added prior contributes zero because global fusion uses shrink=0.",
+  "original_runner_sha256": "d2fa6d0474d105efec9a16c03038835de3a744e85a32c4e7449bad04abb080a9",
+  "completed_test_outputs_before_correction": false
+}
