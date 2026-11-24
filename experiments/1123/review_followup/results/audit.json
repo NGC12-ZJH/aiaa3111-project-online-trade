@@ -1,0 +1,22 @@
+{
+  "protocol_sha256": "0ad06a62cebcb3cbe4105afd97a71ead0224aeda5b2c7a36348854ad425360d5",
+  "test_loaded": false,
+  "phase_baskets": [
+    7521,
+    4862
+  ],
+  "comparative_sample": {
+    "all": 8067,
+    "profile": 4862,
+    "identified_non_profile": 2502,
+    "anonymous": 703,
+    "identified": 7364,
+    "identified_customers": 2716,
+    "maskable": 7136
+  },
+  "distinct_combinations": {
+    "2": 2786,
+    "3": 49589
+  },
+  "roster_budget": 120
+}

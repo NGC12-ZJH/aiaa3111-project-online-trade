@@ -1,4 +1,4 @@
-# 1123 三种分群与推荐 Test 补测
+# 1123 三种分群、推荐与审查补测
 
 | 入口 | 内容 |
 | --- | --- |
@@ -6,8 +6,10 @@
 | [完整实验协议](README.md) | Discovery 组库、Validation 选参、冻结与历史 Test 的评价定义 |
 | [三项推荐补测](test_utility/results/README.md) | L1 条件兜底、G100→G200、顾客历史选 SKU |
 | [推荐补测协议](test_utility/README.md) | 配对对照、冻结设置和商品层评价时序 |
+| [四项审查补测结果](review_followup/results/README.md) | 跨期品类差异、篮子大小匹配 B2、G 贪心、分群稳定性与缩放 |
+| [四项审查补测协议](review_followup/README.md) | 固定 P5／120 的 Discovery 与 Validation 计算口径 |
 
-主实验在共同预算下比较分群来源，推荐补测每次改变一个因素。两份结果报告链接相应的排名、冻结记录、区间和审计表。
+主实验在共同预算下比较分群来源，推荐补测每次改变一个因素。审查补测评价到 Validation，与两份历史 Test 报告对应不同证据阶段。
 
 ## 本地复算
 
@@ -26,3 +28,5 @@ Pop-Location
 ```
 
 复算附录保留了 1123 实际调用的 1122 依赖字节。上面的复制命令只在新建的同级 1122 目录中把这些依赖放回原位置。查看现成结果只需打开上方报告。要重新计算，主实验和推荐补测各使用一个新输出目录。推荐补测读取同级主实验的冻结清单。数据准备与引用校验见 [D 复现说明](../../docs/evaluation/reproduce.md)。
+
+四项审查补测读取同级主实验的冻结名单。在上述目录布局下，可从工作目录运行 `python -X utf8 -B 1123/review_followup/run.py --out 1123/review_followup/results_replay`。
