@@ -1,0 +1,16 @@
+{
+  "sample": {
+    "all": 10890,
+    "profile": 5730,
+    "identified_non_profile": 4532,
+    "anonymous": 628,
+    "identified": 10262,
+    "identified_customers": 3465,
+    "maskable": 9728
+  },
+  "systems": 305,
+  "baseline_replay_verified": true,
+  "freeze_sha256": "3a2fd5319220c488f4f21c771a725b8293faf7f0a9c197fa8462e23956e4d508",
+  "B2_seeds_per_segmentation": 100,
+  "maskable_orders": 9728
+}
