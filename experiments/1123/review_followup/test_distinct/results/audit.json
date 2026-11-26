@@ -1,0 +1,16 @@
+{
+  "baseline_validation_reproduced": true,
+  "discovery_pair_count": 2786,
+  "evaluation_orders": {
+    "validation": 4862,
+    "test": 5730
+  },
+  "b2_seeds_per_period_and_variant": 100,
+  "snapshot_commit": "2ae672b7ea6edb7f5e1561b6a64823004dea833e",
+  "source_baskets_sha256": "30aef702f812ab42224271871271daff5b4e37a594696eee82208252198367bf",
+  "main_freeze_sha256": "687fa796458d0711ec510a95d8bbde4b0f9068dc6e645c53785b6b811a120594",
+  "published_validation_sha256": "fdb704bdb4e61c783e9104a517b80e047c53b3189caedc65916deccff97b2dd2",
+  "runner_sha256": "e1f5dd99aa578368e5633b1cf2d9a8a770d5d36b2fb14e2c7d65465fa59eddda",
+  "values_sha256": "4a2d2a6f45fc76da3e197673fe0454c3e4c3109491f1aa43d52e5589ff0dc66d",
+  "b2_draws_sha256": "6f96f646f7827d5ef9a43b11c9c54669c1c3697775611a7c5277bf5466551142"
+}

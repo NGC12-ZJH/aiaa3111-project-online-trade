@@ -9,6 +9,7 @@
 | [四项审查补测结果](review_followup/results/README.md) | 跨期品类差异、篮子大小匹配 B2、G 贪心、分群稳定性与缩放 |
 | [四项审查补测协议](review_followup/README.md) | 固定 P5／120 的 Discovery 与 Validation 计算口径 |
 | [B2 与贪心 G 的 Test 补测](review_followup/test/README.md) | 同样的 120 个组合与同一批 Test 订单，比较普通 G、三种真实分群、贪心 G 和 300 套 B2 |
+| [海报 Fig. 4 · Validation → Test](review_followup/test_distinct/README.md) | 共购结构的 Bray–Curtis 距离、B2 中位数、逐种子明细及复算命令 |
 
 主实验在共同预算下比较分群来源，推荐补测每次改变一个因素。四项审查补测报告 Discovery 和 Validation，B2 与贪心 G 的 Test 补测沿用其中已保存的规则名单。
 
